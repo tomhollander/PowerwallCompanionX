@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:converters="clr-namespace:PowerwallCompanionX.Converters"
+             BackgroundColor="Black"
+             x:Class="PowerwallCompanionX.Views.MainPage">
+
+    <Page.Resources>
+        <converters:BatteryPercentageConverter x:Key="BatteryPercentageConverter" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Column 0 -->
+        <StackLayout Orientation="Vertical" Grid.Column="0">
+            <gauge:SfCircularGauge Margin="30,30,30,0">
+                <gauge:SfCircularGauge.Headers>
+                    <gauge:Header Text="{Binding BatteryPercent, Converter={ StaticResource BatteryPercentageConverter}}" ForegroundColor="White" TextSize="60" Position="0.5,0.5" />
+                </gauge:SfCircularGauge.Headers>
+                <gauge:SfCircularGauge.Scales>
+                    <gauge:Scale  StartAngle="95" SweepAngle="350" ShowLabels="False" ShowRim="True" RadiusFactor="1" RimThickness="30" RimColor="DimGray">
+
+                        <gauge:Scale.MinorTickSettings>
+                            <gauge:TickSettings Length="0" Thickness="0" Offset="5"/>
+                        </gauge:Scale.MinorTickSettings>
+                        <gauge:Scale.MajorTickSettings>
+                            <gauge:TickSettings Color ="Black" Thickness="4" Length="30" Offset="1"/>
+                        </gauge:Scale.MajorTickSettings>
+                        <gauge:Scale.Ranges>
+                            <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1"  Color = "LimeGreen" />
+                        </gauge:Scale.Ranges>
+
+                    </gauge:Scale>
+
+                </gauge:SfCircularGauge.Scales>
+            </gauge:SfCircularGauge>
+            <Label Text="{Binding BatteryStatus}" TextColor="White" FontSize="24" HorizontalTextAlignment="Center" />
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>

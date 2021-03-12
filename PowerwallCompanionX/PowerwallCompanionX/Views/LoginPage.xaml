@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PowerwallCompanionX.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <StackLayout Orientation="Horizontal">
+                <Label>Email:</Label>
+                <Entry x:Name="emailEntry" Text="{Binding Email}" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>Password:</Label>
+                <Entry IsPassword="True" Text="{Binding Password}" x:Name="passwordEntry" HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label>MFA:</Label>
+                <Entry Placeholder="Leave blank if MFA disabled"  x:Name="mfaEntry" Text="{Binding MfaCode}"  HorizontalOptions="FillAndExpand"></Entry>
+            </StackLayout>
+            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
+            <Label TextColor="Red" Text="{Binding ErrorMessage}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
