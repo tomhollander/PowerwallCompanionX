@@ -59,7 +59,7 @@
 
                         </gauge:SfCircularGauge.Scales>
                     </gauge:SfCircularGauge>
-                    <Label Text="{Binding BatteryStatus}" TextColor="White" FontSize="24" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding BatteryStatus}" TextColor="White" FontSize="30" HorizontalTextAlignment="Center" />
                 </StackLayout>
 
                 <!-- Column 1-->
@@ -69,22 +69,24 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50" />
                         <!-- Home caption -->
+                        <RowDefinition Height="40" />
+                        <!-- Home main graph -->
                         <RowDefinition Height="20" />
-                        <!-- Home Graph -->
+                        <!-- Home component graphs -->
                         <RowDefinition Height="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                         <RowDefinition Height="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
                         <RowDefinition Height="{Binding HomeFromBattery, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
                         <RowDefinition Height="{Binding HomeFromBattery, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
                         <RowDefinition Height="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
                         <RowDefinition Height="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
-                        <RowDefinition Height="20" />
                         <!-- Divider-->
-                        <RowDefinition Height="50"  />
-                        <!-- Solar caption -->
                         <RowDefinition Height="20" />
-                        <!-- Solar graph -->
+                        <!-- Solar caption -->
+                        <RowDefinition Height="40"  />
+                        <!-- Solar main graph -->
+                        <RowDefinition Height="20" />
+                        <!-- Solar component graphs -->
                         <RowDefinition Height="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                         <RowDefinition Height="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                         <RowDefinition Height="{Binding SolarToBattery, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
@@ -99,8 +101,8 @@
                     <!-- Home Use -->
                     <Label FontSize="20"  Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,15,0,0">HOME USE</Label>
                     <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan" HorizontalTextAlignment="Right" VerticalTextAlignment="Center" FontSize="60" Margin="-30,0,10,0" Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
-                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                        <Rectangle  Fill="Cyan"   WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal" >
+                        <Rectangle  Fill="Cyan"   WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20"  />
                     </StackLayout>
                     <Label FontSize="16"  Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left">From Solar</Label>
                     <Label Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" TextColor="Gold" HorizontalTextAlignment="Right" VerticalTextAlignment="Center" FontSize="30" Margin="0,0,10,0" Text="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
@@ -150,7 +152,7 @@
 
                 </Grid>
 
-                <Label x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="56" TextColor="#888888" Margin="40,-40,0,0"
+                <Label x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="60" TextColor="#888888" Margin="40,-40,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" />
                 <ImageButton Source="Settings.png"
