@@ -38,6 +38,14 @@ namespace PowerwallCompanionX.Views
         {
             try
             {
+#if FAKE
+                viewModel.BatteryPercent = 72;
+                viewModel.HomeValue = 1900D;
+                viewModel.SolarValue = 1900D;
+                viewModel.BatteryValue = -1000D;
+                viewModel.GridValue = 100D;
+                viewModel.GridActive = true;
+#else
                 var siteId = Application.Current.Properties[AppProperties.SiteId].ToString();
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
@@ -48,6 +56,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.BatteryValue = powerInfo["response"]["battery_power"].Value<double>();
                 viewModel.GridValue = powerInfo["response"]["grid_power"].Value<double>();
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
+#endif
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = true;
             }
