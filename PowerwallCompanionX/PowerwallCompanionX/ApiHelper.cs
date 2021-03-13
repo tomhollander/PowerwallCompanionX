@@ -92,9 +92,11 @@ namespace PowerwallCompanionX
             try
             {
                 var authHelper = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
-                var token = await authHelper.RefreshTokenAsync(Application.Current.Properties[AppProperties.RefreshToken].ToString(), TeslaAuth.TeslaAccountRegion.Unknown);
-                Application.Current.Properties[AppProperties.AccessToken] = token;
-               
+                var tokens = await authHelper.RefreshTokenAsync(Application.Current.Properties[AppProperties.RefreshToken].ToString(), TeslaAuth.TeslaAccountRegion.Unknown);
+                Application.Current.Properties[AppProperties.AccessToken] = tokens.AccessToken;
+                Application.Current.Properties[AppProperties.RefreshToken] = tokens.RefreshToken;
+                await Application.Current.SavePropertiesAsync();
+
             }
             catch
             {

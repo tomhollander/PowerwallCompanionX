@@ -25,7 +25,7 @@
         <StackLayout Orientation="Horizontal">
             <Label Text="Bar Scale" VerticalOptions="Center"/>
             <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
-            <Label Text="cm / kW" VerticalOptions="Center"/>
+            <Label Text="kW / cm" VerticalOptions="Center"/>
         </StackLayout>
     </StackLayout>
 
