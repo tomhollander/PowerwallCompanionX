@@ -76,5 +76,6 @@ namespace PowerwallCompanionX.Views
                 viewModel.StatusOK = false;
             }
         }
+
     }
 }

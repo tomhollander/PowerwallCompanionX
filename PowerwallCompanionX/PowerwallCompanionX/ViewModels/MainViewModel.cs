@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PowerwallCompanionX.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -16,6 +17,26 @@ namespace PowerwallCompanionX.ViewModels
         private double _gridValue;
         private bool _gridActive;
         private bool _statusOK;
+
+        public MainViewModel()
+        {
+            StatusCommand = new Command(OnStatusTapped);
+            SettingsCommand = new Command(OnSettingsTapped);
+        }
+
+        private void OnSettingsTapped(object obj)
+        {
+            Application.Current.MainPage = new SettingsPage();
+        }
+
+        private async void OnStatusTapped(object obj)
+        {
+            if (LastExceptionMessage != null)
+            {
+                var message = $"Last error occurred at {LastExceptionDate.ToString("g")}:\r\n{LastExceptionMessage}";
+                await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
+            }
+        }
 
         public void NotifyProperties()
         {
@@ -173,6 +194,9 @@ namespace PowerwallCompanionX.ViewModels
                 return false;
             }
         }
+
+        public Command StatusCommand { get; }
+        public Command SettingsCommand { get; }
 
         public string LastExceptionMessage { get; set; }
         public DateTime LastExceptionDate { get; set; }

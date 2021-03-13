@@ -11,12 +11,29 @@
         <converters:HideGridRowConverter x:Key="HideGridRowConverter" />
         <converters:KilowattConverter x:Key="KilowattConverter" />
         <converters:PositiveBarGraphConverter x:Key="PositiveBarGraphConverter" />
+        <converters:StatusConverter x:Key="StatusConverter" />
+        <converters:GridActiveToColorConverter x:Key="GridActiveToColorConverter"/>
     </Page.Resources>
 
     
     <ScrollView VerticalScrollBarVisibility="Default">
         <StackLayout>
-            <Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20"></Image>
+            <Grid>
+                <ImageButton Source="Settings.png"
+                    HeightRequest="30" WidthRequest="30"
+                    BackgroundColor="#202020"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Command="{Binding SettingsCommand}"
+                    />
+                <Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20"></Image>
+                <Ellipse WidthRequest="15" HeightRequest="15" Fill="{Binding StatusOK, Mode=OneWay, Converter={StaticResource StatusConverter}}" HorizontalOptions="End" VerticalOptions="Center" x:Name="statusLight">
+                    <Ellipse.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding StatusCommand}" />
+                    </Ellipse.GestureRecognizers>
+                </Ellipse>
+                <Label HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,30,0" Text="kW"/>
+            </Grid>
 
 
             <Grid x:Name="mainGrid" HorizontalOptions="CenterAndExpand">
@@ -41,7 +58,7 @@
                                     <gauge:TickSettings Color ="Black" Thickness="4" Length="30" Offset="1"/>
                                 </gauge:Scale.MajorTickSettings>
                                 <gauge:Scale.Ranges>
-                                    <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1"  Color = "LimeGreen" />
+                                    <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1"  Color = "{Binding GridActive, Converter={StaticResource GridActiveToColorConverter}}" />
                                 </gauge:Scale.Ranges>
 
                             </gauge:Scale>
@@ -138,6 +155,10 @@
                     </StackLayout>
 
                 </Grid>
+
+                <Label x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="56" TextColor="#888888" Margin="40,-40,0,0"
+                               IsVisible="{Binding ShowClock, Mode=OneWay}"
+                               Text="{Binding Time, Mode=OneWay}" />
             </Grid>
         </StackLayout>
     </ScrollView>
