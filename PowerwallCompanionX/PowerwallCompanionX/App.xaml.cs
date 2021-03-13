@@ -13,7 +13,7 @@ namespace PowerwallCompanionX
             InitializeComponent();
 
             if (Current.Properties.ContainsKey(AppProperties.SiteId) &&
-                !string.IsNullOrEmpty(Current.Properties[AppProperties.SiteId].ToString()))
+                !string.IsNullOrEmpty((string)Current.Properties[AppProperties.SiteId]))
             {
                 MainPage = new MainPage();
             }

@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PowerwallCompanionX.App">
     <Application.Resources>
-
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="LightGray" />
+            <Setter Property="PlaceholderColor" Value="DarkGray" />
+            <Setter Property="BackgroundColor" Value="#303030" />
+        </Style>
     </Application.Resources>
 </Application>

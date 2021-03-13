@@ -11,5 +11,6 @@ namespace PowerwallCompanionX
         public const string Email = "Email";
         public const string SiteId = "SiteId";
         public const string ShowClock = "ShowClock";
+        public const string GraphScale = "GraphScale";
     }
 }

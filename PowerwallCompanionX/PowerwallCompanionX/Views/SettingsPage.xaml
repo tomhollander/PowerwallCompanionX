@@ -10,10 +10,23 @@
                     BackgroundColor="#202020"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
-                    Command="{Binding SettingsCommand}"/>
+                    Command="{Binding BackCommand}"/>
             <Label Text="Settings" FontSize="Title" TextColor="White" />
         </StackLayout>
-        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Signed In as " VerticalOptions="Center"></Label>
+            <Label Text="{Binding Email}" VerticalOptions="Center"></Label>
+            <Button Text="Sign Out" HorizontalOptions="End" Command="{Binding SignOutCommand}" VerticalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}" />
+            <Label Text="Show Clock" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Bar Scale" VerticalOptions="Center"/>
+            <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
+            <Label Text="cm / kW" VerticalOptions="Center"/>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

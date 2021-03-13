@@ -57,7 +57,7 @@ namespace PowerwallCompanionX.ViewModels
             LoginCommand = new Command(OnLoginClicked);
             if (Application.Current.Properties.ContainsKey(AppProperties.Email))
             {
-                Email = Application.Current.Properties[AppProperties.Email].ToString();
+                Email = (string)Application.Current.Properties[AppProperties.Email];
             }
         }
 
