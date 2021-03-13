@@ -12,10 +12,11 @@ namespace PowerwallCompanionX.ViewModels
 {
     class LoginViewModel : INotifyPropertyChanged
     {
-        public string email;
-        public string password;
-        public string mfaCode;
-        public string errorMessage;
+        private string email;
+        private string password;
+        private string mfaCode;
+        private string errorMessage;
+        private bool isBusy;
 
         public string Email
         {
@@ -50,6 +51,17 @@ namespace PowerwallCompanionX.ViewModels
             
         }
 
+        public bool IsBusy
+        {
+            get => isBusy;
+            set
+            {
+                isBusy = value;
+                OnPropertyChanged("IsBusy");
+            }
+
+        }
+
         public Command LoginCommand { get; }
 
         public LoginViewModel()
@@ -65,6 +77,8 @@ namespace PowerwallCompanionX.ViewModels
         {
             try
             {
+                IsBusy = true;
+                ErrorMessage = "";
                 var auth = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
                 var tokens = await auth.AuthenticateAsync(email, password, mfaCode);
 
@@ -74,11 +88,16 @@ namespace PowerwallCompanionX.ViewModels
                 await Application.Current.SavePropertiesAsync();
 
                 await GetSiteId();
+                IsBusy = false;
                 Application.Current.MainPage = new MainPage();
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 

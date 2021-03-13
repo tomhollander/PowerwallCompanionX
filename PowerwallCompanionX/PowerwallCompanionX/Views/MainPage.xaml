@@ -158,7 +158,7 @@
                 <ImageButton Source="Settings.png"
                     HeightRequest="30" WidthRequest="30"
                     Margin="0,-10,0,0"
-                    BackgroundColor="#202020"
+                    BackgroundColor="Transparent"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Command="{Binding SettingsCommand}"

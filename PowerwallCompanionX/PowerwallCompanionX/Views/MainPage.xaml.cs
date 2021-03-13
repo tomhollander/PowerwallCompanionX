@@ -62,11 +62,18 @@ namespace PowerwallCompanionX.Views
             }
             catch (UnauthorizedAccessException ex)
             {
-                Application.Current.MainPage = new LoginPage();
-                viewModel.LastExceptionMessage = ex.Message;
-                viewModel.LastExceptionDate = DateTime.Now;
-                viewModel.NotifyProperties();
-                viewModel.StatusOK = false;
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    if (!(Application.Current.MainPage is LoginPage))
+                    {
+                        Application.Current.MainPage = new LoginPage();
+                        viewModel.LastExceptionMessage = ex.Message;
+                        viewModel.LastExceptionDate = DateTime.Now;
+                        viewModel.NotifyProperties();
+                        viewModel.StatusOK = false;
+                    }
+                });
+                
             }
             catch (Exception ex)
             {
