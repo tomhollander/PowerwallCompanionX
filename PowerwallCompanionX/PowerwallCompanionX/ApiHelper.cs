@@ -66,7 +66,10 @@ namespace PowerwallCompanionX
 
         private static async Task<JObject> CallGetApi(string url, string demoId)
         {
-
+            if (AccessToken == "DEMO")
+            {
+                return await GetDemoDocument(demoId);
+            }
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
             client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
@@ -86,6 +89,21 @@ namespace PowerwallCompanionX
             }
         }
 
+        private static async Task<JObject> GetDemoDocument(string demoId)
+        {
+            return JObject.Parse(@"{
+    ""response"": {
+    ""solar_power"": 73.6399993896484,
+    ""energy_left"": 6552.78947368421,
+    ""total_pack_energy"": 14057,
+    ""battery_power"": 530,
+    ""load_power"": 583.669994354248,
+    ""grid_status"": ""Active"",
+    ""grid_power"": -19.9700050354004,
+    ""timestamp"": ""2018-02-28T07:12:32+11:00""
+  }
+        }");
+        }
 
         private static async Task RefreshToken()
         {

@@ -79,12 +79,22 @@ namespace PowerwallCompanionX.ViewModels
             {
                 IsBusy = true;
                 ErrorMessage = "";
-                var auth = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
-                var tokens = await auth.AuthenticateAsync(email, password, mfaCode);
 
-                Application.Current.Properties[AppProperties.Email] = email;
-                Application.Current.Properties[AppProperties.AccessToken] = tokens.AccessToken;
-                Application.Current.Properties[AppProperties.RefreshToken] = tokens.RefreshToken;
+                if (email == "demo@example.com" && password == "demo")
+                {
+                    Application.Current.Properties[AppProperties.Email] = email;
+                    Application.Current.Properties[AppProperties.AccessToken] = "DEMO";
+                    Application.Current.Properties[AppProperties.RefreshToken] = "DEMO";
+                }
+                else
+                {
+                    var auth = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
+                    var tokens = await auth.AuthenticateAsync(email, password, mfaCode);
+
+                    Application.Current.Properties[AppProperties.Email] = email;
+                    Application.Current.Properties[AppProperties.AccessToken] = tokens.AccessToken;
+                    Application.Current.Properties[AppProperties.RefreshToken] = tokens.RefreshToken;
+                }
                 await Application.Current.SavePropertiesAsync();
 
                 await GetSiteId();
@@ -103,6 +113,12 @@ namespace PowerwallCompanionX.ViewModels
 
         private async Task GetSiteId()
         {
+            if ((string)Application.Current.Properties[AppProperties.AccessToken] == "DEMO")
+            {
+                Application.Current.Properties[AppProperties.SiteId] = "DEMO";
+                await Application.Current.SavePropertiesAsync();
+                return;
+            }
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", "Products");
             foreach (var product in productsResponse["response"])
             {
