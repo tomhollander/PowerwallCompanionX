@@ -11,7 +11,7 @@ namespace PowerwallCompanionX.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double doubleValue = (double)value;
-            if (doubleValue <= 0)
+            if (doubleValue < 50) // Prevent tiny values from showing
             {
                 return false;
             }
