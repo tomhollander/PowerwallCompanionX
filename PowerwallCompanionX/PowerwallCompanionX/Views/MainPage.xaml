@@ -13,6 +13,7 @@
         <converters:PositiveBarGraphConverter x:Key="PositiveBarGraphConverter" />
         <converters:StatusConverter x:Key="StatusConverter" />
         <converters:GridActiveToColorConverter x:Key="GridActiveToColorConverter"/>
+        <converters:GridActiveToBackgroundColorConverter x:Key="GridActiveToBackgroundColorConverter"/>
         <converters:PositiveToBooleanConverter x:Key="PositiveToBooleanConverter" />
     </Page.Resources>
 
@@ -43,7 +44,7 @@
                             <gauge:Header Text="{Binding BatteryPercent, Converter={ StaticResource BatteryPercentageConverter}}" ForegroundColor="White" TextSize="60" Position="0.5,0.5" />
                         </gauge:SfCircularGauge.Headers>
                         <gauge:SfCircularGauge.Scales>
-                            <gauge:Scale  StartAngle="95" SweepAngle="350" ShowLabels="False" ShowRim="True" RadiusFactor="1" RimThickness="30" RimColor="DimGray">
+                            <gauge:Scale  StartAngle="95" SweepAngle="350" ShowLabels="False" ShowRim="True" RadiusFactor="1" RimThickness="30" RimColor="{Binding GridActive, Converter={StaticResource GridActiveToBackgroundColorConverter}}">
 
                                 <gauge:Scale.MinorTickSettings>
                                     <gauge:TickSettings Length="0" Thickness="0" Offset="5"/>
@@ -52,7 +53,7 @@
                                     <gauge:TickSettings Color ="Black" Thickness="4" Length="30" Offset="1"/>
                                 </gauge:Scale.MajorTickSettings>
                                 <gauge:Scale.Ranges>
-                                    <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1"  Color = "{Binding GridActive, Converter={StaticResource GridActiveToColorConverter}}" />
+                                    <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1" Color="{Binding GridActive, Converter={StaticResource GridActiveToColorConverter}}" />
                                 </gauge:Scale.Ranges>
 
                             </gauge:Scale>
