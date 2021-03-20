@@ -191,6 +191,26 @@ namespace PowerwallCompanionX.ViewModels
             }
         }
 
+        public double LargeFontSize
+        {
+            get { return Settings.FontScale * 60; }
+        }
+
+        public double SmallFontSize
+        {
+            get { return Settings.FontScale * 30; }
+        }
+
+        public double LargeCaptionFontSize
+        {
+            get { return Settings.FontScale * 20; }
+        }
+
+        public double SmallCaptionFontSize
+        {
+            get { return Settings.FontScale * 16; }
+        }
+
         public Command StatusCommand { get; }
         public Command SettingsCommand { get; }
 

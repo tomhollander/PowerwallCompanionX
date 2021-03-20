@@ -16,7 +16,7 @@ namespace PowerwallCompanionX
             SiteId,
             ShowClock,
             GraphScale,
-            FontSize
+            FontScale
         }
 
         public static string AccessToken
@@ -52,6 +52,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<decimal>(nameof(Properties.GraphScale), 1.0M);
             set => Application.Current.Properties[nameof(Properties.GraphScale)] = value;
+        }
+
+        public static double FontScale
+        {
+            get => GetProperty<double>(nameof(Properties.FontScale), 1);
+            set => Application.Current.Properties[nameof(Properties.FontScale)] = value;
         }
 
         private static T GetProperty<T>(string keyName, T defaultValue)

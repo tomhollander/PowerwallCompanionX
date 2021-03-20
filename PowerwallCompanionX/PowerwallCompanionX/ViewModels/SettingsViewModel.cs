@@ -35,6 +35,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.GraphScale = value;
         }
 
+        public double FontScale
+        {
+            get => Settings.FontScale;
+            set => Settings.FontScale = value;
+        }
+
         private async void OnBackTapped(object obj)
         {
             await Application.Current.SavePropertiesAsync();

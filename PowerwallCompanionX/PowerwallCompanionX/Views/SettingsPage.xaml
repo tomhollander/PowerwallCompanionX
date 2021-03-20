@@ -28,6 +28,10 @@
             <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
             <Label Text="kW / cm" VerticalOptions="Center"/>
         </StackLayout>
+        <StackLayout Orientation="Horizontal" >
+            <Label Text="Font Scale" VerticalOptions="Center"/>
+            <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="200" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
