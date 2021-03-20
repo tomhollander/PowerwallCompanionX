@@ -71,7 +71,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <!-- Home caption -->
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
                         <!-- Home main graph -->
                         <RowDefinition Height="20" />
                         <!-- Home component graphs -->
@@ -84,7 +84,7 @@
                         <!-- Divider-->
                         <RowDefinition Height="20" />
                         <!-- Solar caption -->
-                        <RowDefinition Height="*"  />
+                        <RowDefinition Height="Auto"  />
                         <!-- Solar main graph -->
                         <RowDefinition Height="20" />
                         <!-- Solar component graphs -->
@@ -102,7 +102,7 @@
                     <!-- Home Use -->
                     <Label FontSize="20" Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,15,0,0">HOME USE</Label>
                     <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalOptions="End" FontSize="60" Margin="0,0,10,-10" Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
-                    <StackLayout Margin="0" Padding="0" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" >
+                    <StackLayout Margin="0" Padding="0" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                         <Rectangle  Fill="Cyan"   WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20"  />
                     </StackLayout>
                     <Label FontSize="16"  Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left">From Solar</Label>
