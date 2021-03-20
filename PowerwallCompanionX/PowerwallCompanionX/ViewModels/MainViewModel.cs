@@ -187,11 +187,7 @@ namespace PowerwallCompanionX.ViewModels
         {
             get
             {
-                if (Application.Current.Properties.ContainsKey(AppProperties.ShowClock))
-                {
-                    return (bool)Application.Current.Properties[AppProperties.ShowClock];
-                }
-                return false;
+                return Settings.ShowClock;
             }
         }
 

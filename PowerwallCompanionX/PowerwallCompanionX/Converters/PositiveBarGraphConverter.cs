@@ -25,11 +25,7 @@ namespace PowerwallCompanionX.Converters
 
         private double GetGraphScale()
         {
-            if (Application.Current.Properties.ContainsKey(AppProperties.GraphScale))
-            {
-                return decimal.ToDouble((decimal)Application.Current.Properties[AppProperties.GraphScale]);
-            }
-            return 1;
+               return decimal.ToDouble(Settings.GraphScale);   
         }
     }
 }

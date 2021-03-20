@@ -12,8 +12,7 @@ namespace PowerwallCompanionX
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDExMTYzQDMxMzgyZTM0MmUzME9wUTNNVDVoMW5ZdEtoR0dqL2JNOGlIcVFEUDJuelVzQUJ0VDgyc0NIS0k9");
             InitializeComponent();
 
-            if (Current.Properties.ContainsKey(AppProperties.SiteId) &&
-                !string.IsNullOrEmpty((string)Current.Properties[AppProperties.SiteId]))
+            if (!string.IsNullOrEmpty(Settings.SiteId))
             {
                 MainPage = new MainPage();
             }

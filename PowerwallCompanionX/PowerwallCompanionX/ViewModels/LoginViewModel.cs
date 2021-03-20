@@ -67,10 +67,7 @@ namespace PowerwallCompanionX.ViewModels
         public LoginViewModel()
         {
             LoginCommand = new Command(OnLoginClicked);
-            if (Application.Current.Properties.ContainsKey(AppProperties.Email))
-            {
-                Email = (string)Application.Current.Properties[AppProperties.Email];
-            }
+            Email = Settings.Email;
         }
 
         private async void OnLoginClicked(object obj)
@@ -82,20 +79,20 @@ namespace PowerwallCompanionX.ViewModels
 
                 if (email == "demo@example.com" && password == "demo")
                 {
-                    Application.Current.Properties[AppProperties.Email] = email;
-                    Application.Current.Properties[AppProperties.AccessToken] = "DEMO";
-                    Application.Current.Properties[AppProperties.RefreshToken] = "DEMO";
+                    Settings.Email = email;
+                    Settings.AccessToken = "DEMO";
+                    Settings.RefreshToken = "DEMO";
                 }
                 else
                 {
                     var auth = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
                     var tokens = await auth.AuthenticateAsync(email, password, mfaCode);
 
-                    Application.Current.Properties[AppProperties.Email] = email;
-                    Application.Current.Properties[AppProperties.AccessToken] = tokens.AccessToken;
-                    Application.Current.Properties[AppProperties.RefreshToken] = tokens.RefreshToken;
+                    Settings.Email = email;
+                    Settings.AccessToken = tokens.AccessToken;
+                    Settings.RefreshToken = tokens.RefreshToken;
                 }
-                await Application.Current.SavePropertiesAsync();
+                await Settings.SavePropertiesAsync();
 
                 await GetSiteId();
                 IsBusy = false;
@@ -113,10 +110,10 @@ namespace PowerwallCompanionX.ViewModels
 
         private async Task GetSiteId()
         {
-            if ((string)Application.Current.Properties[AppProperties.AccessToken] == "DEMO")
+            if (Settings.AccessToken == "DEMO")
             {
-                Application.Current.Properties[AppProperties.SiteId] = "DEMO";
-                await Application.Current.SavePropertiesAsync();
+                Settings.SiteId = "DEMO";
+                await Settings.SavePropertiesAsync();
                 return;
             }
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", "Products");
@@ -125,8 +122,8 @@ namespace PowerwallCompanionX.ViewModels
                 if (product["resource_type"]?.Value<string>() == "battery" && product["energy_site_id"] != null)
                 {
                     var id = product["energy_site_id"].Value<long>();
-                    Application.Current.Properties[AppProperties.SiteId] = id.ToString();
-                    await Application.Current.SavePropertiesAsync();
+                    Settings.SiteId = id.ToString();
+                    await Settings.SavePropertiesAsync();
                     return;
                 }
             }

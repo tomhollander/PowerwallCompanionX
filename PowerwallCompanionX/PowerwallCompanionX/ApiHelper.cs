@@ -14,17 +14,10 @@ namespace PowerwallCompanionX
         public const string BaseUrl = "https://owner-api.teslamotors.com";
         public static object lockObj = new object();
 
-        private static string AccessToken
-        {
-            get
-            {
-                return Application.Current.Properties[AppProperties.AccessToken].ToString();
-            }
-        }
 
         public static async Task<JObject> CallGetApiWithTokenRefresh(string url, string demoId)
         {
-            if (AccessToken == null)
+            if (Settings.AccessToken == null)
             {
                 throw new UnauthorizedAccessException();
             }
@@ -66,12 +59,12 @@ namespace PowerwallCompanionX
 
         private static async Task<JObject> CallGetApi(string url, string demoId)
         {
-            if (AccessToken == "DEMO")
+            if (Settings.AccessToken == "DEMO")
             {
                 return await GetDemoDocument(demoId);
             }
             var client = new HttpClient();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
             client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
             var response = await client.GetAsync(url);
             var responseMessage = await response.Content.ReadAsStringAsync();
@@ -110,10 +103,10 @@ namespace PowerwallCompanionX
             try
             {
                 var authHelper = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
-                var tokens = await authHelper.RefreshTokenAsync(Application.Current.Properties[AppProperties.RefreshToken].ToString(), TeslaAuth.TeslaAccountRegion.Unknown);
-                Application.Current.Properties[AppProperties.AccessToken] = tokens.AccessToken;
-                Application.Current.Properties[AppProperties.RefreshToken] = tokens.RefreshToken;
-                await Application.Current.SavePropertiesAsync();
+                var tokens = await authHelper.RefreshTokenAsync(Settings.RefreshToken, TeslaAuth.TeslaAccountRegion.Unknown);
+                Settings.AccessToken = tokens.AccessToken;
+                Settings.RefreshToken = tokens.RefreshToken;
+                await Settings.SavePropertiesAsync();
 
             }
             catch

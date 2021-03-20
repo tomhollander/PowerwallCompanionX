@@ -20,33 +20,19 @@ namespace PowerwallCompanionX.ViewModels
 
         public string Email
         {
-            get => (string) Application.Current.Properties[AppProperties.Email];
+            get => Settings.Email;
         }
 
         public bool ShowClock
         {
-            get
-            {
-                if (Application.Current.Properties.ContainsKey(AppProperties.ShowClock))
-                {
-                    return (bool)Application.Current.Properties[AppProperties.ShowClock];
-                }
-                return false;
-            }
-            set => Application.Current.Properties[AppProperties.ShowClock] = value;
+            get => Settings.ShowClock;
+            set => Settings.ShowClock = value;
         }
 
         public decimal GraphScale
         {
-            get
-            {
-                if (Application.Current.Properties.ContainsKey(AppProperties.GraphScale))
-                {
-                    return (decimal)Application.Current.Properties[AppProperties.GraphScale];
-                }
-                return 1.0M;
-            }
-            set => Application.Current.Properties[AppProperties.GraphScale] = value;
+            get => Settings.GraphScale;
+            set => Settings.GraphScale = value;
         }
 
         private async void OnBackTapped(object obj)
@@ -58,11 +44,7 @@ namespace PowerwallCompanionX.ViewModels
 
         private async void OnSignOutTapped(object obj)
         {
-            Application.Current.Properties.Remove(AppProperties.Email);
-            Application.Current.Properties.Remove(AppProperties.SiteId);
-            Application.Current.Properties.Remove(AppProperties.AccessToken);
-            Application.Current.Properties.Remove(AppProperties.RefreshToken);
-            await Application.Current.SavePropertiesAsync();
+            await Settings.SignOutUser();
             Application.Current.MainPage = new LoginPage();
         }
 

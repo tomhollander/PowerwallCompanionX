@@ -46,7 +46,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.GridValue = 100D;
                 viewModel.GridActive = true;
 #else
-                var siteId = Application.Current.Properties[AppProperties.SiteId].ToString();
+                var siteId = Settings.SiteId;
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
 
