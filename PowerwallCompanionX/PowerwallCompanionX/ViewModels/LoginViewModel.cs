@@ -112,22 +112,43 @@ namespace PowerwallCompanionX.ViewModels
         {
             if (Settings.AccessToken == "DEMO")
             {
-                Settings.SiteId = "DEMO";
+                Settings.SiteId = "DEMO1";
+                Settings.AvailableSites = new Dictionary<string, string>
+                {
+                    { "DEMO1", "Demo Powerwall 1" },
+                    { "DEMO2", "Demo Powerwall 2"}
+                };
                 await Settings.SavePropertiesAsync();
                 return;
             }
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", "Products");
+            var availableSites = new Dictionary<string, string>();
+            bool foundSite = false;
             foreach (var product in productsResponse["response"])
             {
                 if (product["resource_type"]?.Value<string>() == "battery" && product["energy_site_id"] != null)
                 {
+                    var siteName = product["site_name"].Value<string>();
                     var id = product["energy_site_id"].Value<long>();
-                    Settings.SiteId = id.ToString();
-                    await Settings.SavePropertiesAsync();
-                    return;
+                    if (!foundSite)
+                    {
+                        Settings.SiteId = id.ToString();
+                        foundSite = true;
+                    }
+                    availableSites.Add(id.ToString(), siteName);
+                    
                 }
             }
-            throw new Exception("Powerwall site not found");
+            if (foundSite)
+            {
+                Settings.AvailableSites = availableSites;
+                await Settings.SavePropertiesAsync();
+            }
+            else
+            {
+                throw new Exception("Powerwall site not found");
+            }
+            
         }
 
 

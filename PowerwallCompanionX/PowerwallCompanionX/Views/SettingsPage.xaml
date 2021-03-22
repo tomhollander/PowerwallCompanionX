@@ -20,6 +20,10 @@
             <Button Text="Sign Out" HorizontalOptions="End" Command="{Binding SignOutCommand}" VerticalOptions="Center"/>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
+            <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" />
+            <Picker Title="Energy Site" ItemsSource="{Binding AvailableSites}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedSite}}" TextColor="White" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
             <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}" />
             <Label Text="Show Clock" />
         </StackLayout>

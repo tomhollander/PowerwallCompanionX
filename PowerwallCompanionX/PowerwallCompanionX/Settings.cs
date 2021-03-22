@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace PowerwallCompanionX
             RefreshToken,
             Email,
             SiteId,
+            AvailableSites,
             ShowClock,
             GraphScale,
             FontScale
@@ -34,6 +36,20 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<string>(nameof(Properties.Email), null);
             set => Application.Current.Properties[nameof(Properties.Email)] = value;
+        }
+
+        public static Dictionary<string, string> AvailableSites
+        {
+            get
+            {
+                var json = GetProperty<string>(nameof(Properties.AvailableSites), null);
+                return json == null ? null : JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            }
+            set
+            {
+                var json = JsonConvert.SerializeObject(value);
+                Application.Current.Properties[nameof(Properties.AvailableSites)] = json;
+            }
         }
 
         public static string SiteId
@@ -82,8 +98,8 @@ namespace PowerwallCompanionX
 
         public static async Task SignOutUser()
         {
-            Application.Current.Properties.Remove(nameof(Properties.Email));
             Application.Current.Properties.Remove(nameof(Properties.SiteId));
+            Application.Current.Properties.Remove(nameof(Properties.AvailableSites));
             Application.Current.Properties.Remove(nameof(Properties.AccessToken));
             Application.Current.Properties.Remove(nameof(Properties.RefreshToken));
             await Application.Current.SavePropertiesAsync();

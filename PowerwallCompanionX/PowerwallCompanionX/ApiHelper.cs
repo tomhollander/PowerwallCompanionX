@@ -59,9 +59,9 @@ namespace PowerwallCompanionX
 
         private static async Task<JObject> CallGetApi(string url, string demoId)
         {
-            if (Settings.AccessToken == "DEMO")
+            if (Settings.AccessToken.StartsWith("DEMO"))
             {
-                return await GetDemoDocument(demoId);
+                return await GetDemoDocument(Settings.SiteId);
             }
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
@@ -82,9 +82,25 @@ namespace PowerwallCompanionX
             }
         }
 
-        private static async Task<JObject> GetDemoDocument(string demoId)
+        private static async Task<JObject> GetDemoDocument(string siteId)
         {
-            return JObject.Parse(@"{
+            if (siteId == "DEMO2")
+            {
+                return JObject.Parse(@"{
+    ""response"": {
+    ""solar_power"": 1373.6399993896484,
+    ""energy_left"": 13000,
+    ""total_pack_energy"": 14057,
+    ""battery_power"": 1626,
+    ""load_power"": 3000,
+    ""grid_status"": ""Inactive"",
+    ""grid_power"": 0,
+    ""timestamp"": ""2018-02-28T07:12:32+11:00""
+            }}");
+            }
+            else
+            {
+                return JObject.Parse(@"{
     ""response"": {
     ""solar_power"": 3473.6399993896484,
     ""energy_left"": 6552.78947368421,
@@ -94,15 +110,16 @@ namespace PowerwallCompanionX
     ""grid_status"": ""Active"",
     ""grid_power"": -19.9700050354004,
     ""timestamp"": ""2018-02-28T07:12:32+11:00""
-  }
-        }");
+            }}");
+            }
+
         }
 
         private static async Task RefreshToken()
         {
             try
             {
-                var authHelper = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
+                var authHelper = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion / 0.0");
                 var tokens = await authHelper.RefreshTokenAsync(Settings.RefreshToken, TeslaAuth.TeslaAccountRegion.Unknown);
                 Settings.AccessToken = tokens.AccessToken;
                 Settings.RefreshToken = tokens.RefreshToken;
