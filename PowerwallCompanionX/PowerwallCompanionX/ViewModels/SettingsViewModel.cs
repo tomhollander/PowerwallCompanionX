@@ -30,6 +30,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.ShowClock = value;
         }
 
+        public bool CyclePages
+        {
+            get => Settings.CyclePages;
+            set => Settings.CyclePages = value;
+        }
+
         public decimal GraphScale
         {
             get => Settings.GraphScale;

@@ -28,6 +28,10 @@
             <Label Text="Show Clock" />
         </StackLayout>
         <StackLayout Orientation="Horizontal">
+            <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
+            <Label Text="Cycle pages when idle" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
             <Label Text="Bar Scale" VerticalOptions="Center"/>
             <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
             <Label Text="kW / cm" VerticalOptions="Center"/>

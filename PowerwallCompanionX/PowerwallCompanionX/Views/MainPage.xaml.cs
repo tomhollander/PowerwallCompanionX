@@ -13,6 +13,11 @@ namespace PowerwallCompanionX.Views
     public partial class MainPage : ContentPage
     {
         private MainViewModel viewModel;
+        private readonly TimeSpan liveStatusRefreshInterval = new TimeSpan(0, 0, 30);
+        private readonly TimeSpan energyHistoryRefreshInterval = new TimeSpan(5, 0, 0);
+        private DateTime lastManualSwipe;
+        private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
+
         public MainPage()
         {
             InitializeComponent();
@@ -26,9 +31,13 @@ namespace PowerwallCompanionX.Views
         { 
             await RefreshDataFromTeslaOwnerApi();
 
-            Device.StartTimer(TimeSpan.FromSeconds(30), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {
                 RefreshDataFromTeslaOwnerApi();
+                if (Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
+                { 
+                    carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
+                }
                 return true; // True = Repeat again, False = Stop the timer
             });
 
@@ -44,6 +53,10 @@ namespace PowerwallCompanionX.Views
         { 
             try
             {
+                if (DateTime.Now - viewModel.LiveStatusLastRefreshed < liveStatusRefreshInterval)
+                {
+                    return;
+                }
 #if FAKE
                 viewModel.BatteryPercent = 72;
                 viewModel.HomeValue = 1900D;
@@ -52,7 +65,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.GridValue = 100D;
                 viewModel.GridActive = true;
 #else
-                var siteId = Settings.SiteId;
+             var siteId = Settings.SiteId;
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
 
@@ -63,6 +76,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.GridValue = GetJsonDoubleValue(powerInfo["response"]["grid_power"]);
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
 #endif
+                viewModel.LiveStatusLastRefreshed = DateTime.Now;
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = true; 
             }
@@ -94,6 +108,10 @@ namespace PowerwallCompanionX.Views
         {
             try
             {
+                if (DateTime.Now - viewModel.EnergyHistoryLastRefreshed < energyHistoryRefreshInterval)
+                {
+                    return;
+                }
                 viewModel.StatusOK = true;
                 string period = "day";
                 var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory");
@@ -114,6 +132,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.BatteryEnergyImportedToday = GetJsonDoubleValue(today["battery_energy_imported_from_grid"]) + GetJsonDoubleValue(today["battery_energy_imported_from_solar"]);
                 viewModel.BatteryEnergyExportedToday = GetJsonDoubleValue(today["battery_energy_exported"]);
 
+                viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = true;
 
@@ -145,6 +164,11 @@ namespace PowerwallCompanionX.Views
 
         private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
         {
+            if (args.Type == PanCardView.Enums.InteractionType.User)
+            {
+                lastManualSwipe = DateTime.Now;
+            }
+
             if (args.Index == 0)
             {
                 unitsLabel.Text = "kW";

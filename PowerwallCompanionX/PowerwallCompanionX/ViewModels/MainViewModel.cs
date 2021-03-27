@@ -297,6 +297,8 @@ namespace PowerwallCompanionX.ViewModels
 
         public string LastExceptionMessage { get; set; }
         public DateTime LastExceptionDate { get; set; }
+        public DateTime LiveStatusLastRefreshed { get; set;  }
+        public DateTime EnergyHistoryLastRefreshed { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
