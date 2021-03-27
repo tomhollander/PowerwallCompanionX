@@ -86,7 +86,7 @@
                                 <!-- Home caption -->
                                 <RowDefinition Height="Auto" />
                                 <!-- Home main graph -->
-                                <RowDefinition Height="20" />
+                                <RowDefinition Height="Auto" />
                                 <!-- Home component graphs -->
                                 <RowDefinition Height="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                                 <RowDefinition Height="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
@@ -99,7 +99,7 @@
                                 <!-- Solar caption -->
                                 <RowDefinition Height="Auto"  />
                                 <!-- Solar main graph -->
-                                <RowDefinition Height="20" />
+                                <RowDefinition Height="Auto" />
                                 <!-- Solar component graphs -->
                                 <RowDefinition Height="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                                 <RowDefinition Height="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
@@ -114,9 +114,9 @@
 
                             <!-- Home Use -->
                             <Label FontSize="{Binding LargeCaptionFontSize}" Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,15,0,0">HOME USE</Label>
-                            <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalOptions="End" FontSize="{Binding LargeFontSize}" Margin="0,0,10,-10" Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan" HorizontalOptions="End" VerticalTextAlignment="End" Margin="{Binding BigNumberMargin}"  FontSize="{Binding LargeFontSize}"  Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
                             <StackLayout Margin="0" Padding="0" Spacing="0" Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                                <Rectangle  Fill="Cyan" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                                <Rectangle  Fill="Cyan" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="{Binding LargeCaptionFontSize}" />
                             </StackLayout>
                             <Label FontSize="{Binding SmallCaptionFontSize}"  Grid.Row="2" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left">From Solar</Label>
                             <Label Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" TextColor="Gold" HorizontalOptions="End" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Margin="0,0,10,0" Text="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
@@ -140,9 +140,9 @@
 
                             <!-- Solar Generation -->
                             <Label FontSize="{Binding LargeCaptionFontSize}"  Grid.Row="9" Grid.Column="1" HorizontalTextAlignment="Left" LineBreakMode="NoWrap"  TextColor="White"  Margin="0,15,0,0">SOLAR GENERATION</Label>
-                            <Label Grid.Row="9" Grid.Column="0" Grid.RowSpan="2" TextColor="Gold" HorizontalOptions="End" VerticalTextAlignment="Center" FontSize="{Binding LargeFontSize}"  Margin="-0,0,10,-10" Text="{Binding SolarValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
+                            <Label Grid.Row="9" Grid.Column="0" Grid.RowSpan="2" TextColor="Gold" HorizontalOptions="End" VerticalTextAlignment="End" Margin="{Binding BigNumberMargin}" FontSize="{Binding LargeFontSize}"  Text="{Binding SolarValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
                             <StackLayout Margin="0" Padding="0" Spacing="0" Orientation="Horizontal" Grid.Row="10" Grid.Column="1">
-                                <Rectangle Fill="Gold" WidthRequest="{Binding SolarValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                                <Rectangle Fill="Gold" WidthRequest="{Binding SolarValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="{Binding LargeCaptionFontSize}"/>
                             </StackLayout>
                             <Label FontSize="{Binding SmallCaptionFontSize}"  Grid.Row="11" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left">To Home</Label>
                             <Label Grid.Row="11" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan"  HorizontalOptions="End" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}"  Margin="0,0,10,0" Text="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
@@ -169,7 +169,10 @@
                     </Grid>
 
                     <!-- Daily Energy View -->
-                    <Grid Margin="30" HorizontalOptions="CenterAndExpand" ColumnSpacing="30" >
+                    <Grid Margin="30" HorizontalOptions="CenterAndExpand" ColumnSpacing="60" >
+                        <Grid.Resources>
+                            <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="50" />
                             <ColumnDefinition Width="*" />
@@ -189,14 +192,35 @@
                         <Image Source="icon_solar.png" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"></Image>
                         <Image Source="icon_grid.png" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"></Image>
                         <Image Source="icon_battery.png" Grid.Row="4" Grid.Column="0" VerticalOptions="Center"></Image>
-                        <Label Grid.Row="1" Grid.Column="1" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="12" ></Label>
-                        <Label Grid.Row="1" Grid.Column="2" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="25" ></Label>
-                        <Label Grid.Row="2" Grid.Column="1" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="12" ></Label>
-                        <Label Grid.Row="2" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="25" ></Label>
-                        <Label Grid.Row="3" Grid.Column="1" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="12 / -3" ></Label>
-                        <Label Grid.Row="3" Grid.Column="2" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="24 / -9" ></Label>
-                        <Label Grid.Row="4" Grid.Column="1" TextColor="LimeGreen" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="12 / -3" ></Label>
-                        <Label Grid.Row="4" Grid.Column="2" TextColor="LimeGreen" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="24 / -9" ></Label>
+                        <Label Grid.Row="1" Grid.Column="1" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding HomeEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                        <Label Grid.Row="1" Grid.Column="2" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding HomeEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                        <Label Grid.Row="2" Grid.Column="1" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding SolarEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                        <Label Grid.Row="2" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding SolarEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                        <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="◀ /" />
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="3" Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="◀ /" />
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="◀ /" />
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="4" Grid.Column="2" Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="◀ /" />
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                            <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                        </StackLayout>
                     </Grid>
                 </x:Array>
             </cards:CarouselView.ItemsSource>

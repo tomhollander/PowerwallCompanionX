@@ -52,6 +52,18 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(SolarToHome));
             NotifyPropertyChanged(nameof(GridValue));
             NotifyPropertyChanged(nameof(GridActive));
+            NotifyPropertyChanged(nameof(HomeEnergyYesterday));
+            NotifyPropertyChanged(nameof(HomeEnergyToday));
+            NotifyPropertyChanged(nameof(SolarEnergyYesterday));
+            NotifyPropertyChanged(nameof(SolarEnergyToday));
+            NotifyPropertyChanged(nameof(GridEnergyImportedYesterday));
+            NotifyPropertyChanged(nameof(GridEnergyImportedToday));
+            NotifyPropertyChanged(nameof(GridEnergyExportedYesterday));
+            NotifyPropertyChanged(nameof(GridEnergyExportedToday));
+            NotifyPropertyChanged(nameof(BatteryEnergyImportedYesterday));
+            NotifyPropertyChanged(nameof(BatteryEnergyImportedToday));
+            NotifyPropertyChanged(nameof(BatteryEnergyExportedYesterday));
+            NotifyPropertyChanged(nameof(BatteryEnergyExportedToday));
             NotifyPropertyChanged(nameof(Time));
         }
 
@@ -103,6 +115,66 @@ namespace PowerwallCompanionX.ViewModels
             {
                 _gridValue = value;
             }
+        }
+
+        public double HomeEnergyToday
+        {
+            get; set; 
+        }
+
+        public double HomeEnergyYesterday
+        {
+            get; set;
+        }
+
+        public double SolarEnergyToday
+        {
+            get; set;
+        }
+
+        public double SolarEnergyYesterday
+        {
+            get; set;
+        }
+
+        public double GridEnergyImportedToday
+        {
+            get; set;
+        }
+
+        public double GridEnergyImportedYesterday
+        {
+            get; set;
+        }
+
+        public double GridEnergyExportedToday
+        {
+            get; set;
+        }
+
+        public double GridEnergyExportedYesterday
+        {
+            get; set;
+        }
+
+        public double BatteryEnergyImportedToday
+        {
+            get; set;
+        }
+
+        public double BatteryEnergyImportedYesterday
+        {
+            get; set;
+        }
+
+        public double BatteryEnergyExportedToday
+        {
+            get; set;
+        }
+
+        public double BatteryEnergyExportedYesterday
+        {
+            get; set;
         }
 
         public double HomeFromGrid
@@ -213,6 +285,11 @@ namespace PowerwallCompanionX.ViewModels
         public double SmallCaptionFontSize
         {
             get { return Settings.FontScale * 16; }
+        }
+
+        public Thickness BigNumberMargin
+        {
+            get { return new Thickness(0,0,5, -Settings.FontScale * 15); }
         }
 
         public Command StatusCommand { get; }
