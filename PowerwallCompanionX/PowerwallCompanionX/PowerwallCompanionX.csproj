@@ -12,6 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CardsView" Version="2.7.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.4.0.47" />
     <PackageReference Include="TeslaAuth" Version="1.0.0-preview.1" />

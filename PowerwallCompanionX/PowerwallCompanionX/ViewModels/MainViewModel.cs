@@ -195,6 +195,10 @@ namespace PowerwallCompanionX.ViewModels
         {
             get { return Settings.FontScale * 60; }
         }
+        public double MediumFontSize
+        {
+            get { return Settings.FontScale * 45; }
+        }
 
         public double SmallFontSize
         {
