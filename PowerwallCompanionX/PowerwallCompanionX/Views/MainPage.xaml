@@ -26,9 +26,9 @@
                 <TapGestureRecognizer Command="{Binding StatusCommand}" />
             </Ellipse.GestureRecognizers>
         </Ellipse>
-        <Label HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,70,0" Text="kW"/>
+        <Label x:Name="unitsLabel" HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,70,0" Text="kW"/>
 
-        <cards:CarouselView Grid.Row="1" >
+        <cards:CarouselView Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared">
             <cards:CarouselView.ItemsSource>
                 <x:Array Type="{x:Type View}">
                     <!-- Instantaneous Power View-->
@@ -226,7 +226,7 @@
             </cards:CarouselView.ItemsSource>
         </cards:CarouselView>
 
-        <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="40,-40,0,0"
+        <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="40,-50,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
         <ImageButton Grid.Row="1" Source="Settings.png"

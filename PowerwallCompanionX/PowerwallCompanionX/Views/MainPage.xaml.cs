@@ -56,11 +56,11 @@ namespace PowerwallCompanionX.Views
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
 
-                viewModel.BatteryPercent = (powerInfo["response"]["energy_left"].Value<double>() / powerInfo["response"]["total_pack_energy"].Value<double>()) * 100D;
-                viewModel.HomeValue = powerInfo["response"]["load_power"].Value<double>();
-                viewModel.SolarValue = powerInfo["response"]["solar_power"].Value<double>();
-                viewModel.BatteryValue = powerInfo["response"]["battery_power"].Value<double>();
-                viewModel.GridValue = powerInfo["response"]["grid_power"].Value<double>();
+                viewModel.BatteryPercent = GetJsonDoubleValue(powerInfo["response"]["energy_left"]) / GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]) * 100D;
+                viewModel.HomeValue = GetJsonDoubleValue(powerInfo["response"]["load_power"]);
+                viewModel.SolarValue = GetJsonDoubleValue(powerInfo["response"]["solar_power"]);
+                viewModel.BatteryValue = GetJsonDoubleValue(powerInfo["response"]["battery_power"]);
+                viewModel.GridValue = GetJsonDoubleValue(powerInfo["response"]["grid_power"]);
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
 #endif
                 viewModel.NotifyProperties();
@@ -96,23 +96,23 @@ namespace PowerwallCompanionX.Views
             {
                 viewModel.StatusOK = true;
                 string period = "day";
-                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory" + period);
+                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory");
 
                 var yesterday = json["response"]["time_series"][0];
-                viewModel.HomeEnergyYesterday = yesterday["consumer_energy_imported_from_grid"].Value<double>() + yesterday["consumer_energy_imported_from_solar"].Value<double>() + yesterday["consumer_energy_imported_from_battery"].Value<double>()+ yesterday["consumer_energy_imported_from_generator"].Value<double>();
-                viewModel.SolarEnergyYesterday = yesterday["solar_energy_exported"].Value<double>();
-                viewModel.GridEnergyImportedYesterday = yesterday["grid_energy_imported"].Value<double>();
-                viewModel.GridEnergyExportedYesterday = yesterday["grid_energy_exported_from_solar"].Value<double>() + yesterday["grid_energy_exported_from_battery"].Value<double>();
-                viewModel.BatteryEnergyImportedYesterday = yesterday["battery_energy_imported_from_grid"].Value<double>() + yesterday["battery_energy_imported_from_solar"].Value<double>();
-                viewModel.BatteryEnergyExportedYesterday = yesterday["battery_energy_exported"].Value<double>();
+                viewModel.HomeEnergyYesterday = GetJsonDoubleValue(yesterday["consumer_energy_imported_from_grid"]) + GetJsonDoubleValue(yesterday["consumer_energy_imported_from_solar"]) + GetJsonDoubleValue(yesterday["consumer_energy_imported_from_battery"])+ GetJsonDoubleValue(yesterday["consumer_energy_imported_from_generator"]);
+                viewModel.SolarEnergyYesterday = GetJsonDoubleValue(yesterday["solar_energy_exported"]);
+                viewModel.GridEnergyImportedYesterday = GetJsonDoubleValue(yesterday["grid_energy_imported"]);
+                viewModel.GridEnergyExportedYesterday = GetJsonDoubleValue(yesterday["grid_energy_exported_from_solar"]) + GetJsonDoubleValue(yesterday["grid_energy_exported_from_battery"]);
+                viewModel.BatteryEnergyImportedYesterday = GetJsonDoubleValue(yesterday["battery_energy_imported_from_grid"]) + GetJsonDoubleValue(yesterday["battery_energy_imported_from_solar"]);
+                viewModel.BatteryEnergyExportedYesterday = GetJsonDoubleValue(yesterday["battery_energy_exported"]);
 
                 var today = json["response"]["time_series"][1];
-                viewModel.HomeEnergyToday = today["consumer_energy_imported_from_grid"].Value<double>() + today["consumer_energy_imported_from_solar"].Value<double>() + today["consumer_energy_imported_from_battery"].Value<double>() + today["consumer_energy_imported_from_generator"].Value<double>();
-                viewModel.SolarEnergyToday = today["solar_energy_exported"].Value<double>();
-                viewModel.GridEnergyImportedToday = today["grid_energy_imported"].Value<double>();
-                viewModel.GridEnergyExportedToday = today["grid_energy_exported_from_solar"].Value<double>() + today["grid_energy_exported_from_battery"].Value<double>();
-                viewModel.BatteryEnergyImportedToday = today["battery_energy_imported_from_grid"].Value<double>() + today["battery_energy_imported_from_solar"].Value<double>();
-                viewModel.BatteryEnergyExportedToday = today["battery_energy_exported"].Value<double>();
+                viewModel.HomeEnergyToday = GetJsonDoubleValue(today["consumer_energy_imported_from_grid"]) + GetJsonDoubleValue(today["consumer_energy_imported_from_solar"]) + GetJsonDoubleValue(today["consumer_energy_imported_from_battery"]) + GetJsonDoubleValue(today["consumer_energy_imported_from_generator"]);
+                viewModel.SolarEnergyToday = GetJsonDoubleValue(today["solar_energy_exported"]);
+                viewModel.GridEnergyImportedToday = GetJsonDoubleValue(today["grid_energy_imported"]);
+                viewModel.GridEnergyExportedToday = GetJsonDoubleValue(today["grid_energy_exported_from_solar"]) + GetJsonDoubleValue(today["grid_energy_exported_from_battery"]);
+                viewModel.BatteryEnergyImportedToday = GetJsonDoubleValue(today["battery_energy_imported_from_grid"]) + GetJsonDoubleValue(today["battery_energy_imported_from_solar"]);
+                viewModel.BatteryEnergyExportedToday = GetJsonDoubleValue(today["battery_energy_exported"]);
 
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = true;
@@ -124,6 +124,34 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = false;
+            }
+        }
+
+        private static double GetJsonDoubleValue(JToken jtoken)
+        {
+            if (jtoken == null)
+            {
+                return 0;
+            }
+            try
+            {
+                return jtoken.Value<double>();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
+        {
+            if (args.Index == 0)
+            {
+                unitsLabel.Text = "kW";
+            }
+            else if (args.Index == 1)
+            {
+                unitsLabel.Text = "kWh";
             }
         }
     }

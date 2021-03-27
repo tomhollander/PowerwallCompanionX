@@ -15,7 +15,7 @@ namespace PowerwallCompanionX
         public static object lockObj = new object();
 
 
-        public static async Task<JObject> CallGetApiWithTokenRefresh(string url, string demoId)
+        public static async Task<JObject> CallGetApiWithTokenRefresh(string url, string demoApiName)
         {
             if (Settings.AccessToken == null)
             {
@@ -24,13 +24,13 @@ namespace PowerwallCompanionX
 
             try
             {
-                return await CallGetApi(url, demoId);
+                return await CallGetApi(url, demoApiName);
             }
             catch (UnauthorizedAccessException)
             {
                 // First fail - try refreshing
                 await RefreshToken();
-                return await CallGetApi(url, demoId);
+                return await CallGetApi(url, demoApiName);
 
             }
         }
@@ -57,11 +57,11 @@ namespace PowerwallCompanionX
             }
         }
 
-        private static async Task<JObject> CallGetApi(string url, string demoId)
+        private static async Task<JObject> CallGetApi(string url, string demoApiName)
         {
             if (Settings.AccessToken.StartsWith("DEMO"))
             {
-                return await GetDemoDocument(Settings.SiteId);
+                return GetDemoDocument(demoApiName, Settings.SiteId);
             }
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
@@ -82,7 +82,68 @@ namespace PowerwallCompanionX
             }
         }
 
-        private static async Task<JObject> GetDemoDocument(string siteId)
+        private static JObject GetDemoDocument(string apiName, string siteId)
+        {
+            if (apiName == "LiveStatus")
+            {
+                return GetDemoPowerDocument(siteId);
+            }
+            else if (apiName == "EnergyHistory")
+            {
+                return GetDemoEnergyDocument(siteId);
+            }
+            throw new InvalidOperationException();
+        }
+
+        private static JObject GetDemoEnergyDocument(string siteId)
+        {
+            return JObject.Parse(@"{  
+   ""response"":{  
+
+""serial_number"":""1118431-01-F--T17G0004126"",
+""period"":""day"",
+""time_series"":[
+
+{
+                ""timestamp"":""2018-02-19T00:00:00+11:00"",
+            ""solar_energy_exported"":22673.4666666966,
+            ""grid_energy_imported"":926.377223184099,
+            ""grid_energy_exported_from_solar"":2132.24583429517,
+            ""grid_energy_exported_from_battery"":0,
+            ""battery_energy_exported"":9760,
+            ""battery_energy_imported_from_grid"":0,
+            ""battery_energy_imported_from_solar"":13670,
+            ""consumer_energy_imported_from_grid"":926.377223184099,
+            ""consumer_energy_imported_from_solar"":6871.22083240142,
+            ""consumer_energy_imported_from_battery"":9760
+
+},
+         {
+                ""timestamp"":""2018-02-20T00:00:00+11:00"",
+            ""solar_energy_exported"":14308.0916666668,
+            ""grid_energy_imported"":96.1911119243596,
+            ""grid_energy_exported_from_solar"":132.668889702298,
+            ""grid_energy_exported_from_battery"":0,
+            ""battery_energy_exported"":3810,
+            ""battery_energy_imported_from_grid"":0,
+            ""battery_energy_imported_from_solar"":9410,
+            ""consumer_energy_imported_from_grid"":96.1911119243596,
+            ""consumer_energy_imported_from_solar"":4765.42277696449,
+            ""consumer_energy_imported_from_battery"":3810
+
+}
+      ],
+      ""self_consumption"":{
+                ""timestamp"":""2018-02-18T15:33:00+11:00"",
+         ""solar"":37.5705682339493,
+         ""battery"":57.4940374042163
+
+}
+        }
+    }");
+        }
+
+        private static JObject GetDemoPowerDocument(string siteId)
         {
             if (siteId == "DEMO2")
             {

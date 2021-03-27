@@ -121,7 +121,7 @@ namespace PowerwallCompanionX.ViewModels
                 await Settings.SavePropertiesAsync();
                 return;
             }
-            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", "Products");
+            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
             var availableSites = new Dictionary<string, string>();
             bool foundSite = false;
             foreach (var product in productsResponse["response"])
