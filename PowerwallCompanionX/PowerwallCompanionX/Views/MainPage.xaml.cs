@@ -14,7 +14,7 @@ namespace PowerwallCompanionX.Views
     {
         private MainViewModel viewModel;
         private readonly TimeSpan liveStatusRefreshInterval = new TimeSpan(0, 0, 30);
-        private readonly TimeSpan energyHistoryRefreshInterval = new TimeSpan(5, 0, 0);
+        private readonly TimeSpan energyHistoryRefreshInterval = new TimeSpan(0, 5, 0);
         private DateTime lastManualSwipe;
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
 

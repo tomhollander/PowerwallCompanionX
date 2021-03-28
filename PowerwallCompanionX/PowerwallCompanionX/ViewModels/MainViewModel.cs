@@ -289,7 +289,7 @@ namespace PowerwallCompanionX.ViewModels
 
         public Thickness BigNumberMargin
         {
-            get { return new Thickness(0,0,5, -Settings.FontScale * 15); }
+            get { return new Thickness(0,0,5, -Settings.FontScale * 15 ); }
         }
 
         public Command StatusCommand { get; }
