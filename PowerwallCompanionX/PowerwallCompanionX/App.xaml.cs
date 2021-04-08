@@ -9,7 +9,7 @@ namespace PowerwallCompanionX
     {
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NDExMTYzQDMxMzgyZTM0MmUzME9wUTNNVDVoMW5ZdEtoR0dqL2JNOGlIcVFEUDJuelVzQUJ0VDgyc0NIS0k9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(SyncfusionLicence.licenceKey);
             InitializeComponent();
 
             if (!string.IsNullOrEmpty(Settings.SiteId))
