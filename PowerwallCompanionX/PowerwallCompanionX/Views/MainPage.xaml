@@ -237,12 +237,12 @@
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                             </StackLayout>
                         </StackLayout>
-                        
-                        <chart:SfChart BackgroundColor="Black" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
+
+                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
                             <chart:SfChart.PrimaryAxis>
-                                <chart:DateTimeAxis>
+                                <chart:DateTimeAxis IntervalType="Hours" Interval="6">
                                     <chart:DateTimeAxis.LabelStyle>
-                                        <chart:ChartAxisLabelStyle TextColor="LightGray"/>
+                                        <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="hh:mm tt"/>
                                     </chart:DateTimeAxis.LabelStyle>
                                 </chart:DateTimeAxis>
                             </chart:SfChart.PrimaryAxis>
@@ -250,7 +250,7 @@
                             <chart:SfChart.SecondaryAxis>
                                 <chart:NumericalAxis>
                                     <chart:NumericalAxis.LabelStyle>
-                                        <chart:ChartAxisLabelStyle TextColor="LightGray"/>
+                                        <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="# W"/>
                                     </chart:NumericalAxis.LabelStyle>
                                 </chart:NumericalAxis>
                             </chart:SfChart.SecondaryAxis>
