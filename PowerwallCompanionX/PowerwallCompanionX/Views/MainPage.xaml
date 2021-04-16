@@ -169,7 +169,7 @@
 
                     <!-- Daily Energy View -->
                     
-                    <Grid Margin="10" HorizontalOptions="Center" RowSpacing="10" ColumnSpacing="40" VerticalOptions="Center">
+                    <Grid Margin="10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="40" VerticalOptions="Center">
                         <Grid.Resources>
                             <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
                         </Grid.Resources>
@@ -197,7 +197,7 @@
                         <Label Grid.Row="2" Grid.Column="1" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding HomeEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                         <Label Grid.Row="1" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                         <Label Grid.Row="2" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                        <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
@@ -207,7 +207,7 @@
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
@@ -217,7 +217,7 @@
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout Grid.Row="1" Grid.Column="4" Orientation="Vertical" Spacing="-10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <StackLayout Grid.Row="1" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
@@ -227,7 +227,7 @@
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                             </StackLayout>
                         </StackLayout>
-                        <StackLayout Grid.Row="2" Grid.Column="4" Orientation="Vertical" Spacing="-10" HorizontalOptions="Center" VerticalOptions="Center">
+                        <StackLayout Grid.Row="2" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
@@ -238,7 +238,8 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-10" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
+                        <!-- Power history chart -->
+                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
                             <chart:SfChart.PrimaryAxis>
                                 <chart:DateTimeAxis IntervalType="Hours" Interval="6">
                                     <chart:DateTimeAxis.LabelStyle>
@@ -255,7 +256,11 @@
                                 </chart:NumericalAxis>
                             </chart:SfChart.SecondaryAxis>
                             <chart:SfChart.Legend>
-                                <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Right" ItemMargin="10,0,0,0" />
+                                <chart:ChartLegend ToggleSeriesVisibility="True" DockPosition="Right" ItemMargin="10,0,0,0">
+                                    <chart:ChartLegend.LabelStyle>
+                                        <chart:ChartLegendLabelStyle TextColor="LightGray" />
+                                    </chart:ChartLegend.LabelStyle>
+                                </chart:ChartLegend>
                             </chart:SfChart.Legend>
 
                             <chart:AreaSeries Color="Cyan" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
