@@ -28,6 +28,10 @@
             <Label Text="Show Clock" />
         </StackLayout>
         <StackLayout Orientation="Horizontal">
+            <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}" />
+            <Label Text="Show Power Graph" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
             <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
             <Label Text="Cycle pages when idle" />
         </StackLayout>

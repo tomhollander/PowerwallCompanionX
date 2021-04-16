@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using PowerwallCompanionX.ViewModels;
+using Syncfusion.SfChart.XForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace PowerwallCompanionX.Views
         private MainViewModel viewModel;
         private readonly TimeSpan liveStatusRefreshInterval = new TimeSpan(0, 0, 30);
         private readonly TimeSpan energyHistoryRefreshInterval = new TimeSpan(0, 5, 0);
+        private readonly TimeSpan powerHistoryRefreshInterval = new TimeSpan(0, 5, 0);
+
         private DateTime lastManualSwipe;
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
 
@@ -47,6 +50,7 @@ namespace PowerwallCompanionX.Views
         {
             await GetCurrentPowerData();
             await GetEnergyHistoryData();
+            await GetPowerHistoryData();
         }
 
         private async Task GetCurrentPowerData()
@@ -143,6 +147,46 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyProperties();
                 viewModel.StatusOK = false;
+            }
+        }
+
+        public async Task GetPowerHistoryData()
+        {
+            try
+            {
+                if (DateTime.Now - viewModel.PowerHistoryLastRefreshed < powerHistoryRefreshInterval || !Settings.ShowGraph)
+                {
+                    return;
+                }
+
+                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=power", "PowerHistory");
+                viewModel.HomeGraphData = new List<ChartDataPoint>();
+                viewModel.SolarGraphData = new List<ChartDataPoint>();
+                viewModel.BatteryGraphData = new List<ChartDataPoint>();
+                viewModel.GridGraphData = new List<ChartDataPoint>();
+
+                foreach (var datapoint in (JArray)json["response"]["time_series"])
+                {
+                    var timestamp = datapoint["timestamp"].Value<DateTime>();
+                    var solarPower = datapoint["solar_power"].Value<double>();
+                    var batteryPower = datapoint["battery_power"].Value<double>();
+                    var gridPower = datapoint["grid_power"].Value<double>();
+                    var homePower = solarPower + batteryPower + gridPower;
+                    viewModel.HomeGraphData.Add(new ChartDataPoint(timestamp, homePower));
+                    viewModel.SolarGraphData.Add(new ChartDataPoint(timestamp, solarPower));
+                    viewModel.GridGraphData.Add(new ChartDataPoint(timestamp, gridPower));
+                    viewModel.BatteryGraphData.Add(new ChartDataPoint(timestamp, batteryPower));
+                }
+
+                viewModel.PowerHistoryLastRefreshed = DateTime.Now;
+                viewModel.NotifyGraphProperties();
+                viewModel.StatusOK = true;
+            }
+            catch (Exception ex)
+            {
+                viewModel.StatusOK = false;
+                viewModel.LastExceptionDate = DateTime.Now;
+                viewModel.LastExceptionMessage = ex.Message;
             }
         }
 

@@ -19,7 +19,8 @@ namespace PowerwallCompanionX
             ShowClock,
             GraphScale,
             FontScale,
-            CyclePages
+            CyclePages,
+            ShowGraph
         }
 
         public static string AccessToken
@@ -63,6 +64,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.ShowClock), false);
             set => Application.Current.Properties[nameof(Properties.ShowClock)] = value;
+        }
+
+        public static bool ShowGraph
+        {
+            get => GetProperty<bool>(nameof(Properties.ShowGraph), true);
+            set => Application.Current.Properties[nameof(Properties.ShowGraph)] = value;
         }
 
         public static bool CyclePages

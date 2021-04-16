@@ -1,6 +1,8 @@
 ﻿using PowerwallCompanionX.Views;
+using Syncfusion.SfChart.XForms;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Text;
@@ -18,6 +20,7 @@ namespace PowerwallCompanionX.ViewModels
         private bool _gridActive;
         private bool _statusOK;
 
+        private ObservableCollection<ChartDataPoint> homeGraphData;
         public MainViewModel()
         {
             StatusCommand = new Command(OnStatusTapped);
@@ -67,7 +70,16 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(Time));
         }
 
-        public void NotifyChangedSettings()
+        public void NotifyGraphProperties()
+        {
+            NotifyPropertyChanged(nameof(HomeGraphData));
+            NotifyPropertyChanged(nameof(SolarGraphData));
+            NotifyPropertyChanged(nameof(BatteryGraphData));
+            NotifyPropertyChanged(nameof(GridGraphData));
+            NotifyPropertyChanged(nameof(GraphDayBoundary));
+            
+        }
+            public void NotifyChangedSettings()
         {
             NotifyPropertyChanged(nameof(ShowClock));
         }
@@ -207,6 +219,23 @@ namespace PowerwallCompanionX.ViewModels
             get { return SolarValue - SolarToGrid - SolarToBattery; }
         }
 
+
+        public List<ChartDataPoint> HomeGraphData
+        {
+            get; set;
+        }
+        public List<ChartDataPoint> SolarGraphData
+        {
+            get; set;
+        }
+        public List<ChartDataPoint> GridGraphData
+        {
+            get; set;
+        }
+        public List<ChartDataPoint> BatteryGraphData
+        {
+            get; set;
+        }
         public bool StatusOK
         {
             get { return _statusOK; }
@@ -292,6 +321,11 @@ namespace PowerwallCompanionX.ViewModels
             get { return new Thickness(0,0,5, -Settings.FontScale * 15 ); }
         }
 
+        public bool ShowGraph
+        {
+            get => Settings.ShowGraph;
+        }
+
         public Command StatusCommand { get; }
         public Command SettingsCommand { get; }
 
@@ -299,6 +333,12 @@ namespace PowerwallCompanionX.ViewModels
         public DateTime LastExceptionDate { get; set; }
         public DateTime LiveStatusLastRefreshed { get; set;  }
         public DateTime EnergyHistoryLastRefreshed { get; set; }
+
+        public DateTime PowerHistoryLastRefreshed { get; set; }
+        public DateTime GraphDayBoundary
+        {
+            get { return DateTime.Today; }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
