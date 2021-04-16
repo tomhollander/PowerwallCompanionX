@@ -169,7 +169,7 @@
 
                     <!-- Daily Energy View -->
                     
-                    <Grid Margin="10" HorizontalOptions="Center" RowSpacing="5" ColumnSpacing="40" VerticalOptions="Center">
+                    <Grid Margin="10" HorizontalOptions="Center" ColumnSpacing="40" VerticalOptions="Center">
                         <Grid.Resources>
                             <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
                         </Grid.Resources>
@@ -185,7 +185,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
 
                         <Label HorizontalOptions="End" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="1" Grid.Column="0">Today</Label>
                         <Label HorizontalOptions="End" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="2" Grid.Column="0">Yesterday</Label>
@@ -239,12 +239,16 @@
                         </StackLayout>
 
                         <!-- Power history chart -->
-                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
+                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+                                       HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
                             <chart:SfChart.PrimaryAxis>
-                                <chart:DateTimeAxis IntervalType="Hours" Interval="6">
+                                <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
                                     <chart:DateTimeAxis.LabelStyle>
                                         <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="hh:mm tt"/>
                                     </chart:DateTimeAxis.LabelStyle>
+                                    <chart:DateTimeAxis.MajorGridLineStyle>
+                                        <chart:ChartLineStyle StrokeColor="#404040" />
+                                    </chart:DateTimeAxis.MajorGridLineStyle>
                                 </chart:DateTimeAxis>
                             </chart:SfChart.PrimaryAxis>
 
@@ -253,6 +257,9 @@
                                     <chart:NumericalAxis.LabelStyle>
                                         <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="# W"/>
                                     </chart:NumericalAxis.LabelStyle>
+                                    <chart:NumericalAxis.MajorGridLineStyle>
+                                        <chart:ChartLineStyle StrokeColor="#404040" />
+                                    </chart:NumericalAxis.MajorGridLineStyle>
                                 </chart:NumericalAxis>
                             </chart:SfChart.SecondaryAxis>
                             <chart:SfChart.Legend>
@@ -263,10 +270,10 @@
                                 </chart:ChartLegend>
                             </chart:SfChart.Legend>
 
-                            <chart:AreaSeries Color="Cyan" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
-                            <chart:AreaSeries Color="Gold" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" />
-                            <chart:AreaSeries Color="LightGray" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" />
-                            <chart:AreaSeries Color="LimeGreen" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" />
+                            <chart:AreaSeries Color="Cyan" StrokeColor="Cyan" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
+                            <chart:AreaSeries Color="Gold" StrokeColor="Gold" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" />
+                            <chart:AreaSeries Color="LightGray" StrokeColor="LightGray" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" />
+                            <chart:AreaSeries Color="LimeGreen" StrokeColor="LimeGreen" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" />
                             <chart:SfChart.ChartAnnotations>
                                 <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
 

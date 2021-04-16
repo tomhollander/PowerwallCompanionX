@@ -236,6 +236,11 @@ namespace PowerwallCompanionX.ViewModels
         {
             get; set;
         }
+
+        public DateTime ChartMaxDate
+        {
+            get => DateTime.Today.AddDays(1);
+        }
         public bool StatusOK
         {
             get { return _statusOK; }
