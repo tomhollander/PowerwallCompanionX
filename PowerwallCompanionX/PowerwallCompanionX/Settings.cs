@@ -20,7 +20,8 @@ namespace PowerwallCompanionX
             GraphScale,
             FontScale,
             CyclePages,
-            ShowGraph
+            ShowGraph,
+            PlaySounds
         }
 
         public static string AccessToken
@@ -76,6 +77,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.CyclePages), false);
             set => Application.Current.Properties[nameof(Properties.CyclePages)] = value;
+        }
+
+        public static bool PlaySounds
+        {
+            get => GetProperty<bool>(nameof(Properties.PlaySounds), true);
+            set => Application.Current.Properties[nameof(Properties.PlaySounds)] = value;
         }
 
         public static decimal GraphScale

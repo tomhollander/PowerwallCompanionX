@@ -42,6 +42,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.CyclePages = value;
         }
 
+        public bool PlaySounds
+        {
+            get => Settings.PlaySounds;
+            set => Settings.PlaySounds = value;
+        }
+
         public decimal GraphScale
         {
             get => Settings.GraphScale;

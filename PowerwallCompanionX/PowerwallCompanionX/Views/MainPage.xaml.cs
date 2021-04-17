@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
 using Syncfusion.SfChart.XForms;
 using System;
@@ -20,6 +21,9 @@ namespace PowerwallCompanionX.Views
 
         private DateTime lastManualSwipe;
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
+
+        private DateTime lastSound = DateTime.MinValue;
+        private readonly TimeSpan soundCooldownPeriod = new TimeSpan(1, 0, 0);
 
         public MainPage()
         {
@@ -69,9 +73,10 @@ namespace PowerwallCompanionX.Views
                 viewModel.GridValue = 100D;
                 viewModel.GridActive = true;
 #else
-             var siteId = Settings.SiteId;
+                var siteId = Settings.SiteId;
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
+                double lastBatteryPercent = viewModel.BatteryPercent;
 
                 viewModel.BatteryPercent = GetJsonDoubleValue(powerInfo["response"]["energy_left"]) / GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]) * 100D;
                 viewModel.HomeValue = GetJsonDoubleValue(powerInfo["response"]["load_power"]);
@@ -82,7 +87,9 @@ namespace PowerwallCompanionX.Views
 #endif
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
                 viewModel.NotifyProperties();
-                viewModel.StatusOK = true; 
+                viewModel.StatusOK = true;
+
+                PlaySoundsOnBatteryStatus(lastBatteryPercent, viewModel.BatteryPercent);
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -108,6 +115,23 @@ namespace PowerwallCompanionX.Views
             }
         }
 
+        private void PlaySoundsOnBatteryStatus(double oldPercent, double newPercent)
+        {
+            if (Settings.PlaySounds && DateTime.Now - lastSound > soundCooldownPeriod)
+            {
+                var player = new SoundPlayer();
+                if (oldPercent < 99.9D && newPercent >= 99.9D)
+                {
+                    player.PlaySound(SoundPlayer.BatteryFull);
+                    lastSound = DateTime.Now;
+                }
+                else if (oldPercent > 0.1D && newPercent <= 0.1D)
+                {
+                    player.PlaySound(SoundPlayer.BatteryEmpty);
+                    lastSound = DateTime.Now;
+                }
+            }
+        }
         private async Task GetEnergyHistoryData()
         {
             try

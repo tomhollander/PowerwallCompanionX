@@ -3,47 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PowerwallCompanionX.Views.SettingsPage"
              BackgroundColor="Black">
-
-    <StackLayout Margin="20">
-        <StackLayout Orientation="Horizontal">
-            <ImageButton Source="Back.png"
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackLayout Margin="20" Grid.Row="0" Grid.Column="0">
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="Back.png"
                     HeightRequest="30" WidthRequest="30"
                     BackgroundColor="#202020"
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Command="{Binding BackCommand}"/>
-            <Label Text="Settings" FontSize="Title" TextColor="White" />
+                <Label Text="Settings" FontSize="Title" TextColor="White" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" />
+                <Picker Title="Energy Site" ItemsSource="{Binding AvailableSites}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedSite}" TextColor="White" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}" />
+                <Label Text="Show Clock" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" />
+                <Label Text="Play sound when battery becomes full or empty" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}" />
+                <Label Text="Show Power Graph" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
+                <Label Text="Cycle pages when idle" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Bar Scale" VerticalOptions="Center"/>
+                <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
+                <Label Text="kW / cm" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Font Scale" VerticalOptions="Center"/>
+                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="200" />
+            </StackLayout>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
+
+        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
             <Label Text="Signed In as " VerticalOptions="Center"></Label>
             <Label Text="{Binding Email}" VerticalOptions="Center"></Label>
-            <Button Text="Sign Out" HorizontalOptions="End" Command="{Binding SignOutCommand}" VerticalOptions="Center"/>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" />
-            <Picker Title="Energy Site" ItemsSource="{Binding AvailableSites}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedSite}}" TextColor="White" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}" />
-            <Label Text="Show Clock" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}" />
-            <Label Text="Show Power Graph" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
-            <Label Text="Cycle pages when idle" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Bar Scale" VerticalOptions="Center"/>
-            <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
-            <Label Text="kW / cm" VerticalOptions="Center"/>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" >
-            <Label Text="Font Scale" VerticalOptions="Center"/>
-            <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="200" />
-        </StackLayout>
-    </StackLayout>
+    </Grid>
+    
 
 </ContentPage>

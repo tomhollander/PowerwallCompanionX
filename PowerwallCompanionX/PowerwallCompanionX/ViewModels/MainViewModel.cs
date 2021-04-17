@@ -20,7 +20,6 @@ namespace PowerwallCompanionX.ViewModels
         private bool _gridActive;
         private bool _statusOK;
 
-        private ObservableCollection<ChartDataPoint> homeGraphData;
         public MainViewModel()
         {
             StatusCommand = new Command(OnStatusTapped);
@@ -77,6 +76,7 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(BatteryGraphData));
             NotifyPropertyChanged(nameof(GridGraphData));
             NotifyPropertyChanged(nameof(GraphDayBoundary));
+            NotifyPropertyChanged(nameof(ChartMaxDate));
         }
             public void NotifyChangedSettings()
         {
