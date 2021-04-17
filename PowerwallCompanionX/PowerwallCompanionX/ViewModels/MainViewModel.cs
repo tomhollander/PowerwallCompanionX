@@ -77,7 +77,6 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(BatteryGraphData));
             NotifyPropertyChanged(nameof(GridGraphData));
             NotifyPropertyChanged(nameof(GraphDayBoundary));
-            
         }
             public void NotifyChangedSettings()
         {
@@ -239,7 +238,14 @@ namespace PowerwallCompanionX.ViewModels
 
         public DateTime ChartMaxDate
         {
-            get => DateTime.Today.AddDays(1);
+            get
+            {
+                if (Settings.AccessToken == "DEMO")
+                {
+                    return new DateTime(2021, 04, 17); // Match the dummy data
+                }
+                return DateTime.Today.AddDays(1);
+            }
         }
         public bool StatusOK
         {

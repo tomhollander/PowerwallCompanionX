@@ -253,7 +253,7 @@
                             </chart:SfChart.PrimaryAxis>
 
                             <chart:SfChart.SecondaryAxis>
-                                <chart:NumericalAxis>
+                                <chart:NumericalAxis RangePadding="None">
                                     <chart:NumericalAxis.LabelStyle>
                                         <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="# W"/>
                                     </chart:NumericalAxis.LabelStyle>
@@ -270,10 +270,10 @@
                                 </chart:ChartLegend>
                             </chart:SfChart.Legend>
 
-                            <chart:AreaSeries Color="Cyan" StrokeColor="Cyan" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
-                            <chart:AreaSeries Color="Gold" StrokeColor="Gold" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" />
-                            <chart:AreaSeries Color="LightGray" StrokeColor="LightGray" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" />
-                            <chart:AreaSeries Color="LimeGreen" StrokeColor="LimeGreen" StrokeWidth="1" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" />
+                            <chart:AreaSeries Color="Cyan" StrokeColor="Cyan" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
+                            <chart:AreaSeries Color="Gold" StrokeColor="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" />
+                            <chart:AreaSeries Color="LightGray" StrokeColor="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" />
+                            <chart:AreaSeries Color="LimeGreen" StrokeColor="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" />
                             <chart:SfChart.ChartAnnotations>
                                 <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
 
