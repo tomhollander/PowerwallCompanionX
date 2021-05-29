@@ -13,10 +13,26 @@ namespace PowerwallCompanionX.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+
+        private LoginViewModel viewModel = new LoginViewModel();
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+            this.BindingContext = viewModel;
+        }
+
+        private void webView_Navigating(object sender, WebNavigatingEventArgs e)
+        {
+            if (e.Url.Contains("void/callback"))
+            {
+                viewModel.CompleteLogin(e.Url);
+
+            }
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            viewModel.LoginAsDemoUser();
         }
     }
 }

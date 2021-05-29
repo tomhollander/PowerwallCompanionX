@@ -10,103 +10,45 @@ using Xamarin.Forms;
 
 namespace PowerwallCompanionX.ViewModels
 {
-    class LoginViewModel : INotifyPropertyChanged
+    class LoginViewModel 
     {
-        private string email;
-        private string password;
-        private string mfaCode;
-        private string errorMessage;
-        private bool isBusy;
-
-        public string Email
-        {
-            get => email;
-            set
-            {
-                email = value;
-                OnPropertyChanged("Email");
-            }
-        }
-
-        public string Password
-        {
-            get => password;
-            set => password = value;
-        }
-
-        public string MfaCode
-        {
-            get => mfaCode;
-            set => mfaCode = value;
-        }
-
-        public string ErrorMessage
-        {
-            get => errorMessage;
-            set
-            {
-                errorMessage = value;
-                OnPropertyChanged("ErrorMessage");
-            }
-            
-        }
-
-        public bool IsBusy
-        {
-            get => isBusy;
-            set
-            {
-                isBusy = value;
-                OnPropertyChanged("IsBusy");
-            }
-
-        }
-
-        public Command LoginCommand { get; }
+        private TeslaAuthHelper teslaAuth = new TeslaAuthHelper("PowerwallCompanionX/0.0");
 
         public LoginViewModel()
         {
-            LoginCommand = new Command(OnLoginClicked);
-            Email = Settings.Email;
+            DependencyService.Get<IClearCookies>().Clear();
         }
-
-        private async void OnLoginClicked(object obj)
+        public string LoginUrl
         {
-            try
-            {
-                IsBusy = true;
-                ErrorMessage = "";
-
-                if (email == "demo@example.com" && password == "demo")
-                {
-                    Settings.Email = email;
-                    Settings.AccessToken = "DEMO";
-                    Settings.RefreshToken = "DEMO";
-                }
-                else
-                {
-                    var auth = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
-                    var tokens = await auth.AuthenticateAsync(email, password, mfaCode);
-
-                    Settings.Email = email;
-                    Settings.AccessToken = tokens.AccessToken;
-                    Settings.RefreshToken = tokens.RefreshToken;
-                }
-                await Settings.SavePropertiesAsync();
-
-                await GetSiteId();
-                IsBusy = false;
-                Application.Current.MainPage = new MainPage();
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage = ex.Message;
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            get { return teslaAuth.GetLoginUrlForBrowser(); }
         }
+
+        public async Task CompleteLogin(string url)
+        {
+            var tokens = await teslaAuth.GetTokenAfterLogin(url);
+            Settings.Email = "Tesla User";
+            Settings.AccessToken = tokens.AccessToken;
+            Settings.RefreshToken = tokens.RefreshToken;
+            await Settings.SavePropertiesAsync();
+
+            await GetSiteId();
+
+            Application.Current.MainPage = new MainPage();
+        }
+
+        public async Task LoginAsDemoUser()
+        {
+            Settings.Email = "demo@example.com";
+            Settings.AccessToken = "DEMO";
+            Settings.RefreshToken = "DEMO";
+            await Settings.SavePropertiesAsync();
+            await GetSiteId();
+
+            Application.Current.MainPage = new MainPage();
+
+        }
+
+ 
 
         private async Task GetSiteId()
         {
@@ -152,16 +94,5 @@ namespace PowerwallCompanionX.ViewModels
         }
 
 
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 }

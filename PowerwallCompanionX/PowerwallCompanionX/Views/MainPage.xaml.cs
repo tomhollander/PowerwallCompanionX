@@ -25,6 +25,8 @@ namespace PowerwallCompanionX.Views
         private DateTime lastSound = DateTime.MinValue;
         private readonly TimeSpan soundCooldownPeriod = new TimeSpan(1, 0, 0);
 
+        private bool keepRefreshing = true;
+
         public MainPage()
         {
             InitializeComponent();
@@ -45,9 +47,14 @@ namespace PowerwallCompanionX.Views
                 { 
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
                 }
-                return true; // True = Repeat again, False = Stop the timer
+                return keepRefreshing; // True = Repeat again, False = Stop the timer
             });
 
+        }
+
+        protected override void OnDisappearing()
+        {
+            keepRefreshing = false;
         }
 
         private async Task RefreshDataFromTeslaOwnerApi()

@@ -9,24 +9,16 @@
         <converters:NegateValueConverter x:Key="NegateValueConverter" />
     </Page.Resources>
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Image Source="PowerwallLogo.png" HorizontalOptions="Center" />
-            <Label HorizontalOptions="Center">Sign In with your Tesla account.</Label>
-            <StackLayout Orientation="Horizontal">
-                <Label WidthRequest="80" VerticalOptions="Center">Email:</Label>
-                <Entry x:Name="emailEntry" Text="{Binding Email}" Keyboard="Email"  HorizontalOptions="FillAndExpand" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"></Entry>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label WidthRequest="80" VerticalOptions="Center">Password:</Label>
-                <Entry IsPassword="True" Text="{Binding Password}" x:Name="passwordEntry" HorizontalOptions="FillAndExpand" IsTextPredictionEnabled="False" IsSpellCheckEnabled="False"></Entry>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label WidthRequest="80" VerticalOptions="Center">MFA:</Label>
-                <Entry Placeholder="Leave blank if MFA disabled" Keyboard="Numeric" x:Name="mfaEntry" Text="{Binding MfaCode}"  HorizontalOptions="FillAndExpand" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False"></Entry>
-            </StackLayout>
-            <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}" IsEnabled="{Binding IsBusy, Converter={StaticResource NegateValueConverter}}" />
-            <ActivityIndicator HorizontalOptions="Center" IsRunning="true" IsVisible="{Binding IsBusy}" />
-            <Label TextColor="Red" Text="{Binding ErrorMessage}"/>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="FillAndExpand">
+            <Image Source="PowerwallLogo.png" HorizontalOptions="Center" HeightRequest="30">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="TapGestureRecognizer_Tapped"
+                        NumberOfTapsRequired="2" /> 
+                </Image.GestureRecognizers>
+            </Image>
+            <WebView x:Name="webView" Source="{Binding LoginUrl}" Navigating="webView_Navigating" 
+                    Margin="0,0,0,200" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
