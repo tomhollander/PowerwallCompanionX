@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TeslaAuth;
 using Xamarin.Forms;
 
 namespace PowerwallCompanionX.ViewModels
@@ -18,6 +19,7 @@ namespace PowerwallCompanionX.ViewModels
         {
             DependencyService.Get<IClearCookies>().Clear();
         }
+
         public string LoginUrl
         {
             get { return teslaAuth.GetLoginUrlForBrowser(); }
@@ -25,7 +27,7 @@ namespace PowerwallCompanionX.ViewModels
 
         public async Task CompleteLogin(string url)
         {
-            var tokens = await teslaAuth.GetTokenAfterLogin(url);
+            var tokens = await teslaAuth.GetTokenAfterLoginAsync(url);
             Settings.Email = "Tesla User";
             Settings.AccessToken = tokens.AccessToken;
             Settings.RefreshToken = tokens.RefreshToken;

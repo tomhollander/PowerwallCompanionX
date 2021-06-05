@@ -21,10 +21,17 @@ namespace PowerwallCompanionX.Views
             this.BindingContext = viewModel;
         }
 
+        protected override void OnAppearing()
+        {
+            webView.IsVisible = true;
+            base.OnAppearing();
+        }
+
         private void webView_Navigating(object sender, WebNavigatingEventArgs e)
         {
             if (e.Url.Contains("void/callback"))
             {
+                webView.IsVisible = false;
                 viewModel.CompleteLogin(e.Url);
 
             }
