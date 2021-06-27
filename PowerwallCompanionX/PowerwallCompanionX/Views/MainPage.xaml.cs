@@ -31,9 +31,103 @@ namespace PowerwallCompanionX.Views
         {
             InitializeComponent();
             viewModel = new MainViewModel();
+            this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
 
             Task.Run(() => RefreshData());
+        }
+
+        private void MainPage_SizeChanged(object sender, EventArgs e)
+        {
+
+            string visualState = Width > Height ? "Landscape" : "Portrait";
+            var page1Grid = (Grid)((Array)carousel.ItemsSource).GetValue(0);
+            var page2Grid = (Grid)((Array)carousel.ItemsSource).GetValue(1);
+
+            if (visualState == "Portrait")
+            {
+                // Page 1 : Move graph from column to row
+                page1Grid.RowDefinitions[1].Height = GridLength.Star;
+                page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
+                Grid.SetRow(page1Grid.Children[1], 1);
+                Grid.SetColumn(page1Grid.Children[1], 0);
+
+                // Page 2 : Transpose grid
+                page2Grid.RowDefinitions.Clear();
+                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+                for (int i = 0; i < 4; i++)
+                {
+                    page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                }
+                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+
+                page2Grid.ColumnDefinitions.Clear();
+                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+                var chart = page2Grid.Children.Last();
+                if (Grid.GetRow(chart) == 3)
+                {
+                    // Previously in landscape mode, so transpose
+                    foreach (var item in page2Grid.Children)
+                    {
+                        if (item != chart)
+                        {
+                            int currentRow = Grid.GetRow(item);
+                            int currentColumn = Grid.GetColumn(item);
+                            Grid.SetColumn(item, currentRow);
+                            Grid.SetRow(item, currentColumn);
+                        }
+                        else
+                        {
+                            Grid.SetRow(chart, 6);
+                            Grid.SetColumnSpan(chart, 3);
+                        }
+                    }
+                }
+                
+            }
+            else
+            {
+                // Page 1 : Move graph from row ro column
+                page1Grid.RowDefinitions[1].Height = new GridLength(0);
+                page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
+                Grid.SetRow(page1Grid.Children[1], 0);
+                Grid.SetColumn(page1Grid.Children[1], 1);
+
+                // Page 2 : Transpose grid
+                page2Grid.ColumnDefinitions.Clear();
+                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+                for (int i = 0; i < 4; i++)
+                {
+                    page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+                }
+                page2Grid.RowDefinitions.Clear();
+                for (int i = 0; i < 4; i++)
+                {
+                    page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+                }
+                var chart = page2Grid.Children.Last();
+                if (Grid.GetRow(chart) == 6)
+                {
+                    // Previously in portrait mode, so transpose
+                    foreach (var item in page2Grid.Children)
+                    {
+                        if (item != chart)
+                        {
+                            int currentRow = Grid.GetRow(item);
+                            int currentColumn = Grid.GetColumn(item);
+                            Grid.SetColumn(item, currentRow);
+                            Grid.SetRow(item, currentColumn);
+                        } else
+                        {
+                            Grid.SetRow(chart, 3);
+                            Grid.SetColumnSpan(chart, 5);
+                        }
+                    }
+                }
+            }    
+           
         }
 
         private async Task RefreshData()

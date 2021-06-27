@@ -27,7 +27,7 @@
                 <TapGestureRecognizer Command="{Binding StatusCommand}" />
             </Ellipse.GestureRecognizers>
         </Ellipse>
-        <Label x:Name="unitsLabel" HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,70,0" FontSize="20" Text="kW"/>
+        <Label x:Name="unitsLabel" HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,50,0" FontSize="20" Text="kW"/>
 
         <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared">
             <cards:CarouselView.ItemsSource>
@@ -45,10 +45,11 @@
                         </Grid.Resources>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
+                            <RowDefinition Height="0" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
                         <!-- Column 0 -->
@@ -78,7 +79,7 @@
                         </StackLayout>
 
                         <!-- Column 1-->
-                        <Grid Grid.Column="1" x:Name="graphGrid" VerticalOptions="CenterAndExpand">
+                        <Grid Grid.Column="1" x:Name="graphGrid" VerticalOptions="CenterAndExpand" Margin="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"  />
                                 <ColumnDefinition Width="*" />
@@ -190,10 +191,10 @@
 
                         <Label HorizontalOptions="End" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="1" Grid.Column="0">Today</Label>
                         <Label HorizontalOptions="End" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="2" Grid.Column="0">Yesterday</Label>
-                        <Image Source="icon_home.png" Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="30"></Image>
-                        <Image Source="icon_solar.png" Grid.Row="0" Grid.Column="2" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="30"></Image>
-                        <Image Source="icon_grid.png" Grid.Row="0" Grid.Column="3" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="30"></Image>
-                        <Image Source="icon_battery.png" Grid.Row="0" Grid.Column="4" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="30"></Image>
+                        <Image Source="icon_home.png" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
+                        <Image Source="icon_solar.png" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
+                        <Image Source="icon_grid.png" Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
+                        <Image Source="icon_battery.png" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
                         <Label Grid.Row="1" Grid.Column="1" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding HomeEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                         <Label Grid.Row="2" Grid.Column="1" TextColor="Cyan" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding HomeEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                         <Label Grid.Row="1" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
