@@ -66,6 +66,8 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(BatteryEnergyImportedToday));
             NotifyPropertyChanged(nameof(BatteryEnergyExportedYesterday));
             NotifyPropertyChanged(nameof(BatteryEnergyExportedToday));
+            NotifyPropertyChanged(nameof(ShowBothGridSettingsToday));
+            NotifyPropertyChanged(nameof(ShowBothGridSettingsYesterday));
             NotifyPropertyChanged(nameof(Time));
         }
 
@@ -168,6 +170,16 @@ namespace PowerwallCompanionX.ViewModels
             get; set;
         }
 
+        public bool ShowBothGridSettingsToday
+        {
+            get { return GridEnergyExportedToday > 0;  }
+        }
+
+        public bool ShowBothGridSettingsYesterday
+        {
+            get { return GridEnergyExportedYesterday > 0;  }
+        }
+
         public double BatteryEnergyImportedToday
         {
             get; set;
@@ -217,7 +229,6 @@ namespace PowerwallCompanionX.ViewModels
         {
             get { return SolarValue - SolarToGrid - SolarToBattery; }
         }
-
 
         public List<ChartDataPoint> HomeGraphData
         {

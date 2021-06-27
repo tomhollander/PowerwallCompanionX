@@ -23,7 +23,7 @@ namespace PowerwallCompanionX.Views
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
 
         private DateTime lastSound = DateTime.MinValue;
-        private readonly TimeSpan soundCooldownPeriod = new TimeSpan(1, 0, 0);
+        private readonly TimeSpan soundCooldownPeriod = new TimeSpan(2, 0, 0);
 
         private bool keepRefreshing = true;
 
@@ -127,12 +127,12 @@ namespace PowerwallCompanionX.Views
             if (Settings.PlaySounds && DateTime.Now - lastSound > soundCooldownPeriod)
             {
                 var player = new SoundPlayer();
-                if (oldPercent < 99.9D && newPercent >= 99.9D)
+                if (oldPercent < 99.6D && newPercent >= 99.6D)
                 {
                     player.PlaySound(SoundPlayer.BatteryFull);
                     lastSound = DateTime.Now;
                 }
-                else if (oldPercent > 0.1D && newPercent <= 0.1D)
+                else if (oldPercent > 0.5D && newPercent <= 0.5D)
                 {
                     player.PlaySound(SoundPlayer.BatteryEmpty);
                     lastSound = DateTime.Now;
