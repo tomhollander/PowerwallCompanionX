@@ -12,13 +12,21 @@ namespace PowerwallCompanionX.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        public enum StatusEnum
+        {
+            IdleGrid,
+            ImportingFromGrid,
+            ExportingToGrid,
+            Error
+        }
+
         private double _batteryPercent;
         private double _homeValue;
         private double _solarValue;
         private double _batteryValue;
         private double _gridValue;
         private bool _gridActive;
-        private bool _statusOK;
+        private StatusEnum _status;
 
         public MainViewModel()
         {
@@ -172,12 +180,12 @@ namespace PowerwallCompanionX.ViewModels
 
         public bool ShowBothGridSettingsToday
         {
-            get { return GridEnergyExportedToday > 0;  }
+            get { return GridEnergyExportedToday > 400;  }
         }
 
         public bool ShowBothGridSettingsYesterday
         {
-            get { return GridEnergyExportedYesterday > 0;  }
+            get { return GridEnergyExportedYesterday > 400;  }
         }
 
         public double BatteryEnergyImportedToday
@@ -258,13 +266,13 @@ namespace PowerwallCompanionX.ViewModels
                 return DateTime.Today.AddDays(1);
             }
         }
-        public bool StatusOK
+        public StatusEnum Status
         {
-            get { return _statusOK; }
+            get { return _status; }
             set
             {
-                _statusOK = value;
-                NotifyPropertyChanged(nameof(StatusOK));
+                _status = value;
+                NotifyPropertyChanged(nameof(Status));
             }
         }
 

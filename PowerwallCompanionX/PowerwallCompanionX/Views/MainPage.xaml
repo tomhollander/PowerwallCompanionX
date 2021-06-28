@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20"></Image>
-        <Ellipse WidthRequest="15" HeightRequest="15" Margin="0,5,20,0" Fill="{Binding StatusOK, Mode=OneWay, Converter={StaticResource StatusConverter}}" HorizontalOptions="End" VerticalOptions="Center" x:Name="statusLight">
+        <Ellipse WidthRequest="15" HeightRequest="15" Margin="0,5,20,0" Fill="{Binding Status, Mode=OneWay, Converter={StaticResource StatusConverter}}" HorizontalOptions="End" VerticalOptions="Center" x:Name="statusLight">
             <Ellipse.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding StatusCommand}" />
             </Ellipse.GestureRecognizers>
@@ -79,7 +79,7 @@
                         </StackLayout>
 
                         <!-- Column 1-->
-                        <Grid Grid.Column="1" x:Name="graphGrid" VerticalOptions="CenterAndExpand" Margin="10">
+                        <Grid Grid.Column="1" x:Name="graphGrid" VerticalOptions="CenterAndExpand" Margin="20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"  />
                                 <ColumnDefinition Width="*" />

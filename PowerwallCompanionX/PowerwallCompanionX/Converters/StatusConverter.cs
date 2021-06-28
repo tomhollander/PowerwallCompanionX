@@ -10,14 +10,18 @@ namespace PowerwallCompanionX.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool boolValue = (bool)value;
-            if (boolValue == true)
+            var status = (ViewModels.MainViewModel.StatusEnum)value;
+            switch (status)
             {
-                return new SolidColorBrush(Color.Lime);
-            }
-            else
-            {
-                return new SolidColorBrush(Color.Red);
+                case ViewModels.MainViewModel.StatusEnum.IdleGrid:
+                    return new SolidColorBrush(Color.Lime);
+                case ViewModels.MainViewModel.StatusEnum.ExportingToGrid:
+                    return new SolidColorBrush(Color.Gold);
+                case ViewModels.MainViewModel.StatusEnum.ImportingFromGrid:
+                    return new SolidColorBrush(Color.Blue);
+                case ViewModels.MainViewModel.StatusEnum.Error:
+                default:
+                    return new SolidColorBrush(Color.Red);
             }
         }
 

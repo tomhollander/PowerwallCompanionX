@@ -188,7 +188,19 @@ namespace PowerwallCompanionX.Views
 #endif
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
                 viewModel.NotifyProperties();
-                viewModel.StatusOK = true;
+                if (viewModel.GridValue < -100)
+                {
+                    viewModel.Status = MainViewModel.StatusEnum.ExportingToGrid;
+                }
+                else if (viewModel.GridValue > 100)
+                {
+                    viewModel.Status = MainViewModel.StatusEnum.ImportingFromGrid;
+                } 
+                else
+                {
+                    viewModel.Status = MainViewModel.StatusEnum.IdleGrid;
+                }
+                
 
                 PlaySoundsOnBatteryStatus(lastBatteryPercent, viewModel.BatteryPercent);
             }
@@ -202,7 +214,7 @@ namespace PowerwallCompanionX.Views
                         viewModel.LastExceptionMessage = ex.Message;
                         viewModel.LastExceptionDate = DateTime.Now;
                         viewModel.NotifyProperties();
-                        viewModel.StatusOK = false;
+                        viewModel.Status = MainViewModel.StatusEnum.Error;
                     }
                 });
                 
@@ -212,7 +224,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyProperties();
-                viewModel.StatusOK = false;
+                viewModel.Status = MainViewModel.StatusEnum.Error;
             }
         }
 
@@ -241,7 +253,7 @@ namespace PowerwallCompanionX.Views
                 {
                     return;
                 }
-                viewModel.StatusOK = true;
+
                 string period = "day";
                 var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory");
 
@@ -263,7 +275,7 @@ namespace PowerwallCompanionX.Views
 
                 viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyProperties();
-                viewModel.StatusOK = true;
+   
 
             }
             catch (Exception ex)
@@ -271,7 +283,6 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyProperties();
-                viewModel.StatusOK = false;
             }
         }
 
@@ -305,11 +316,9 @@ namespace PowerwallCompanionX.Views
 
                 viewModel.PowerHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyGraphProperties();
-                viewModel.StatusOK = true;
             }
             catch (Exception ex)
             {
-                viewModel.StatusOK = false;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.LastExceptionMessage = ex.Message;
             }
