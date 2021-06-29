@@ -11,7 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <StackLayout Margin="20" Grid.Row="0" Grid.Column="0">
+        <StackLayout Margin="10" Grid.Row="0" Grid.Column="0">
             <StackLayout Orientation="Horizontal">
                 <ImageButton Source="Back.png"
                     HeightRequest="30" WidthRequest="30"
@@ -52,7 +52,7 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+        <StackLayout Margin="10" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
             <Label Text="Signed In as " VerticalOptions="Center"></Label>
             <Label Text="{Binding Email}" VerticalOptions="Center"></Label>
             <Button Text="Sign Out" Command="{Binding SignOutCommand}"/>

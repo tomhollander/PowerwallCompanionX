@@ -187,7 +187,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
 #endif
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
-                viewModel.NotifyProperties();
+                
                 if (viewModel.GridValue < -100)
                 {
                     viewModel.Status = MainViewModel.StatusEnum.ExportingToGrid;
@@ -200,7 +200,8 @@ namespace PowerwallCompanionX.Views
                 {
                     viewModel.Status = MainViewModel.StatusEnum.IdleGrid;
                 }
-                
+                viewModel.NotifyProperties();
+
 
                 PlaySoundsOnBatteryStatus(lastBatteryPercent, viewModel.BatteryPercent);
             }
