@@ -47,7 +47,9 @@ namespace PowerwallCompanionX.Views
             if (visualState == "Portrait")
             {
                 // Page 1 : Move graph from column to row
-                page1Grid.RowDefinitions[1].Height = GridLength.Star;
+                page1Grid.RowDefinitions[0].Height = new GridLength(330);
+                page1Grid.RowDefinitions[1].Height = GridLength.Auto;
+                page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
                 page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
                 Grid.SetRow(page1Grid.Children[1], 1);
                 Grid.SetColumn(page1Grid.Children[1], 0);
@@ -89,9 +91,11 @@ namespace PowerwallCompanionX.Views
             }
             else
             {
-                // Page 1 : Move graph from row ro column
+                // Page 1 : Move graph from row to column
+                page1Grid.RowDefinitions[0].Height = GridLength.Auto;
                 page1Grid.RowDefinitions[1].Height = new GridLength(0);
-                page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
+                page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
+                page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
                 Grid.SetRow(page1Grid.Children[1], 0);
                 Grid.SetColumn(page1Grid.Children[1], 1);
 
@@ -356,6 +360,22 @@ namespace PowerwallCompanionX.Views
             {
                 unitsLabel.Text = "kWh";
             }
+        }
+
+        private async void statusEllipse_Tapped(object sender, EventArgs e)
+        {
+
+            if (viewModel.Status == MainViewModel.StatusEnum.Error)
+            {
+                if (viewModel.LastExceptionMessage != null)
+                {
+                    var message = $"Last error occurred at {viewModel.LastExceptionDate.ToString("g")}:\r\n{viewModel.LastExceptionMessage}";
+                    await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
+                }
+            }
+            statusTooltip.IsVisible = true;
+            await Task.Delay(3000);
+            statusTooltip.IsVisible = false;
         }
     }
 

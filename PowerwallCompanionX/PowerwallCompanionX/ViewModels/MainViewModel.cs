@@ -30,7 +30,6 @@ namespace PowerwallCompanionX.ViewModels
 
         public MainViewModel()
         {
-            StatusCommand = new Command(OnStatusTapped);
             SettingsCommand = new Command(OnSettingsTapped);
         }
 
@@ -39,14 +38,6 @@ namespace PowerwallCompanionX.ViewModels
             Application.Current.MainPage = new SettingsPage();
         }
 
-        private async void OnStatusTapped(object obj)
-        {
-            if (LastExceptionMessage != null)
-            {
-                var message = $"Last error occurred at {LastExceptionDate.ToString("g")}:\r\n{LastExceptionMessage}";
-                await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
-            }
-        }
 
         public void NotifyProperties()
         {
@@ -180,12 +171,12 @@ namespace PowerwallCompanionX.ViewModels
 
         public bool ShowBothGridSettingsToday
         {
-            get { return GridEnergyExportedToday > 400;  }
+            get { return GridEnergyExportedToday > 500;  }
         }
 
         public bool ShowBothGridSettingsYesterday
         {
-            get { return GridEnergyExportedYesterday > 400;  }
+            get { return GridEnergyExportedYesterday > 500;  }
         }
 
         public double BatteryEnergyImportedToday
@@ -273,6 +264,27 @@ namespace PowerwallCompanionX.ViewModels
             {
                 _status = value;
                 NotifyPropertyChanged(nameof(Status));
+                NotifyPropertyChanged(nameof(StatusString));
+            }
+        }
+
+        public string StatusString
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case StatusEnum.Error:
+                        return "Connection Error";
+                    case StatusEnum.ExportingToGrid:
+                        return "Exporting to Grid";
+                    case StatusEnum.ImportingFromGrid:
+                        return "Importing from Grid";
+                    case StatusEnum.IdleGrid:
+                        return "Grid Idle";
+                    default:
+                        return null;
+                }
             }
         }
 
@@ -355,8 +367,6 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => Settings.ShowGraph;
         }
-
-        public Command StatusCommand { get; }
         public Command SettingsCommand { get; }
 
         public string LastExceptionMessage { get; set; }
