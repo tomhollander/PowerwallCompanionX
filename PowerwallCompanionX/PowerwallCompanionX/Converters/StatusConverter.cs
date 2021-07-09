@@ -18,7 +18,7 @@ namespace PowerwallCompanionX.Converters
                 case ViewModels.MainViewModel.StatusEnum.ExportingToGrid:
                     return new SolidColorBrush(Color.Magenta);
                 case ViewModels.MainViewModel.StatusEnum.ImportingFromGrid:
-                    return new SolidColorBrush(Color.MediumBlue);
+                    return new SolidColorBrush(Color.DodgerBlue);
                 case ViewModels.MainViewModel.StatusEnum.Error:
                 default:
                     return new SolidColorBrush(Color.Red);
