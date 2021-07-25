@@ -22,8 +22,8 @@ namespace PowerwallCompanionX.Views
         private DateTime lastManualSwipe;
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
 
-        private DateTime lastSound = DateTime.MinValue;
-        private readonly TimeSpan soundCooldownPeriod = new TimeSpan(2, 0, 0);
+        private double maxPercentSinceSound = 0D;
+        private double minPercentSinceSound = 100D;
 
         private bool keepRefreshing = true;
 
@@ -181,7 +181,6 @@ namespace PowerwallCompanionX.Views
                 var siteId = Settings.SiteId;
 
                 var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
-                double lastBatteryPercent = viewModel.BatteryPercent;
 
                 viewModel.BatteryPercent = GetJsonDoubleValue(powerInfo["response"]["energy_left"]) / GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]) * 100D;
                 viewModel.HomeValue = GetJsonDoubleValue(powerInfo["response"]["load_power"]);
@@ -207,7 +206,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.NotifyProperties();
 
 
-                PlaySoundsOnBatteryStatus(lastBatteryPercent, viewModel.BatteryPercent);
+                PlaySoundsOnBatteryStatus(viewModel.BatteryPercent);
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -233,20 +232,23 @@ namespace PowerwallCompanionX.Views
             }
         }
 
-        private void PlaySoundsOnBatteryStatus(double oldPercent, double newPercent)
+        private void PlaySoundsOnBatteryStatus(double newPercent)
         {
-            if (Settings.PlaySounds && DateTime.Now - lastSound > soundCooldownPeriod)
+            if (Settings.PlaySounds)
             {
-                var player = new SoundPlayer();
-                if (oldPercent < 99.6D && newPercent >= 99.6D)
+                minPercentSinceSound = Math.Min(minPercentSinceSound, newPercent);
+                maxPercentSinceSound = Math.Max(maxPercentSinceSound, newPercent);
+                if (newPercent >= 99.6D && minPercentSinceSound < 80D)
                 {
+                    var player = new SoundPlayer();
                     player.PlaySound(SoundPlayer.BatteryFull);
-                    lastSound = DateTime.Now;
+                    minPercentSinceSound = 100D;
                 }
-                else if (oldPercent > 0.5D && newPercent <= 0.5D)
+                else if (newPercent <= 0.5D && maxPercentSinceSound > 20D)
                 {
+                    var player = new SoundPlayer();
                     player.PlaySound(SoundPlayer.BatteryEmpty);
-                    lastSound = DateTime.Now;
+                    maxPercentSinceSound = 0D;
                 }
             }
         }
