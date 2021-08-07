@@ -157,7 +157,7 @@
                                 <Rectangle Fill="LimeGreen" WidthRequest="{Binding SolarToBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                             </StackLayout>
 
-                            <Label FontSize="16"  Grid.Row="15" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,8,0,2">To Grid</Label>
+                            <Label FontSize="{Binding SmallCaptionFontSize}"  Grid.Row="15" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,8,0,2">To Grid</Label>
                             <Label Grid.Row="15" Grid.Column="0" Grid.RowSpan="2" TextColor="LightGray" HorizontalOptions="End" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}"  Margin="0,5,10,0" Text="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
                             <StackLayout Margin="0" Padding="0" Spacing="0" Orientation="Horizontal" Grid.Row="16" Grid.Column="1" IsVisible="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource PositiveToBooleanConverter}}" IsClippedToBounds="True">
                                 <Rectangle Fill="Transparent" WidthRequest="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />

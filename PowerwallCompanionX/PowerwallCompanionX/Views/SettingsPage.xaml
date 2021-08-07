@@ -48,7 +48,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" >
                 <Label Text="Font Scale" VerticalOptions="Center"/>
-                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="200" />
+                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" />
             </StackLayout>
         </StackLayout>
 
