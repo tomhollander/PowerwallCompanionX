@@ -205,47 +205,47 @@
 
                         <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding ShowBothGridSettingsToday}">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding ShowBothGridSettingsYesterday}">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Row="1" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                             </StackLayout>
                         </StackLayout>
                         <StackLayout Grid.Row="2" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}" Text="▶" />
+                                <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="▸" />
                             </StackLayout>
                         </StackLayout>
 
                         <!-- Power history chart -->
-                        <chart:SfChart BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+                        <chart:SfChart BackgroundColor="Black" Margin="-30,0,-30,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
                                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="{Binding ShowGraph}">
                             <chart:SfChart.PrimaryAxis>
                                 <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
