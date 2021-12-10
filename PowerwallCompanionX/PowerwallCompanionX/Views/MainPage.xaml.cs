@@ -362,6 +362,7 @@ namespace PowerwallCompanionX.Views
             {
                 unitsLabel.Text = "kWh";
             }
+            ShowSettingsButtonThenFade();
         }
 
         private async void statusEllipse_Tapped(object sender, EventArgs e)
@@ -378,6 +379,20 @@ namespace PowerwallCompanionX.Views
             statusTooltip.IsVisible = true;
             await Task.Delay(3000);
             statusTooltip.IsVisible = false;
+        }
+
+
+
+        private async void grid_Tapped(object sender, EventArgs e)
+        {
+            await ShowSettingsButtonThenFade();
+        }
+
+        private async Task ShowSettingsButtonThenFade()
+        {
+            await settingsButton.FadeTo(1, 500);
+            await Task.Delay(5000);
+            await settingsButton.FadeTo(0, 500);
         }
     }
 
