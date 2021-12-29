@@ -79,7 +79,7 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(GraphDayBoundary));
             NotifyPropertyChanged(nameof(ChartMaxDate));
         }
-            public void NotifyChangedSettings()
+        public void NotifyChangedSettings()
         {
             NotifyPropertyChanged(nameof(ShowClock));
         }

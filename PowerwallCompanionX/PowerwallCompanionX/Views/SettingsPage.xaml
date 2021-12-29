@@ -3,14 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PowerwallCompanionX.Views.SettingsPage"
              BackgroundColor="Black">
-    <Grid>
-        <Grid.ColumnDefinitions >
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-        </Grid.RowDefinitions>
+   
         <StackLayout Margin="10" Grid.Row="0" Grid.Column="0">
             <StackLayout Orientation="Horizontal">
                 <ImageButton Source="Back.png"
@@ -43,21 +36,19 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Bar Scale" VerticalOptions="Center"/>
-                <Entry WidthRequest="100" x:Name="barScaleEntry" Keyboard="Numeric" VerticalOptions="Center" Text="{Binding GraphScale}"/>
+                <Slider Minimum="0.1" Maximum="5"  Value="{Binding GraphScale, Mode=TwoWay}" WidthRequest="190" />
+                <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
                 <Label Text="kW / cm" VerticalOptions="Center"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" >
                 <Label Text="Font Scale" VerticalOptions="Center"/>
                 <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" />
             </StackLayout>
-        </StackLayout>
+        <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
+    </StackLayout>
 
-        <StackLayout Margin="10" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
-            <Label Text="Signed In as " VerticalOptions="Center"></Label>
-            <Label Text="{Binding Email}" VerticalOptions="Center"></Label>
-            <Button Text="Sign Out" Command="{Binding SignOutCommand}"/>
-        </StackLayout>
-    </Grid>
+
+
     
 
 </ContentPage>

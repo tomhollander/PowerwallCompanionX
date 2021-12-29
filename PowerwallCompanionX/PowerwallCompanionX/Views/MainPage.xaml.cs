@@ -349,11 +349,6 @@ namespace PowerwallCompanionX.Views
 
         private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
         {
-            if (args.Type == PanCardView.Enums.InteractionType.User)
-            {
-                lastManualSwipe = DateTime.Now;
-            }
-
             if (args.Index == 0)
             {
                 unitsLabel.Text = "kW";
@@ -362,7 +357,13 @@ namespace PowerwallCompanionX.Views
             {
                 unitsLabel.Text = "kWh";
             }
-            ShowSettingsButtonThenFade();
+
+            if (args.Type == PanCardView.Enums.InteractionType.User)
+            {
+                lastManualSwipe = DateTime.Now;
+                ShowSettingsButtonThenFade();
+            }
+            
         }
 
         private async void statusEllipse_Tapped(object sender, EventArgs e)

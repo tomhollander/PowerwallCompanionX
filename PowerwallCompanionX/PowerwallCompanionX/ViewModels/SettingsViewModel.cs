@@ -1,13 +1,14 @@
 ﻿using PowerwallCompanionX.Views;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
 namespace PowerwallCompanionX.ViewModels
 {
-    class SettingsViewModel
+    class SettingsViewModel : INotifyPropertyChanged
     {
         public SettingsViewModel()
         {
@@ -51,7 +52,10 @@ namespace PowerwallCompanionX.ViewModels
         public decimal GraphScale
         {
             get => Settings.GraphScale;
-            set => Settings.GraphScale = value;
+            set { 
+                Settings.GraphScale = value;
+                NotifyPropertyChanged(nameof(GraphScale));
+            }
         }
 
         public double FontScale
@@ -83,6 +87,16 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => AvailableSites.Where(s => s.Key == Settings.SiteId).FirstOrDefault();
             set => Settings.SiteId = value.Key;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         private async void OnBackTapped(object obj)
