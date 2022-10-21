@@ -24,6 +24,7 @@ namespace PowerwallCompanionX.Views
         protected override void OnAppearing()
         {
             webView.IsVisible = true;
+            webView.Focus();
             base.OnAppearing();
         }
 
