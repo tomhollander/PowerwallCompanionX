@@ -63,7 +63,7 @@ namespace PowerwallCompanionX
 
         public static bool ShowClock
         {
-            get => GetProperty<bool>(nameof(Properties.ShowClock), false);
+            get => GetProperty<bool>(nameof(Properties.ShowClock), true);
             set => Application.Current.Properties[nameof(Properties.ShowClock)] = value;
         }
 
@@ -75,7 +75,7 @@ namespace PowerwallCompanionX
 
         public static bool CyclePages
         {
-            get => GetProperty<bool>(nameof(Properties.CyclePages), false);
+            get => GetProperty<bool>(nameof(Properties.CyclePages), true);
             set => Application.Current.Properties[nameof(Properties.CyclePages)] = value;
         }
 

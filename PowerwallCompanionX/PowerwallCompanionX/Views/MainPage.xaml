@@ -24,7 +24,7 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Tapped="grid_Tapped"/>
         </Grid.GestureRecognizers>
-        <Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20"></Image>
+        <!--<Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20"></Image>-->
         <Ellipse WidthRequest="25" HeightRequest="25" Margin="0,5,20,0" Fill="{Binding Status, Mode=OneWay, Converter={StaticResource StatusConverter}}" HorizontalOptions="End" VerticalOptions="Center" x:Name="statusLight">
             <Ellipse.GestureRecognizers>
                 <TapGestureRecognizer Tapped="statusEllipse_Tapped" />
@@ -37,7 +37,7 @@
             <cards:CarouselView.ItemsSource>
                 <x:Array Type="{x:Type View}">
                     <!-- Instantaneous Power View-->
-                    <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand">
+                    <Grid x:Name="mainGrid" HorizontalOptions="Center" VerticalOptions="Center">
                         <Grid.Resources>
                             <converters:GridActiveToColorConverter x:Key="GridActiveToColorConverter"/>
                             <converters:GridActiveToBackgroundColorConverter x:Key="GridActiveToBackgroundColorConverter"/>
@@ -84,7 +84,7 @@
                         </StackLayout>
 
                         <!-- Column 1-->
-                        <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="CenterAndExpand" Margin="20" RowSpacing="0"  >
+                        <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="CenterAndExpand" Margin="20" RowSpacing="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -118,7 +118,7 @@
                             </Grid.RowDefinitions>
 
                             <!-- Home Use -->
-                            <Label FontSize="{Binding LargeCaptionFontSize}" Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,15,0,5">HOME USE</Label>
+                            <Label FontSize="{Binding LargeCaptionFontSize}" Grid.Row="0" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,15,0,5">BUILDING USE</Label>
                             <Label Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan" HorizontalOptions="End" VerticalTextAlignment="End" Margin="{Binding BigNumberMargin}"  FontSize="{Binding LargeFontSize}"  Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
                             <StackLayout Margin="0" Padding="0" Spacing="0" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" IsClippedToBounds="True">
                                 <Rectangle  Fill="Cyan" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="{Binding LargeCaptionFontSize}" />
@@ -149,7 +149,7 @@
                             <StackLayout Margin="0" Padding="0" Spacing="0" Orientation="Horizontal" Grid.Row="10" Grid.Column="1" IsClippedToBounds="True">
                                 <Rectangle Fill="Gold" WidthRequest="{Binding SolarValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="{Binding LargeCaptionFontSize}"/>
                             </StackLayout>
-                            <Label FontSize="{Binding SmallCaptionFontSize}"  Grid.Row="11" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,8,0,2">To Home</Label>
+                            <Label FontSize="{Binding SmallCaptionFontSize}"  Grid.Row="11" Grid.Column="1" TextColor="White" HorizontalTextAlignment="Left" Margin="0,8,0,2">To Building</Label>
                             <Label Grid.Row="11" Grid.Column="0" Grid.RowSpan="2" TextColor="Cyan"  HorizontalOptions="End" VerticalTextAlignment="Center" FontSize="{Binding SmallFontSize}"  Margin="0,5,10,0" Text="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource KilowattConverter}}"></Label>
                             <StackLayout Margin="0" Padding="0" Spacing="0" Orientation="Horizontal" Grid.Row="12" Grid.Column="1" IsVisible="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource PositiveToBooleanConverter}}" IsClippedToBounds="True">
                                 <Rectangle Fill="Cyan" WidthRequest="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
@@ -280,7 +280,7 @@
                                 </chart:ChartLegend>
                             </chart:SfChart.Legend>
 
-                            <chart:AreaSeries Color="Cyan" StrokeColor="Cyan" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" />
+                            <chart:AreaSeries Color="Cyan" StrokeColor="Cyan" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Building" />
                             <chart:AreaSeries Color="Gold" StrokeColor="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" />
                             <chart:AreaSeries Color="LightGray" StrokeColor="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" />
                             <chart:AreaSeries Color="LimeGreen" StrokeColor="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" />
@@ -310,6 +310,7 @@
                     Opacity="0"
                     Command="{Binding SettingsCommand}"
                     />
+        <Image Grid.Row="1" Source="alba_logo.png" WidthRequest="150"  VerticalOptions="End" HorizontalOptions="End" Margin="30"/>
     </Grid>
 
 </ContentPage>

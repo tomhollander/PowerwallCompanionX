@@ -170,5 +170,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_grid_export.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\alba_logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
