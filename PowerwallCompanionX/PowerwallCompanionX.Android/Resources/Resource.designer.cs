@@ -14,7 +14,7 @@ namespace PowerwallCompanionX.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.0.11")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
 	public partial class Resource
 	{
 		
@@ -37,6 +37,18 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Animation.abc_slide_out_top = global::PowerwallCompanionX.Droid.Resource.Animation.abc_slide_out_top;
 			global::PanCardView.Droid.Resource.Animation.abc_tooltip_enter = global::PowerwallCompanionX.Droid.Resource.Animation.abc_tooltip_enter;
 			global::PanCardView.Droid.Resource.Animation.abc_tooltip_exit = global::PowerwallCompanionX.Droid.Resource.Animation.abc_tooltip_exit;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::PanCardView.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::PowerwallCompanionX.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
 			global::PanCardView.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::PowerwallCompanionX.Droid.Resource.Animation.design_bottom_sheet_slide_in;
 			global::PanCardView.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::PowerwallCompanionX.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::PanCardView.Droid.Resource.Animation.design_snackbar_in = global::PowerwallCompanionX.Droid.Resource.Animation.design_snackbar_in;
@@ -45,12 +57,20 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Animation.EnterFromRight = global::PowerwallCompanionX.Droid.Resource.Animation.EnterFromRight;
 			global::PanCardView.Droid.Resource.Animation.ExitToLeft = global::PowerwallCompanionX.Droid.Resource.Animation.ExitToLeft;
 			global::PanCardView.Droid.Resource.Animation.ExitToRight = global::PowerwallCompanionX.Droid.Resource.Animation.ExitToRight;
+			global::PanCardView.Droid.Resource.Animation.fragment_fast_out_extra_slow_in = global::PowerwallCompanionX.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::PanCardView.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in = global::PowerwallCompanionX.Droid.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::PanCardView.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out = global::PowerwallCompanionX.Droid.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::PanCardView.Droid.Resource.Animation.mtrl_card_lowers_interpolator = global::PowerwallCompanionX.Droid.Resource.Animation.mtrl_card_lowers_interpolator;
 			global::PanCardView.Droid.Resource.Animator.design_appbar_state_list_animator = global::PowerwallCompanionX.Droid.Resource.Animator.design_appbar_state_list_animator;
 			global::PanCardView.Droid.Resource.Animator.design_fab_hide_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.design_fab_hide_motion_spec;
 			global::PanCardView.Droid.Resource.Animator.design_fab_show_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.design_fab_show_motion_spec;
 			global::PanCardView.Droid.Resource.Animator.mtrl_btn_state_list_anim = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_btn_state_list_anim;
 			global::PanCardView.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::PanCardView.Droid.Resource.Animator.mtrl_card_state_list_anim = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_card_state_list_anim;
 			global::PanCardView.Droid.Resource.Animator.mtrl_chip_state_list_anim = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_chip_state_list_anim;
+			global::PanCardView.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::PanCardView.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::PanCardView.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_extended_fab_state_list_animator;
 			global::PanCardView.Droid.Resource.Animator.mtrl_fab_hide_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_fab_hide_motion_spec;
 			global::PanCardView.Droid.Resource.Animator.mtrl_fab_show_motion_spec = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_fab_show_motion_spec;
 			global::PanCardView.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::PowerwallCompanionX.Droid.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
@@ -87,6 +107,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.actionOverflowButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.actionOverflowButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.actionOverflowMenuStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.actionOverflowMenuStyle;
 			global::PanCardView.Droid.Resource.Attribute.actionProviderClass = global::PowerwallCompanionX.Droid.Resource.Attribute.actionProviderClass;
+			global::PanCardView.Droid.Resource.Attribute.actionTextColorAlpha = global::PowerwallCompanionX.Droid.Resource.Attribute.actionTextColorAlpha;
 			global::PanCardView.Droid.Resource.Attribute.actionViewClass = global::PowerwallCompanionX.Droid.Resource.Attribute.actionViewClass;
 			global::PanCardView.Droid.Resource.Attribute.activityChooserViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.activityChooserViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
@@ -96,6 +117,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.allowStacking = global::PowerwallCompanionX.Droid.Resource.Attribute.allowStacking;
 			global::PanCardView.Droid.Resource.Attribute.alpha = global::PowerwallCompanionX.Droid.Resource.Attribute.alpha;
 			global::PanCardView.Droid.Resource.Attribute.alphabeticModifiers = global::PowerwallCompanionX.Droid.Resource.Attribute.alphabeticModifiers;
+			global::PanCardView.Droid.Resource.Attribute.animationMode = global::PowerwallCompanionX.Droid.Resource.Attribute.animationMode;
+			global::PanCardView.Droid.Resource.Attribute.appBarLayoutStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.appBarLayoutStyle;
 			global::PanCardView.Droid.Resource.Attribute.arrowHeadLength = global::PowerwallCompanionX.Droid.Resource.Attribute.arrowHeadLength;
 			global::PanCardView.Droid.Resource.Attribute.arrowShaftLength = global::PowerwallCompanionX.Droid.Resource.Attribute.arrowShaftLength;
 			global::PanCardView.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.autoCompleteTextViewStyle;
@@ -105,16 +128,30 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.autoSizeStepGranularity = global::PowerwallCompanionX.Droid.Resource.Attribute.autoSizeStepGranularity;
 			global::PanCardView.Droid.Resource.Attribute.autoSizeTextType = global::PowerwallCompanionX.Droid.Resource.Attribute.autoSizeTextType;
 			global::PanCardView.Droid.Resource.Attribute.background = global::PowerwallCompanionX.Droid.Resource.Attribute.background;
+			global::PanCardView.Droid.Resource.Attribute.backgroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundColor;
+			global::PanCardView.Droid.Resource.Attribute.backgroundInsetBottom = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundInsetBottom;
+			global::PanCardView.Droid.Resource.Attribute.backgroundInsetEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundInsetEnd;
+			global::PanCardView.Droid.Resource.Attribute.backgroundInsetStart = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundInsetStart;
+			global::PanCardView.Droid.Resource.Attribute.backgroundInsetTop = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundInsetTop;
+			global::PanCardView.Droid.Resource.Attribute.backgroundOverlayColorAlpha = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundOverlayColorAlpha;
 			global::PanCardView.Droid.Resource.Attribute.backgroundSplit = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundSplit;
 			global::PanCardView.Droid.Resource.Attribute.backgroundStacked = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundStacked;
 			global::PanCardView.Droid.Resource.Attribute.backgroundTint = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundTint;
 			global::PanCardView.Droid.Resource.Attribute.backgroundTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.backgroundTintMode;
+			global::PanCardView.Droid.Resource.Attribute.badgeGravity = global::PowerwallCompanionX.Droid.Resource.Attribute.badgeGravity;
+			global::PanCardView.Droid.Resource.Attribute.badgeStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.badgeStyle;
+			global::PanCardView.Droid.Resource.Attribute.badgeTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.badgeTextColor;
 			global::PanCardView.Droid.Resource.Attribute.barLength = global::PowerwallCompanionX.Droid.Resource.Attribute.barLength;
 			global::PanCardView.Droid.Resource.Attribute.behavior_autoHide = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_autoHide;
+			global::PanCardView.Droid.Resource.Attribute.behavior_autoShrink = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_autoShrink;
+			global::PanCardView.Droid.Resource.Attribute.behavior_draggable = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_draggable;
+			global::PanCardView.Droid.Resource.Attribute.behavior_expandedOffset = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_expandedOffset;
 			global::PanCardView.Droid.Resource.Attribute.behavior_fitToContents = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_fitToContents;
+			global::PanCardView.Droid.Resource.Attribute.behavior_halfExpandedRatio = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_halfExpandedRatio;
 			global::PanCardView.Droid.Resource.Attribute.behavior_hideable = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_hideable;
 			global::PanCardView.Droid.Resource.Attribute.behavior_overlapTop = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_overlapTop;
 			global::PanCardView.Droid.Resource.Attribute.behavior_peekHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_peekHeight;
+			global::PanCardView.Droid.Resource.Attribute.behavior_saveFlags = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_saveFlags;
 			global::PanCardView.Droid.Resource.Attribute.behavior_skipCollapsed = global::PowerwallCompanionX.Droid.Resource.Attribute.behavior_skipCollapsed;
 			global::PanCardView.Droid.Resource.Attribute.borderlessButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.borderlessButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.borderWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.borderWidth;
@@ -130,12 +167,15 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.boxCornerRadiusTopEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.boxCornerRadiusTopEnd;
 			global::PanCardView.Droid.Resource.Attribute.boxCornerRadiusTopStart = global::PowerwallCompanionX.Droid.Resource.Attribute.boxCornerRadiusTopStart;
 			global::PanCardView.Droid.Resource.Attribute.boxStrokeColor = global::PowerwallCompanionX.Droid.Resource.Attribute.boxStrokeColor;
+			global::PanCardView.Droid.Resource.Attribute.boxStrokeErrorColor = global::PowerwallCompanionX.Droid.Resource.Attribute.boxStrokeErrorColor;
 			global::PanCardView.Droid.Resource.Attribute.boxStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.boxStrokeWidth;
+			global::PanCardView.Droid.Resource.Attribute.boxStrokeWidthFocused = global::PowerwallCompanionX.Droid.Resource.Attribute.boxStrokeWidthFocused;
 			global::PanCardView.Droid.Resource.Attribute.buttonBarButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonBarButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.buttonBarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonBarStyle;
+			global::PanCardView.Droid.Resource.Attribute.buttonCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonCompat;
 			global::PanCardView.Droid.Resource.Attribute.buttonGravity = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonGravity;
 			global::PanCardView.Droid.Resource.Attribute.buttonIconDimen = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonIconDimen;
 			global::PanCardView.Droid.Resource.Attribute.buttonPanelSideLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.buttonPanelSideLayout;
@@ -146,14 +186,17 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.cardBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.cardBackgroundColor;
 			global::PanCardView.Droid.Resource.Attribute.cardCornerRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.cardCornerRadius;
 			global::PanCardView.Droid.Resource.Attribute.cardElevation = global::PowerwallCompanionX.Droid.Resource.Attribute.cardElevation;
+			global::PanCardView.Droid.Resource.Attribute.cardForegroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.cardForegroundColor;
 			global::PanCardView.Droid.Resource.Attribute.cardMaxElevation = global::PowerwallCompanionX.Droid.Resource.Attribute.cardMaxElevation;
 			global::PanCardView.Droid.Resource.Attribute.cardPreventCornerOverlap = global::PowerwallCompanionX.Droid.Resource.Attribute.cardPreventCornerOverlap;
 			global::PanCardView.Droid.Resource.Attribute.cardUseCompatPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.cardUseCompatPadding;
 			global::PanCardView.Droid.Resource.Attribute.cardViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.cardViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.checkboxStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.checkboxStyle;
+			global::PanCardView.Droid.Resource.Attribute.checkedButton = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedButton;
 			global::PanCardView.Droid.Resource.Attribute.checkedChip = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedChip;
 			global::PanCardView.Droid.Resource.Attribute.checkedIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedIcon;
 			global::PanCardView.Droid.Resource.Attribute.checkedIconEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedIconEnabled;
+			global::PanCardView.Droid.Resource.Attribute.checkedIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedIconTint;
 			global::PanCardView.Droid.Resource.Attribute.checkedIconVisible = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedIconVisible;
 			global::PanCardView.Droid.Resource.Attribute.checkedTextViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.checkedTextViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.chipBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.chipBackgroundColor;
@@ -166,6 +209,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.chipIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.chipIconTint;
 			global::PanCardView.Droid.Resource.Attribute.chipIconVisible = global::PowerwallCompanionX.Droid.Resource.Attribute.chipIconVisible;
 			global::PanCardView.Droid.Resource.Attribute.chipMinHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.chipMinHeight;
+			global::PanCardView.Droid.Resource.Attribute.chipMinTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Attribute.chipMinTouchTargetSize;
 			global::PanCardView.Droid.Resource.Attribute.chipSpacing = global::PowerwallCompanionX.Droid.Resource.Attribute.chipSpacing;
 			global::PanCardView.Droid.Resource.Attribute.chipSpacingHorizontal = global::PowerwallCompanionX.Droid.Resource.Attribute.chipSpacingHorizontal;
 			global::PanCardView.Droid.Resource.Attribute.chipSpacingVertical = global::PowerwallCompanionX.Droid.Resource.Attribute.chipSpacingVertical;
@@ -174,6 +218,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.chipStrokeColor = global::PowerwallCompanionX.Droid.Resource.Attribute.chipStrokeColor;
 			global::PanCardView.Droid.Resource.Attribute.chipStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.chipStrokeWidth;
 			global::PanCardView.Droid.Resource.Attribute.chipStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.chipStyle;
+			global::PanCardView.Droid.Resource.Attribute.chipSurfaceColor = global::PowerwallCompanionX.Droid.Resource.Attribute.chipSurfaceColor;
 			global::PanCardView.Droid.Resource.Attribute.closeIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.closeIcon;
 			global::PanCardView.Droid.Resource.Attribute.closeIconEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.closeIconEnabled;
 			global::PanCardView.Droid.Resource.Attribute.closeIconEndPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.closeIconEndPadding;
@@ -186,6 +231,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.collapsedTitleGravity = global::PowerwallCompanionX.Droid.Resource.Attribute.collapsedTitleGravity;
 			global::PanCardView.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.collapsedTitleTextAppearance;
 			global::PanCardView.Droid.Resource.Attribute.collapseIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.collapseIcon;
+			global::PanCardView.Droid.Resource.Attribute.collectionViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.collectionViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.color = global::PowerwallCompanionX.Droid.Resource.Attribute.color;
 			global::PanCardView.Droid.Resource.Attribute.colorAccent = global::PowerwallCompanionX.Droid.Resource.Attribute.colorAccent;
 			global::PanCardView.Droid.Resource.Attribute.colorBackgroundFloating = global::PowerwallCompanionX.Droid.Resource.Attribute.colorBackgroundFloating;
@@ -194,9 +240,19 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.colorControlHighlight = global::PowerwallCompanionX.Droid.Resource.Attribute.colorControlHighlight;
 			global::PanCardView.Droid.Resource.Attribute.colorControlNormal = global::PowerwallCompanionX.Droid.Resource.Attribute.colorControlNormal;
 			global::PanCardView.Droid.Resource.Attribute.colorError = global::PowerwallCompanionX.Droid.Resource.Attribute.colorError;
+			global::PanCardView.Droid.Resource.Attribute.colorOnBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnBackground;
+			global::PanCardView.Droid.Resource.Attribute.colorOnError = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnError;
+			global::PanCardView.Droid.Resource.Attribute.colorOnPrimary = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnPrimary;
+			global::PanCardView.Droid.Resource.Attribute.colorOnPrimarySurface = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnPrimarySurface;
+			global::PanCardView.Droid.Resource.Attribute.colorOnSecondary = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnSecondary;
+			global::PanCardView.Droid.Resource.Attribute.colorOnSurface = global::PowerwallCompanionX.Droid.Resource.Attribute.colorOnSurface;
 			global::PanCardView.Droid.Resource.Attribute.colorPrimary = global::PowerwallCompanionX.Droid.Resource.Attribute.colorPrimary;
 			global::PanCardView.Droid.Resource.Attribute.colorPrimaryDark = global::PowerwallCompanionX.Droid.Resource.Attribute.colorPrimaryDark;
+			global::PanCardView.Droid.Resource.Attribute.colorPrimarySurface = global::PowerwallCompanionX.Droid.Resource.Attribute.colorPrimarySurface;
+			global::PanCardView.Droid.Resource.Attribute.colorPrimaryVariant = global::PowerwallCompanionX.Droid.Resource.Attribute.colorPrimaryVariant;
 			global::PanCardView.Droid.Resource.Attribute.colorSecondary = global::PowerwallCompanionX.Droid.Resource.Attribute.colorSecondary;
+			global::PanCardView.Droid.Resource.Attribute.colorSecondaryVariant = global::PowerwallCompanionX.Droid.Resource.Attribute.colorSecondaryVariant;
+			global::PanCardView.Droid.Resource.Attribute.colorSurface = global::PowerwallCompanionX.Droid.Resource.Attribute.colorSurface;
 			global::PanCardView.Droid.Resource.Attribute.colorSwitchThumbNormal = global::PowerwallCompanionX.Droid.Resource.Attribute.colorSwitchThumbNormal;
 			global::PanCardView.Droid.Resource.Attribute.commitIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.commitIcon;
 			global::PanCardView.Droid.Resource.Attribute.contentDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.contentDescription;
@@ -214,12 +270,28 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.contentScrim = global::PowerwallCompanionX.Droid.Resource.Attribute.contentScrim;
 			global::PanCardView.Droid.Resource.Attribute.controlBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.controlBackground;
 			global::PanCardView.Droid.Resource.Attribute.coordinatorLayoutStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::PanCardView.Droid.Resource.Attribute.cornerFamily = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerFamily;
+			global::PanCardView.Droid.Resource.Attribute.cornerFamilyBottomLeft = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerFamilyBottomLeft;
+			global::PanCardView.Droid.Resource.Attribute.cornerFamilyBottomRight = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerFamilyBottomRight;
+			global::PanCardView.Droid.Resource.Attribute.cornerFamilyTopLeft = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerFamilyTopLeft;
+			global::PanCardView.Droid.Resource.Attribute.cornerFamilyTopRight = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerFamilyTopRight;
 			global::PanCardView.Droid.Resource.Attribute.cornerRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerRadius;
+			global::PanCardView.Droid.Resource.Attribute.cornerSize = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerSize;
+			global::PanCardView.Droid.Resource.Attribute.cornerSizeBottomLeft = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerSizeBottomLeft;
+			global::PanCardView.Droid.Resource.Attribute.cornerSizeBottomRight = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerSizeBottomRight;
+			global::PanCardView.Droid.Resource.Attribute.cornerSizeTopLeft = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerSizeTopLeft;
+			global::PanCardView.Droid.Resource.Attribute.cornerSizeTopRight = global::PowerwallCompanionX.Droid.Resource.Attribute.cornerSizeTopRight;
 			global::PanCardView.Droid.Resource.Attribute.counterEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.counterEnabled;
 			global::PanCardView.Droid.Resource.Attribute.counterMaxLength = global::PowerwallCompanionX.Droid.Resource.Attribute.counterMaxLength;
 			global::PanCardView.Droid.Resource.Attribute.counterOverflowTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.counterOverflowTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.counterOverflowTextColor;
 			global::PanCardView.Droid.Resource.Attribute.counterTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.counterTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.counterTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.counterTextColor;
 			global::PanCardView.Droid.Resource.Attribute.customNavigationLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.customNavigationLayout;
+			global::PanCardView.Droid.Resource.Attribute.dayInvalidStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.dayInvalidStyle;
+			global::PanCardView.Droid.Resource.Attribute.daySelectedStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.daySelectedStyle;
+			global::PanCardView.Droid.Resource.Attribute.dayStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.dayStyle;
+			global::PanCardView.Droid.Resource.Attribute.dayTodayStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.dayTodayStyle;
 			global::PanCardView.Droid.Resource.Attribute.defaultQueryHint = global::PowerwallCompanionX.Droid.Resource.Attribute.defaultQueryHint;
 			global::PanCardView.Droid.Resource.Attribute.dialogCornerRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.dialogCornerRadius;
 			global::PanCardView.Droid.Resource.Attribute.dialogPreferredPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.dialogPreferredPadding;
@@ -229,18 +301,41 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.dividerHorizontal = global::PowerwallCompanionX.Droid.Resource.Attribute.dividerHorizontal;
 			global::PanCardView.Droid.Resource.Attribute.dividerPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.dividerPadding;
 			global::PanCardView.Droid.Resource.Attribute.dividerVertical = global::PowerwallCompanionX.Droid.Resource.Attribute.dividerVertical;
+			global::PanCardView.Droid.Resource.Attribute.drawableBottomCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableBottomCompat;
+			global::PanCardView.Droid.Resource.Attribute.drawableEndCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableEndCompat;
+			global::PanCardView.Droid.Resource.Attribute.drawableLeftCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableLeftCompat;
+			global::PanCardView.Droid.Resource.Attribute.drawableRightCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableRightCompat;
 			global::PanCardView.Droid.Resource.Attribute.drawableSize = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableSize;
+			global::PanCardView.Droid.Resource.Attribute.drawableStartCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableStartCompat;
+			global::PanCardView.Droid.Resource.Attribute.drawableTint = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableTint;
+			global::PanCardView.Droid.Resource.Attribute.drawableTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableTintMode;
+			global::PanCardView.Droid.Resource.Attribute.drawableTopCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.drawableTopCompat;
 			global::PanCardView.Droid.Resource.Attribute.drawerArrowStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.drawerArrowStyle;
+			global::PanCardView.Droid.Resource.Attribute.drawerLayoutStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.drawerLayoutStyle;
 			global::PanCardView.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Attribute.dropDownListViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.dropDownListViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.editTextBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.editTextBackground;
 			global::PanCardView.Droid.Resource.Attribute.editTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.editTextColor;
 			global::PanCardView.Droid.Resource.Attribute.editTextStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.editTextStyle;
 			global::PanCardView.Droid.Resource.Attribute.elevation = global::PowerwallCompanionX.Droid.Resource.Attribute.elevation;
+			global::PanCardView.Droid.Resource.Attribute.elevationOverlayColor = global::PowerwallCompanionX.Droid.Resource.Attribute.elevationOverlayColor;
+			global::PanCardView.Droid.Resource.Attribute.elevationOverlayEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.elevationOverlayEnabled;
+			global::PanCardView.Droid.Resource.Attribute.endIconCheckable = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconCheckable;
+			global::PanCardView.Droid.Resource.Attribute.endIconContentDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconContentDescription;
+			global::PanCardView.Droid.Resource.Attribute.endIconDrawable = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconDrawable;
+			global::PanCardView.Droid.Resource.Attribute.endIconMode = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconMode;
+			global::PanCardView.Droid.Resource.Attribute.endIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconTint;
+			global::PanCardView.Droid.Resource.Attribute.endIconTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.endIconTintMode;
 			global::PanCardView.Droid.Resource.Attribute.enforceMaterialTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.enforceMaterialTheme;
 			global::PanCardView.Droid.Resource.Attribute.enforceTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.enforceTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.ensureMinTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Attribute.ensureMinTouchTargetSize;
+			global::PanCardView.Droid.Resource.Attribute.errorContentDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.errorContentDescription;
 			global::PanCardView.Droid.Resource.Attribute.errorEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.errorEnabled;
+			global::PanCardView.Droid.Resource.Attribute.errorIconDrawable = global::PowerwallCompanionX.Droid.Resource.Attribute.errorIconDrawable;
+			global::PanCardView.Droid.Resource.Attribute.errorIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.errorIconTint;
+			global::PanCardView.Droid.Resource.Attribute.errorIconTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.errorIconTintMode;
 			global::PanCardView.Droid.Resource.Attribute.errorTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.errorTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.errorTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.errorTextColor;
 			global::PanCardView.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::PowerwallCompanionX.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
 			global::PanCardView.Droid.Resource.Attribute.expanded = global::PowerwallCompanionX.Droid.Resource.Attribute.expanded;
 			global::PanCardView.Droid.Resource.Attribute.expandedTitleGravity = global::PowerwallCompanionX.Droid.Resource.Attribute.expandedTitleGravity;
@@ -250,7 +345,10 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.expandedTitleMarginStart = global::PowerwallCompanionX.Droid.Resource.Attribute.expandedTitleMarginStart;
 			global::PanCardView.Droid.Resource.Attribute.expandedTitleMarginTop = global::PowerwallCompanionX.Droid.Resource.Attribute.expandedTitleMarginTop;
 			global::PanCardView.Droid.Resource.Attribute.expandedTitleTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.extendedFloatingActionButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::PanCardView.Droid.Resource.Attribute.extendMotionSpec = global::PowerwallCompanionX.Droid.Resource.Attribute.extendMotionSpec;
 			global::PanCardView.Droid.Resource.Attribute.fabAlignmentMode = global::PowerwallCompanionX.Droid.Resource.Attribute.fabAlignmentMode;
+			global::PanCardView.Droid.Resource.Attribute.fabAnimationMode = global::PowerwallCompanionX.Droid.Resource.Attribute.fabAnimationMode;
 			global::PanCardView.Droid.Resource.Attribute.fabCradleMargin = global::PowerwallCompanionX.Droid.Resource.Attribute.fabCradleMargin;
 			global::PanCardView.Droid.Resource.Attribute.fabCradleRoundedCornerRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.fabCradleRoundedCornerRadius;
 			global::PanCardView.Droid.Resource.Attribute.fabCradleVerticalOffset = global::PowerwallCompanionX.Droid.Resource.Attribute.fabCradleVerticalOffset;
@@ -276,20 +374,26 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.fontWeight = global::PowerwallCompanionX.Droid.Resource.Attribute.fontWeight;
 			global::PanCardView.Droid.Resource.Attribute.foregroundInsidePadding = global::PowerwallCompanionX.Droid.Resource.Attribute.foregroundInsidePadding;
 			global::PanCardView.Droid.Resource.Attribute.gapBetweenBars = global::PowerwallCompanionX.Droid.Resource.Attribute.gapBetweenBars;
+			global::PanCardView.Droid.Resource.Attribute.gestureInsetBottomIgnored = global::PowerwallCompanionX.Droid.Resource.Attribute.gestureInsetBottomIgnored;
 			global::PanCardView.Droid.Resource.Attribute.goIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.goIcon;
+			global::PanCardView.Droid.Resource.Attribute.haloColor = global::PowerwallCompanionX.Droid.Resource.Attribute.haloColor;
+			global::PanCardView.Droid.Resource.Attribute.haloRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.haloRadius;
 			global::PanCardView.Droid.Resource.Attribute.headerLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.headerLayout;
 			global::PanCardView.Droid.Resource.Attribute.height = global::PowerwallCompanionX.Droid.Resource.Attribute.height;
 			global::PanCardView.Droid.Resource.Attribute.helperText = global::PowerwallCompanionX.Droid.Resource.Attribute.helperText;
 			global::PanCardView.Droid.Resource.Attribute.helperTextEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.helperTextEnabled;
 			global::PanCardView.Droid.Resource.Attribute.helperTextTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.helperTextTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.helperTextTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.helperTextTextColor;
 			global::PanCardView.Droid.Resource.Attribute.hideMotionSpec = global::PowerwallCompanionX.Droid.Resource.Attribute.hideMotionSpec;
 			global::PanCardView.Droid.Resource.Attribute.hideOnContentScroll = global::PowerwallCompanionX.Droid.Resource.Attribute.hideOnContentScroll;
 			global::PanCardView.Droid.Resource.Attribute.hideOnScroll = global::PowerwallCompanionX.Droid.Resource.Attribute.hideOnScroll;
 			global::PanCardView.Droid.Resource.Attribute.hintAnimationEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.hintAnimationEnabled;
 			global::PanCardView.Droid.Resource.Attribute.hintEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.hintEnabled;
 			global::PanCardView.Droid.Resource.Attribute.hintTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.hintTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.hintTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.hintTextColor;
 			global::PanCardView.Droid.Resource.Attribute.homeAsUpIndicator = global::PowerwallCompanionX.Droid.Resource.Attribute.homeAsUpIndicator;
 			global::PanCardView.Droid.Resource.Attribute.homeLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.homeLayout;
+			global::PanCardView.Droid.Resource.Attribute.horizontalOffset = global::PowerwallCompanionX.Droid.Resource.Attribute.horizontalOffset;
 			global::PanCardView.Droid.Resource.Attribute.hoveredFocusedTranslationZ = global::PowerwallCompanionX.Droid.Resource.Attribute.hoveredFocusedTranslationZ;
 			global::PanCardView.Droid.Resource.Attribute.icon = global::PowerwallCompanionX.Droid.Resource.Attribute.icon;
 			global::PanCardView.Droid.Resource.Attribute.iconEndPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.iconEndPadding;
@@ -305,19 +409,34 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.initialActivityCount = global::PowerwallCompanionX.Droid.Resource.Attribute.initialActivityCount;
 			global::PanCardView.Droid.Resource.Attribute.insetForeground = global::PowerwallCompanionX.Droid.Resource.Attribute.insetForeground;
 			global::PanCardView.Droid.Resource.Attribute.isLightTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.isLightTheme;
+			global::PanCardView.Droid.Resource.Attribute.isMaterialTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.isMaterialTheme;
 			global::PanCardView.Droid.Resource.Attribute.itemBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.itemBackground;
+			global::PanCardView.Droid.Resource.Attribute.itemFillColor = global::PowerwallCompanionX.Droid.Resource.Attribute.itemFillColor;
 			global::PanCardView.Droid.Resource.Attribute.itemHorizontalPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.itemHorizontalPadding;
 			global::PanCardView.Droid.Resource.Attribute.itemHorizontalTranslationEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.itemHorizontalTranslationEnabled;
 			global::PanCardView.Droid.Resource.Attribute.itemIconPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.itemIconPadding;
 			global::PanCardView.Droid.Resource.Attribute.itemIconSize = global::PowerwallCompanionX.Droid.Resource.Attribute.itemIconSize;
 			global::PanCardView.Droid.Resource.Attribute.itemIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.itemIconTint;
+			global::PanCardView.Droid.Resource.Attribute.itemMaxLines = global::PowerwallCompanionX.Droid.Resource.Attribute.itemMaxLines;
 			global::PanCardView.Droid.Resource.Attribute.itemPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.itemPadding;
+			global::PanCardView.Droid.Resource.Attribute.itemRippleColor = global::PowerwallCompanionX.Droid.Resource.Attribute.itemRippleColor;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeAppearance;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeFillColor = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeFillColor;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeInsetBottom = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeInsetBottom;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeInsetEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeInsetEnd;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeInsetStart = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeInsetStart;
+			global::PanCardView.Droid.Resource.Attribute.itemShapeInsetTop = global::PowerwallCompanionX.Droid.Resource.Attribute.itemShapeInsetTop;
 			global::PanCardView.Droid.Resource.Attribute.itemSpacing = global::PowerwallCompanionX.Droid.Resource.Attribute.itemSpacing;
+			global::PanCardView.Droid.Resource.Attribute.itemStrokeColor = global::PowerwallCompanionX.Droid.Resource.Attribute.itemStrokeColor;
+			global::PanCardView.Droid.Resource.Attribute.itemStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.itemStrokeWidth;
 			global::PanCardView.Droid.Resource.Attribute.itemTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.itemTextAppearance;
 			global::PanCardView.Droid.Resource.Attribute.itemTextAppearanceActive = global::PowerwallCompanionX.Droid.Resource.Attribute.itemTextAppearanceActive;
 			global::PanCardView.Droid.Resource.Attribute.itemTextAppearanceInactive = global::PowerwallCompanionX.Droid.Resource.Attribute.itemTextAppearanceInactive;
 			global::PanCardView.Droid.Resource.Attribute.itemTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.itemTextColor;
 			global::PanCardView.Droid.Resource.Attribute.keylines = global::PowerwallCompanionX.Droid.Resource.Attribute.keylines;
+			global::PanCardView.Droid.Resource.Attribute.labelBehavior = global::PowerwallCompanionX.Droid.Resource.Attribute.labelBehavior;
+			global::PanCardView.Droid.Resource.Attribute.labelStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.labelStyle;
 			global::PanCardView.Droid.Resource.Attribute.labelVisibilityMode = global::PowerwallCompanionX.Droid.Resource.Attribute.labelVisibilityMode;
 			global::PanCardView.Droid.Resource.Attribute.lastBaselineToBottomHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.lastBaselineToBottomHeight;
 			global::PanCardView.Droid.Resource.Attribute.layout = global::PowerwallCompanionX.Droid.Resource.Attribute.layout;
@@ -333,9 +452,12 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.layout_scrollFlags = global::PowerwallCompanionX.Droid.Resource.Attribute.layout_scrollFlags;
 			global::PanCardView.Droid.Resource.Attribute.layout_scrollInterpolator = global::PowerwallCompanionX.Droid.Resource.Attribute.layout_scrollInterpolator;
 			global::PanCardView.Droid.Resource.Attribute.liftOnScroll = global::PowerwallCompanionX.Droid.Resource.Attribute.liftOnScroll;
+			global::PanCardView.Droid.Resource.Attribute.liftOnScrollTargetViewId = global::PowerwallCompanionX.Droid.Resource.Attribute.liftOnScrollTargetViewId;
 			global::PanCardView.Droid.Resource.Attribute.lineHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.lineHeight;
 			global::PanCardView.Droid.Resource.Attribute.lineSpacing = global::PowerwallCompanionX.Droid.Resource.Attribute.lineSpacing;
 			global::PanCardView.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::PowerwallCompanionX.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::PanCardView.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::PowerwallCompanionX.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::PanCardView.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::PowerwallCompanionX.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
 			global::PanCardView.Droid.Resource.Attribute.listDividerAlertDialog = global::PowerwallCompanionX.Droid.Resource.Attribute.listDividerAlertDialog;
 			global::PanCardView.Droid.Resource.Attribute.listItemLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.listItemLayout;
 			global::PanCardView.Droid.Resource.Attribute.listLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.listLayout;
@@ -344,26 +466,53 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.listPreferredItemHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemHeightLarge;
 			global::PanCardView.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::PanCardView.Droid.Resource.Attribute.listPreferredItemPaddingEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
 			global::PanCardView.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
 			global::PanCardView.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::PanCardView.Droid.Resource.Attribute.listPreferredItemPaddingStart = global::PowerwallCompanionX.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::PanCardView.Droid.Resource.Attribute.logo = global::PowerwallCompanionX.Droid.Resource.Attribute.logo;
 			global::PanCardView.Droid.Resource.Attribute.logoDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.logoDescription;
+			global::PanCardView.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialAlertDialogTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.materialAlertDialogTheme;
+			global::PanCardView.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialButtonOutlinedStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialButtonOutlinedStyle;
 			global::PanCardView.Droid.Resource.Attribute.materialButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialButtonStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialButtonToggleGroupStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarDay = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarDay;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarFullscreenTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderDivider = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderDivider;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderLayout;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderSelection = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderSelection;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderTitle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderTitle;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarHeaderToggleButton = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialCalendarTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCalendarTheme;
 			global::PanCardView.Droid.Resource.Attribute.materialCardViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.materialCardViewStyle;
+			global::PanCardView.Droid.Resource.Attribute.materialThemeOverlay = global::PowerwallCompanionX.Droid.Resource.Attribute.materialThemeOverlay;
 			global::PanCardView.Droid.Resource.Attribute.maxActionInlineWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.maxActionInlineWidth;
 			global::PanCardView.Droid.Resource.Attribute.maxButtonHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.maxButtonHeight;
+			global::PanCardView.Droid.Resource.Attribute.maxCharacterCount = global::PowerwallCompanionX.Droid.Resource.Attribute.maxCharacterCount;
 			global::PanCardView.Droid.Resource.Attribute.maxImageSize = global::PowerwallCompanionX.Droid.Resource.Attribute.maxImageSize;
+			global::PanCardView.Droid.Resource.Attribute.maxLines = global::PowerwallCompanionX.Droid.Resource.Attribute.maxLines;
 			global::PanCardView.Droid.Resource.Attribute.measureWithLargestChild = global::PowerwallCompanionX.Droid.Resource.Attribute.measureWithLargestChild;
 			global::PanCardView.Droid.Resource.Attribute.menu = global::PowerwallCompanionX.Droid.Resource.Attribute.menu;
+			global::PanCardView.Droid.Resource.Attribute.minTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Attribute.minTouchTargetSize;
 			global::PanCardView.Droid.Resource.Attribute.multiChoiceItemLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.multiChoiceItemLayout;
 			global::PanCardView.Droid.Resource.Attribute.navigationContentDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.navigationContentDescription;
 			global::PanCardView.Droid.Resource.Attribute.navigationIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.navigationIcon;
 			global::PanCardView.Droid.Resource.Attribute.navigationMode = global::PowerwallCompanionX.Droid.Resource.Attribute.navigationMode;
 			global::PanCardView.Droid.Resource.Attribute.navigationViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.navigationViewStyle;
+			global::PanCardView.Droid.Resource.Attribute.number = global::PowerwallCompanionX.Droid.Resource.Attribute.number;
 			global::PanCardView.Droid.Resource.Attribute.numericModifiers = global::PowerwallCompanionX.Droid.Resource.Attribute.numericModifiers;
 			global::PanCardView.Droid.Resource.Attribute.overlapAnchor = global::PowerwallCompanionX.Droid.Resource.Attribute.overlapAnchor;
 			global::PanCardView.Droid.Resource.Attribute.paddingBottomNoButtons = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::PanCardView.Droid.Resource.Attribute.paddingBottomSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingBottomSystemWindowInsets;
 			global::PanCardView.Droid.Resource.Attribute.paddingEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingEnd;
+			global::PanCardView.Droid.Resource.Attribute.paddingLeftSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingLeftSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Attribute.paddingRightSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingRightSystemWindowInsets;
 			global::PanCardView.Droid.Resource.Attribute.paddingStart = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingStart;
 			global::PanCardView.Droid.Resource.Attribute.paddingTopNoTitle = global::PowerwallCompanionX.Droid.Resource.Attribute.paddingTopNoTitle;
 			global::PanCardView.Droid.Resource.Attribute.panelBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.panelBackground;
@@ -374,9 +523,16 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.passwordToggleEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.passwordToggleEnabled;
 			global::PanCardView.Droid.Resource.Attribute.passwordToggleTint = global::PowerwallCompanionX.Droid.Resource.Attribute.passwordToggleTint;
 			global::PanCardView.Droid.Resource.Attribute.passwordToggleTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::PanCardView.Droid.Resource.Attribute.placeholderText = global::PowerwallCompanionX.Droid.Resource.Attribute.placeholderText;
+			global::PanCardView.Droid.Resource.Attribute.placeholderTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.placeholderTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.placeholderTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.placeholderTextColor;
+			global::PanCardView.Droid.Resource.Attribute.popupMenuBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.popupMenuBackground;
 			global::PanCardView.Droid.Resource.Attribute.popupMenuStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.popupMenuStyle;
 			global::PanCardView.Droid.Resource.Attribute.popupTheme = global::PowerwallCompanionX.Droid.Resource.Attribute.popupTheme;
 			global::PanCardView.Droid.Resource.Attribute.popupWindowStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.popupWindowStyle;
+			global::PanCardView.Droid.Resource.Attribute.prefixText = global::PowerwallCompanionX.Droid.Resource.Attribute.prefixText;
+			global::PanCardView.Droid.Resource.Attribute.prefixTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.prefixTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.prefixTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.prefixTextColor;
 			global::PanCardView.Droid.Resource.Attribute.preserveIconSpacing = global::PowerwallCompanionX.Droid.Resource.Attribute.preserveIconSpacing;
 			global::PanCardView.Droid.Resource.Attribute.pressedTranslationZ = global::PowerwallCompanionX.Droid.Resource.Attribute.pressedTranslationZ;
 			global::PanCardView.Droid.Resource.Attribute.progressBarPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.progressBarPadding;
@@ -384,30 +540,42 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.queryBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.queryBackground;
 			global::PanCardView.Droid.Resource.Attribute.queryHint = global::PowerwallCompanionX.Droid.Resource.Attribute.queryHint;
 			global::PanCardView.Droid.Resource.Attribute.radioButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.radioButtonStyle;
+			global::PanCardView.Droid.Resource.Attribute.rangeFillColor = global::PowerwallCompanionX.Droid.Resource.Attribute.rangeFillColor;
 			global::PanCardView.Droid.Resource.Attribute.ratingBarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.ratingBarStyle;
 			global::PanCardView.Droid.Resource.Attribute.ratingBarStyleIndicator = global::PowerwallCompanionX.Droid.Resource.Attribute.ratingBarStyleIndicator;
 			global::PanCardView.Droid.Resource.Attribute.ratingBarStyleSmall = global::PowerwallCompanionX.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::PanCardView.Droid.Resource.Attribute.recyclerViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.recyclerViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.reverseLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.reverseLayout;
 			global::PanCardView.Droid.Resource.Attribute.rippleColor = global::PowerwallCompanionX.Droid.Resource.Attribute.rippleColor;
 			global::PanCardView.Droid.Resource.Attribute.scrimAnimationDuration = global::PowerwallCompanionX.Droid.Resource.Attribute.scrimAnimationDuration;
 			global::PanCardView.Droid.Resource.Attribute.scrimBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.scrimBackground;
 			global::PanCardView.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::PowerwallCompanionX.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::PanCardView.Droid.Resource.Attribute.scrollViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.scrollViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.searchHintIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.searchHintIcon;
 			global::PanCardView.Droid.Resource.Attribute.searchIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.searchIcon;
 			global::PanCardView.Droid.Resource.Attribute.searchViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.searchViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.seekBarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.seekBarStyle;
 			global::PanCardView.Droid.Resource.Attribute.selectableItemBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.selectableItemBackground;
 			global::PanCardView.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::PowerwallCompanionX.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::PanCardView.Droid.Resource.Attribute.selectionRequired = global::PowerwallCompanionX.Droid.Resource.Attribute.selectionRequired;
+			global::PanCardView.Droid.Resource.Attribute.shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.shapeAppearance;
+			global::PanCardView.Droid.Resource.Attribute.shapeAppearanceLargeComponent = global::PowerwallCompanionX.Droid.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::PanCardView.Droid.Resource.Attribute.shapeAppearanceMediumComponent = global::PowerwallCompanionX.Droid.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::PanCardView.Droid.Resource.Attribute.shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Attribute.shapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Attribute.shapeAppearanceSmallComponent = global::PowerwallCompanionX.Droid.Resource.Attribute.shapeAppearanceSmallComponent;
 			global::PanCardView.Droid.Resource.Attribute.showAsAction = global::PowerwallCompanionX.Droid.Resource.Attribute.showAsAction;
 			global::PanCardView.Droid.Resource.Attribute.showDividers = global::PowerwallCompanionX.Droid.Resource.Attribute.showDividers;
 			global::PanCardView.Droid.Resource.Attribute.showMotionSpec = global::PowerwallCompanionX.Droid.Resource.Attribute.showMotionSpec;
 			global::PanCardView.Droid.Resource.Attribute.showText = global::PowerwallCompanionX.Droid.Resource.Attribute.showText;
 			global::PanCardView.Droid.Resource.Attribute.showTitle = global::PowerwallCompanionX.Droid.Resource.Attribute.showTitle;
+			global::PanCardView.Droid.Resource.Attribute.shrinkMotionSpec = global::PowerwallCompanionX.Droid.Resource.Attribute.shrinkMotionSpec;
 			global::PanCardView.Droid.Resource.Attribute.singleChoiceItemLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.singleChoiceItemLayout;
 			global::PanCardView.Droid.Resource.Attribute.singleLine = global::PowerwallCompanionX.Droid.Resource.Attribute.singleLine;
 			global::PanCardView.Droid.Resource.Attribute.singleSelection = global::PowerwallCompanionX.Droid.Resource.Attribute.singleSelection;
+			global::PanCardView.Droid.Resource.Attribute.sliderStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.sliderStyle;
 			global::PanCardView.Droid.Resource.Attribute.snackbarButtonStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.snackbarButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.snackbarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.snackbarStyle;
+			global::PanCardView.Droid.Resource.Attribute.snackbarTextViewStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.snackbarTextViewStyle;
 			global::PanCardView.Droid.Resource.Attribute.spanCount = global::PowerwallCompanionX.Droid.Resource.Attribute.spanCount;
 			global::PanCardView.Droid.Resource.Attribute.spinBars = global::PowerwallCompanionX.Droid.Resource.Attribute.spinBars;
 			global::PanCardView.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.spinnerDropDownItemStyle;
@@ -415,12 +583,19 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.splitTrack = global::PowerwallCompanionX.Droid.Resource.Attribute.splitTrack;
 			global::PanCardView.Droid.Resource.Attribute.srcCompat = global::PowerwallCompanionX.Droid.Resource.Attribute.srcCompat;
 			global::PanCardView.Droid.Resource.Attribute.stackFromEnd = global::PowerwallCompanionX.Droid.Resource.Attribute.stackFromEnd;
+			global::PanCardView.Droid.Resource.Attribute.startIconCheckable = global::PowerwallCompanionX.Droid.Resource.Attribute.startIconCheckable;
+			global::PanCardView.Droid.Resource.Attribute.startIconContentDescription = global::PowerwallCompanionX.Droid.Resource.Attribute.startIconContentDescription;
+			global::PanCardView.Droid.Resource.Attribute.startIconDrawable = global::PowerwallCompanionX.Droid.Resource.Attribute.startIconDrawable;
+			global::PanCardView.Droid.Resource.Attribute.startIconTint = global::PowerwallCompanionX.Droid.Resource.Attribute.startIconTint;
+			global::PanCardView.Droid.Resource.Attribute.startIconTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.startIconTintMode;
 			global::PanCardView.Droid.Resource.Attribute.state_above_anchor = global::PowerwallCompanionX.Droid.Resource.Attribute.state_above_anchor;
 			global::PanCardView.Droid.Resource.Attribute.state_collapsed = global::PowerwallCompanionX.Droid.Resource.Attribute.state_collapsed;
 			global::PanCardView.Droid.Resource.Attribute.state_collapsible = global::PowerwallCompanionX.Droid.Resource.Attribute.state_collapsible;
+			global::PanCardView.Droid.Resource.Attribute.state_dragged = global::PowerwallCompanionX.Droid.Resource.Attribute.state_dragged;
 			global::PanCardView.Droid.Resource.Attribute.state_liftable = global::PowerwallCompanionX.Droid.Resource.Attribute.state_liftable;
 			global::PanCardView.Droid.Resource.Attribute.state_lifted = global::PowerwallCompanionX.Droid.Resource.Attribute.state_lifted;
 			global::PanCardView.Droid.Resource.Attribute.statusBarBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.statusBarBackground;
+			global::PanCardView.Droid.Resource.Attribute.statusBarForeground = global::PowerwallCompanionX.Droid.Resource.Attribute.statusBarForeground;
 			global::PanCardView.Droid.Resource.Attribute.statusBarScrim = global::PowerwallCompanionX.Droid.Resource.Attribute.statusBarScrim;
 			global::PanCardView.Droid.Resource.Attribute.strokeColor = global::PowerwallCompanionX.Droid.Resource.Attribute.strokeColor;
 			global::PanCardView.Droid.Resource.Attribute.strokeWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.strokeWidth;
@@ -430,7 +605,11 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.subtitleTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.subtitleTextAppearance;
 			global::PanCardView.Droid.Resource.Attribute.subtitleTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.subtitleTextColor;
 			global::PanCardView.Droid.Resource.Attribute.subtitleTextStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.subtitleTextStyle;
+			global::PanCardView.Droid.Resource.Attribute.suffixText = global::PowerwallCompanionX.Droid.Resource.Attribute.suffixText;
+			global::PanCardView.Droid.Resource.Attribute.suffixTextAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.suffixTextAppearance;
+			global::PanCardView.Droid.Resource.Attribute.suffixTextColor = global::PowerwallCompanionX.Droid.Resource.Attribute.suffixTextColor;
 			global::PanCardView.Droid.Resource.Attribute.suggestionRowLayout = global::PowerwallCompanionX.Droid.Resource.Attribute.suggestionRowLayout;
+			global::PanCardView.Droid.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.swipeRefreshLayoutProgressSpinnerBackgroundColor;
 			global::PanCardView.Droid.Resource.Attribute.switchMinWidth = global::PowerwallCompanionX.Droid.Resource.Attribute.switchMinWidth;
 			global::PanCardView.Droid.Resource.Attribute.switchPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.switchPadding;
 			global::PanCardView.Droid.Resource.Attribute.switchStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.switchStyle;
@@ -473,6 +652,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceHeadline5 = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceHeadline5;
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceHeadline6 = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceHeadline6;
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::PanCardView.Droid.Resource.Attribute.textAppearanceLineHeightEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceLineHeightEnabled;
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceListItem = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceListItem;
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceListItemSecondary;
 			global::PanCardView.Droid.Resource.Attribute.textAppearanceListItemSmall = global::PowerwallCompanionX.Droid.Resource.Attribute.textAppearanceListItemSmall;
@@ -486,13 +666,22 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.textColorAlertDialogListItem = global::PowerwallCompanionX.Droid.Resource.Attribute.textColorAlertDialogListItem;
 			global::PanCardView.Droid.Resource.Attribute.textColorSearchUrl = global::PowerwallCompanionX.Droid.Resource.Attribute.textColorSearchUrl;
 			global::PanCardView.Droid.Resource.Attribute.textEndPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.textEndPadding;
+			global::PanCardView.Droid.Resource.Attribute.textInputLayoutFocusedRectEnabled = global::PowerwallCompanionX.Droid.Resource.Attribute.textInputLayoutFocusedRectEnabled;
 			global::PanCardView.Droid.Resource.Attribute.textInputStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.textInputStyle;
+			global::PanCardView.Droid.Resource.Attribute.textLocale = global::PowerwallCompanionX.Droid.Resource.Attribute.textLocale;
 			global::PanCardView.Droid.Resource.Attribute.textStartPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.textStartPadding;
 			global::PanCardView.Droid.Resource.Attribute.theme = global::PowerwallCompanionX.Droid.Resource.Attribute.theme;
+			global::PanCardView.Droid.Resource.Attribute.themeLineHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.themeLineHeight;
 			global::PanCardView.Droid.Resource.Attribute.thickness = global::PowerwallCompanionX.Droid.Resource.Attribute.thickness;
+			global::PanCardView.Droid.Resource.Attribute.thumbColor = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbColor;
+			global::PanCardView.Droid.Resource.Attribute.thumbElevation = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbElevation;
+			global::PanCardView.Droid.Resource.Attribute.thumbRadius = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbRadius;
 			global::PanCardView.Droid.Resource.Attribute.thumbTextPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbTextPadding;
 			global::PanCardView.Droid.Resource.Attribute.thumbTint = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbTint;
 			global::PanCardView.Droid.Resource.Attribute.thumbTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.thumbTintMode;
+			global::PanCardView.Droid.Resource.Attribute.tickColor = global::PowerwallCompanionX.Droid.Resource.Attribute.tickColor;
+			global::PanCardView.Droid.Resource.Attribute.tickColorActive = global::PowerwallCompanionX.Droid.Resource.Attribute.tickColorActive;
+			global::PanCardView.Droid.Resource.Attribute.tickColorInactive = global::PowerwallCompanionX.Droid.Resource.Attribute.tickColorInactive;
 			global::PanCardView.Droid.Resource.Attribute.tickMark = global::PowerwallCompanionX.Droid.Resource.Attribute.tickMark;
 			global::PanCardView.Droid.Resource.Attribute.tickMarkTint = global::PowerwallCompanionX.Droid.Resource.Attribute.tickMarkTint;
 			global::PanCardView.Droid.Resource.Attribute.tickMarkTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.tickMarkTintMode;
@@ -514,12 +703,21 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.toolbarStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.toolbarStyle;
 			global::PanCardView.Droid.Resource.Attribute.tooltipForegroundColor = global::PowerwallCompanionX.Droid.Resource.Attribute.tooltipForegroundColor;
 			global::PanCardView.Droid.Resource.Attribute.tooltipFrameBackground = global::PowerwallCompanionX.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::PanCardView.Droid.Resource.Attribute.tooltipStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.tooltipStyle;
 			global::PanCardView.Droid.Resource.Attribute.tooltipText = global::PowerwallCompanionX.Droid.Resource.Attribute.tooltipText;
 			global::PanCardView.Droid.Resource.Attribute.track = global::PowerwallCompanionX.Droid.Resource.Attribute.track;
+			global::PanCardView.Droid.Resource.Attribute.trackColor = global::PowerwallCompanionX.Droid.Resource.Attribute.trackColor;
+			global::PanCardView.Droid.Resource.Attribute.trackColorActive = global::PowerwallCompanionX.Droid.Resource.Attribute.trackColorActive;
+			global::PanCardView.Droid.Resource.Attribute.trackColorInactive = global::PowerwallCompanionX.Droid.Resource.Attribute.trackColorInactive;
+			global::PanCardView.Droid.Resource.Attribute.trackHeight = global::PowerwallCompanionX.Droid.Resource.Attribute.trackHeight;
 			global::PanCardView.Droid.Resource.Attribute.trackTint = global::PowerwallCompanionX.Droid.Resource.Attribute.trackTint;
 			global::PanCardView.Droid.Resource.Attribute.trackTintMode = global::PowerwallCompanionX.Droid.Resource.Attribute.trackTintMode;
+			global::PanCardView.Droid.Resource.Attribute.transitionShapeAppearance = global::PowerwallCompanionX.Droid.Resource.Attribute.transitionShapeAppearance;
 			global::PanCardView.Droid.Resource.Attribute.ttcIndex = global::PowerwallCompanionX.Droid.Resource.Attribute.ttcIndex;
 			global::PanCardView.Droid.Resource.Attribute.useCompatPadding = global::PowerwallCompanionX.Droid.Resource.Attribute.useCompatPadding;
+			global::PanCardView.Droid.Resource.Attribute.useMaterialThemeColors = global::PowerwallCompanionX.Droid.Resource.Attribute.useMaterialThemeColors;
+			global::PanCardView.Droid.Resource.Attribute.values = global::PowerwallCompanionX.Droid.Resource.Attribute.values;
+			global::PanCardView.Droid.Resource.Attribute.verticalOffset = global::PowerwallCompanionX.Droid.Resource.Attribute.verticalOffset;
 			global::PanCardView.Droid.Resource.Attribute.viewInflaterClass = global::PowerwallCompanionX.Droid.Resource.Attribute.viewInflaterClass;
 			global::PanCardView.Droid.Resource.Attribute.voiceIcon = global::PowerwallCompanionX.Droid.Resource.Attribute.voiceIcon;
 			global::PanCardView.Droid.Resource.Attribute.windowActionBar = global::PowerwallCompanionX.Droid.Resource.Attribute.windowActionBar;
@@ -532,6 +730,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Attribute.windowMinWidthMajor = global::PowerwallCompanionX.Droid.Resource.Attribute.windowMinWidthMajor;
 			global::PanCardView.Droid.Resource.Attribute.windowMinWidthMinor = global::PowerwallCompanionX.Droid.Resource.Attribute.windowMinWidthMinor;
 			global::PanCardView.Droid.Resource.Attribute.windowNoTitle = global::PowerwallCompanionX.Droid.Resource.Attribute.windowNoTitle;
+			global::PanCardView.Droid.Resource.Attribute.yearSelectedStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.yearSelectedStyle;
+			global::PanCardView.Droid.Resource.Attribute.yearStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.yearStyle;
+			global::PanCardView.Droid.Resource.Attribute.yearTodayStyle = global::PowerwallCompanionX.Droid.Resource.Attribute.yearTodayStyle;
 			global::PanCardView.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::PowerwallCompanionX.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::PanCardView.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::PowerwallCompanionX.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::PanCardView.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::PowerwallCompanionX.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
@@ -541,6 +742,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::PowerwallCompanionX.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::PanCardView.Droid.Resource.Color.abc_btn_colored_text_material = global::PowerwallCompanionX.Droid.Resource.Color.abc_btn_colored_text_material;
 			global::PanCardView.Droid.Resource.Color.abc_color_highlight_material = global::PowerwallCompanionX.Droid.Resource.Color.abc_color_highlight_material;
+			global::PanCardView.Droid.Resource.Color.abc_decor_view_status_guard = global::PowerwallCompanionX.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::PanCardView.Droid.Resource.Color.abc_decor_view_status_guard_light = global::PowerwallCompanionX.Droid.Resource.Color.abc_decor_view_status_guard_light;
 			global::PanCardView.Droid.Resource.Color.abc_hint_foreground_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.abc_hint_foreground_material_dark;
 			global::PanCardView.Droid.Resource.Color.abc_hint_foreground_material_light = global::PowerwallCompanionX.Droid.Resource.Color.abc_hint_foreground_material_light;
 			global::PanCardView.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -561,6 +764,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.abc_tint_switch_track = global::PowerwallCompanionX.Droid.Resource.Color.abc_tint_switch_track;
 			global::PanCardView.Droid.Resource.Color.accent_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.accent_material_dark;
 			global::PanCardView.Droid.Resource.Color.accent_material_light = global::PowerwallCompanionX.Droid.Resource.Color.accent_material_light;
+			global::PanCardView.Droid.Resource.Color.androidx_core_ripple_material_light = global::PowerwallCompanionX.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::PanCardView.Droid.Resource.Color.androidx_core_secondary_text_default_material_light = global::PowerwallCompanionX.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::PanCardView.Droid.Resource.Color.background_floating_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.background_floating_material_dark;
 			global::PanCardView.Droid.Resource.Color.background_floating_material_light = global::PowerwallCompanionX.Droid.Resource.Color.background_floating_material_light;
 			global::PanCardView.Droid.Resource.Color.background_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.background_material_dark;
@@ -581,9 +786,35 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.cardview_light_background = global::PowerwallCompanionX.Droid.Resource.Color.cardview_light_background;
 			global::PanCardView.Droid.Resource.Color.cardview_shadow_end_color = global::PowerwallCompanionX.Droid.Resource.Color.cardview_shadow_end_color;
 			global::PanCardView.Droid.Resource.Color.cardview_shadow_start_color = global::PowerwallCompanionX.Droid.Resource.Color.cardview_shadow_start_color;
+			global::PanCardView.Droid.Resource.Color.checkbox_themeable_attribute_color = global::PowerwallCompanionX.Droid.Resource.Color.checkbox_themeable_attribute_color;
 			global::PanCardView.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::PowerwallCompanionX.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::PanCardView.Droid.Resource.Color.design_box_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.design_box_stroke_color;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_background = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_background;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_error = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_error;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_on_background = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_on_background;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_on_error = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_on_error;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_on_primary = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_on_primary;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_on_secondary = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_on_secondary;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_on_surface = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_on_surface;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_primary = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_primary;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_primary_dark = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_primary_dark;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_primary_variant = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_primary_variant;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_secondary = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_secondary;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_secondary_variant = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_secondary_variant;
+			global::PanCardView.Droid.Resource.Color.design_dark_default_color_surface = global::PowerwallCompanionX.Droid.Resource.Color.design_dark_default_color_surface;
+			global::PanCardView.Droid.Resource.Color.design_default_color_background = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_background;
+			global::PanCardView.Droid.Resource.Color.design_default_color_error = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_error;
+			global::PanCardView.Droid.Resource.Color.design_default_color_on_background = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_on_background;
+			global::PanCardView.Droid.Resource.Color.design_default_color_on_error = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_on_error;
+			global::PanCardView.Droid.Resource.Color.design_default_color_on_primary = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_on_primary;
+			global::PanCardView.Droid.Resource.Color.design_default_color_on_secondary = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_on_secondary;
+			global::PanCardView.Droid.Resource.Color.design_default_color_on_surface = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_on_surface;
 			global::PanCardView.Droid.Resource.Color.design_default_color_primary = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_primary;
 			global::PanCardView.Droid.Resource.Color.design_default_color_primary_dark = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_primary_dark;
+			global::PanCardView.Droid.Resource.Color.design_default_color_primary_variant = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_primary_variant;
+			global::PanCardView.Droid.Resource.Color.design_default_color_secondary = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_secondary;
+			global::PanCardView.Droid.Resource.Color.design_default_color_secondary_variant = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_secondary_variant;
+			global::PanCardView.Droid.Resource.Color.design_default_color_surface = global::PowerwallCompanionX.Droid.Resource.Color.design_default_color_surface;
 			global::PanCardView.Droid.Resource.Color.design_error = global::PowerwallCompanionX.Droid.Resource.Color.design_error;
 			global::PanCardView.Droid.Resource.Color.design_fab_shadow_end_color = global::PowerwallCompanionX.Droid.Resource.Color.design_fab_shadow_end_color;
 			global::PanCardView.Droid.Resource.Color.design_fab_shadow_mid_color = global::PowerwallCompanionX.Droid.Resource.Color.design_fab_shadow_mid_color;
@@ -592,6 +823,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::PowerwallCompanionX.Droid.Resource.Color.design_fab_stroke_end_outer_color;
 			global::PanCardView.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::PowerwallCompanionX.Droid.Resource.Color.design_fab_stroke_top_inner_color;
 			global::PanCardView.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::PowerwallCompanionX.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::PanCardView.Droid.Resource.Color.design_icon_tint = global::PowerwallCompanionX.Droid.Resource.Color.design_icon_tint;
 			global::PanCardView.Droid.Resource.Color.design_snackbar_background_color = global::PowerwallCompanionX.Droid.Resource.Color.design_snackbar_background_color;
 			global::PanCardView.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.dim_foreground_disabled_material_dark;
 			global::PanCardView.Droid.Resource.Color.dim_foreground_disabled_material_light = global::PowerwallCompanionX.Droid.Resource.Color.dim_foreground_disabled_material_light;
@@ -615,20 +847,56 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.material_grey_800 = global::PowerwallCompanionX.Droid.Resource.Color.material_grey_800;
 			global::PanCardView.Droid.Resource.Color.material_grey_850 = global::PowerwallCompanionX.Droid.Resource.Color.material_grey_850;
 			global::PanCardView.Droid.Resource.Color.material_grey_900 = global::PowerwallCompanionX.Droid.Resource.Color.material_grey_900;
-			global::PanCardView.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_bottom_nav_colored_item_tint;
-			global::PanCardView.Droid.Resource.Color.mtrl_bottom_nav_item_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::PanCardView.Droid.Resource.Color.material_on_background_disabled = global::PowerwallCompanionX.Droid.Resource.Color.material_on_background_disabled;
+			global::PanCardView.Droid.Resource.Color.material_on_background_emphasis_high_type = global::PowerwallCompanionX.Droid.Resource.Color.material_on_background_emphasis_high_type;
+			global::PanCardView.Droid.Resource.Color.material_on_background_emphasis_medium = global::PowerwallCompanionX.Droid.Resource.Color.material_on_background_emphasis_medium;
+			global::PanCardView.Droid.Resource.Color.material_on_primary_disabled = global::PowerwallCompanionX.Droid.Resource.Color.material_on_primary_disabled;
+			global::PanCardView.Droid.Resource.Color.material_on_primary_emphasis_high_type = global::PowerwallCompanionX.Droid.Resource.Color.material_on_primary_emphasis_high_type;
+			global::PanCardView.Droid.Resource.Color.material_on_primary_emphasis_medium = global::PowerwallCompanionX.Droid.Resource.Color.material_on_primary_emphasis_medium;
+			global::PanCardView.Droid.Resource.Color.material_on_surface_disabled = global::PowerwallCompanionX.Droid.Resource.Color.material_on_surface_disabled;
+			global::PanCardView.Droid.Resource.Color.material_on_surface_emphasis_high_type = global::PowerwallCompanionX.Droid.Resource.Color.material_on_surface_emphasis_high_type;
+			global::PanCardView.Droid.Resource.Color.material_on_surface_emphasis_medium = global::PowerwallCompanionX.Droid.Resource.Color.material_on_surface_emphasis_medium;
+			global::PanCardView.Droid.Resource.Color.material_on_surface_stroke = global::PowerwallCompanionX.Droid.Resource.Color.material_on_surface_stroke;
+			global::PanCardView.Droid.Resource.Color.material_slider_active_tick_marks_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_active_tick_marks_color;
+			global::PanCardView.Droid.Resource.Color.material_slider_active_track_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_active_track_color;
+			global::PanCardView.Droid.Resource.Color.material_slider_halo_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_halo_color;
+			global::PanCardView.Droid.Resource.Color.material_slider_inactive_tick_marks_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_inactive_tick_marks_color;
+			global::PanCardView.Droid.Resource.Color.material_slider_inactive_track_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_inactive_track_color;
+			global::PanCardView.Droid.Resource.Color.material_slider_thumb_color = global::PowerwallCompanionX.Droid.Resource.Color.material_slider_thumb_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_bg_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_bg_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_ripple_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_stroke_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::PanCardView.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_text_btn_ripple_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_text_color_disabled = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_text_color_disabled;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_text_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_btn_transparent_bg_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_calendar_item_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_calendar_selected_range = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_calendar_selected_range;
+			global::PanCardView.Droid.Resource.Color.mtrl_card_view_foreground = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_card_view_foreground;
+			global::PanCardView.Droid.Resource.Color.mtrl_card_view_ripple = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_card_view_ripple;
 			global::PanCardView.Droid.Resource.Color.mtrl_chip_background_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_chip_background_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_chip_close_icon_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_chip_close_icon_tint;
-			global::PanCardView.Droid.Resource.Color.mtrl_chip_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_chip_ripple_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_chip_surface_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_chip_surface_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_chip_text_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_chip_text_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_choice_chip_background_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_choice_chip_background_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_choice_chip_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_choice_chip_text_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_choice_chip_text_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_error = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_error;
+			global::PanCardView.Droid.Resource.Color.mtrl_fab_bg_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_fab_bg_color_selector;
+			global::PanCardView.Droid.Resource.Color.mtrl_fab_icon_text_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_fab_icon_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_fab_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_fab_ripple_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_filled_background_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_filled_background_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_filled_icon_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_filled_icon_tint;
+			global::PanCardView.Droid.Resource.Color.mtrl_filled_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_filled_stroke_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_indicator_text_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_indicator_text_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_navigation_item_background_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_navigation_item_background_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_navigation_item_icon_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::PanCardView.Droid.Resource.Color.mtrl_navigation_item_text_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_navigation_item_text_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::PanCardView.Droid.Resource.Color.mtrl_outlined_icon_tint = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_outlined_icon_tint;
+			global::PanCardView.Droid.Resource.Color.mtrl_outlined_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_outlined_stroke_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_popupmenu_overlay_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_popupmenu_overlay_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_scrim_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_scrim_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_tabs_colored_ripple_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_tabs_colored_ripple_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_tabs_icon_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_tabs_icon_color_selector;
@@ -638,6 +906,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_disabled_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_textinput_disabled_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_textinput_focused_box_stroke_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::PowerwallCompanionX.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.notification_action_color_filter = global::PowerwallCompanionX.Droid.Resource.Color.notification_action_color_filter;
@@ -651,6 +920,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.primary_text_default_material_light = global::PowerwallCompanionX.Droid.Resource.Color.primary_text_default_material_light;
 			global::PanCardView.Droid.Resource.Color.primary_text_disabled_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.primary_text_disabled_material_dark;
 			global::PanCardView.Droid.Resource.Color.primary_text_disabled_material_light = global::PowerwallCompanionX.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::PanCardView.Droid.Resource.Color.radiobutton_themeable_attribute_color = global::PowerwallCompanionX.Droid.Resource.Color.radiobutton_themeable_attribute_color;
 			global::PanCardView.Droid.Resource.Color.ripple_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.ripple_material_dark;
 			global::PanCardView.Droid.Resource.Color.ripple_material_light = global::PowerwallCompanionX.Droid.Resource.Color.ripple_material_light;
 			global::PanCardView.Droid.Resource.Color.secondary_text_default_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.secondary_text_default_material_dark;
@@ -663,6 +933,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Color.switch_thumb_material_light = global::PowerwallCompanionX.Droid.Resource.Color.switch_thumb_material_light;
 			global::PanCardView.Droid.Resource.Color.switch_thumb_normal_material_dark = global::PowerwallCompanionX.Droid.Resource.Color.switch_thumb_normal_material_dark;
 			global::PanCardView.Droid.Resource.Color.switch_thumb_normal_material_light = global::PowerwallCompanionX.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::PanCardView.Droid.Resource.Color.test_mtrl_calendar_day = global::PowerwallCompanionX.Droid.Resource.Color.test_mtrl_calendar_day;
+			global::PanCardView.Droid.Resource.Color.test_mtrl_calendar_day_selected = global::PowerwallCompanionX.Droid.Resource.Color.test_mtrl_calendar_day_selected;
 			global::PanCardView.Droid.Resource.Color.tooltip_background_dark = global::PowerwallCompanionX.Droid.Resource.Color.tooltip_background_dark;
 			global::PanCardView.Droid.Resource.Color.tooltip_background_light = global::PowerwallCompanionX.Droid.Resource.Color.tooltip_background_light;
 			global::PanCardView.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -713,6 +985,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_floating_window_z = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_floating_window_z;
+			global::PanCardView.Droid.Resource.Dimension.abc_list_item_height_large_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_list_item_height_large_material;
+			global::PanCardView.Droid.Resource.Dimension.abc_list_item_height_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_list_item_height_material;
+			global::PanCardView.Droid.Resource.Dimension.abc_list_item_height_small_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_list_item_height_small_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_panel_menu_list_width = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_panel_menu_list_width;
 			global::PanCardView.Droid.Resource.Dimension.abc_progress_bar_height_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_progress_bar_height_material;
@@ -740,6 +1015,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_title_material = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::PowerwallCompanionX.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::PanCardView.Droid.Resource.Dimension.action_bar_size = global::PowerwallCompanionX.Droid.Resource.Dimension.action_bar_size;
+			global::PanCardView.Droid.Resource.Dimension.appcompat_dialog_background_inset = global::PowerwallCompanionX.Droid.Resource.Dimension.appcompat_dialog_background_inset;
 			global::PanCardView.Droid.Resource.Dimension.browser_actions_context_menu_max_width = global::PowerwallCompanionX.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
 			global::PanCardView.Droid.Resource.Dimension.browser_actions_context_menu_min_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::PanCardView.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::PowerwallCompanionX.Droid.Resource.Dimension.cardview_compat_inset_shadow;
@@ -752,6 +1029,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.compat_control_corner_material = global::PowerwallCompanionX.Droid.Resource.Dimension.compat_control_corner_material;
 			global::PanCardView.Droid.Resource.Dimension.compat_notification_large_icon_max_height = global::PowerwallCompanionX.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::PanCardView.Droid.Resource.Dimension.compat_notification_large_icon_max_width = global::PowerwallCompanionX.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::PanCardView.Droid.Resource.Dimension.default_dimension = global::PowerwallCompanionX.Droid.Resource.Dimension.default_dimension;
+			global::PanCardView.Droid.Resource.Dimension.def_drawer_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.def_drawer_elevation;
 			global::PanCardView.Droid.Resource.Dimension.design_appbar_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.design_appbar_elevation;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_navigation_active_item_min_width;
@@ -764,6 +1043,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_navigation_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_navigation_margin;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::PanCardView.Droid.Resource.Dimension.design_bottom_sheet_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_sheet_elevation;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
 			global::PanCardView.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::PowerwallCompanionX.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
 			global::PanCardView.Droid.Resource.Dimension.design_fab_border_width = global::PowerwallCompanionX.Droid.Resource.Dimension.design_fab_border_width;
@@ -782,6 +1062,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.design_navigation_padding_bottom = global::PowerwallCompanionX.Droid.Resource.Dimension.design_navigation_padding_bottom;
 			global::PanCardView.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
 			global::PanCardView.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::PowerwallCompanionX.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::PanCardView.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.design_snackbar_action_text_color_alpha;
 			global::PanCardView.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
 			global::PanCardView.Droid.Resource.Dimension.design_snackbar_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.design_snackbar_elevation;
 			global::PanCardView.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::PowerwallCompanionX.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
@@ -811,7 +1092,24 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::PowerwallCompanionX.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::PanCardView.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::PowerwallCompanionX.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::PanCardView.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::PowerwallCompanionX.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::PanCardView.Droid.Resource.Dimension.material_emphasis_disabled = global::PowerwallCompanionX.Droid.Resource.Dimension.material_emphasis_disabled;
+			global::PanCardView.Droid.Resource.Dimension.material_emphasis_high_type = global::PowerwallCompanionX.Droid.Resource.Dimension.material_emphasis_high_type;
+			global::PanCardView.Droid.Resource.Dimension.material_emphasis_medium = global::PowerwallCompanionX.Droid.Resource.Dimension.material_emphasis_medium;
+			global::PanCardView.Droid.Resource.Dimension.material_text_view_test_line_height = global::PowerwallCompanionX.Droid.Resource.Dimension.material_text_view_test_line_height;
+			global::PanCardView.Droid.Resource.Dimension.material_text_view_test_line_height_override = global::PowerwallCompanionX.Droid.Resource.Dimension.material_text_view_test_line_height_override;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_text_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_text_size;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_badge_with_text_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_badge_with_text_radius;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
@@ -838,25 +1136,130 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_btn_text_btn_padding_right;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_btn_text_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_btn_text_size;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_btn_z = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_btn_z;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_action_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_action_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_action_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_action_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_bottom_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_content_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_content_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_corner = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_corner;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_day_width = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_day_width;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_content_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_text_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_navigation_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_year_corner = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_year_corner;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_year_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_year_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_calendar_year_width = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_calendar_year_width;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_card_checked_icon_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_card_checked_icon_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_card_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_corner_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_card_dragged_z = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_dragged_z;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_card_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_elevation;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_card_spacing = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_card_spacing;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_chip_text_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_chip_text_size;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_edittext_rectangle_top_offset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_end_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_icon_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_min_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_min_width = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_start_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_top_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_fab_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_fab_elevation;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_fab_min_touch_target = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_fab_min_touch_target;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_large_touch_target = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_large_touch_target;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_min_touch_target_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_min_touch_target_size;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_elevation;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_item_icon_size = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_halo_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_halo_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_label_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_label_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_label_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_label_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_label_square_side = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_label_square_side;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_thumb_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_thumb_elevation;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_thumb_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_thumb_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_track_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_track_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_track_side_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_track_side_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_track_top = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_track_top;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_slider_widget_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_slider_widget_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_snackbar_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_snackbar_margin;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_switch_thumb_elevation = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_switch_thumb_elevation;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_counter_margin_start = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_counter_margin_start;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
 			global::PanCardView.Droid.Resource.Dimension.mtrl_toolbar_default_height = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_toolbar_default_height;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_tooltip_arrowSize = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_tooltip_arrowSize;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_tooltip_cornerSize = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_tooltip_cornerSize;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_tooltip_minHeight = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_tooltip_minHeight;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_tooltip_minWidth = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_tooltip_minWidth;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_tooltip_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_tooltip_padding;
+			global::PanCardView.Droid.Resource.Dimension.mtrl_transition_shared_axis_slide_distance = global::PowerwallCompanionX.Droid.Resource.Dimension.mtrl_transition_shared_axis_slide_distance;
 			global::PanCardView.Droid.Resource.Dimension.notification_action_icon_size = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_action_icon_size;
 			global::PanCardView.Droid.Resource.Dimension.notification_action_text_size = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_action_text_size;
 			global::PanCardView.Droid.Resource.Dimension.notification_big_circle_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_big_circle_margin;
@@ -872,6 +1275,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Dimension.notification_subtext_size = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_subtext_size;
 			global::PanCardView.Droid.Resource.Dimension.notification_top_pad = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_top_pad;
 			global::PanCardView.Droid.Resource.Dimension.notification_top_pad_large_text = global::PowerwallCompanionX.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::PanCardView.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::PowerwallCompanionX.Droid.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
 			global::PanCardView.Droid.Resource.Dimension.tooltip_corner_radius = global::PowerwallCompanionX.Droid.Resource.Dimension.tooltip_corner_radius;
 			global::PanCardView.Droid.Resource.Dimension.tooltip_horizontal_padding = global::PowerwallCompanionX.Droid.Resource.Dimension.tooltip_horizontal_padding;
 			global::PanCardView.Droid.Resource.Dimension.tooltip_margin = global::PowerwallCompanionX.Droid.Resource.Dimension.tooltip_margin;
@@ -884,11 +1288,13 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_action_bar_item_background_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_borderless_material = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_borderless_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_check_material = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_check_material;
+			global::PanCardView.Droid.Resource.Drawable.abc_btn_check_material_anim = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_check_material_anim;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_colored_material = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_colored_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_radio_material = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::PanCardView.Droid.Resource.Drawable.abc_btn_radio_material_anim = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_radio_material_anim;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
 			global::PanCardView.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
@@ -966,15 +1372,38 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Drawable.abc_vector_test = global::PowerwallCompanionX.Droid.Resource.Drawable.abc_vector_test;
 			global::PanCardView.Droid.Resource.Drawable.avd_hide_password = global::PowerwallCompanionX.Droid.Resource.Drawable.avd_hide_password;
 			global::PanCardView.Droid.Resource.Drawable.avd_show_password = global::PowerwallCompanionX.Droid.Resource.Drawable.avd_show_password;
-			global::PanCardView.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::PowerwallCompanionX.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::PanCardView.Droid.Resource.Drawable.btn_checkbox_checked_mtrl = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::PanCardView.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::PanCardView.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::PanCardView.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::PanCardView.Droid.Resource.Drawable.btn_radio_off_mtrl = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_radio_off_mtrl;
+			global::PanCardView.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::PanCardView.Droid.Resource.Drawable.btn_radio_on_mtrl = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_radio_on_mtrl;
+			global::PanCardView.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::PowerwallCompanionX.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
 			global::PanCardView.Droid.Resource.Drawable.design_fab_background = global::PowerwallCompanionX.Droid.Resource.Drawable.design_fab_background;
 			global::PanCardView.Droid.Resource.Drawable.design_ic_visibility = global::PowerwallCompanionX.Droid.Resource.Drawable.design_ic_visibility;
 			global::PanCardView.Droid.Resource.Drawable.design_ic_visibility_off = global::PowerwallCompanionX.Droid.Resource.Drawable.design_ic_visibility_off;
 			global::PanCardView.Droid.Resource.Drawable.design_password_eye = global::PowerwallCompanionX.Droid.Resource.Drawable.design_password_eye;
 			global::PanCardView.Droid.Resource.Drawable.design_snackbar_background = global::PowerwallCompanionX.Droid.Resource.Drawable.design_snackbar_background;
+			global::PanCardView.Droid.Resource.Drawable.ic_mtrl_checked_circle = global::PowerwallCompanionX.Droid.Resource.Drawable.ic_mtrl_checked_circle;
 			global::PanCardView.Droid.Resource.Drawable.ic_mtrl_chip_checked_black = global::PowerwallCompanionX.Droid.Resource.Drawable.ic_mtrl_chip_checked_black;
 			global::PanCardView.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle = global::PowerwallCompanionX.Droid.Resource.Drawable.ic_mtrl_chip_checked_circle;
 			global::PanCardView.Droid.Resource.Drawable.ic_mtrl_chip_close_circle = global::PowerwallCompanionX.Droid.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_calendar_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_calendar_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_clear_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_clear_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_edit_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_edit_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_keyboard_arrow_left_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_keyboard_arrow_right_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_menu_arrow_down_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_menu_arrow_down_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.material_ic_menu_arrow_up_black_24dp = global::PowerwallCompanionX.Droid.Resource.Drawable.material_ic_menu_arrow_up_black_24dp;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_dialog_background = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_dialog_background;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_dropdown_arrow = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_dropdown_arrow;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_ic_cancel = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_ic_cancel;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_ic_error = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_ic_error;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_popupmenu_background = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_popupmenu_background;
+			global::PanCardView.Droid.Resource.Drawable.mtrl_popupmenu_background_dark = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::PanCardView.Droid.Resource.Drawable.mtrl_tabs_default_indicator = global::PowerwallCompanionX.Droid.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::PanCardView.Droid.Resource.Drawable.navigation_empty_icon = global::PowerwallCompanionX.Droid.Resource.Drawable.navigation_empty_icon;
 			global::PanCardView.Droid.Resource.Drawable.notification_action_background = global::PowerwallCompanionX.Droid.Resource.Drawable.notification_action_background;
@@ -989,8 +1418,42 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Drawable.notification_template_icon_low_bg = global::PowerwallCompanionX.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::PanCardView.Droid.Resource.Drawable.notification_tile_bg = global::PowerwallCompanionX.Droid.Resource.Drawable.notification_tile_bg;
 			global::PanCardView.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::PowerwallCompanionX.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::PanCardView.Droid.Resource.Drawable.test_custom_background = global::PowerwallCompanionX.Droid.Resource.Drawable.test_custom_background;
 			global::PanCardView.Droid.Resource.Drawable.tooltip_frame_dark = global::PowerwallCompanionX.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::PanCardView.Droid.Resource.Drawable.tooltip_frame_light = global::PowerwallCompanionX.Droid.Resource.Drawable.tooltip_frame_light;
+			global::PanCardView.Droid.Resource.Id.accessibility_action_clickable_span = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_0 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_0;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_1 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_1;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_10 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_10;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_11 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_11;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_12 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_12;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_13 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_13;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_14 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_14;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_15 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_15;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_16 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_16;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_17 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_17;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_18 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_18;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_19 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_19;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_2 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_2;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_20 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_20;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_21 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_21;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_22 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_22;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_23 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_23;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_24 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_24;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_25 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_25;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_26 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_26;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_27 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_27;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_28 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_28;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_29 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_29;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_3 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_3;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_30 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_30;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_31 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_31;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_4 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_4;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_5 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_5;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_6 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_6;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_7 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_7;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_8 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_8;
+			global::PanCardView.Droid.Resource.Id.accessibility_custom_action_9 = global::PowerwallCompanionX.Droid.Resource.Id.accessibility_custom_action_9;
 			global::PanCardView.Droid.Resource.Id.action0 = global::PowerwallCompanionX.Droid.Resource.Id.action0;
 			global::PanCardView.Droid.Resource.Id.actions = global::PowerwallCompanionX.Droid.Resource.Id.actions;
 			global::PanCardView.Droid.Resource.Id.action_bar = global::PowerwallCompanionX.Droid.Resource.Id.action_bar;
@@ -1023,6 +1486,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.bottom = global::PowerwallCompanionX.Droid.Resource.Id.bottom;
 			global::PanCardView.Droid.Resource.Id.bottomtab_navarea = global::PowerwallCompanionX.Droid.Resource.Id.bottomtab_navarea;
 			global::PanCardView.Droid.Resource.Id.bottomtab_tabbar = global::PowerwallCompanionX.Droid.Resource.Id.bottomtab_tabbar;
+			global::PanCardView.Droid.Resource.Id.BOTTOM_END = global::PowerwallCompanionX.Droid.Resource.Id.BOTTOM_END;
+			global::PanCardView.Droid.Resource.Id.BOTTOM_START = global::PowerwallCompanionX.Droid.Resource.Id.BOTTOM_START;
 			global::PanCardView.Droid.Resource.Id.browser_actions_header_text = global::PowerwallCompanionX.Droid.Resource.Id.browser_actions_header_text;
 			global::PanCardView.Droid.Resource.Id.browser_actions_menu_items = global::PowerwallCompanionX.Droid.Resource.Id.browser_actions_menu_items;
 			global::PanCardView.Droid.Resource.Id.browser_actions_menu_item_icon = global::PowerwallCompanionX.Droid.Resource.Id.browser_actions_menu_item_icon;
@@ -1030,14 +1495,24 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.browser_actions_menu_view = global::PowerwallCompanionX.Droid.Resource.Id.browser_actions_menu_view;
 			global::PanCardView.Droid.Resource.Id.buttonPanel = global::PowerwallCompanionX.Droid.Resource.Id.buttonPanel;
 			global::PanCardView.Droid.Resource.Id.cancel_action = global::PowerwallCompanionX.Droid.Resource.Id.cancel_action;
+			global::PanCardView.Droid.Resource.Id.cancel_button = global::PowerwallCompanionX.Droid.Resource.Id.cancel_button;
 			global::PanCardView.Droid.Resource.Id.center = global::PowerwallCompanionX.Droid.Resource.Id.center;
 			global::PanCardView.Droid.Resource.Id.center_horizontal = global::PowerwallCompanionX.Droid.Resource.Id.center_horizontal;
 			global::PanCardView.Droid.Resource.Id.center_vertical = global::PowerwallCompanionX.Droid.Resource.Id.center_vertical;
 			global::PanCardView.Droid.Resource.Id.checkbox = global::PowerwallCompanionX.Droid.Resource.Id.checkbox;
+			global::PanCardView.Droid.Resource.Id.@checked = global::PowerwallCompanionX.Droid.Resource.Id.@checked;
+			global::PanCardView.Droid.Resource.Id.chip = global::PowerwallCompanionX.Droid.Resource.Id.chip;
+			global::PanCardView.Droid.Resource.Id.chip1 = global::PowerwallCompanionX.Droid.Resource.Id.chip1;
+			global::PanCardView.Droid.Resource.Id.chip2 = global::PowerwallCompanionX.Droid.Resource.Id.chip2;
+			global::PanCardView.Droid.Resource.Id.chip3 = global::PowerwallCompanionX.Droid.Resource.Id.chip3;
+			global::PanCardView.Droid.Resource.Id.chip_group = global::PowerwallCompanionX.Droid.Resource.Id.chip_group;
 			global::PanCardView.Droid.Resource.Id.chronometer = global::PowerwallCompanionX.Droid.Resource.Id.chronometer;
+			global::PanCardView.Droid.Resource.Id.clear_text = global::PowerwallCompanionX.Droid.Resource.Id.clear_text;
 			global::PanCardView.Droid.Resource.Id.clip_horizontal = global::PowerwallCompanionX.Droid.Resource.Id.clip_horizontal;
 			global::PanCardView.Droid.Resource.Id.clip_vertical = global::PowerwallCompanionX.Droid.Resource.Id.clip_vertical;
+			global::PanCardView.Droid.Resource.Id.clockwise = global::PowerwallCompanionX.Droid.Resource.Id.clockwise;
 			global::PanCardView.Droid.Resource.Id.collapseActionView = global::PowerwallCompanionX.Droid.Resource.Id.collapseActionView;
+			global::PanCardView.Droid.Resource.Id.confirm_button = global::PowerwallCompanionX.Droid.Resource.Id.confirm_button;
 			global::PanCardView.Droid.Resource.Id.container = global::PowerwallCompanionX.Droid.Resource.Id.container;
 			global::PanCardView.Droid.Resource.Id.content = global::PowerwallCompanionX.Droid.Resource.Id.content;
 			global::PanCardView.Droid.Resource.Id.contentPanel = global::PowerwallCompanionX.Droid.Resource.Id.contentPanel;
@@ -1045,6 +1520,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.CTRL = global::PowerwallCompanionX.Droid.Resource.Id.CTRL;
 			global::PanCardView.Droid.Resource.Id.custom = global::PowerwallCompanionX.Droid.Resource.Id.custom;
 			global::PanCardView.Droid.Resource.Id.customPanel = global::PowerwallCompanionX.Droid.Resource.Id.customPanel;
+			global::PanCardView.Droid.Resource.Id.cut = global::PowerwallCompanionX.Droid.Resource.Id.cut;
+			global::PanCardView.Droid.Resource.Id.date_picker_actions = global::PowerwallCompanionX.Droid.Resource.Id.date_picker_actions;
 			global::PanCardView.Droid.Resource.Id.decor_content_parent = global::PowerwallCompanionX.Droid.Resource.Id.decor_content_parent;
 			global::PanCardView.Droid.Resource.Id.default_activity_button = global::PowerwallCompanionX.Droid.Resource.Id.default_activity_button;
 			global::PanCardView.Droid.Resource.Id.design_bottom_sheet = global::PowerwallCompanionX.Droid.Resource.Id.design_bottom_sheet;
@@ -1052,7 +1529,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.design_menu_item_action_area_stub = global::PowerwallCompanionX.Droid.Resource.Id.design_menu_item_action_area_stub;
 			global::PanCardView.Droid.Resource.Id.design_menu_item_text = global::PowerwallCompanionX.Droid.Resource.Id.design_menu_item_text;
 			global::PanCardView.Droid.Resource.Id.design_navigation_view = global::PowerwallCompanionX.Droid.Resource.Id.design_navigation_view;
+			global::PanCardView.Droid.Resource.Id.dialog_button = global::PowerwallCompanionX.Droid.Resource.Id.dialog_button;
 			global::PanCardView.Droid.Resource.Id.disableHome = global::PowerwallCompanionX.Droid.Resource.Id.disableHome;
+			global::PanCardView.Droid.Resource.Id.dropdown_menu = global::PowerwallCompanionX.Droid.Resource.Id.dropdown_menu;
 			global::PanCardView.Droid.Resource.Id.edit_query = global::PowerwallCompanionX.Droid.Resource.Id.edit_query;
 			global::PanCardView.Droid.Resource.Id.end = global::PowerwallCompanionX.Droid.Resource.Id.end;
 			global::PanCardView.Droid.Resource.Id.end_padder = global::PowerwallCompanionX.Droid.Resource.Id.end_padder;
@@ -1061,16 +1540,23 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.exitUntilCollapsed = global::PowerwallCompanionX.Droid.Resource.Id.exitUntilCollapsed;
 			global::PanCardView.Droid.Resource.Id.expanded_menu = global::PowerwallCompanionX.Droid.Resource.Id.expanded_menu;
 			global::PanCardView.Droid.Resource.Id.expand_activities_button = global::PowerwallCompanionX.Droid.Resource.Id.expand_activities_button;
+			global::PanCardView.Droid.Resource.Id.fade = global::PowerwallCompanionX.Droid.Resource.Id.fade;
 			global::PanCardView.Droid.Resource.Id.fill = global::PowerwallCompanionX.Droid.Resource.Id.fill;
 			global::PanCardView.Droid.Resource.Id.filled = global::PowerwallCompanionX.Droid.Resource.Id.filled;
 			global::PanCardView.Droid.Resource.Id.fill_horizontal = global::PowerwallCompanionX.Droid.Resource.Id.fill_horizontal;
 			global::PanCardView.Droid.Resource.Id.fill_vertical = global::PowerwallCompanionX.Droid.Resource.Id.fill_vertical;
+			global::PanCardView.Droid.Resource.Id.fitToContents = global::PowerwallCompanionX.Droid.Resource.Id.fitToContents;
 			global::PanCardView.Droid.Resource.Id.@fixed = global::PowerwallCompanionX.Droid.Resource.Id.@fixed;
+			global::PanCardView.Droid.Resource.Id.floating = global::PowerwallCompanionX.Droid.Resource.Id.floating;
 			global::PanCardView.Droid.Resource.Id.flyoutcontent_appbar = global::PowerwallCompanionX.Droid.Resource.Id.flyoutcontent_appbar;
 			global::PanCardView.Droid.Resource.Id.forever = global::PowerwallCompanionX.Droid.Resource.Id.forever;
+			global::PanCardView.Droid.Resource.Id.fragment_container_view_tag = global::PowerwallCompanionX.Droid.Resource.Id.fragment_container_view_tag;
 			global::PanCardView.Droid.Resource.Id.FUNCTION = global::PowerwallCompanionX.Droid.Resource.Id.FUNCTION;
 			global::PanCardView.Droid.Resource.Id.ghost_view = global::PowerwallCompanionX.Droid.Resource.Id.ghost_view;
+			global::PanCardView.Droid.Resource.Id.ghost_view_holder = global::PowerwallCompanionX.Droid.Resource.Id.ghost_view_holder;
+			global::PanCardView.Droid.Resource.Id.gone = global::PowerwallCompanionX.Droid.Resource.Id.gone;
 			global::PanCardView.Droid.Resource.Id.group_divider = global::PowerwallCompanionX.Droid.Resource.Id.group_divider;
+			global::PanCardView.Droid.Resource.Id.hideable = global::PowerwallCompanionX.Droid.Resource.Id.hideable;
 			global::PanCardView.Droid.Resource.Id.home = global::PowerwallCompanionX.Droid.Resource.Id.home;
 			global::PanCardView.Droid.Resource.Id.homeAsUp = global::PowerwallCompanionX.Droid.Resource.Id.homeAsUp;
 			global::PanCardView.Droid.Resource.Id.icon = global::PowerwallCompanionX.Droid.Resource.Id.icon;
@@ -1081,7 +1567,6 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.italic = global::PowerwallCompanionX.Droid.Resource.Id.italic;
 			global::PanCardView.Droid.Resource.Id.item_touch_helper_previous_elevation = global::PowerwallCompanionX.Droid.Resource.Id.item_touch_helper_previous_elevation;
 			global::PanCardView.Droid.Resource.Id.labeled = global::PowerwallCompanionX.Droid.Resource.Id.labeled;
-			global::PanCardView.Droid.Resource.Id.largeLabel = global::PowerwallCompanionX.Droid.Resource.Id.largeLabel;
 			global::PanCardView.Droid.Resource.Id.left = global::PowerwallCompanionX.Droid.Resource.Id.left;
 			global::PanCardView.Droid.Resource.Id.line1 = global::PowerwallCompanionX.Droid.Resource.Id.line1;
 			global::PanCardView.Droid.Resource.Id.line3 = global::PowerwallCompanionX.Droid.Resource.Id.line3;
@@ -1093,24 +1578,55 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.main_viewpager = global::PowerwallCompanionX.Droid.Resource.Id.main_viewpager;
 			global::PanCardView.Droid.Resource.Id.masked = global::PowerwallCompanionX.Droid.Resource.Id.masked;
 			global::PanCardView.Droid.Resource.Id.media_actions = global::PowerwallCompanionX.Droid.Resource.Id.media_actions;
+			global::PanCardView.Droid.Resource.Id.media_controller_compat_view_tag = global::PowerwallCompanionX.Droid.Resource.Id.media_controller_compat_view_tag;
 			global::PanCardView.Droid.Resource.Id.message = global::PowerwallCompanionX.Droid.Resource.Id.message;
 			global::PanCardView.Droid.Resource.Id.META = global::PowerwallCompanionX.Droid.Resource.Id.META;
 			global::PanCardView.Droid.Resource.Id.middle = global::PowerwallCompanionX.Droid.Resource.Id.middle;
 			global::PanCardView.Droid.Resource.Id.mini = global::PowerwallCompanionX.Droid.Resource.Id.mini;
+			global::PanCardView.Droid.Resource.Id.month_grid = global::PowerwallCompanionX.Droid.Resource.Id.month_grid;
+			global::PanCardView.Droid.Resource.Id.month_navigation_bar = global::PowerwallCompanionX.Droid.Resource.Id.month_navigation_bar;
+			global::PanCardView.Droid.Resource.Id.month_navigation_fragment_toggle = global::PowerwallCompanionX.Droid.Resource.Id.month_navigation_fragment_toggle;
+			global::PanCardView.Droid.Resource.Id.month_navigation_next = global::PowerwallCompanionX.Droid.Resource.Id.month_navigation_next;
+			global::PanCardView.Droid.Resource.Id.month_navigation_previous = global::PowerwallCompanionX.Droid.Resource.Id.month_navigation_previous;
+			global::PanCardView.Droid.Resource.Id.month_title = global::PowerwallCompanionX.Droid.Resource.Id.month_title;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_days_of_week = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_days_of_week;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_day_selector_frame = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_frame = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_frame;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_main_pane = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_main_pane;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_months = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_months;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_selection_frame = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_selection_frame;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_text_input_frame = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_text_input_frame;
+			global::PanCardView.Droid.Resource.Id.mtrl_calendar_year_selector_frame = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::PanCardView.Droid.Resource.Id.mtrl_card_checked_layer_id = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_card_checked_layer_id;
 			global::PanCardView.Droid.Resource.Id.mtrl_child_content_container = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_child_content_container;
 			global::PanCardView.Droid.Resource.Id.mtrl_internal_children_alpha_tag = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::PanCardView.Droid.Resource.Id.mtrl_motion_snapshot_view = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_motion_snapshot_view;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_fullscreen = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_fullscreen;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_header = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_header;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_header_selection_text = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_header_selection_text;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_header_title_and_selection = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_header_toggle = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_header_toggle;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_text_input_date = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_text_input_date;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_text_input_range_end = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_text_input_range_end;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_text_input_range_start = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_text_input_range_start;
+			global::PanCardView.Droid.Resource.Id.mtrl_picker_title_text = global::PowerwallCompanionX.Droid.Resource.Id.mtrl_picker_title_text;
 			global::PanCardView.Droid.Resource.Id.multiply = global::PowerwallCompanionX.Droid.Resource.Id.multiply;
 			global::PanCardView.Droid.Resource.Id.navigation_header_container = global::PowerwallCompanionX.Droid.Resource.Id.navigation_header_container;
 			global::PanCardView.Droid.Resource.Id.never = global::PowerwallCompanionX.Droid.Resource.Id.never;
 			global::PanCardView.Droid.Resource.Id.none = global::PowerwallCompanionX.Droid.Resource.Id.none;
 			global::PanCardView.Droid.Resource.Id.normal = global::PowerwallCompanionX.Droid.Resource.Id.normal;
+			global::PanCardView.Droid.Resource.Id.noScroll = global::PowerwallCompanionX.Droid.Resource.Id.noScroll;
 			global::PanCardView.Droid.Resource.Id.notification_background = global::PowerwallCompanionX.Droid.Resource.Id.notification_background;
 			global::PanCardView.Droid.Resource.Id.notification_main_column = global::PowerwallCompanionX.Droid.Resource.Id.notification_main_column;
 			global::PanCardView.Droid.Resource.Id.notification_main_column_container = global::PowerwallCompanionX.Droid.Resource.Id.notification_main_column_container;
+			global::PanCardView.Droid.Resource.Id.off = global::PowerwallCompanionX.Droid.Resource.Id.off;
+			global::PanCardView.Droid.Resource.Id.on = global::PowerwallCompanionX.Droid.Resource.Id.on;
 			global::PanCardView.Droid.Resource.Id.outline = global::PowerwallCompanionX.Droid.Resource.Id.outline;
 			global::PanCardView.Droid.Resource.Id.parallax = global::PowerwallCompanionX.Droid.Resource.Id.parallax;
 			global::PanCardView.Droid.Resource.Id.parentPanel = global::PowerwallCompanionX.Droid.Resource.Id.parentPanel;
 			global::PanCardView.Droid.Resource.Id.parent_matrix = global::PowerwallCompanionX.Droid.Resource.Id.parent_matrix;
+			global::PanCardView.Droid.Resource.Id.password_toggle = global::PowerwallCompanionX.Droid.Resource.Id.password_toggle;
+			global::PanCardView.Droid.Resource.Id.peekHeight = global::PowerwallCompanionX.Droid.Resource.Id.peekHeight;
 			global::PanCardView.Droid.Resource.Id.pin = global::PowerwallCompanionX.Droid.Resource.Id.pin;
 			global::PanCardView.Droid.Resource.Id.progress_circular = global::PowerwallCompanionX.Droid.Resource.Id.progress_circular;
 			global::PanCardView.Droid.Resource.Id.progress_horizontal = global::PowerwallCompanionX.Droid.Resource.Id.progress_horizontal;
@@ -1118,7 +1634,11 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.right = global::PowerwallCompanionX.Droid.Resource.Id.right;
 			global::PanCardView.Droid.Resource.Id.right_icon = global::PowerwallCompanionX.Droid.Resource.Id.right_icon;
 			global::PanCardView.Droid.Resource.Id.right_side = global::PowerwallCompanionX.Droid.Resource.Id.right_side;
+			global::PanCardView.Droid.Resource.Id.rounded = global::PowerwallCompanionX.Droid.Resource.Id.rounded;
+			global::PanCardView.Droid.Resource.Id.row_index_key = global::PowerwallCompanionX.Droid.Resource.Id.row_index_key;
 			global::PanCardView.Droid.Resource.Id.save_non_transition_alpha = global::PowerwallCompanionX.Droid.Resource.Id.save_non_transition_alpha;
+			global::PanCardView.Droid.Resource.Id.save_overlay_view = global::PowerwallCompanionX.Droid.Resource.Id.save_overlay_view;
+			global::PanCardView.Droid.Resource.Id.scale = global::PowerwallCompanionX.Droid.Resource.Id.scale;
 			global::PanCardView.Droid.Resource.Id.screen = global::PowerwallCompanionX.Droid.Resource.Id.screen;
 			global::PanCardView.Droid.Resource.Id.scroll = global::PowerwallCompanionX.Droid.Resource.Id.scroll;
 			global::PanCardView.Droid.Resource.Id.scrollable = global::PowerwallCompanionX.Droid.Resource.Id.scrollable;
@@ -1144,7 +1664,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.showCustom = global::PowerwallCompanionX.Droid.Resource.Id.showCustom;
 			global::PanCardView.Droid.Resource.Id.showHome = global::PowerwallCompanionX.Droid.Resource.Id.showHome;
 			global::PanCardView.Droid.Resource.Id.showTitle = global::PowerwallCompanionX.Droid.Resource.Id.showTitle;
-			global::PanCardView.Droid.Resource.Id.smallLabel = global::PowerwallCompanionX.Droid.Resource.Id.smallLabel;
+			global::PanCardView.Droid.Resource.Id.skipCollapsed = global::PowerwallCompanionX.Droid.Resource.Id.skipCollapsed;
+			global::PanCardView.Droid.Resource.Id.slide = global::PowerwallCompanionX.Droid.Resource.Id.slide;
+			global::PanCardView.Droid.Resource.Id.sliding_tabs = global::PowerwallCompanionX.Droid.Resource.Id.sliding_tabs;
 			global::PanCardView.Droid.Resource.Id.snackbar_action = global::PowerwallCompanionX.Droid.Resource.Id.snackbar_action;
 			global::PanCardView.Droid.Resource.Id.snackbar_text = global::PowerwallCompanionX.Droid.Resource.Id.snackbar_text;
 			global::PanCardView.Droid.Resource.Id.snap = global::PowerwallCompanionX.Droid.Resource.Id.snap;
@@ -1161,37 +1683,61 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Id.submit_area = global::PowerwallCompanionX.Droid.Resource.Id.submit_area;
 			global::PanCardView.Droid.Resource.Id.SYM = global::PowerwallCompanionX.Droid.Resource.Id.SYM;
 			global::PanCardView.Droid.Resource.Id.tabMode = global::PowerwallCompanionX.Droid.Resource.Id.tabMode;
+			global::PanCardView.Droid.Resource.Id.tag_accessibility_actions = global::PowerwallCompanionX.Droid.Resource.Id.tag_accessibility_actions;
+			global::PanCardView.Droid.Resource.Id.tag_accessibility_clickable_spans = global::PowerwallCompanionX.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::PanCardView.Droid.Resource.Id.tag_accessibility_heading = global::PowerwallCompanionX.Droid.Resource.Id.tag_accessibility_heading;
+			global::PanCardView.Droid.Resource.Id.tag_accessibility_pane_title = global::PowerwallCompanionX.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::PanCardView.Droid.Resource.Id.tag_screen_reader_focusable = global::PowerwallCompanionX.Droid.Resource.Id.tag_screen_reader_focusable;
 			global::PanCardView.Droid.Resource.Id.tag_transition_group = global::PowerwallCompanionX.Droid.Resource.Id.tag_transition_group;
 			global::PanCardView.Droid.Resource.Id.tag_unhandled_key_event_manager = global::PowerwallCompanionX.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::PanCardView.Droid.Resource.Id.tag_unhandled_key_listeners = global::PowerwallCompanionX.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::PanCardView.Droid.Resource.Id.test_checkbox_android_button_tint = global::PowerwallCompanionX.Droid.Resource.Id.test_checkbox_android_button_tint;
+			global::PanCardView.Droid.Resource.Id.test_checkbox_app_button_tint = global::PowerwallCompanionX.Droid.Resource.Id.test_checkbox_app_button_tint;
+			global::PanCardView.Droid.Resource.Id.test_radiobutton_android_button_tint = global::PowerwallCompanionX.Droid.Resource.Id.test_radiobutton_android_button_tint;
+			global::PanCardView.Droid.Resource.Id.test_radiobutton_app_button_tint = global::PowerwallCompanionX.Droid.Resource.Id.test_radiobutton_app_button_tint;
 			global::PanCardView.Droid.Resource.Id.text = global::PowerwallCompanionX.Droid.Resource.Id.text;
 			global::PanCardView.Droid.Resource.Id.text2 = global::PowerwallCompanionX.Droid.Resource.Id.text2;
+			global::PanCardView.Droid.Resource.Id.textEnd = global::PowerwallCompanionX.Droid.Resource.Id.textEnd;
 			global::PanCardView.Droid.Resource.Id.textinput_counter = global::PowerwallCompanionX.Droid.Resource.Id.textinput_counter;
 			global::PanCardView.Droid.Resource.Id.textinput_error = global::PowerwallCompanionX.Droid.Resource.Id.textinput_error;
 			global::PanCardView.Droid.Resource.Id.textinput_helper_text = global::PowerwallCompanionX.Droid.Resource.Id.textinput_helper_text;
+			global::PanCardView.Droid.Resource.Id.textinput_placeholder = global::PowerwallCompanionX.Droid.Resource.Id.textinput_placeholder;
+			global::PanCardView.Droid.Resource.Id.textinput_prefix_text = global::PowerwallCompanionX.Droid.Resource.Id.textinput_prefix_text;
+			global::PanCardView.Droid.Resource.Id.textinput_suffix_text = global::PowerwallCompanionX.Droid.Resource.Id.textinput_suffix_text;
 			global::PanCardView.Droid.Resource.Id.textSpacerNoButtons = global::PowerwallCompanionX.Droid.Resource.Id.textSpacerNoButtons;
 			global::PanCardView.Droid.Resource.Id.textSpacerNoTitle = global::PowerwallCompanionX.Droid.Resource.Id.textSpacerNoTitle;
 			global::PanCardView.Droid.Resource.Id.textStart = global::PowerwallCompanionX.Droid.Resource.Id.textStart;
+			global::PanCardView.Droid.Resource.Id.text_input_end_icon = global::PowerwallCompanionX.Droid.Resource.Id.text_input_end_icon;
+			global::PanCardView.Droid.Resource.Id.text_input_start_icon = global::PowerwallCompanionX.Droid.Resource.Id.text_input_start_icon;
 			global::PanCardView.Droid.Resource.Id.time = global::PowerwallCompanionX.Droid.Resource.Id.time;
 			global::PanCardView.Droid.Resource.Id.title = global::PowerwallCompanionX.Droid.Resource.Id.title;
 			global::PanCardView.Droid.Resource.Id.titleDividerNoCustom = global::PowerwallCompanionX.Droid.Resource.Id.titleDividerNoCustom;
 			global::PanCardView.Droid.Resource.Id.title_template = global::PowerwallCompanionX.Droid.Resource.Id.title_template;
+			global::PanCardView.Droid.Resource.Id.toolbar = global::PowerwallCompanionX.Droid.Resource.Id.toolbar;
 			global::PanCardView.Droid.Resource.Id.top = global::PowerwallCompanionX.Droid.Resource.Id.top;
 			global::PanCardView.Droid.Resource.Id.topPanel = global::PowerwallCompanionX.Droid.Resource.Id.topPanel;
+			global::PanCardView.Droid.Resource.Id.TOP_END = global::PowerwallCompanionX.Droid.Resource.Id.TOP_END;
+			global::PanCardView.Droid.Resource.Id.TOP_START = global::PowerwallCompanionX.Droid.Resource.Id.TOP_START;
 			global::PanCardView.Droid.Resource.Id.touch_outside = global::PowerwallCompanionX.Droid.Resource.Id.touch_outside;
 			global::PanCardView.Droid.Resource.Id.transition_current_scene = global::PowerwallCompanionX.Droid.Resource.Id.transition_current_scene;
 			global::PanCardView.Droid.Resource.Id.transition_layout_save = global::PowerwallCompanionX.Droid.Resource.Id.transition_layout_save;
 			global::PanCardView.Droid.Resource.Id.transition_position = global::PowerwallCompanionX.Droid.Resource.Id.transition_position;
 			global::PanCardView.Droid.Resource.Id.transition_scene_layoutid_cache = global::PowerwallCompanionX.Droid.Resource.Id.transition_scene_layoutid_cache;
 			global::PanCardView.Droid.Resource.Id.transition_transform = global::PowerwallCompanionX.Droid.Resource.Id.transition_transform;
+			global::PanCardView.Droid.Resource.Id.triangle = global::PowerwallCompanionX.Droid.Resource.Id.triangle;
+			global::PanCardView.Droid.Resource.Id.@unchecked = global::PowerwallCompanionX.Droid.Resource.Id.@unchecked;
 			global::PanCardView.Droid.Resource.Id.uniform = global::PowerwallCompanionX.Droid.Resource.Id.uniform;
 			global::PanCardView.Droid.Resource.Id.unlabeled = global::PowerwallCompanionX.Droid.Resource.Id.unlabeled;
 			global::PanCardView.Droid.Resource.Id.up = global::PowerwallCompanionX.Droid.Resource.Id.up;
 			global::PanCardView.Droid.Resource.Id.useLogo = global::PowerwallCompanionX.Droid.Resource.Id.useLogo;
 			global::PanCardView.Droid.Resource.Id.view_offset_helper = global::PowerwallCompanionX.Droid.Resource.Id.view_offset_helper;
+			global::PanCardView.Droid.Resource.Id.view_tree_saved_state_registry_owner = global::PowerwallCompanionX.Droid.Resource.Id.view_tree_saved_state_registry_owner;
 			global::PanCardView.Droid.Resource.Id.visible = global::PowerwallCompanionX.Droid.Resource.Id.visible;
+			global::PanCardView.Droid.Resource.Id.visible_removing_fragment_view_tag = global::PowerwallCompanionX.Droid.Resource.Id.visible_removing_fragment_view_tag;
+			global::PanCardView.Droid.Resource.Id.withinBounds = global::PowerwallCompanionX.Droid.Resource.Id.withinBounds;
 			global::PanCardView.Droid.Resource.Id.withText = global::PowerwallCompanionX.Droid.Resource.Id.withText;
 			global::PanCardView.Droid.Resource.Id.wrap_content = global::PowerwallCompanionX.Droid.Resource.Id.wrap_content;
+			global::PanCardView.Droid.Resource.Id.zero_corner_chip = global::PowerwallCompanionX.Droid.Resource.Id.zero_corner_chip;
 			global::PanCardView.Droid.Resource.Integer.abc_config_activityDefaultDur = global::PowerwallCompanionX.Droid.Resource.Integer.abc_config_activityDefaultDur;
 			global::PanCardView.Droid.Resource.Integer.abc_config_activityShortDur = global::PowerwallCompanionX.Droid.Resource.Integer.abc_config_activityShortDur;
 			global::PanCardView.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::PowerwallCompanionX.Droid.Resource.Integer.app_bar_elevation_anim_duration;
@@ -1201,12 +1747,25 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Integer.design_snackbar_text_max_lines = global::PowerwallCompanionX.Droid.Resource.Integer.design_snackbar_text_max_lines;
 			global::PanCardView.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms = global::PowerwallCompanionX.Droid.Resource.Integer.design_tab_indicator_anim_duration_ms;
 			global::PanCardView.Droid.Resource.Integer.hide_password_duration = global::PowerwallCompanionX.Droid.Resource.Integer.hide_password_duration;
+			global::PanCardView.Droid.Resource.Integer.mtrl_badge_max_character_count = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_badge_max_character_count;
 			global::PanCardView.Droid.Resource.Integer.mtrl_btn_anim_delay_ms = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_btn_anim_delay_ms;
 			global::PanCardView.Droid.Resource.Integer.mtrl_btn_anim_duration_ms = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::PanCardView.Droid.Resource.Integer.mtrl_calendar_header_orientation = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_calendar_header_orientation;
+			global::PanCardView.Droid.Resource.Integer.mtrl_calendar_selection_text_lines = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::PanCardView.Droid.Resource.Integer.mtrl_calendar_year_selector_span = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::PanCardView.Droid.Resource.Integer.mtrl_card_anim_delay_ms = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::PanCardView.Droid.Resource.Integer.mtrl_card_anim_duration_ms = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_card_anim_duration_ms;
 			global::PanCardView.Droid.Resource.Integer.mtrl_chip_anim_duration = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_chip_anim_duration;
 			global::PanCardView.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::PowerwallCompanionX.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::PanCardView.Droid.Resource.Integer.show_password_duration = global::PowerwallCompanionX.Droid.Resource.Integer.show_password_duration;
 			global::PanCardView.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::PowerwallCompanionX.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::PanCardView.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::PanCardView.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::PanCardView.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::PanCardView.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::PanCardView.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::PanCardView.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::PowerwallCompanionX.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::PanCardView.Droid.Resource.Interpolator.fast_out_slow_in = global::PowerwallCompanionX.Droid.Resource.Interpolator.fast_out_slow_in;
 			global::PanCardView.Droid.Resource.Interpolator.mtrl_fast_out_linear_in = global::PowerwallCompanionX.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
 			global::PanCardView.Droid.Resource.Interpolator.mtrl_fast_out_slow_in = global::PowerwallCompanionX.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
 			global::PanCardView.Droid.Resource.Interpolator.mtrl_linear = global::PowerwallCompanionX.Droid.Resource.Interpolator.mtrl_linear;
@@ -1242,6 +1801,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Layout.BottomTabLayout = global::PowerwallCompanionX.Droid.Resource.Layout.BottomTabLayout;
 			global::PanCardView.Droid.Resource.Layout.browser_actions_context_menu_page = global::PowerwallCompanionX.Droid.Resource.Layout.browser_actions_context_menu_page;
 			global::PanCardView.Droid.Resource.Layout.browser_actions_context_menu_row = global::PowerwallCompanionX.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::PanCardView.Droid.Resource.Layout.custom_dialog = global::PowerwallCompanionX.Droid.Resource.Layout.custom_dialog;
 			global::PanCardView.Droid.Resource.Layout.design_bottom_navigation_item = global::PowerwallCompanionX.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::PanCardView.Droid.Resource.Layout.design_bottom_sheet_dialog = global::PowerwallCompanionX.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::PanCardView.Droid.Resource.Layout.design_layout_snackbar = global::PowerwallCompanionX.Droid.Resource.Layout.design_layout_snackbar;
@@ -1255,9 +1815,39 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Layout.design_navigation_item_subheader = global::PowerwallCompanionX.Droid.Resource.Layout.design_navigation_item_subheader;
 			global::PanCardView.Droid.Resource.Layout.design_navigation_menu = global::PowerwallCompanionX.Droid.Resource.Layout.design_navigation_menu;
 			global::PanCardView.Droid.Resource.Layout.design_navigation_menu_item = global::PowerwallCompanionX.Droid.Resource.Layout.design_navigation_menu_item;
+			global::PanCardView.Droid.Resource.Layout.design_text_input_end_icon = global::PowerwallCompanionX.Droid.Resource.Layout.design_text_input_end_icon;
+			global::PanCardView.Droid.Resource.Layout.design_text_input_start_icon = global::PowerwallCompanionX.Droid.Resource.Layout.design_text_input_start_icon;
+			global::PanCardView.Droid.Resource.Layout.FallbackTabbarDoNotUse = global::PowerwallCompanionX.Droid.Resource.Layout.FallbackTabbarDoNotUse;
+			global::PanCardView.Droid.Resource.Layout.FallbackToolbarDoNotUse = global::PowerwallCompanionX.Droid.Resource.Layout.FallbackToolbarDoNotUse;
 			global::PanCardView.Droid.Resource.Layout.FlyoutContent = global::PowerwallCompanionX.Droid.Resource.Layout.FlyoutContent;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_dialog = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_dialog;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_dialog_actions = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_dialog_actions;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_dialog_title = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_dialog_title;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_select_dialog_item = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::PanCardView.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_day = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_day;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_days_of_week = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_days_of_week;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_day_of_week = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_day_of_week;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_horizontal = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_horizontal;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_month = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_month;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_months = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_months;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_month_labeled = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_month_labeled;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_month_navigation = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_month_navigation;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_vertical = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_vertical;
+			global::PanCardView.Droid.Resource.Layout.mtrl_calendar_year = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_calendar_year;
 			global::PanCardView.Droid.Resource.Layout.mtrl_layout_snackbar = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_layout_snackbar;
 			global::PanCardView.Droid.Resource.Layout.mtrl_layout_snackbar_include = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_layout_snackbar_include;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_actions = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_actions;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_dialog = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_dialog;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_fullscreen = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_fullscreen;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_header_dialog = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_header_dialog;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_header_fullscreen = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_header_selection_text = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_header_selection_text;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_header_title_text = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_header_title_text;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_header_toggle = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_header_toggle;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_text_input_date = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_text_input_date;
+			global::PanCardView.Droid.Resource.Layout.mtrl_picker_text_input_date_range = global::PowerwallCompanionX.Droid.Resource.Layout.mtrl_picker_text_input_date_range;
 			global::PanCardView.Droid.Resource.Layout.notification_action = global::PowerwallCompanionX.Droid.Resource.Layout.notification_action;
 			global::PanCardView.Droid.Resource.Layout.notification_action_tombstone = global::PowerwallCompanionX.Droid.Resource.Layout.notification_action_tombstone;
 			global::PanCardView.Droid.Resource.Layout.notification_media_action = global::PowerwallCompanionX.Droid.Resource.Layout.notification_media_action;
@@ -1279,6 +1869,23 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Layout.select_dialog_singlechoice_material = global::PowerwallCompanionX.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::PanCardView.Droid.Resource.Layout.ShellContent = global::PowerwallCompanionX.Droid.Resource.Layout.ShellContent;
 			global::PanCardView.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::PowerwallCompanionX.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::PanCardView.Droid.Resource.Layout.Tabbar = global::PowerwallCompanionX.Droid.Resource.Layout.Tabbar;
+			global::PanCardView.Droid.Resource.Layout.test_action_chip = global::PowerwallCompanionX.Droid.Resource.Layout.test_action_chip;
+			global::PanCardView.Droid.Resource.Layout.test_chip_zero_corner_radius = global::PowerwallCompanionX.Droid.Resource.Layout.test_chip_zero_corner_radius;
+			global::PanCardView.Droid.Resource.Layout.test_design_checkbox = global::PowerwallCompanionX.Droid.Resource.Layout.test_design_checkbox;
+			global::PanCardView.Droid.Resource.Layout.test_design_radiobutton = global::PowerwallCompanionX.Droid.Resource.Layout.test_design_radiobutton;
+			global::PanCardView.Droid.Resource.Layout.test_reflow_chipgroup = global::PowerwallCompanionX.Droid.Resource.Layout.test_reflow_chipgroup;
+			global::PanCardView.Droid.Resource.Layout.test_toolbar = global::PowerwallCompanionX.Droid.Resource.Layout.test_toolbar;
+			global::PanCardView.Droid.Resource.Layout.test_toolbar_custom_background = global::PowerwallCompanionX.Droid.Resource.Layout.test_toolbar_custom_background;
+			global::PanCardView.Droid.Resource.Layout.test_toolbar_elevation = global::PowerwallCompanionX.Droid.Resource.Layout.test_toolbar_elevation;
+			global::PanCardView.Droid.Resource.Layout.test_toolbar_surface = global::PowerwallCompanionX.Droid.Resource.Layout.test_toolbar_surface;
+			global::PanCardView.Droid.Resource.Layout.text_view_without_line_height = global::PowerwallCompanionX.Droid.Resource.Layout.text_view_without_line_height;
+			global::PanCardView.Droid.Resource.Layout.text_view_with_line_height_from_appearance = global::PowerwallCompanionX.Droid.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::PanCardView.Droid.Resource.Layout.text_view_with_line_height_from_layout = global::PowerwallCompanionX.Droid.Resource.Layout.text_view_with_line_height_from_layout;
+			global::PanCardView.Droid.Resource.Layout.text_view_with_line_height_from_style = global::PowerwallCompanionX.Droid.Resource.Layout.text_view_with_line_height_from_style;
+			global::PanCardView.Droid.Resource.Layout.text_view_with_theme_line_height = global::PowerwallCompanionX.Droid.Resource.Layout.text_view_with_theme_line_height;
+			global::PanCardView.Droid.Resource.Layout.Toolbar = global::PowerwallCompanionX.Droid.Resource.Layout.Toolbar;
+			global::PanCardView.Droid.Resource.Plurals.mtrl_badge_content_description = global::PowerwallCompanionX.Droid.Resource.Plurals.mtrl_badge_content_description;
 			global::PanCardView.Droid.Resource.String.abc_action_bar_home_description = global::PowerwallCompanionX.Droid.Resource.String.abc_action_bar_home_description;
 			global::PanCardView.Droid.Resource.String.abc_action_bar_up_description = global::PowerwallCompanionX.Droid.Resource.String.abc_action_bar_up_description;
 			global::PanCardView.Droid.Resource.String.abc_action_menu_overflow_description = global::PowerwallCompanionX.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -1307,14 +1914,63 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::PowerwallCompanionX.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::PanCardView.Droid.Resource.String.abc_toolbar_collapse_description = global::PowerwallCompanionX.Droid.Resource.String.abc_toolbar_collapse_description;
 			global::PanCardView.Droid.Resource.String.appbar_scrolling_view_behavior = global::PowerwallCompanionX.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::PanCardView.Droid.Resource.String.app_name = global::PowerwallCompanionX.Droid.Resource.String.app_name;
 			global::PanCardView.Droid.Resource.String.bottom_sheet_behavior = global::PowerwallCompanionX.Droid.Resource.String.bottom_sheet_behavior;
 			global::PanCardView.Droid.Resource.String.character_counter_content_description = global::PowerwallCompanionX.Droid.Resource.String.character_counter_content_description;
+			global::PanCardView.Droid.Resource.String.character_counter_overflowed_content_description = global::PowerwallCompanionX.Droid.Resource.String.character_counter_overflowed_content_description;
 			global::PanCardView.Droid.Resource.String.character_counter_pattern = global::PowerwallCompanionX.Droid.Resource.String.character_counter_pattern;
+			global::PanCardView.Droid.Resource.String.chip_text = global::PowerwallCompanionX.Droid.Resource.String.chip_text;
+			global::PanCardView.Droid.Resource.String.clear_text_end_icon_content_description = global::PowerwallCompanionX.Droid.Resource.String.clear_text_end_icon_content_description;
+			global::PanCardView.Droid.Resource.String.copy_toast_msg = global::PowerwallCompanionX.Droid.Resource.String.copy_toast_msg;
+			global::PanCardView.Droid.Resource.String.error_icon_content_description = global::PowerwallCompanionX.Droid.Resource.String.error_icon_content_description;
+			global::PanCardView.Droid.Resource.String.exposed_dropdown_menu_content_description = global::PowerwallCompanionX.Droid.Resource.String.exposed_dropdown_menu_content_description;
 			global::PanCardView.Droid.Resource.String.fab_transformation_scrim_behavior = global::PowerwallCompanionX.Droid.Resource.String.fab_transformation_scrim_behavior;
 			global::PanCardView.Droid.Resource.String.fab_transformation_sheet_behavior = global::PowerwallCompanionX.Droid.Resource.String.fab_transformation_sheet_behavior;
+			global::PanCardView.Droid.Resource.String.fallback_menu_item_copy_link = global::PowerwallCompanionX.Droid.Resource.String.fallback_menu_item_copy_link;
+			global::PanCardView.Droid.Resource.String.fallback_menu_item_open_in_browser = global::PowerwallCompanionX.Droid.Resource.String.fallback_menu_item_open_in_browser;
+			global::PanCardView.Droid.Resource.String.fallback_menu_item_share_link = global::PowerwallCompanionX.Droid.Resource.String.fallback_menu_item_share_link;
+			global::PanCardView.Droid.Resource.String.hello = global::PowerwallCompanionX.Droid.Resource.String.hello;
 			global::PanCardView.Droid.Resource.String.hide_bottom_view_on_scroll_behavior = global::PowerwallCompanionX.Droid.Resource.String.hide_bottom_view_on_scroll_behavior;
-			global::PanCardView.Droid.Resource.String.library_name = global::PowerwallCompanionX.Droid.Resource.String.library_name;
+			global::PanCardView.Droid.Resource.String.icon_content_description = global::PowerwallCompanionX.Droid.Resource.String.icon_content_description;
+			global::PanCardView.Droid.Resource.String.item_view_role_description = global::PowerwallCompanionX.Droid.Resource.String.item_view_role_description;
+			global::PanCardView.Droid.Resource.String.material_slider_range_end = global::PowerwallCompanionX.Droid.Resource.String.material_slider_range_end;
+			global::PanCardView.Droid.Resource.String.material_slider_range_start = global::PowerwallCompanionX.Droid.Resource.String.material_slider_range_start;
+			global::PanCardView.Droid.Resource.String.mtrl_badge_numberless_content_description = global::PowerwallCompanionX.Droid.Resource.String.mtrl_badge_numberless_content_description;
 			global::PanCardView.Droid.Resource.String.mtrl_chip_close_icon_content_description = global::PowerwallCompanionX.Droid.Resource.String.mtrl_chip_close_icon_content_description;
+			global::PanCardView.Droid.Resource.String.mtrl_exceed_max_badge_number_content_description = global::PowerwallCompanionX.Droid.Resource.String.mtrl_exceed_max_badge_number_content_description;
+			global::PanCardView.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix = global::PowerwallCompanionX.Droid.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_a11y_next_month = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_a11y_next_month;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_a11y_prev_month = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_a11y_prev_month;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_announce_current_selection = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_announce_current_selection;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_cancel = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_cancel;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_confirm = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_confirm;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_date_header_selected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_date_header_selected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_date_header_title = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_date_header_title;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_date_header_unselected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_date_header_unselected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_day_of_week_column_header = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_invalid_format = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_invalid_format;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_invalid_format_example = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_invalid_format_example;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_invalid_format_use = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_invalid_format_use;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_invalid_range = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_invalid_range;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_navigate_to_year_description = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_out_of_range = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_out_of_range;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_range_header_only_end_selected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_range_header_only_start_selected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_range_header_selected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_range_header_selected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_range_header_title = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_range_header_title;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_range_header_unselected = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_range_header_unselected;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_save = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_save;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_date_hint = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_date_hint;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_day_abbr = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_month_abbr = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_text_input_year_abbr = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_toggle_to_day_selection = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::PanCardView.Droid.Resource.String.mtrl_picker_toggle_to_year_selection = global::PowerwallCompanionX.Droid.Resource.String.mtrl_picker_toggle_to_year_selection;
+			global::PanCardView.Droid.Resource.String.overflow_tab_title = global::PowerwallCompanionX.Droid.Resource.String.overflow_tab_title;
 			global::PanCardView.Droid.Resource.String.password_toggle_content_description = global::PowerwallCompanionX.Droid.Resource.String.password_toggle_content_description;
 			global::PanCardView.Droid.Resource.String.path_password_eye = global::PowerwallCompanionX.Droid.Resource.String.path_password_eye;
 			global::PanCardView.Droid.Resource.String.path_password_eye_mask_strike_through = global::PowerwallCompanionX.Droid.Resource.String.path_password_eye_mask_strike_through;
@@ -1324,10 +1980,12 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.String.status_bar_notification_info_overflow = global::PowerwallCompanionX.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::PanCardView.Droid.Resource.Style.AlertDialog_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.AlertDialog_AppCompat;
 			global::PanCardView.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::PanCardView.Droid.Resource.Style.AndroidThemeColorAccentYellow = global::PowerwallCompanionX.Droid.Resource.Style.AndroidThemeColorAccentYellow;
 			global::PanCardView.Droid.Resource.Style.Animation_AppCompat_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Animation_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::PowerwallCompanionX.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::PanCardView.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::PowerwallCompanionX.Droid.Resource.Style.Animation_AppCompat_Tooltip;
 			global::PanCardView.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
 			global::PanCardView.Droid.Resource.Style.AppCompatDialogStyle = global::PowerwallCompanionX.Droid.Resource.Style.AppCompatDialogStyle;
 			global::PanCardView.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_AlertDialog_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
@@ -1337,6 +1995,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_CardView = global::PowerwallCompanionX.Droid.Resource.Style.Base_CardView;
 			global::PanCardView.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::PanCardView.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::PanCardView.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::PowerwallCompanionX.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::PanCardView.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::PowerwallCompanionX.Droid.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -1382,6 +2043,10 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::PowerwallCompanionX.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -1394,6 +2059,9 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
+			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
@@ -1414,6 +2082,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
@@ -1423,22 +2092,30 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
 			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_MaterialComponents;
+			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light;
+			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Base_V21_Theme_MaterialComponents_Light_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_V22_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Base_V23_Theme_AppCompat;
@@ -1510,18 +2187,39 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_TextView = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_Slider = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_Slider;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView = global::PowerwallCompanionX.Droid.Resource.Style.Base_Widget_MaterialComponents_TextView;
 			global::PanCardView.Droid.Resource.Style.CardView = global::PowerwallCompanionX.Droid.Resource.Style.CardView;
 			global::PanCardView.Droid.Resource.Style.CardView_Dark = global::PowerwallCompanionX.Droid.Resource.Style.CardView_Dark;
 			global::PanCardView.Droid.Resource.Style.CardView_Light = global::PowerwallCompanionX.Droid.Resource.Style.CardView_Light;
+			global::PanCardView.Droid.Resource.Style.collectionViewTheme = global::PowerwallCompanionX.Droid.Resource.Style.collectionViewTheme;
+			global::PanCardView.Droid.Resource.Style.EmptyTheme = global::PowerwallCompanionX.Droid.Resource.Style.EmptyTheme;
 			global::PanCardView.Droid.Resource.Style.MainTheme = global::PowerwallCompanionX.Droid.Resource.Style.MainTheme;
 			global::PanCardView.Droid.Resource.Style.MainTheme_Base = global::PowerwallCompanionX.Droid.Resource.Style.MainTheme_Base;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::PanCardView.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::PowerwallCompanionX.Droid.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
 			global::PanCardView.Droid.Resource.Style.Platform_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Platform_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Platform_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Platform_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Platform_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.Platform_MaterialComponents;
@@ -1553,6 +2251,40 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::PowerwallCompanionX.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
 			global::PanCardView.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::PowerwallCompanionX.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
 			global::PanCardView.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::PowerwallCompanionX.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::PanCardView.Droid.Resource.Style.scrollViewScrollBars = global::PowerwallCompanionX.Droid.Resource.Style.scrollViewScrollBars;
+			global::PanCardView.Droid.Resource.Style.scrollViewTheme = global::PowerwallCompanionX.Droid.Resource.Style.scrollViewTheme;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_Cut = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::PanCardView.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip = global::PowerwallCompanionX.Droid.Resource.Style.ShapeAppearance_MaterialComponents_Tooltip;
+			global::PanCardView.Droid.Resource.Style.TestStyleWithLineHeight = global::PowerwallCompanionX.Droid.Resource.Style.TestStyleWithLineHeight;
+			global::PanCardView.Droid.Resource.Style.TestStyleWithLineHeightAppearance = global::PowerwallCompanionX.Droid.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::PanCardView.Droid.Resource.Style.TestStyleWithoutLineHeight = global::PowerwallCompanionX.Droid.Resource.Style.TestStyleWithoutLineHeight;
+			global::PanCardView.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::PowerwallCompanionX.Droid.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::PanCardView.Droid.Resource.Style.TestThemeWithLineHeight = global::PowerwallCompanionX.Droid.Resource.Style.TestThemeWithLineHeight;
+			global::PanCardView.Droid.Resource.Style.TestThemeWithLineHeightDisabled = global::PowerwallCompanionX.Droid.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::PanCardView.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::PowerwallCompanionX.Droid.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::PanCardView.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::PowerwallCompanionX.Droid.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::PanCardView.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::PowerwallCompanionX.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::PanCardView.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::PowerwallCompanionX.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::PanCardView.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::PowerwallCompanionX.Droid.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_AppCompat;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -1617,8 +2349,12 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Error = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Error;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_HelperText = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_HelperText;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Hint = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Placeholder = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Placeholder;
+			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Prefix = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Prefix;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Suffix = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Suffix;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Design_Tab = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Badge;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Body1;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Body2;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Button = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Button;
@@ -1633,28 +2369,57 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Overline;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle1;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2 = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Subtitle2;
+			global::PanCardView.Droid.Resource.Style.TextAppearance_MaterialComponents_Tooltip = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_MaterialComponents_Tooltip;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::PowerwallCompanionX.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlayColorAccentRed = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlayColorAccentRed;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_Design_TextInputEditText;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert_Framework;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Light_Dialog_Alert_Framework;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::PowerwallCompanionX.Droid.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_DayNight;
@@ -1668,6 +2433,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Empty = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Empty;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -1686,11 +2452,33 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -1698,7 +2486,13 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -1772,6 +2566,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_TextView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_TextView;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_Toolbar;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::PowerwallCompanionX.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
@@ -1786,11 +2581,27 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
 			global::PanCardView.Droid.Resource.Style.Widget_Design_Snackbar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Design_Snackbar;
 			global::PanCardView.Droid.Resource.Style.Widget_Design_TabLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::PanCardView.Droid.Resource.Style.Widget_Design_TextInputEditText = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Design_TextInputEditText;
 			global::PanCardView.Droid.Resource.Style.Widget_Design_TextInputLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Badge = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Badge;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_Icon;
@@ -1798,31 +2609,76 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CardView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_CardView;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_CheckedTextView;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_NavigationView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ShapeableImageView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_ShapeableImageView;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Slider = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Slider;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Snackbar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_TextView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Snackbar_TextView;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TabLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TabLayout;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_TextView = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_TextView;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Toolbar = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Tooltip = global::PowerwallCompanionX.Droid.Resource.Style.Widget_MaterialComponents_Tooltip;
 			global::PanCardView.Droid.Resource.Style.Widget_Support_CoordinatorLayout = global::PowerwallCompanionX.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar = global::PowerwallCompanionX.Droid.Resource.Styleable.ActionBar;
 			global::PanCardView.Droid.Resource.Styleable.ActionBarLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.ActionBarLayout;
@@ -1908,6 +2764,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::PowerwallCompanionX.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::PowerwallCompanionX.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::PowerwallCompanionX.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::PowerwallCompanionX.Droid.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_statusBarForeground = global::PowerwallCompanionX.Droid.Resource.Styleable.AppBarLayout_statusBarForeground;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatImageView;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView_android_src = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -1933,11 +2791,21 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableTint = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_lineHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTextView_textLocale = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTextView_textLocale;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
@@ -2011,14 +2879,18 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
@@ -2060,29 +2932,42 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::PowerwallCompanionX.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::PanCardView.Droid.Resource.Styleable.Badge = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge;
+			global::PanCardView.Droid.Resource.Styleable.Badge_backgroundColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_backgroundColor;
+			global::PanCardView.Droid.Resource.Styleable.Badge_badgeGravity = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_badgeGravity;
+			global::PanCardView.Droid.Resource.Styleable.Badge_badgeTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_badgeTextColor;
+			global::PanCardView.Droid.Resource.Styleable.Badge_horizontalOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_horizontalOffset;
+			global::PanCardView.Droid.Resource.Styleable.Badge_maxCharacterCount = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_maxCharacterCount;
+			global::PanCardView.Droid.Resource.Styleable.Badge_number = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_number;
+			global::PanCardView.Droid.Resource.Styleable.Badge_verticalOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.Badge_verticalOffset;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_elevation;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_fabAnimationMode;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_fabCradleMargin;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
 			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_hideOnScroll = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_hideOnScroll;
+			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_paddingBottomSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_paddingLeftSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomAppBar_paddingRightSystemWindowInsets;
 			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_elevation;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
 			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemIconSize = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemIconSize;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
-			global::PanCardView.Droid.Resource.Styleable.BottomNavigationView_menu = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomNavigationView_menu;
 			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_draggable;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
 			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
 			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
 			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
 			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_gestureInsetBottomIgnored;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
 			global::PanCardView.Droid.Resource.Styleable.ButtonBarLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.ButtonBarLayout;
 			global::PanCardView.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::PowerwallCompanionX.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
 			global::PanCardView.Droid.Resource.Styleable.CardView = global::PowerwallCompanionX.Droid.Resource.Styleable.CardView;
@@ -2105,6 +2990,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_chipSpacing;
 			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
 			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_selectionRequired = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_selectionRequired;
 			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleLine = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_singleLine;
 			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleSelection = global::PowerwallCompanionX.Droid.Resource.Styleable.ChipGroup_singleSelection;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_checkable = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_android_checkable;
@@ -2112,8 +2998,10 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_maxWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_android_maxWidth;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_text = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_android_text;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_textAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_android_textAppearance;
+			global::PanCardView.Droid.Resource.Styleable.Chip_android_textColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_android_textColor;
 			global::PanCardView.Droid.Resource.Styleable.Chip_checkedIcon = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_checkedIcon;
 			global::PanCardView.Droid.Resource.Styleable.Chip_checkedIconEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_checkedIconEnabled;
+			global::PanCardView.Droid.Resource.Styleable.Chip_checkedIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_checkedIconTint;
 			global::PanCardView.Droid.Resource.Styleable.Chip_checkedIconVisible = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_checkedIconVisible;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipBackgroundColor;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipCornerRadius = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipCornerRadius;
@@ -2124,9 +3012,11 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipIconTint;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipIconVisible = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipIconVisible;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipMinHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipMinHeight;
+			global::PanCardView.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipMinTouchTargetSize;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipStartPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipStartPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipStrokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipStrokeColor;
 			global::PanCardView.Droid.Resource.Styleable.Chip_chipStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipStrokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.Chip_chipSurfaceColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_chipSurfaceColor;
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIcon = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIcon;
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIconEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIconEnabled;
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIconEndPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIconEndPadding;
@@ -2134,10 +3024,13 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIconStartPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIconStartPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIconTint;
 			global::PanCardView.Droid.Resource.Styleable.Chip_closeIconVisible = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_closeIconVisible;
+			global::PanCardView.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_ensureMinTouchTargetSize;
 			global::PanCardView.Droid.Resource.Styleable.Chip_hideMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_hideMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.Chip_iconEndPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_iconEndPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_iconStartPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_iconStartPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_rippleColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_rippleColor;
+			global::PanCardView.Droid.Resource.Styleable.Chip_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_shapeAppearanceOverlay;
 			global::PanCardView.Droid.Resource.Styleable.Chip_showMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_showMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.Chip_textEndPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_textEndPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_textStartPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.Chip_textStartPadding;
@@ -2155,6 +3048,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_maxLines = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_maxLines;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::PowerwallCompanionX.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
@@ -2167,6 +3061,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.ColorStateListItem_android_color = global::PowerwallCompanionX.Droid.Resource.Styleable.ColorStateListItem_android_color;
 			global::PanCardView.Droid.Resource.Styleable.CompoundButton = global::PowerwallCompanionX.Droid.Resource.Styleable.CompoundButton;
 			global::PanCardView.Droid.Resource.Styleable.CompoundButton_android_button = global::PowerwallCompanionX.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::PanCardView.Droid.Resource.Styleable.CompoundButton_buttonCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.CompoundButton_buttonCompat;
 			global::PanCardView.Droid.Resource.Styleable.CompoundButton_buttonTint = global::PowerwallCompanionX.Droid.Resource.Styleable.CompoundButton_buttonTint;
 			global::PanCardView.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.CoordinatorLayout;
@@ -2189,13 +3084,26 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::PowerwallCompanionX.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::PanCardView.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::PowerwallCompanionX.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::PanCardView.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::PowerwallCompanionX.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::PanCardView.Droid.Resource.Styleable.DrawerLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.DrawerLayout;
+			global::PanCardView.Droid.Resource.Styleable.DrawerLayout_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.DrawerLayout_elevation;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::PanCardView.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_android_enabled = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_android_enabled;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_fabSize;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_hideMotionSpec;
@@ -2203,6 +3111,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_maxImageSize = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_maxImageSize;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
 			global::PanCardView.Droid.Resource.Styleable.FlowLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.FlowLayout;
@@ -2230,6 +3140,13 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::PowerwallCompanionX.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::PowerwallCompanionX.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::PowerwallCompanionX.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::PanCardView.Droid.Resource.Styleable.Fragment = global::PowerwallCompanionX.Droid.Resource.Styleable.Fragment;
+			global::PanCardView.Droid.Resource.Styleable.FragmentContainerView = global::PowerwallCompanionX.Droid.Resource.Styleable.FragmentContainerView;
+			global::PanCardView.Droid.Resource.Styleable.FragmentContainerView_android_name = global::PowerwallCompanionX.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::PanCardView.Droid.Resource.Styleable.FragmentContainerView_android_tag = global::PowerwallCompanionX.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::PanCardView.Droid.Resource.Styleable.Fragment_android_id = global::PowerwallCompanionX.Droid.Resource.Styleable.Fragment_android_id;
+			global::PanCardView.Droid.Resource.Styleable.Fragment_android_name = global::PowerwallCompanionX.Droid.Resource.Styleable.Fragment_android_name;
+			global::PanCardView.Droid.Resource.Styleable.Fragment_android_tag = global::PowerwallCompanionX.Droid.Resource.Styleable.Fragment_android_tag;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColor;
 			global::PanCardView.Droid.Resource.Styleable.GradientColorItem = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColorItem;
 			global::PanCardView.Droid.Resource.Styleable.GradientColorItem_android_color = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColorItem_android_color;
@@ -2246,6 +3163,12 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_startY = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_tileMode = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_type = global::PowerwallCompanionX.Droid.Resource.Styleable.GradientColor_android_type;
+			global::PanCardView.Droid.Resource.Styleable.Insets = global::PowerwallCompanionX.Droid.Resource.Styleable.Insets;
+			global::PanCardView.Droid.Resource.Styleable.Insets_paddingBottomSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.Insets_paddingBottomSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Styleable.Insets_paddingLeftSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.Insets_paddingLeftSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Styleable.Insets_paddingRightSystemWindowInsets = global::PowerwallCompanionX.Droid.Resource.Styleable.Insets_paddingRightSystemWindowInsets;
+			global::PanCardView.Droid.Resource.Styleable.ItemsViewRendererTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.ItemsViewRendererTheme;
+			global::PanCardView.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.ItemsViewRendererTheme_collectionViewStyle;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.LinearLayoutCompat;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::PowerwallCompanionX.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::PowerwallCompanionX.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -2264,7 +3187,26 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow = global::PowerwallCompanionX.Droid.Resource.Styleable.ListPopupWindow;
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::PowerwallCompanionX.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialog = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialog;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAutoCompleteTextView = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAutoCompleteTextView;
+			global::PanCardView.Droid.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialAutoCompleteTextView_android_inputType;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButtonToggleGroup = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButtonToggleGroup;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButtonToggleGroup_selectionRequired;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButton_android_background = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_android_background;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButton_android_checkable = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_android_checkable;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_android_insetBottom = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_android_insetBottom;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_android_insetLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_android_insetLeft;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_android_insetRight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_android_insetRight;
@@ -2272,6 +3214,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_backgroundTint;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_backgroundTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_backgroundTintMode;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_cornerRadius = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_cornerRadius;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButton_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_elevation;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_icon = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_icon;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_iconGravity = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_iconGravity;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_iconPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_iconPadding;
@@ -2279,11 +3222,58 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_iconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_iconTint;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_iconTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_iconTintMode;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_rippleColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_rippleColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButton_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_strokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_strokeColor;
 			global::PanCardView.Droid.Resource.Styleable.MaterialButton_strokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialButton_strokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_dayStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_yearStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCalendar_yearTodayStyle;
 			global::PanCardView.Droid.Resource.Styleable.MaterialCardView = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_android_checkable = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_android_checkable;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_checkedIcon = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_checkedIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_rippleColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_rippleColor;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_state_dragged = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_state_dragged;
 			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_strokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_strokeColor;
 			global::PanCardView.Droid.Resource.Styleable.MaterialCardView_strokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCheckBox = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCheckBox;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCheckBox_buttonTint = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::PanCardView.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::PanCardView.Droid.Resource.Styleable.MaterialRadioButton = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialRadioButton;
+			global::PanCardView.Droid.Resource.Styleable.MaterialRadioButton_buttonTint = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialRadioButton_buttonTint;
+			global::PanCardView.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::PanCardView.Droid.Resource.Styleable.MaterialShape = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialShape;
+			global::PanCardView.Droid.Resource.Styleable.MaterialShape_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextView = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextView;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextView_android_lineHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextView_android_textAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::PanCardView.Droid.Resource.Styleable.MaterialTextView_lineHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.MaterialTextView_lineHeight;
 			global::PanCardView.Droid.Resource.Styleable.MenuGroup = global::PowerwallCompanionX.Droid.Resource.Styleable.MenuGroup;
 			global::PanCardView.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::PowerwallCompanionX.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
 			global::PanCardView.Droid.Resource.Styleable.MenuGroup_android_enabled = global::PowerwallCompanionX.Droid.Resource.Styleable.MenuGroup_android_enabled;
@@ -2334,7 +3324,16 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemBackground;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemHorizontalPadding;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemIconPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemIconPadding;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemIconSize = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemIconSize;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemMaxLines = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemMaxLines;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeFillColor = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemShapeInsetTop;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_itemTextColor;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_menu = global::PowerwallCompanionX.Droid.Resource.Styleable.NavigationView_menu;
@@ -2344,10 +3343,13 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::PowerwallCompanionX.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::PanCardView.Droid.Resource.Styleable.RangeSlider = global::PowerwallCompanionX.Droid.Resource.Styleable.RangeSlider;
+			global::PanCardView.Droid.Resource.Styleable.RangeSlider_values = global::PowerwallCompanionX.Droid.Resource.Styleable.RangeSlider_values;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView = global::PowerwallCompanionX.Droid.Resource.Styleable.RecycleListView;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::PowerwallCompanionX.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::PowerwallCompanionX.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
 			global::PanCardView.Droid.Resource.Styleable.RecyclerView = global::PowerwallCompanionX.Droid.Resource.Styleable.RecyclerView;
+			global::PanCardView.Droid.Resource.Styleable.RecyclerView_android_clipToPadding = global::PowerwallCompanionX.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
 			global::PanCardView.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::PowerwallCompanionX.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::PanCardView.Droid.Resource.Styleable.RecyclerView_android_orientation = global::PowerwallCompanionX.Droid.Resource.Styleable.RecyclerView_android_orientation;
 			global::PanCardView.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
@@ -2363,6 +3365,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::PowerwallCompanionX.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
 			global::PanCardView.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::PowerwallCompanionX.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
 			global::PanCardView.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::PowerwallCompanionX.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::PanCardView.Droid.Resource.Styleable.ScrollViewRendererTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.ScrollViewRendererTheme;
+			global::PanCardView.Droid.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.ScrollViewRendererTheme_scrollViewStyle;
 			global::PanCardView.Droid.Resource.Styleable.SearchView = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView;
 			global::PanCardView.Droid.Resource.Styleable.SearchView_android_focusable = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView_android_focusable;
 			global::PanCardView.Droid.Resource.Styleable.SearchView_android_imeOptions = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView_android_imeOptions;
@@ -2381,13 +3385,55 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.SearchView_submitBackground = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView_submitBackground;
 			global::PanCardView.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::PanCardView.Droid.Resource.Styleable.SearchView_voiceIcon = global::PowerwallCompanionX.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::PanCardView.Droid.Resource.Styleable.ShapeableImageView = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeableImageView;
+			global::PanCardView.Droid.Resource.Styleable.ShapeableImageView_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeableImageView_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeableImageView_shapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.ShapeableImageView_strokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeableImageView_strokeColor;
+			global::PanCardView.Droid.Resource.Styleable.ShapeableImageView_strokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeableImageView_strokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerFamily = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerSize = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::PanCardView.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::PowerwallCompanionX.Droid.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
+			global::PanCardView.Droid.Resource.Styleable.Slider = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider;
+			global::PanCardView.Droid.Resource.Styleable.Slider_android_enabled = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_android_enabled;
+			global::PanCardView.Droid.Resource.Styleable.Slider_android_stepSize = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_android_stepSize;
+			global::PanCardView.Droid.Resource.Styleable.Slider_android_value = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_android_value;
+			global::PanCardView.Droid.Resource.Styleable.Slider_android_valueFrom = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_android_valueFrom;
+			global::PanCardView.Droid.Resource.Styleable.Slider_android_valueTo = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_android_valueTo;
+			global::PanCardView.Droid.Resource.Styleable.Slider_haloColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_haloColor;
+			global::PanCardView.Droid.Resource.Styleable.Slider_haloRadius = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_haloRadius;
+			global::PanCardView.Droid.Resource.Styleable.Slider_labelBehavior = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_labelBehavior;
+			global::PanCardView.Droid.Resource.Styleable.Slider_labelStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_labelStyle;
+			global::PanCardView.Droid.Resource.Styleable.Slider_thumbColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_thumbColor;
+			global::PanCardView.Droid.Resource.Styleable.Slider_thumbElevation = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_thumbElevation;
+			global::PanCardView.Droid.Resource.Styleable.Slider_thumbRadius = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_thumbRadius;
+			global::PanCardView.Droid.Resource.Styleable.Slider_tickColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_tickColor;
+			global::PanCardView.Droid.Resource.Styleable.Slider_tickColorActive = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_tickColorActive;
+			global::PanCardView.Droid.Resource.Styleable.Slider_tickColorInactive = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_tickColorInactive;
+			global::PanCardView.Droid.Resource.Styleable.Slider_trackColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_trackColor;
+			global::PanCardView.Droid.Resource.Styleable.Slider_trackColorActive = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_trackColorActive;
+			global::PanCardView.Droid.Resource.Styleable.Slider_trackColorInactive = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_trackColorInactive;
+			global::PanCardView.Droid.Resource.Styleable.Slider_trackHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.Slider_trackHeight;
 			global::PanCardView.Droid.Resource.Styleable.Snackbar = global::PowerwallCompanionX.Droid.Resource.Styleable.Snackbar;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout;
+			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_animationMode = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_animationMode;
+			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
+			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_backgroundTint;
+			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_backgroundTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_backgroundTintMode;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_elevation = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_elevation;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
 			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
 			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.Snackbar_snackbarStyle;
+			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarTextViewStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.Snackbar_snackbarTextViewStyle;
 			global::PanCardView.Droid.Resource.Styleable.Spinner = global::PowerwallCompanionX.Droid.Resource.Styleable.Spinner;
 			global::PanCardView.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
 			global::PanCardView.Droid.Resource.Styleable.Spinner_android_entries = global::PowerwallCompanionX.Droid.Resource.Styleable.Spinner_android_entries;
@@ -2403,6 +3449,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::PowerwallCompanionX.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_variablePadding = global::PowerwallCompanionX.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_visible = global::PowerwallCompanionX.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::PanCardView.Droid.Resource.Styleable.SwipeRefreshLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.SwipeRefreshLayout;
+			global::PanCardView.Droid.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Styleable.SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat_android_textOff;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat_android_textOn;
@@ -2418,6 +3466,8 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_track = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat_track;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_trackTint = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat_trackTint;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::PanCardView.Droid.Resource.Styleable.SwitchMaterial = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchMaterial;
+			global::PanCardView.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::PowerwallCompanionX.Droid.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
 			global::PanCardView.Droid.Resource.Styleable.TabItem = global::PowerwallCompanionX.Droid.Resource.Styleable.TabItem;
 			global::PanCardView.Droid.Resource.Styleable.TabItem_android_icon = global::PowerwallCompanionX.Droid.Resource.Styleable.TabItem_android_icon;
 			global::PanCardView.Droid.Resource.Styleable.TabItem_android_layout = global::PowerwallCompanionX.Droid.Resource.Styleable.TabItem_android_layout;
@@ -2457,12 +3507,18 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textColor;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textFontWeight = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textSize = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textSize;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_textStyle;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_android_typeface = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_android_typeface;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_fontFamily = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::PanCardView.Droid.Resource.Styleable.TextAppearance_fontVariationSettings = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::PanCardView.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::PanCardView.Droid.Resource.Styleable.TextAppearance_textLocale = global::PowerwallCompanionX.Droid.Resource.Styleable.TextAppearance_textLocale;
+			global::PanCardView.Droid.Resource.Styleable.TextInputEditText = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputEditText;
+			global::PanCardView.Droid.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputEditText_textInputLayoutFocusedRectEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_android_enabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_android_enabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_android_hint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_android_hint;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxBackgroundColor;
@@ -2473,24 +3529,57 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopEnd;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxStrokeColor;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxStrokeErrorColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxStrokeErrorColor;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_counterTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconCheckable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconDrawable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconMode = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconMode;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconTint;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_endIconTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_endIconTintMode;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorContentDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorContentDescription;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorIconTintMode;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_errorTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_errorTextColor;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_helperText = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_helperText;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_helperTextEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_helperTextTextColor;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_hintTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_hintTextColor;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
 			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_placeholderText = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_placeholderText;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_placeholderTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_placeholderTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_placeholderTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_placeholderTextColor;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_prefixText = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_prefixText;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_prefixTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_prefixTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_prefixTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_prefixTextColor;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_shapeAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_startIconCheckable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_startIconDrawable = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_startIconTint = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_startIconTint;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_startIconTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_startIconTintMode;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_suffixText = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_suffixText;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_suffixTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_suffixTextAppearance;
+			global::PanCardView.Droid.Resource.Styleable.TextInputLayout_suffixTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.TextInputLayout_suffixTextColor;
 			global::PanCardView.Droid.Resource.Styleable.ThemeEnforcement = global::PowerwallCompanionX.Droid.Resource.Styleable.ThemeEnforcement;
 			global::PanCardView.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.ThemeEnforcement_android_textAppearance;
 			global::PanCardView.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
@@ -2510,6 +3599,7 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_logo = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_logo;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_logoDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_logoDescription;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::PanCardView.Droid.Resource.Styleable.Toolbar_menu = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_menu;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_navigationIcon = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_navigationIcon;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_popupTheme = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_popupTheme;
@@ -2525,11 +3615,21 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_titleMarginTop;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleTextColor = global::PowerwallCompanionX.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_layout_margin = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_layout_margin;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_minHeight = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_minHeight;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_minWidth = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_minWidth;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_padding = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_padding;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_text = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_text;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_android_textAppearance = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_android_textAppearance;
+			global::PanCardView.Droid.Resource.Styleable.Tooltip_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.Tooltip_backgroundTint;
 			global::PanCardView.Droid.Resource.Styleable.View = global::PowerwallCompanionX.Droid.Resource.Styleable.View;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewBackgroundHelper;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::PanCardView.Droid.Resource.Styleable.ViewPager2 = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewPager2;
+			global::PanCardView.Droid.Resource.Styleable.ViewPager2_android_orientation = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewPager2_android_orientation;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewStubCompat;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_id = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::PowerwallCompanionX.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -2539,6 +3639,12 @@ namespace PowerwallCompanionX.Droid
 			global::PanCardView.Droid.Resource.Styleable.View_paddingEnd = global::PowerwallCompanionX.Droid.Resource.Styleable.View_paddingEnd;
 			global::PanCardView.Droid.Resource.Styleable.View_paddingStart = global::PowerwallCompanionX.Droid.Resource.Styleable.View_paddingStart;
 			global::PanCardView.Droid.Resource.Styleable.View_theme = global::PowerwallCompanionX.Droid.Resource.Styleable.View_theme;
+			global::PanCardView.Droid.Resource.Xml.image_share_filepaths = global::PowerwallCompanionX.Droid.Resource.Xml.image_share_filepaths;
+			global::PanCardView.Droid.Resource.Xml.standalone_badge = global::PowerwallCompanionX.Droid.Resource.Xml.standalone_badge;
+			global::PanCardView.Droid.Resource.Xml.standalone_badge_gravity_bottom_end = global::PowerwallCompanionX.Droid.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::PanCardView.Droid.Resource.Xml.standalone_badge_gravity_bottom_start = global::PowerwallCompanionX.Droid.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::PanCardView.Droid.Resource.Xml.standalone_badge_gravity_top_start = global::PowerwallCompanionX.Droid.Resource.Xml.standalone_badge_gravity_top_start;
+			global::PanCardView.Droid.Resource.Xml.standalone_badge_offset = global::PowerwallCompanionX.Droid.Resource.Xml.standalone_badge_offset;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.Avatar1 = global::PowerwallCompanionX.Droid.Resource.Drawable.Avatar1;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.Avatar10 = global::PowerwallCompanionX.Droid.Resource.Drawable.Avatar10;
 			global::Syncfusion.XForms.Android.Core.Resource.Drawable.Avatar11 = global::PowerwallCompanionX.Droid.Resource.Drawable.Avatar11;
@@ -17048,254 +18154,257 @@ namespace PowerwallCompanionX.Droid
 			// aapt resource value: 0x7F0E001C
 			public const int abc_toolbar_collapse_description = 2131623964;
 			
-			// aapt resource value: 0x7F0E001D
-			public const int appbar_scrolling_view_behavior = 2131623965;
+			// aapt resource value: 0x7F0E001E
+			public const int appbar_scrolling_view_behavior = 2131623966;
 			
 			// aapt resource value: 0x7F0E0000
 			public const int ApplicationName = 2131623936;
 			
-			// aapt resource value: 0x7F0E001E
-			public const int bottom_sheet_behavior = 2131623966;
+			// aapt resource value: 0x7F0E001D
+			public const int app_name = 2131623965;
 			
 			// aapt resource value: 0x7F0E001F
-			public const int character_counter_content_description = 2131623967;
+			public const int bottom_sheet_behavior = 2131623967;
 			
 			// aapt resource value: 0x7F0E0020
-			public const int character_counter_overflowed_content_description = 2131623968;
+			public const int character_counter_content_description = 2131623968;
 			
 			// aapt resource value: 0x7F0E0021
-			public const int character_counter_pattern = 2131623969;
+			public const int character_counter_overflowed_content_description = 2131623969;
 			
 			// aapt resource value: 0x7F0E0022
-			public const int chip_text = 2131623970;
+			public const int character_counter_pattern = 2131623970;
 			
 			// aapt resource value: 0x7F0E0023
-			public const int clear_text_end_icon_content_description = 2131623971;
+			public const int chip_text = 2131623971;
 			
 			// aapt resource value: 0x7F0E0024
-			public const int copy_toast_msg = 2131623972;
+			public const int clear_text_end_icon_content_description = 2131623972;
 			
 			// aapt resource value: 0x7F0E0025
-			public const int error_icon_content_description = 2131623973;
+			public const int copy_toast_msg = 2131623973;
 			
 			// aapt resource value: 0x7F0E0026
-			public const int exposed_dropdown_menu_content_description = 2131623974;
+			public const int error_icon_content_description = 2131623974;
 			
 			// aapt resource value: 0x7F0E0027
-			public const int fab_transformation_scrim_behavior = 2131623975;
+			public const int exposed_dropdown_menu_content_description = 2131623975;
 			
 			// aapt resource value: 0x7F0E0028
-			public const int fab_transformation_sheet_behavior = 2131623976;
+			public const int fab_transformation_scrim_behavior = 2131623976;
 			
 			// aapt resource value: 0x7F0E0029
-			public const int fallback_menu_item_copy_link = 2131623977;
+			public const int fab_transformation_sheet_behavior = 2131623977;
 			
 			// aapt resource value: 0x7F0E002A
-			public const int fallback_menu_item_open_in_browser = 2131623978;
+			public const int fallback_menu_item_copy_link = 2131623978;
 			
 			// aapt resource value: 0x7F0E002B
-			public const int fallback_menu_item_share_link = 2131623979;
+			public const int fallback_menu_item_open_in_browser = 2131623979;
+			
+			// aapt resource value: 0x7F0E002C
+			public const int fallback_menu_item_share_link = 2131623980;
 			
 			// aapt resource value: 0x7F0E0001
 			public const int Hello = 2131623937;
 			
-			// aapt resource value: 0x7F0E002C
-			public const int hide_bottom_view_on_scroll_behavior = 2131623980;
-			
 			// aapt resource value: 0x7F0E002D
-			public const int icon_content_description = 2131623981;
+			public const int hello = 2131623981;
 			
 			// aapt resource value: 0x7F0E002E
-			public const int item_view_role_description = 2131623982;
+			public const int hide_bottom_view_on_scroll_behavior = 2131623982;
 			
 			// aapt resource value: 0x7F0E002F
-			public const int library_name = 2131623983;
+			public const int icon_content_description = 2131623983;
 			
 			// aapt resource value: 0x7F0E0030
-			public const int material_slider_range_end = 2131623984;
+			public const int item_view_role_description = 2131623984;
 			
 			// aapt resource value: 0x7F0E0031
-			public const int material_slider_range_start = 2131623985;
+			public const int material_slider_range_end = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int mtrl_badge_numberless_content_description = 2131623986;
+			public const int material_slider_range_start = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int mtrl_chip_close_icon_content_description = 2131623987;
+			public const int mtrl_badge_numberless_content_description = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int mtrl_exceed_max_badge_number_content_description = 2131623988;
+			public const int mtrl_chip_close_icon_content_description = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int mtrl_exceed_max_badge_number_suffix = 2131623989;
+			public const int mtrl_exceed_max_badge_number_content_description = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int mtrl_picker_a11y_next_month = 2131623990;
+			public const int mtrl_exceed_max_badge_number_suffix = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int mtrl_picker_a11y_prev_month = 2131623991;
+			public const int mtrl_picker_a11y_next_month = 2131623991;
 			
 			// aapt resource value: 0x7F0E0038
-			public const int mtrl_picker_announce_current_selection = 2131623992;
+			public const int mtrl_picker_a11y_prev_month = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int mtrl_picker_cancel = 2131623993;
+			public const int mtrl_picker_announce_current_selection = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int mtrl_picker_confirm = 2131623994;
+			public const int mtrl_picker_cancel = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int mtrl_picker_date_header_selected = 2131623995;
+			public const int mtrl_picker_confirm = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int mtrl_picker_date_header_title = 2131623996;
+			public const int mtrl_picker_date_header_selected = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int mtrl_picker_date_header_unselected = 2131623997;
+			public const int mtrl_picker_date_header_title = 2131623997;
 			
 			// aapt resource value: 0x7F0E003E
-			public const int mtrl_picker_day_of_week_column_header = 2131623998;
+			public const int mtrl_picker_date_header_unselected = 2131623998;
 			
 			// aapt resource value: 0x7F0E003F
-			public const int mtrl_picker_invalid_format = 2131623999;
+			public const int mtrl_picker_day_of_week_column_header = 2131623999;
 			
 			// aapt resource value: 0x7F0E0040
-			public const int mtrl_picker_invalid_format_example = 2131624000;
+			public const int mtrl_picker_invalid_format = 2131624000;
 			
 			// aapt resource value: 0x7F0E0041
-			public const int mtrl_picker_invalid_format_use = 2131624001;
+			public const int mtrl_picker_invalid_format_example = 2131624001;
 			
 			// aapt resource value: 0x7F0E0042
-			public const int mtrl_picker_invalid_range = 2131624002;
+			public const int mtrl_picker_invalid_format_use = 2131624002;
 			
 			// aapt resource value: 0x7F0E0043
-			public const int mtrl_picker_navigate_to_year_description = 2131624003;
+			public const int mtrl_picker_invalid_range = 2131624003;
 			
 			// aapt resource value: 0x7F0E0044
-			public const int mtrl_picker_out_of_range = 2131624004;
+			public const int mtrl_picker_navigate_to_year_description = 2131624004;
 			
 			// aapt resource value: 0x7F0E0045
-			public const int mtrl_picker_range_header_only_end_selected = 2131624005;
+			public const int mtrl_picker_out_of_range = 2131624005;
 			
 			// aapt resource value: 0x7F0E0046
-			public const int mtrl_picker_range_header_only_start_selected = 2131624006;
+			public const int mtrl_picker_range_header_only_end_selected = 2131624006;
 			
 			// aapt resource value: 0x7F0E0047
-			public const int mtrl_picker_range_header_selected = 2131624007;
+			public const int mtrl_picker_range_header_only_start_selected = 2131624007;
 			
 			// aapt resource value: 0x7F0E0048
-			public const int mtrl_picker_range_header_title = 2131624008;
+			public const int mtrl_picker_range_header_selected = 2131624008;
 			
 			// aapt resource value: 0x7F0E0049
-			public const int mtrl_picker_range_header_unselected = 2131624009;
+			public const int mtrl_picker_range_header_title = 2131624009;
 			
 			// aapt resource value: 0x7F0E004A
-			public const int mtrl_picker_save = 2131624010;
+			public const int mtrl_picker_range_header_unselected = 2131624010;
 			
 			// aapt resource value: 0x7F0E004B
-			public const int mtrl_picker_text_input_date_hint = 2131624011;
+			public const int mtrl_picker_save = 2131624011;
 			
 			// aapt resource value: 0x7F0E004C
-			public const int mtrl_picker_text_input_date_range_end_hint = 2131624012;
+			public const int mtrl_picker_text_input_date_hint = 2131624012;
 			
 			// aapt resource value: 0x7F0E004D
-			public const int mtrl_picker_text_input_date_range_start_hint = 2131624013;
+			public const int mtrl_picker_text_input_date_range_end_hint = 2131624013;
 			
 			// aapt resource value: 0x7F0E004E
-			public const int mtrl_picker_text_input_day_abbr = 2131624014;
+			public const int mtrl_picker_text_input_date_range_start_hint = 2131624014;
 			
 			// aapt resource value: 0x7F0E004F
-			public const int mtrl_picker_text_input_month_abbr = 2131624015;
+			public const int mtrl_picker_text_input_day_abbr = 2131624015;
 			
 			// aapt resource value: 0x7F0E0050
-			public const int mtrl_picker_text_input_year_abbr = 2131624016;
+			public const int mtrl_picker_text_input_month_abbr = 2131624016;
 			
 			// aapt resource value: 0x7F0E0051
-			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131624017;
+			public const int mtrl_picker_text_input_year_abbr = 2131624017;
 			
 			// aapt resource value: 0x7F0E0052
-			public const int mtrl_picker_toggle_to_day_selection = 2131624018;
+			public const int mtrl_picker_toggle_to_calendar_input_mode = 2131624018;
 			
 			// aapt resource value: 0x7F0E0053
-			public const int mtrl_picker_toggle_to_text_input_mode = 2131624019;
+			public const int mtrl_picker_toggle_to_day_selection = 2131624019;
 			
 			// aapt resource value: 0x7F0E0054
-			public const int mtrl_picker_toggle_to_year_selection = 2131624020;
+			public const int mtrl_picker_toggle_to_text_input_mode = 2131624020;
 			
 			// aapt resource value: 0x7F0E0055
-			public const int overflow_tab_title = 2131624021;
+			public const int mtrl_picker_toggle_to_year_selection = 2131624021;
 			
 			// aapt resource value: 0x7F0E0056
-			public const int password_toggle_content_description = 2131624022;
+			public const int overflow_tab_title = 2131624022;
 			
 			// aapt resource value: 0x7F0E0057
-			public const int path_password_eye = 2131624023;
+			public const int password_toggle_content_description = 2131624023;
 			
 			// aapt resource value: 0x7F0E0058
-			public const int path_password_eye_mask_strike_through = 2131624024;
+			public const int path_password_eye = 2131624024;
 			
 			// aapt resource value: 0x7F0E0059
-			public const int path_password_eye_mask_visible = 2131624025;
+			public const int path_password_eye_mask_strike_through = 2131624025;
 			
 			// aapt resource value: 0x7F0E005A
-			public const int path_password_strike_through = 2131624026;
+			public const int path_password_eye_mask_visible = 2131624026;
 			
 			// aapt resource value: 0x7F0E005B
-			public const int q = 2131624027;
+			public const int path_password_strike_through = 2131624027;
 			
 			// aapt resource value: 0x7F0E005C
-			public const int quarter = 2131624028;
+			public const int q = 2131624028;
 			
 			// aapt resource value: 0x7F0E005D
-			public const int search_menu_title = 2131624029;
-			
-			// aapt resource value: 0x7F0E0061
-			public const int sfchart_close_label = 2131624033;
-			
-			// aapt resource value: 0x7F0E0062
-			public const int sfchart_decrease_label = 2131624034;
-			
-			// aapt resource value: 0x7F0E0063
-			public const int sfchart_high_label = 2131624035;
-			
-			// aapt resource value: 0x7F0E0064
-			public const int sfchart_increase_label = 2131624036;
-			
-			// aapt resource value: 0x7F0E0065
-			public const int sfchart_low_label = 2131624037;
-			
-			// aapt resource value: 0x7F0E0066
-			public const int sfchart_maximum_label = 2131624038;
+			public const int quarter = 2131624029;
 			
 			// aapt resource value: 0x7F0E005E
-			public const int sfchart_Median_label = 2131624030;
+			public const int search_menu_title = 2131624030;
+			
+			// aapt resource value: 0x7F0E0062
+			public const int sfchart_close_label = 2131624034;
+			
+			// aapt resource value: 0x7F0E0063
+			public const int sfchart_decrease_label = 2131624035;
+			
+			// aapt resource value: 0x7F0E0064
+			public const int sfchart_high_label = 2131624036;
+			
+			// aapt resource value: 0x7F0E0065
+			public const int sfchart_increase_label = 2131624037;
+			
+			// aapt resource value: 0x7F0E0066
+			public const int sfchart_low_label = 2131624038;
 			
 			// aapt resource value: 0x7F0E0067
-			public const int sfchart_minimum_label = 2131624039;
-			
-			// aapt resource value: 0x7F0E0068
-			public const int sfchart_open_label = 2131624040;
-			
-			// aapt resource value: 0x7F0E0069
-			public const int sfchart_others_label = 2131624041;
+			public const int sfchart_maximum_label = 2131624039;
 			
 			// aapt resource value: 0x7F0E005F
-			public const int sfchart_Q1_label = 2131624031;
+			public const int sfchart_Median_label = 2131624031;
 			
-			// aapt resource value: 0x7F0E0060
-			public const int sfchart_Q3_label = 2131624032;
+			// aapt resource value: 0x7F0E0068
+			public const int sfchart_minimum_label = 2131624040;
+			
+			// aapt resource value: 0x7F0E0069
+			public const int sfchart_open_label = 2131624041;
 			
 			// aapt resource value: 0x7F0E006A
-			public const int sfchart_total_label = 2131624042;
+			public const int sfchart_others_label = 2131624042;
+			
+			// aapt resource value: 0x7F0E0060
+			public const int sfchart_Q1_label = 2131624032;
+			
+			// aapt resource value: 0x7F0E0061
+			public const int sfchart_Q3_label = 2131624033;
 			
 			// aapt resource value: 0x7F0E006B
-			public const int status_bar_notification_info_overflow = 2131624043;
+			public const int sfchart_total_label = 2131624043;
 			
 			// aapt resource value: 0x7F0E006C
-			public const int w = 2131624044;
+			public const int status_bar_notification_info_overflow = 2131624044;
 			
 			// aapt resource value: 0x7F0E006D
-			public const int week = 2131624045;
+			public const int w = 2131624045;
+			
+			// aapt resource value: 0x7F0E006E
+			public const int week = 2131624046;
 			
 			static String()
 			{
