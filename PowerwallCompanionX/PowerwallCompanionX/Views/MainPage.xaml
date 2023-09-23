@@ -74,6 +74,7 @@
                                         </gauge:Scale.MajorTickSettings>
                                         <gauge:Scale.Ranges>
                                             <gauge:Range StartValue="0" EndValue="{Binding BatteryPercent}" Thickness="30"  Offset="1" Color="{Binding GridActive, Converter={StaticResource GridActiveToColorConverter}}" />
+                                            <gauge:Range  StartValue="{Binding MinBatteryPercentToday}" EndValue="{Binding MaxBatteryPercentToday}" Thickness="5" Offset="0.7" Color="Green" />
                                         </gauge:Scale.Ranges>
 
                                     </gauge:Scale>

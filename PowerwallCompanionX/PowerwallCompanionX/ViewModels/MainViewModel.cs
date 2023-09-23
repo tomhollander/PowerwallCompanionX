@@ -21,6 +21,9 @@ namespace PowerwallCompanionX.ViewModels
         }
 
         private double _batteryPercent;
+        private double _minPercentToday;
+        private double _maxPercentToday;
+        private DateTime _batteryDay;
         private double _homeValue;
         private double _solarValue;
         private double _batteryValue;
@@ -90,7 +93,18 @@ namespace PowerwallCompanionX.ViewModels
             set
             {
                 _batteryPercent = value;
+                UpdateMinMaxPercentToday();
             }
+        }
+
+        public double MinBatteryPercentToday
+        {
+            get { return _minPercentToday; }
+        }
+
+        public double MaxBatteryPercentToday
+        {
+            get { return _maxPercentToday; }
         }
         public double HomeValue
         {
@@ -378,6 +392,28 @@ namespace PowerwallCompanionX.ViewModels
         public DateTime GraphDayBoundary
         {
             get { return DateTime.Today; }
+        }
+
+        private void UpdateMinMaxPercentToday()
+        {
+            if (_batteryDay != DateTime.Today)
+            {
+                _batteryDay = DateTime.Today;
+                _minPercentToday = BatteryPercent;
+                _maxPercentToday = BatteryPercent;
+                NotifyPropertyChanged(nameof(MinBatteryPercentToday));
+                NotifyPropertyChanged(nameof(MaxBatteryPercentToday));
+            }
+            else if (BatteryPercent < _minPercentToday)
+            {
+                _minPercentToday = BatteryPercent;
+                NotifyPropertyChanged(nameof(MinBatteryPercentToday));
+            }
+            else if (BatteryPercent > _maxPercentToday)
+            {
+                _maxPercentToday = BatteryPercent;
+                NotifyPropertyChanged(nameof(MaxBatteryPercentToday));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
