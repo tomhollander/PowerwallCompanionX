@@ -2,12 +2,14 @@
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
 using Syncfusion.SfChart.XForms;
+using Syncfusion.XForms.TextInputLayout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace PowerwallCompanionX.Views
@@ -31,107 +33,167 @@ namespace PowerwallCompanionX.Views
         {
             InitializeComponent();
             viewModel = new MainViewModel();
+            SetPhoneOrTabletLayout();
             this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
-
             Task.Run(() => RefreshData());
+        }
+
+        private void SetPhoneOrTabletLayout()
+        {
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            {
+                carousel.ItemsSource = new View[] { mainGrid, dailyEnergyGrid };
+            }
+            else
+            { 
+                rootGrid.Children.Remove(mainGrid);
+                rootGrid.Children.Remove(dailyEnergyGrid);
+                tabletGrid.Children.Add(mainGrid);
+                tabletGrid.Children.Add(dailyEnergyGrid);
+            }
+            MainPage_SizeChanged(null, null);
         }
 
         private void MainPage_SizeChanged(object sender, EventArgs e)
         {
 
             string visualState = Width > Height ? "Landscape" : "Portrait";
-            var page1Grid = (Grid)((Array)carousel.ItemsSource).GetValue(0);
-            var page2Grid = (Grid)((Array)carousel.ItemsSource).GetValue(1);
+            var formfactor = DeviceInfo.Idiom;
 
-            if (visualState == "Portrait")
+            if (formfactor == DeviceIdiom.Phone)
             {
-                // Page 1 : Move graph from column to row
-                page1Grid.RowDefinitions[0].Height = new GridLength(330);
-                page1Grid.RowDefinitions[1].Height = GridLength.Auto;
-                page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
-                page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
-                Grid.SetRow(page1Grid.Children[1], 1);
-                Grid.SetColumn(page1Grid.Children[1], 0);
-
-                // Page 2 : Transpose grid
-                page2Grid.RowDefinitions.Clear();
-                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                for (int i = 0; i < 4; i++)
+                var page1Grid = (Grid)((Array)carousel.ItemsSource).GetValue(0);
+                var page2Grid = (Grid)((Array)carousel.ItemsSource).GetValue(1);
+                if (visualState == "Portrait")
                 {
-                    page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                    SetPortraitMode(page1Grid, page2Grid);
                 }
-                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-
-                page2Grid.ColumnDefinitions.Clear();
-                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
-                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
-                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
-                var chart = page2Grid.Children.Last();
-                if (Grid.GetRow(chart) == 3)
+                else if (visualState == "Landscape")
                 {
-                    // Previously in landscape mode, so transpose
-                    foreach (var item in page2Grid.Children)
-                    {
-                        if (item != chart)
-                        {
-                            int currentRow = Grid.GetRow(item);
-                            int currentColumn = Grid.GetColumn(item);
-                            Grid.SetColumn(item, currentRow);
-                            Grid.SetRow(item, currentColumn);
-                        }
-                        else
-                        {
-                            Grid.SetRow(chart, 6);
-                            Grid.SetColumnSpan(chart, 3);
-                        }
-                    }
+                    SetLandscapeMode(page1Grid, page2Grid);
                 }
-                
             }
             else
             {
-                // Page 1 : Move graph from row to column
-                page1Grid.RowDefinitions[0].Height = GridLength.Auto;
-                page1Grid.RowDefinitions[1].Height = new GridLength(0);
-                page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
-                page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
-                Grid.SetRow(page1Grid.Children[1], 0);
-                Grid.SetColumn(page1Grid.Children[1], 1);
+                if (visualState == "Portrait")
+                {
+                    // Tablet portrait has two landscapes stacked
+                    tabletGrid.ColumnDefinitions.Clear();
+                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                    SetLandscapeMode(mainGrid, dailyEnergyGrid);
+                    Grid.SetRow(mainGrid, 0);
+                    Grid.SetRow(dailyEnergyGrid, 1);
+                    Grid.SetColumn(mainGrid, 0);
+                    Grid.SetColumn(dailyEnergyGrid, 0);
+                }
+                else
+                {
+                    // Tablet landscape has two portraits side by side
+                    tabletGrid.RowDefinitions.Clear();
+                    tabletGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+                    tabletGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+                    SetPortraitMode(mainGrid, dailyEnergyGrid);
+                    Grid.SetColumn(mainGrid, 0);
+                    Grid.SetColumn(dailyEnergyGrid, 1);
+                    Grid.SetRow(mainGrid, 0);
+                    Grid.SetRow(dailyEnergyGrid, 0);
+                }
+            }
 
-                // Page 2 : Transpose grid
-                page2Grid.ColumnDefinitions.Clear();
-                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
-                for (int i = 0; i < 4; i++)
+
+
+
+        }
+
+        private static void SetLandscapeMode(Grid page1Grid, Grid page2Grid)
+        {
+            // Page 1 : Move graph from row to column
+            page1Grid.RowDefinitions[0].Height = GridLength.Auto;
+            page1Grid.RowDefinitions[1].Height = new GridLength(0);
+            page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
+            page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
+            Grid.SetRow(page1Grid.Children[1], 0);
+            Grid.SetColumn(page1Grid.Children[1], 1);
+
+            // Page 2 : Transpose grid
+            page2Grid.ColumnDefinitions.Clear();
+            page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            for (int i = 0; i < 4; i++)
+            {
+                page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+            }
+            page2Grid.RowDefinitions.Clear();
+            for (int i = 0; i < 4; i++)
+            {
+                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            }
+            var chart = page2Grid.Children.Last();
+            if (Grid.GetRow(chart) == 6)
+            {
+                // Previously in portrait mode, so transpose
+                foreach (var item in page2Grid.Children)
                 {
-                    page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
-                }
-                page2Grid.RowDefinitions.Clear();
-                for (int i = 0; i < 4; i++)
-                {
-                    page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-                }
-                var chart = page2Grid.Children.Last();
-                if (Grid.GetRow(chart) == 6)
-                {
-                    // Previously in portrait mode, so transpose
-                    foreach (var item in page2Grid.Children)
+                    if (item != chart)
                     {
-                        if (item != chart)
-                        {
-                            int currentRow = Grid.GetRow(item);
-                            int currentColumn = Grid.GetColumn(item);
-                            Grid.SetColumn(item, currentRow);
-                            Grid.SetRow(item, currentColumn);
-                        } else
-                        {
-                            Grid.SetRow(chart, 3);
-                            Grid.SetColumnSpan(chart, 5);
-                        }
+                        int currentRow = Grid.GetRow(item);
+                        int currentColumn = Grid.GetColumn(item);
+                        Grid.SetColumn(item, currentRow);
+                        Grid.SetRow(item, currentColumn);
+                    }
+                    else
+                    {
+                        Grid.SetRow(chart, 3);
+                        Grid.SetColumnSpan(chart, 5);
                     }
                 }
-            }    
-           
+            }
+        }
+
+        private static void SetPortraitMode(Grid page1Grid, Grid page2Grid)
+        {
+            // Page 1 : Move graph from column to row
+            page1Grid.RowDefinitions[0].Height = new GridLength(330);
+            page1Grid.RowDefinitions[1].Height = GridLength.Auto;
+            page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
+            page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
+            Grid.SetRow(page1Grid.Children[1], 1);
+            Grid.SetColumn(page1Grid.Children[1], 0);
+
+            // Page 2 : Transpose grid
+            page2Grid.RowDefinitions.Clear();
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            for (int i = 0; i < 4; i++)
+            {
+                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+            }
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+
+            page2Grid.ColumnDefinitions.Clear();
+            page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Auto });
+            page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+            page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
+            var chart = page2Grid.Children.Last();
+            if (Grid.GetRow(chart) == 3)
+            {
+                // Previously in landscape mode, so transpose
+                foreach (var item in page2Grid.Children)
+                {
+                    if (item != chart)
+                    {
+                        int currentRow = Grid.GetRow(item);
+                        int currentColumn = Grid.GetColumn(item);
+                        Grid.SetColumn(item, currentRow);
+                        Grid.SetRow(item, currentColumn);
+                    }
+                    else
+                    {
+                        Grid.SetRow(chart, 6);
+                        Grid.SetColumnSpan(chart, 3);
+                    }
+                }
+            }
         }
 
         private async Task RefreshData()
