@@ -32,16 +32,17 @@
         </Ellipse>
         <Label x:Name="unitsLabel" HorizontalTextAlignment="Right" TextColor="White" Margin="0,5,50,0" FontSize="20" Text="kW"/>
 
-
-        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared">
-        </cards:CarouselView>
         <Grid x:Name="tabletGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
         </Grid>
+        
+        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared" IsPanSwipeEnabled="True">
+        </cards:CarouselView>
+
 
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="40,-40,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"

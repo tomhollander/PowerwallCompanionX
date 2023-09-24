@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using PanCardView;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
 using Syncfusion.SfChart.XForms;
@@ -28,6 +29,7 @@ namespace PowerwallCompanionX.Views
         private double minPercentSinceSound = 100D;
 
         private bool keepRefreshing = true;
+        private string lastOrientation;
 
         public MainPage()
         {
@@ -43,6 +45,8 @@ namespace PowerwallCompanionX.Views
         {
             if (DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
+                rootGrid.Children.Remove(mainGrid);
+                rootGrid.Children.Remove(dailyEnergyGrid);
                 carousel.ItemsSource = new View[] { mainGrid, dailyEnergyGrid };
             }
             else
@@ -51,6 +55,8 @@ namespace PowerwallCompanionX.Views
                 rootGrid.Children.Remove(dailyEnergyGrid);
                 tabletGrid.Children.Add(mainGrid);
                 tabletGrid.Children.Add(dailyEnergyGrid);
+                settingsButton.Opacity = 1;
+                timeTextBlock.Margin = new Thickness(80, -40, 0, 0);
             }
             MainPage_SizeChanged(null, null);
         }
@@ -63,15 +69,13 @@ namespace PowerwallCompanionX.Views
 
             if (formfactor == DeviceIdiom.Phone)
             {
-                var page1Grid = (Grid)((Array)carousel.ItemsSource).GetValue(0);
-                var page2Grid = (Grid)((Array)carousel.ItemsSource).GetValue(1);
                 if (visualState == "Portrait")
                 {
-                    SetPortraitMode(page1Grid, page2Grid);
+                    SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
                 else if (visualState == "Landscape")
                 {
-                    SetLandscapeMode(page1Grid, page2Grid);
+                    SetLandscapeMode(mainGrid, dailyEnergyGrid);
                 }
             }
             else
@@ -80,8 +84,9 @@ namespace PowerwallCompanionX.Views
                 {
                     // Tablet portrait has two landscapes stacked
                     tabletGrid.ColumnDefinitions.Clear();
-                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
-                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                    tabletGrid.RowDefinitions.Clear();
+                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(2, GridUnitType.Star) });
+                    tabletGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(3, GridUnitType.Star) });
                     SetLandscapeMode(mainGrid, dailyEnergyGrid);
                     Grid.SetRow(mainGrid, 0);
                     Grid.SetRow(dailyEnergyGrid, 1);
@@ -92,6 +97,7 @@ namespace PowerwallCompanionX.Views
                 {
                     // Tablet landscape has two portraits side by side
                     tabletGrid.RowDefinitions.Clear();
+                    tabletGrid.ColumnDefinitions.Clear();
                     tabletGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
                     tabletGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
@@ -107,8 +113,10 @@ namespace PowerwallCompanionX.Views
 
         }
 
-        private static void SetLandscapeMode(Grid page1Grid, Grid page2Grid)
+        private void SetLandscapeMode(Grid page1Grid, Grid page2Grid)
         {
+            if (lastOrientation == "Landscape") return;
+
             // Page 1 : Move graph from row to column
             page1Grid.RowDefinitions[0].Height = GridLength.Auto;
             page1Grid.RowDefinitions[1].Height = new GridLength(0);
@@ -149,10 +157,13 @@ namespace PowerwallCompanionX.Views
                     }
                 }
             }
+            lastOrientation = "Landscape";
         }
 
-        private static void SetPortraitMode(Grid page1Grid, Grid page2Grid)
+        private void SetPortraitMode(Grid page1Grid, Grid page2Grid)
         {
+            if (lastOrientation == "Portrait") return;
+
             // Page 1 : Move graph from column to row
             page1Grid.RowDefinitions[0].Height = new GridLength(330);
             page1Grid.RowDefinitions[1].Height = GridLength.Auto;
@@ -194,6 +205,7 @@ namespace PowerwallCompanionX.Views
                     }
                 }
             }
+            lastOrientation = "Portrait";
         }
 
         private async Task RefreshData()
@@ -203,7 +215,8 @@ namespace PowerwallCompanionX.Views
             Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {
                 RefreshDataFromTeslaOwnerApi();
-                if (Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone && 
+                    Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
                 { 
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
                 }
@@ -430,6 +443,7 @@ namespace PowerwallCompanionX.Views
 
         private async void statusEllipse_Tapped(object sender, EventArgs e)
         {
+            MainPage_SizeChanged(null, null);
 
             if (viewModel.Status == MainViewModel.StatusEnum.Error)
             {
@@ -453,9 +467,12 @@ namespace PowerwallCompanionX.Views
 
         private async Task ShowSettingsButtonThenFade()
         {
-            await settingsButton.FadeTo(1, 500);
-            await Task.Delay(5000);
-            await settingsButton.FadeTo(0, 500);
+            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            {
+                await settingsButton.FadeTo(1, 500);
+                await Task.Delay(5000);
+                await settingsButton.FadeTo(0, 500);
+            }
         }
     }
 
