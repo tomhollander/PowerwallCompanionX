@@ -108,7 +108,10 @@ namespace PowerwallCompanionX.Views
                 }
             }
 
-
+            if (chart.Height > 200)
+            {
+                chart.HeightRequest = 200;
+            }
 
 
         }

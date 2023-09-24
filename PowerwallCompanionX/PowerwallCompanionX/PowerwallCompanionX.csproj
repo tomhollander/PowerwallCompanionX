@@ -13,16 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Media\battery-empty.wav" />
-    <None Remove="Media\battery-full.wav" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Media\battery-empty.wav" />
-    <EmbeddedResource Include="Media\battery-full.wav" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CardsView" Version="2.8.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="19.4.0.56" />
@@ -31,6 +21,12 @@
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v13.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

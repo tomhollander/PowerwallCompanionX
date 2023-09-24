@@ -13,9 +13,9 @@ namespace PowerwallCompanionX.Media
 
         public void PlaySound(string file)
         {
-            var stream = GetStreamFromFile(file);
+            //var stream = GetStreamFromFile(file);
             var audio = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.Current;
-            audio.Load(stream);
+            audio.Load(file);
             audio.Play();
         }
 
