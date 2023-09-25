@@ -441,6 +441,8 @@ namespace PowerwallCompanionX.Views
                 lastManualSwipe = DateTime.Now;
                 ShowSettingsButtonThenFade();
             }
+
+            viewModel.NotifyProperties(); 
             
         }
 

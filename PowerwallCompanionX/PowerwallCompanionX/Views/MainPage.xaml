@@ -5,7 +5,7 @@
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
              xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:converters="clr-namespace:PowerwallCompanionX.Converters"
-             BackgroundColor="#1E1E1E" 
+             BackgroundColor="Black" 
              x:Class="PowerwallCompanionX.Views.MainPage">
 
     <Page.Resources>
@@ -277,7 +277,7 @@
             </StackLayout>
 
             <!-- Power history chart -->
-            <chart:SfChart x:Name="chart"  BackgroundColor="#1E1E1E" Margin="-30,0,-30,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+            <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="-30,0,-30,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
                         HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding ShowGraph}">
                 <chart:SfChart.PrimaryAxis>
                     <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">

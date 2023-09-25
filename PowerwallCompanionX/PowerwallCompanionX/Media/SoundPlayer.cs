@@ -19,11 +19,5 @@ namespace PowerwallCompanionX.Media
             audio.Play();
         }
 
-        private Stream GetStreamFromFile(string filename)
-        {
-            var assembly = typeof(App).GetTypeInfo().Assembly;
-            var stream = assembly.GetManifestResourceStream("PowerwallCompanionX.Media." + filename);
-            return stream;
-        }
     }
 }
