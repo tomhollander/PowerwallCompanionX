@@ -42,7 +42,7 @@ namespace PowerwallCompanionX.ViewModels
         }
 
 
-        public void NotifyProperties()
+        public void NotifyPowerProperties()
         {
             NotifyPropertyChanged(nameof(BatteryPercent));
             NotifyPropertyChanged(nameof(BatteryStatus));
@@ -56,6 +56,11 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(SolarToHome));
             NotifyPropertyChanged(nameof(GridValue));
             NotifyPropertyChanged(nameof(GridActive));
+            NotifyPropertyChanged(nameof(Time));
+        }
+
+        public void NotifyDailyEnergyProperties()
+        { 
             NotifyPropertyChanged(nameof(HomeEnergyYesterday));
             NotifyPropertyChanged(nameof(HomeEnergyToday));
             NotifyPropertyChanged(nameof(SolarEnergyYesterday));

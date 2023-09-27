@@ -281,7 +281,7 @@ namespace PowerwallCompanionX.Views
                 {
                     viewModel.Status = MainViewModel.StatusEnum.IdleGrid;
                 }
-                viewModel.NotifyProperties();
+                viewModel.NotifyPowerProperties();
 
 
                 PlaySoundsOnBatteryStatus(viewModel.BatteryPercent);
@@ -295,7 +295,7 @@ namespace PowerwallCompanionX.Views
                         Application.Current.MainPage = new LoginPage();
                         viewModel.LastExceptionMessage = ex.Message;
                         viewModel.LastExceptionDate = DateTime.Now;
-                        viewModel.NotifyProperties();
+                        viewModel.NotifyPowerProperties();
                         viewModel.Status = MainViewModel.StatusEnum.Error;
                     }
                 });
@@ -305,7 +305,7 @@ namespace PowerwallCompanionX.Views
             {
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
-                viewModel.NotifyProperties();
+                viewModel.NotifyPowerProperties();
                 viewModel.Status = MainViewModel.StatusEnum.Error;
             }
         }
@@ -359,7 +359,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.BatteryEnergyExportedToday = GetJsonDoubleValue(today["battery_energy_exported"]);
 
                 viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
-                viewModel.NotifyProperties();
+                viewModel.NotifyDailyEnergyProperties();
    
 
             }
@@ -367,7 +367,7 @@ namespace PowerwallCompanionX.Views
             {
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
-                viewModel.NotifyProperties();
+                viewModel.NotifyDailyEnergyProperties();
             }
         }
 
@@ -441,8 +441,6 @@ namespace PowerwallCompanionX.Views
                 lastManualSwipe = DateTime.Now;
                 ShowSettingsButtonThenFade();
             }
-
-            viewModel.NotifyProperties(); 
             
         }
 
