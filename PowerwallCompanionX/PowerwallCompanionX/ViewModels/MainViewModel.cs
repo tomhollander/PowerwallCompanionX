@@ -14,9 +14,8 @@ namespace PowerwallCompanionX.ViewModels
     {
         public enum StatusEnum
         {
-            IdleGrid,
-            ImportingFromGrid,
-            ExportingToGrid,
+            Online,
+            GridOutage,
             Error
         }
 
@@ -283,27 +282,6 @@ namespace PowerwallCompanionX.ViewModels
             {
                 _status = value;
                 NotifyPropertyChanged(nameof(Status));
-                NotifyPropertyChanged(nameof(StatusString));
-            }
-        }
-
-        public string StatusString
-        {
-            get
-            {
-                switch (Status)
-                {
-                    case StatusEnum.Error:
-                        return "Connection Error";
-                    case StatusEnum.ExportingToGrid:
-                        return "Exporting to Grid";
-                    case StatusEnum.ImportingFromGrid:
-                        return "Importing from Grid";
-                    case StatusEnum.IdleGrid:
-                        return "Grid Idle";
-                    default:
-                        return null;
-                }
             }
         }
 

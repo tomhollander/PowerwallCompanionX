@@ -6,20 +6,26 @@ using Xamarin.Forms;
 
 namespace PowerwallCompanionX.Converters
 {
-    class GridActiveToColorConverter : IValueConverter
+    internal class BatteryValueToImageFilenameConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool boolValue = (bool)value;
-            if (boolValue == true)
+            double batteryValue = (double)value;
+            if (batteryValue < -20)
             {
-                return Color.LimeGreen;
+                return "icon_battery_import.png";
+            }
+            else if (batteryValue > 20)
+            {
+                return "icon_battery_export.png";
             }
             else
             {
-                return Color.Orange;
+                return null;
             }
+          
         }
+    
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

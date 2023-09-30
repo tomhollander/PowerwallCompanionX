@@ -266,21 +266,9 @@ namespace PowerwallCompanionX.Views
                 viewModel.BatteryValue = GetJsonDoubleValue(powerInfo["response"]["battery_power"]);
                 viewModel.GridValue = GetJsonDoubleValue(powerInfo["response"]["grid_power"]);
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
+                viewModel.Status = viewModel.GridActive ? MainViewModel.StatusEnum.Online : MainViewModel.StatusEnum.GridOutage;
 #endif
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
-                
-                if (viewModel.GridValue < -100)
-                {
-                    viewModel.Status = MainViewModel.StatusEnum.ExportingToGrid;
-                }
-                else if (viewModel.GridValue > 100)
-                {
-                    viewModel.Status = MainViewModel.StatusEnum.ImportingFromGrid;
-                } 
-                else
-                {
-                    viewModel.Status = MainViewModel.StatusEnum.IdleGrid;
-                }
                 viewModel.NotifyPowerProperties();
 
 
@@ -427,14 +415,14 @@ namespace PowerwallCompanionX.Views
 
         private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
         {
-            if (args.Index == 0)
-            {
-                unitsLabel.Text = "kW";
-            }
-            else if (args.Index == 1)
-            {
-                unitsLabel.Text = "kWh";
-            }
+            //if (args.Index == 0)
+            //{
+            //    unitsLabel.Text = "kW";
+            //}
+            //else if (args.Index == 1)
+            //{
+            //    unitsLabel.Text = "kWh";
+            //}
 
             if (args.Type == PanCardView.Enums.InteractionType.User)
             {
