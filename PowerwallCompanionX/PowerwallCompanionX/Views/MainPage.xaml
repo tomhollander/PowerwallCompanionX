@@ -21,7 +21,7 @@
         </Grid.GestureRecognizers>
         <Image Source="PowerwallLogo.png" HorizontalOptions="Center" Scale="0.6" Margin="0,-20,0,-20">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="statusEllipse_Tapped" />
+                <TapGestureRecognizer Tapped="status_Tapped" />
             </Image.GestureRecognizers>
         </Image>
 
@@ -37,24 +37,21 @@
         </cards:CarouselView>
 
 
-        <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="10,-40,0,0"
+        <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
-        <Label Grid.Row="1" x:Name="extrasTextBLock" HorizontalTextAlignment="Right" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Margin="0,-10,20,0" HorizontalOptions="End" VerticalOptions="Start" Text="23° 🌧️"/>
-        <Label Grid.Row="1" x:Name="statusTooltip"  IsVisible="False" BackgroundColor="LightGray" TextColor="Black" Text="{Binding StatusString}" HorizontalOptions="End" VerticalOptions="Start" Padding="5" Margin="0,0,0,0"  />
+        <Label Grid.Row="1" x:Name="extrasTextBLock" HorizontalTextAlignment="Right" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Margin="0,-30,10,0" HorizontalOptions="End" VerticalOptions="Start" Text="23° 🌧️"/>
+        
         <ImageButton x:Name="settingsButton" 
                     Grid.Row="1" Source="Settings.png"
                     HeightRequest="30" WidthRequest="30"
-                    Margin="20,-20,0,0"
+                    Margin="10,-25,0,0"
                     BackgroundColor="Transparent"
                     HorizontalOptions="Start"
                     VerticalOptions="Start"
                     Opacity="0"
                     Command="{Binding SettingsCommand}"
                     />
-
-
-
 
 
 

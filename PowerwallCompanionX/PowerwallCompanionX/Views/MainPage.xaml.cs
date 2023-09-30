@@ -31,6 +31,9 @@ namespace PowerwallCompanionX.Views
         private bool keepRefreshing = true;
         private string lastOrientation;
 
+        private Thickness timeDefaultMargin;
+        private Thickness extrasDefaultMargin;
+
         public MainPage()
         {
             InitializeComponent();
@@ -43,6 +46,9 @@ namespace PowerwallCompanionX.Views
 
         private void SetPhoneOrTabletLayout()
         {
+            timeDefaultMargin = timeTextBlock.Margin;
+            extrasDefaultMargin = extrasTextBLock.Margin;
+
             if (DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
                 rootGrid.Children.Remove(mainGrid);
@@ -50,13 +56,15 @@ namespace PowerwallCompanionX.Views
                 carousel.ItemsSource = new View[] { mainGrid, dailyEnergyGrid };
             }
             else
-            { 
+            {
+                // Move time to the right to leave room for persistent settings button
+                timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left + 20, timeDefaultMargin.Top, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
+
                 rootGrid.Children.Remove(mainGrid);
                 rootGrid.Children.Remove(dailyEnergyGrid);
                 tabletGrid.Children.Add(mainGrid);
                 tabletGrid.Children.Add(dailyEnergyGrid);
                 settingsButton.Opacity = 1;
-                timeTextBlock.Margin = new Thickness(80, -40, 0, 0);
             }
             MainPage_SizeChanged(null, null);
         }
@@ -71,10 +79,18 @@ namespace PowerwallCompanionX.Views
             {
                 if (visualState == "Portrait")
                 {
+                    // Give extra space for the clock and extras
+                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 20, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
+                    extrasTextBLock.Margin = new Thickness(extrasDefaultMargin.Left, extrasDefaultMargin.Top + 20, extrasDefaultMargin.Right, extrasDefaultMargin.Bottom);
+
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
                 else if (visualState == "Landscape")
                 {
+                    // Restore default margins for clock and extras
+                    timeTextBlock.Margin = timeDefaultMargin;
+                    extrasTextBLock.Margin = extrasDefaultMargin;
+
                     SetLandscapeMode(mainGrid, dailyEnergyGrid);
                 }
             }
@@ -415,15 +431,6 @@ namespace PowerwallCompanionX.Views
 
         private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
         {
-            //if (args.Index == 0)
-            //{
-            //    unitsLabel.Text = "kW";
-            //}
-            //else if (args.Index == 1)
-            //{
-            //    unitsLabel.Text = "kWh";
-            //}
-
             if (args.Type == PanCardView.Enums.InteractionType.User)
             {
                 lastManualSwipe = DateTime.Now;
@@ -432,7 +439,7 @@ namespace PowerwallCompanionX.Views
             
         }
 
-        private async void statusEllipse_Tapped(object sender, EventArgs e)
+        private async void status_Tapped(object sender, EventArgs e)
         {
             MainPage_SizeChanged(null, null);
 
@@ -444,9 +451,6 @@ namespace PowerwallCompanionX.Views
                     await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
                 }
             }
-            statusTooltip.IsVisible = true;
-            await Task.Delay(3000);
-            statusTooltip.IsVisible = false;
         }
 
 
