@@ -33,7 +33,6 @@ namespace PowerwallCompanionX.Views
         private string lastOrientation;
 
         private Thickness timeDefaultMargin;
-        private Thickness extrasDefaultMargin;
 
         private IExtrasProvider extrasProvider;
 
@@ -45,7 +44,20 @@ namespace PowerwallCompanionX.Views
             this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
 
-
+            switch (Settings.SelectedExtras)
+            {
+                case "Weather":
+                    extrasProvider = new WeatherExtrasProvider(Settings.WeatherApiKey, Settings.WeatherCity, "C");
+                    break;
+                case "Amber":
+                    extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
+                    break;
+                case "Tesla":
+                    extrasProvider = new TeslaExtrasProvider();
+                    break;
+                default:
+                    break;
+            }
 
             Task.Run(() => RefreshData());
         }
@@ -53,7 +65,6 @@ namespace PowerwallCompanionX.Views
         private void SetPhoneOrTabletLayout()
         {
             timeDefaultMargin = timeTextBlock.Margin;
-            extrasDefaultMargin = extrasTextBLock.Margin;
 
             if (DeviceInfo.Idiom == DeviceIdiom.Phone)
             {
@@ -85,17 +96,15 @@ namespace PowerwallCompanionX.Views
             {
                 if (visualState == "Portrait")
                 {
-                    // Give extra space for the clock and extras
-                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 20, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
-                    extrasTextBLock.Margin = new Thickness(extrasDefaultMargin.Left, extrasDefaultMargin.Top + 20, extrasDefaultMargin.Right, extrasDefaultMargin.Bottom);
+                    // Give extra space for the clock
+                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 15, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
 
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
                 else if (visualState == "Landscape")
                 {
-                    // Restore default margins for clock and extras
+                    // Restore default margins for clock 
                     timeTextBlock.Margin = timeDefaultMargin;
-                    extrasTextBLock.Margin = extrasDefaultMargin;
 
                     SetLandscapeMode(mainGrid, dailyEnergyGrid);
                 }
@@ -234,10 +243,16 @@ namespace PowerwallCompanionX.Views
         }
 
         private async Task RefreshData()
-        { 
+        {
+            extrasTextBlock.IsVisible = (extrasProvider != null);
             await RefreshDataFromTeslaOwnerApi();
+            if (extrasProvider != null)
+            {
+                viewModel.ExtrasContent = await extrasProvider.RefreshStatus();
+            }
 
-            Device.StartTimer(TimeSpan.FromSeconds(10), () => 
+
+                Device.StartTimer(TimeSpan.FromSeconds(10), () =>
             {
                 Task.Run(async () =>
                 {
@@ -258,6 +273,7 @@ namespace PowerwallCompanionX.Views
 
         }
 
+ 
         protected override void OnDisappearing()
         {
             keepRefreshing = false;

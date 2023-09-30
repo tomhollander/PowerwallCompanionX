@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using static Android.Provider.ContactsContract.CommonDataKinds;
 
 namespace PowerwallCompanionX
 {
@@ -108,7 +110,8 @@ namespace PowerwallCompanionX
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
             client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
-            var response = await client.PostAsync(url, new ByteArrayContent(new byte[0]));
+            var content = new StringContent(String.Empty, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(url, content);
             var responseMessage = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {

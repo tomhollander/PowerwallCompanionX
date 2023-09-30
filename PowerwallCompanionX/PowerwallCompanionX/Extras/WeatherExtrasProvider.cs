@@ -100,6 +100,7 @@ namespace PowerwallCompanionX.Extras
                     decimal forecastTemp = _units == "C" ? forecastNode["maxtemp_c"].Value<decimal>() : forecastNode["maxtemp_f"].Value<decimal>();
 
                     _lastForecast = $"{currentTemp:f0}° {currentIcon} Max: {forecastTemp:f0}°";
+                    _lastUpdated = DateTime.Now;
                     return _lastForecast;
                 }
                 else

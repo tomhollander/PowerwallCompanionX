@@ -9,59 +9,103 @@ namespace PowerwallCompanionX.Extras
 {
     internal class TeslaExtrasProvider : IExtrasProvider
     {
-        private string _vehicleId;
-        public string _vehicleName;
         private DateTime _lastRefreshed;
-        private int _lastBatteryLevel;
+        private Dictionary<long, VehicleData> _vehicles;
 
-        public TeslaExtrasProvider(string vehicleId)
+        public TeslaExtrasProvider()
         {
-            _vehicleId = vehicleId;
         }
 
         public async Task<string> RefreshStatus()
         {
             try
             {
+                if (_vehicles == null)
+                {
+                    await GetVehicles();
+                }
+
                 var dataAge = DateTime.Now - _lastRefreshed;
                 if (dataAge > TimeSpan.FromMinutes(15))
                 {
-                    await GetChargeLevel();
+                    await GetChargeLevels();
                 }
-                return $"{_vehicleName}: {_lastBatteryLevel}%";
+                string message = "🚘 ";
+                foreach (var v in _vehicles.Values)
+                {
+                    message += $"{v.VehicleName}: {v.BatteryLevel}%  ";
+                }
+                return message;
             }
             catch
             {
                 return "Tesla failed";
             }
         }
-        
-        // Don't think we need to use this but keeping it here just in case...
-        private async Task<bool> IsVehicleAwake()
+
+        private async Task GetVehicles()
         {
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
-            var vehicle = productsResponse["response"].Where(r => r.Value<string>("id") == _vehicleId).FirstOrDefault();
-            if (vehicle == null)
+            _vehicles = new Dictionary<long, VehicleData>();
+            foreach (var p in productsResponse["response"])
             {
-                throw new KeyNotFoundException();
+                if (p["vehicle_id"] != null)
+                {
+                    var v = new VehicleData();
+                    v.VehicleId = p["id"].Value<long>();
+                    v.VehicleName = p["display_name"].Value<string>();
+                    v.IsAwake = p["state"].Value<string>() == "online";
+                    _vehicles.Add(v.VehicleId, v);
+                }
             }
-            _vehicleName = vehicle["display_name"].Value<string>();
-            return vehicle["state"].Value<string>() == "online";
         }
 
-
-        private async Task WakeUpVehicle()
+        private async Task UpateOnlineStatus()
         {
-            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + _vehicleId + "/wake_up");
+            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
+            _vehicles = new Dictionary<long, VehicleData>();
+            foreach (var p in productsResponse["response"])
+            {
+                var id = p["id"].Value<long>();
+                _vehicles[id].IsAwake = p["state"].Value<string>() == "online";
+            }
         }
 
-
-        private async Task GetChargeLevel()
+        private async Task GetChargeLevels()
         {
-            var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + _vehicleId + "/vehicle_data", null);
-            _lastBatteryLevel = vehicleResponse["response"]["charge_state"]["battery_level"].Value<int>();
-            _vehicleName = vehicleResponse["response"]["vehicle_state"]["vehicle_name"].Value<string>();
+            foreach (var v in _vehicles.Values)
+            {
+                if (!v.IsAwake && (DateTime.Now - v.LastUpdated).TotalHours > 6)
+                {
+                    // Only wake up once every 6 hours
+                    await WakeUpVehicle(v.VehicleId);
+                    await Task.Delay(5);
+                }
+
+                if (v.IsAwake)
+                {
+                    var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + v.VehicleId.ToString() + "/vehicle_data", null);
+                    v.BatteryLevel = vehicleResponse["response"]["charge_state"]["battery_level"].Value<int>();
+                    v.LastUpdated = DateTime.Now;
+                }
+
+            }    
+
             _lastRefreshed = DateTime.Now;
+        }
+
+        private async Task WakeUpVehicle(long id)
+        {
+            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + id.ToString() + "/wake_up");
+        }
+
+        public class VehicleData
+        {
+            public long VehicleId { get; set; }
+            public string VehicleName { get; set; }
+            public int BatteryLevel { get; set; }
+            public bool IsAwake { get; set; }
+            public DateTime LastUpdated { get; set;  }
         }
     }
 }

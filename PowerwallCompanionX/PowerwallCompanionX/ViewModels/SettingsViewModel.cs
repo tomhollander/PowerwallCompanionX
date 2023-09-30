@@ -1,4 +1,5 @@
-﻿using PowerwallCompanionX.Views;
+﻿using Android.Icu.Text;
+using PowerwallCompanionX.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,10 +50,44 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.PlaySounds = value;
         }
 
+        public List<KeyValuePair<string, string>> AvailableExtras
+        {
+            get => new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>( "None", "None") ,
+                new KeyValuePair<string, string>("Weather", "Weather"),
+                new KeyValuePair<string, string>("Tesla", "Tesla car battery"),
+                new KeyValuePair<string, string>("Amber", "Amber electric prices")
+            };
+        }
+
+        public KeyValuePair<string, string> SelectedExtras
+        {
+            get => AvailableExtras.Where(e => e.Key == Settings.SelectedExtras).FirstOrDefault();
+            set => Settings.SelectedExtras = value.Key;
+        }
+
+        public string WeatherApiKey
+        {
+            get => Settings.WeatherApiKey;
+            set => Settings.WeatherApiKey = value;
+        }
+
+        public string WeatherCity
+        {
+            get => Settings.WeatherCity;
+            set => Settings.WeatherCity = value;
+        }
+
+        public string AmberApiKey
+        {
+            get => Settings.AmberApiKey;
+            set => Settings.AmberApiKey = value;
+        }
+
         public decimal GraphScale
         {
             get => Settings.GraphScale;
-            set { 
+            set {
                 Settings.GraphScale = value;
                 NotifyPropertyChanged(nameof(GraphScale));
             }
@@ -111,6 +146,7 @@ namespace PowerwallCompanionX.ViewModels
             await Settings.SignOutUser();
             Application.Current.MainPage = new LoginPage();
         }
+
 
     }
 }

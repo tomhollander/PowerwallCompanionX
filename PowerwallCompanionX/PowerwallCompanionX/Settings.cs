@@ -21,7 +21,11 @@ namespace PowerwallCompanionX
             FontScale,
             CyclePages,
             ShowGraph,
-            PlaySounds
+            PlaySounds,
+            SelectedExtras,
+            WeatherApiKey,
+            WeatherCity,
+            AmberApiKey,
         }
 
         public static string AccessToken
@@ -95,6 +99,30 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<double>(nameof(Properties.FontScale), 1);
             set => Application.Current.Properties[nameof(Properties.FontScale)] = value;
+        }
+
+        public static string SelectedExtras
+        {
+            get => GetProperty<string>(nameof(Properties.SelectedExtras), "None");
+            set => Application.Current.Properties[nameof(Properties.SelectedExtras)] = value;
+        }
+
+        public static string WeatherApiKey
+        {
+            get => GetProperty<string>(nameof(Properties.WeatherApiKey), null);
+            set => Application.Current.Properties[nameof(Properties.WeatherApiKey)] = value;
+        }
+
+        public static string WeatherCity
+        {
+            get => GetProperty<string>(nameof(Properties.WeatherCity), null);
+            set => Application.Current.Properties[nameof(Properties.WeatherCity)] = value;
+        }
+
+        public static string AmberApiKey
+        {
+            get => GetProperty<string>(nameof(Properties.AmberApiKey), null);
+            set => Application.Current.Properties[nameof(Properties.AmberApiKey)] = value;
         }
 
         private static T GetProperty<T>(string keyName, T defaultValue)

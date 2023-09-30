@@ -17,6 +17,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="19.4.0.56" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="19.4.0.56" />
+    <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
     <PackageReference Include="TeslaAuth" Version="2.3.0" />
     <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />

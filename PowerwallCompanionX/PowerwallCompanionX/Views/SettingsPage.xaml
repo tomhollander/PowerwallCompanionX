@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PowerwallCompanionX.Views.SettingsPage"
              BackgroundColor="Black">
-   
+
+    <ScrollView>
         <StackLayout Margin="10" Grid.Row="0" Grid.Column="0">
             <StackLayout Orientation="Horizontal">
                 <ImageButton Source="Back.png"
@@ -13,6 +14,16 @@
                     VerticalOptions="Center"
                     Command="{Binding BackCommand}"/>
                 <Label Text="Settings" FontSize="Title" TextColor="White" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Bar Scale" VerticalOptions="Center"/>
+                <Slider Minimum="0.1" Maximum="5"  Value="{Binding GraphScale, Mode=TwoWay}" WidthRequest="190" />
+                <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
+                <Label Text="kW / cm" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Font Scale" VerticalOptions="Center"/>
+                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" />
@@ -34,21 +45,31 @@
                 <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
                 <Label Text="Cycle pages when idle" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Bar Scale" VerticalOptions="Center"/>
-                <Slider Minimum="0.1" Maximum="5"  Value="{Binding GraphScale, Mode=TwoWay}" WidthRequest="190" />
-                <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
-                <Label Text="kW / cm" VerticalOptions="Center"/>
-            </StackLayout>
             <StackLayout Orientation="Horizontal" >
-                <Label Text="Font Scale" VerticalOptions="Center"/>
-                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" />
+                <Label Text="Extra Info" VerticalOptions="Center"/>
+                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="200" SelectedIndexChanged="Picker_SelectedIndexChanged" />
             </StackLayout>
-        <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
-    </StackLayout>
+            <StackLayout x:Name="weatherSettings" IsVisible="False">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="weatherapi.com API key" VerticalOptions="Center"/>
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherApiKey, Mode=TwoWay}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="City" VerticalOptions="Center"/>
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="teslaCarSettings" IsVisible="False">
+            </StackLayout>
+            <StackLayout x:Name="amberSettings" IsVisible="False">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Amber Electric API key" VerticalOptions="Center"/>
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}"/>
+                </StackLayout>
+            </StackLayout>
 
-
-
-    
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
