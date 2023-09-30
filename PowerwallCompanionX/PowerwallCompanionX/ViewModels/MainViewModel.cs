@@ -29,6 +29,7 @@ namespace PowerwallCompanionX.ViewModels
         private double _gridValue;
         private bool _gridActive;
         private StatusEnum _status;
+        public string _extrasContent; 
 
         public MainViewModel()
         {
@@ -313,6 +314,17 @@ namespace PowerwallCompanionX.ViewModels
                 _gridActive = value;
             }
         }
+
+        public string ExtrasContent
+        {
+            get { return _extrasContent; }
+            set
+            {
+                _extrasContent = value;
+                NotifyPropertyChanged(nameof(ExtrasContent));
+            }
+        }
+
         public string Time
         {
             get

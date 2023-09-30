@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -35,6 +36,26 @@ namespace PowerwallCompanionX
             }
         }
 
+        public static async Task<JObject> CallPostApiWithTokenRefresh(string url)
+        {
+            if (Settings.AccessToken == null)
+            {
+                throw new UnauthorizedAccessException();
+            }
+
+            try
+            {
+                return await CallPostApi(url);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // First fail - try refreshing
+                await RefreshToken();
+                return await CallPostApi(url);
+
+            }
+        }
+
         public static async Task<JObject> CallApiIgnoreCerts(string url)
         {
             using (var httpClientHandler = new HttpClientHandler())
@@ -67,6 +88,27 @@ namespace PowerwallCompanionX
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
             client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
             var response = await client.GetAsync(url);
+            var responseMessage = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                return JObject.Parse(responseMessage);
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+            {
+                throw new UnauthorizedAccessException();
+            }
+            else
+            {
+                throw new HttpRequestException(responseMessage);
+            }
+        }
+
+        private static async Task<JObject> CallPostApi(string url)
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
+            var response = await client.PostAsync(url, new ByteArrayContent(new byte[0]));
             var responseMessage = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {

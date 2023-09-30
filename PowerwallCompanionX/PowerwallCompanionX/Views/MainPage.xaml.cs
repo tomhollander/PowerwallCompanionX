@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using PanCardView;
+using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
 using Syncfusion.SfChart.XForms;
@@ -34,6 +35,8 @@ namespace PowerwallCompanionX.Views
         private Thickness timeDefaultMargin;
         private Thickness extrasDefaultMargin;
 
+        private IExtrasProvider extrasProvider;
+
         public MainPage()
         {
             InitializeComponent();
@@ -41,6 +44,9 @@ namespace PowerwallCompanionX.Views
             SetPhoneOrTabletLayout();
             this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
+
+
+
             Task.Run(() => RefreshData());
         }
 
@@ -231,15 +237,23 @@ namespace PowerwallCompanionX.Views
         { 
             await RefreshDataFromTeslaOwnerApi();
 
-            Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+            Device.StartTimer(TimeSpan.FromSeconds(10), () => 
             {
-                RefreshDataFromTeslaOwnerApi();
-                if (DeviceInfo.Idiom == DeviceIdiom.Phone && 
+                Task.Run(async () =>
+                {
+                    await RefreshDataFromTeslaOwnerApi();
+                    if (extrasProvider != null)
+                    {
+                        viewModel.ExtrasContent = await extrasProvider.RefreshStatus();
+                    }
+                });
+                if (DeviceInfo.Idiom == DeviceIdiom.Phone &&
                     Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
-                { 
+                {
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
                 }
                 return keepRefreshing; // True = Repeat again, False = Stop the timer
+
             });
 
         }

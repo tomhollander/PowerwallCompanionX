@@ -40,7 +40,7 @@
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
-        <Label Grid.Row="1" x:Name="extrasTextBLock" HorizontalTextAlignment="Right" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Margin="0,-30,10,0" HorizontalOptions="End" VerticalOptions="Start" Text="23° 🌧️"/>
+        <Label Grid.Row="1" x:Name="extrasTextBLock" HorizontalTextAlignment="Right" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Margin="0,-20,10,0" HorizontalOptions="End" VerticalOptions="Start" Text="{Binding ExtrasContent}"/>
         
         <ImageButton x:Name="settingsButton" 
                     Grid.Row="1" Source="Settings.png"
@@ -80,7 +80,7 @@
             <!-- Column 0 -->
             <StackLayout Orientation="Vertical" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
 
-                <gauge:SfCircularGauge Margin="50,30,30,0" HeightRequest="300" >
+                <gauge:SfCircularGauge Margin="20,30,30,0" HeightRequest="300" >
                     <gauge:SfCircularGauge.Headers>
                         <gauge:Header Text="{Binding BatteryPercent, Converter={ StaticResource BatteryPercentageConverter}}" ForegroundColor="White" TextSize="{Binding LargeFontSize}" Position="0.5,0.5" />
                     </gauge:SfCircularGauge.Headers>
