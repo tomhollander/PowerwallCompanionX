@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PowerwallCompanionX.Views.SettingsPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:segmentCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
              BackgroundColor="Black">
 
     <ScrollView>
@@ -49,24 +51,45 @@
                 <Label Text="Extra Info" VerticalOptions="Center"/>
                 <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="200" SelectedIndexChanged="Picker_SelectedIndexChanged" />
             </StackLayout>
-            <StackLayout x:Name="weatherSettings" IsVisible="False">
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="weatherapi.com API key" VerticalOptions="Center"/>
-                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherApiKey, Mode=TwoWay}"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="City" VerticalOptions="Center"/>
-                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"/>
-                </StackLayout>
-            </StackLayout>
+
+            <Grid x:Name="weatherSettings">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Grid.ColumnSpan="2">Get free API key from weatherapi.com</Label>
+                <Label Text="API key" Grid.Row="1" Grid.Column="0" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherApiKey, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
+                <Label Text="City" Grid.Row="2" Grid.Column="0" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="2" Grid.Column="1"/>
+                <Label Text="Units" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" />
+                <buttons:SfSegmentedControl Grid.Row="3" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" >
+                    <segmentCollection:List x:TypeArguments="x:String">
+                        <x:String>C</x:String>
+                        <x:String>F</x:String>
+                    </segmentCollection:List>
+                </buttons:SfSegmentedControl>
+            </Grid>
             <StackLayout x:Name="teslaCarSettings" IsVisible="False">
             </StackLayout>
-            <StackLayout x:Name="amberSettings" IsVisible="False">
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Amber Electric API key" VerticalOptions="Center"/>
-                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}"/>
-                </StackLayout>
-            </StackLayout>
+            <Grid x:Name="amberSettings">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Text="Amber Electric API key" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
+            </Grid>
 
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
         </StackLayout>

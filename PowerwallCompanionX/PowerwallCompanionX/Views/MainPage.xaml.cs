@@ -47,7 +47,7 @@ namespace PowerwallCompanionX.Views
             switch (Settings.SelectedExtras)
             {
                 case "Weather":
-                    extrasProvider = new WeatherExtrasProvider(Settings.WeatherApiKey, Settings.WeatherCity, "C");
+                    extrasProvider = new WeatherExtrasProvider(Settings.WeatherApiKey, Settings.WeatherCity, Settings.WeatherUnits);
                     break;
                 case "Amber":
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
@@ -394,7 +394,16 @@ namespace PowerwallCompanionX.Views
 
                 viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyDailyEnergyProperties();
-   
+
+                // This should be possible with data binding, but for some reason it is failing on phones in portrait mode
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    bothGridSettingsToday.IsVisible = viewModel.ShowBothGridSettingsToday;
+                    bothGridSettingsYesterday.IsVisible = viewModel.ShowBothGridSettingsYesterday;
+                    singleGridSettingsToday.IsVisible = !viewModel.ShowBothGridSettingsToday; 
+                    singleGridSettingsYesterday.IsVisible = !viewModel.ShowBothGridSettingsYesterday;
+                });
+
 
             }
             catch (Exception ex)

@@ -78,6 +78,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.WeatherCity = value;
         }
 
+        public string WeatherUnits
+        {
+            get => Settings.WeatherUnits;
+            set => Settings.WeatherUnits = value;
+        }
+
         public string AmberApiKey
         {
             get => Settings.AmberApiKey;

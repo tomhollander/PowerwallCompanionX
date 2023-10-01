@@ -38,7 +38,7 @@ namespace PowerwallCompanionX.Extras
                 {
                     await GetPrices();
                 }
-                return $"{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
+                return $"🔌{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
             }
             catch
             {

@@ -41,7 +41,7 @@
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
-        <Label Grid.Row="2"  x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Margin="0"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}"/>
+        <Label Grid.Row="2"  x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Padding="10"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}"/>
         
         <ImageButton x:Name="settingsButton" 
                     Grid.Row="1" Source="Settings.png"
@@ -247,10 +247,10 @@
             <Label Grid.Row="1" Grid.Column="1" TextColor="Cyan" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding HomeEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
             <Label Grid.Row="2" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
             <Label Grid.Row="1" Grid.Column="2" TextColor="Gold" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-            <Label Grid.Row="2" Grid.Column="3" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" IsVisible="{Binding ShowBothGridSettingsToday, Converter={StaticResource NegateValueConverter}}" ></Label>
-            <Label Grid.Row="1" Grid.Column="3" TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" IsVisible="{Binding ShowBothGridSettingsYesterday, Converter={StaticResource NegateValueConverter}}" ></Label>
+            <Label Grid.Row="2" Grid.Column="3" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" x:Name="singleGridSettingsToday" ></Label>
+            <Label Grid.Row="1" Grid.Column="3" TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" x:Name="singleGridSettingsYesterday" ></Label>
 
-            <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding ShowBothGridSettingsToday}">
+            <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" x:Name="bothGridSettingsToday">
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                     <Image Source="icon_grid_import.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" />
                     <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
@@ -260,7 +260,7 @@
                     <Image Source="icon_grid_export.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
             </StackLayout>
-            <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="{Binding ShowBothGridSettingsYesterday}">
+            <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" x:Name="bothGridSettingsYesterday">
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                     <Image Source="icon_grid_import.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center"  />
                     <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>

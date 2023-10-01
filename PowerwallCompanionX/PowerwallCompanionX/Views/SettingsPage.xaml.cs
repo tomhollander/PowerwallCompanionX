@@ -19,6 +19,7 @@ namespace PowerwallCompanionX.Views
             InitializeComponent();
             viewModel = new SettingsViewModel();
             this.BindingContext = viewModel;
+            weatherUnitsSegmentedControl.SelectedIndex = viewModel.WeatherUnits == "C" ? 0 : 1;
             if (DeviceInfo.Idiom != DeviceIdiom.Phone)
             {
                 cyclePages.IsEnabled = false;
@@ -30,6 +31,11 @@ namespace PowerwallCompanionX.Views
             teslaCarSettings.IsVisible = (viewModel.SelectedExtras.Key == "Tesla");
             weatherSettings.IsVisible = (viewModel.SelectedExtras.Key == "Weather");
             amberSettings.IsVisible = (viewModel.SelectedExtras.Key == "Amber");
+        }
+
+        private void weatherUnitsSegmentedControl_SelectionChanged(object sender, Syncfusion.XForms.Buttons.SelectionChangedEventArgs e)
+        {
+            viewModel.WeatherUnits = weatherUnitsSegmentedControl.SelectedIndex == 0 ? "C" : "F";
         }
     }
 }

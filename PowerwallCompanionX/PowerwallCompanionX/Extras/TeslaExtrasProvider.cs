@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Android.App.Admin;
 using Newtonsoft.Json.Linq;
 
 namespace PowerwallCompanionX.Extras
@@ -10,7 +11,7 @@ namespace PowerwallCompanionX.Extras
     internal class TeslaExtrasProvider : IExtrasProvider
     {
         private DateTime _lastRefreshed;
-        private Dictionary<long, VehicleData> _vehicles;
+        private Dictionary<string, VehicleData> _vehicles;
 
         public TeslaExtrasProvider()
         {
@@ -24,10 +25,11 @@ namespace PowerwallCompanionX.Extras
                 {
                     await GetVehicles();
                 }
-
+ 
                 var dataAge = DateTime.Now - _lastRefreshed;
                 if (dataAge > TimeSpan.FromMinutes(15))
                 {
+                    await UpdateOnlineStatus();
                     await GetChargeLevels();
                 }
                 string message = "🚘 ";
@@ -46,13 +48,13 @@ namespace PowerwallCompanionX.Extras
         private async Task GetVehicles()
         {
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
-            _vehicles = new Dictionary<long, VehicleData>();
+            _vehicles = new Dictionary<string, VehicleData>();
             foreach (var p in productsResponse["response"])
             {
                 if (p["vehicle_id"] != null)
                 {
                     var v = new VehicleData();
-                    v.VehicleId = p["id"].Value<long>();
+                    v.VehicleId = p["id"].Value<string>();
                     v.VehicleName = p["display_name"].Value<string>();
                     v.IsAwake = p["state"].Value<string>() == "online";
                     _vehicles.Add(v.VehicleId, v);
@@ -60,14 +62,16 @@ namespace PowerwallCompanionX.Extras
             }
         }
 
-        private async Task UpateOnlineStatus()
+        private async Task UpdateOnlineStatus()
         {
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
-            _vehicles = new Dictionary<long, VehicleData>();
             foreach (var p in productsResponse["response"])
             {
-                var id = p["id"].Value<long>();
-                _vehicles[id].IsAwake = p["state"].Value<string>() == "online";
+                if (p["vehicle_id"] != null)
+                {
+                    var id = p["id"].Value<string>();
+                    _vehicles[id].IsAwake = p["state"].Value<string>() == "online";
+                }
             }
         }
 
@@ -79,7 +83,8 @@ namespace PowerwallCompanionX.Extras
                 {
                     // Only wake up once every 6 hours
                     await WakeUpVehicle(v.VehicleId);
-                    await Task.Delay(5);
+                    v.IsAwake = true;
+                    await Task.Delay(TimeSpan.FromSeconds(5));
                 }
 
                 if (v.IsAwake)
@@ -94,14 +99,14 @@ namespace PowerwallCompanionX.Extras
             _lastRefreshed = DateTime.Now;
         }
 
-        private async Task WakeUpVehicle(long id)
+        private async Task WakeUpVehicle(string id)
         {
-            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + id.ToString() + "/wake_up");
+            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + id + "/wake_up");
         }
 
         public class VehicleData
         {
-            public long VehicleId { get; set; }
+            public string VehicleId { get; set; }
             public string VehicleName { get; set; }
             public int BatteryLevel { get; set; }
             public bool IsAwake { get; set; }
