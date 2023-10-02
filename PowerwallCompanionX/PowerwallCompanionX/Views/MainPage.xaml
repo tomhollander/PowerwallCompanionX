@@ -66,8 +66,10 @@
                 <converters:HideGridRowConverter x:Key="HideGridRowConverter" />
                 <converters:KilowattConverter x:Key="KilowattConverter" />
                 <converters:PositiveBarGraphConverter x:Key="PositiveBarGraphConverter" />
-                <converters:BatteryValueToImageFilenameConverter x:Key="BatteryValueToImageFilenameConverter" />
-                <converters:GridValueToImageFilenameConverter x:Key="GridValueToImageFilenameConverter" />
+                <converters:GridExportingToVisibilityConverter x:Key="GridExportingToVisibilityConverter" />
+                <converters:GridImportingToVisibilityConverter x:Key="GridImportingToVisibilityConverter" />
+                <converters:BatteryExportingToVisibilityConverter x:Key="BatteryExportingToVisibilityConverter"/>
+                <converters:BatteryImportingToVisibilityConverter x:Key="BatteryImportingToVisibilityConverter"/>
             </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -88,20 +90,22 @@
                     <gauge:SfCircularGauge.Annotations>
                         <gauge:GaugeAnnotation Angle="225" Offset="1.2">
                             <gauge:GaugeAnnotation.View>
-                                <Image HeightRequest="40" WidthRequest="40">
-                                    <Image.Source>
-                                        <FileImageSource File="{Binding GridValue, Converter={StaticResource GridValueToImageFilenameConverter}}" />
-                                    </Image.Source>
-                                </Image>
+                                <Image HeightRequest="40" WidthRequest="40" Source="icon_grid_export_yellow.png" IsVisible="{Binding GridValue, Converter={StaticResource GridExportingToVisibilityConverter}}" />
                             </gauge:GaugeAnnotation.View>
                         </gauge:GaugeAnnotation>
                         <gauge:GaugeAnnotation Angle="315" Offset="1.2">
                             <gauge:GaugeAnnotation.View>
-                                <Image HeightRequest="40" WidthRequest="40">
-                                    <Image.Source>
-                                        <FileImageSource File="{Binding BatteryValue, Converter={StaticResource BatteryValueToImageFilenameConverter}}" />
-                                    </Image.Source>
-                                </Image>
+                                <Image HeightRequest="40" WidthRequest="40" Source="icon_battery_import.png" IsVisible="{Binding BatteryValue, Converter={StaticResource BatteryImportingToVisibilityConverter}}" />
+                            </gauge:GaugeAnnotation.View>
+                        </gauge:GaugeAnnotation>
+                        <gauge:GaugeAnnotation Angle="45" Offset="1.2">
+                            <gauge:GaugeAnnotation.View>
+                                <Image HeightRequest="40" WidthRequest="40" Source="icon_battery_export.png" IsVisible="{Binding BatteryValue, Converter={StaticResource BatteryExportingToVisibilityConverter}}" />
+                            </gauge:GaugeAnnotation.View>
+                        </gauge:GaugeAnnotation>
+                        <gauge:GaugeAnnotation Angle="135" Offset="1.2">
+                            <gauge:GaugeAnnotation.View>
+                                <Image HeightRequest="40" WidthRequest="40"  Source="icon_grid_import.png" IsVisible="{Binding GridValue, Converter={StaticResource GridImportingToVisibilityConverter}}" />
                             </gauge:GaugeAnnotation.View>
                         </gauge:GaugeAnnotation>
                     </gauge:SfCircularGauge.Annotations>

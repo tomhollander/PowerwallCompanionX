@@ -12,6 +12,7 @@ namespace PowerwallCompanionX.Extras
     {
         private DateTime _lastRefreshed;
         private Dictionary<string, VehicleData> _vehicles;
+        private string lastMessage = "Tesla status pending";
 
         public TeslaExtrasProvider()
         {
@@ -21,27 +22,50 @@ namespace PowerwallCompanionX.Extras
         {
             try
             {
-                if (_vehicles == null)
-                {
-                    await GetVehicles();
-                }
- 
                 var dataAge = DateTime.Now - _lastRefreshed;
                 if (dataAge > TimeSpan.FromMinutes(15))
                 {
+                    // Only ever update once every 15 mins
+
+
+                    if (_vehicles == null)
+                    {
+                        await GetVehicles();
+                    }
+
                     await UpdateOnlineStatus();
+
+
+                    if (_vehicles.Values.Any(v => !v.IsAwake))
+                    {
+                        if (dataAge > TimeSpan.FromHours(6))
+                        {
+                            // Only wake cars once every 6 hours
+                            foreach (var v in _vehicles.Values)
+                            {
+                                if (!v.IsAwake)
+                                {
+                                    await WakeUpVehicle(v.VehicleId);
+                                }
+                            }
+                        }
+                        // Return previous status; wait until next cycle if the car has been woken
+                        return lastMessage;
+                    }
+
                     await GetChargeLevels();
+
+                    lastMessage = "🚘 ";
+                    foreach (var v in _vehicles.Values)
+                    {
+                        lastMessage += $"{v.VehicleName}: {v.BatteryLevel}%  ";
+                    }
                 }
-                string message = "🚘 ";
-                foreach (var v in _vehicles.Values)
-                {
-                    message += $"{v.VehicleName}: {v.BatteryLevel}%  ";
-                }
-                return message;
+                return lastMessage;
             }
             catch
             {
-                return "Tesla failed";
+                return "Tesla status failed";
             }
         }
 
@@ -79,14 +103,6 @@ namespace PowerwallCompanionX.Extras
         {
             foreach (var v in _vehicles.Values)
             {
-                if (!v.IsAwake && (DateTime.Now - v.LastUpdated).TotalHours > 6)
-                {
-                    // Only wake up once every 6 hours
-                    await WakeUpVehicle(v.VehicleId);
-                    v.IsAwake = true;
-                    await Task.Delay(TimeSpan.FromSeconds(5));
-                }
-
                 if (v.IsAwake)
                 {
                     var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + v.VehicleId.ToString() + "/vehicle_data", null);
@@ -95,7 +111,6 @@ namespace PowerwallCompanionX.Extras
                 }
 
             }    
-
             _lastRefreshed = DateTime.Now;
         }
 

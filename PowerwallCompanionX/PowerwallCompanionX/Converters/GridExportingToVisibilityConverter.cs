@@ -8,23 +8,17 @@ using static Android.App.Assist.AssistStructure;
 
 namespace PowerwallCompanionX.Converters
 {
-    internal class GridValueToImageFilenameConverter : IValueConverter
+    internal class GridExportingToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double gridValue = (double)value;
+
             if (gridValue < -100)
             {
-                return "icon_grid_export_yellow.png";
+                return true;
             }
-            else if (gridValue > 100)
-            {
-                return "icon_grid_import.png";
-            }
-            else
-            {
-                return null;
-            }
+            return false;
 
         }
     

@@ -6,24 +6,16 @@ using Xamarin.Forms;
 
 namespace PowerwallCompanionX.Converters
 {
-    internal class BatteryValueToImageFilenameConverter : IValueConverter
+    internal class BatteryExportingToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double batteryValue = (double)value;
-            if (batteryValue < -20)
+            if (batteryValue > 20)
             {
-                return "icon_battery_import.png";
+                return true;
             }
-            else if (batteryValue > 20)
-            {
-                return "icon_battery_export.png";
-            }
-            else
-            {
-                return null;
-            }
-          
+            return false;
         }
     
 

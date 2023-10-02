@@ -150,6 +150,10 @@ namespace PowerwallCompanionX.ViewModels
             }
         }
 
+        public double TotalPackEnergy
+        {
+            get; set;
+        }
         public double HomeEnergyToday
         {
             get; set; 

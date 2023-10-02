@@ -46,6 +46,9 @@ namespace PowerwallCompanionX.Views
 
             switch (Settings.SelectedExtras)
             {
+                case "Powerwall":
+                    extrasProvider = new PowerwallExtrasProvider(viewModel);
+                    break;
                 case "Weather":
                     extrasProvider = new WeatherExtrasProvider(Settings.WeatherApiKey, Settings.WeatherCity, Settings.WeatherUnits);
                     break;
@@ -312,6 +315,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.BatteryValue = GetJsonDoubleValue(powerInfo["response"]["battery_power"]);
                 viewModel.GridValue = GetJsonDoubleValue(powerInfo["response"]["grid_power"]);
                 viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
+                viewModel.TotalPackEnergy = GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]);  
                 viewModel.Status = viewModel.GridActive ? MainViewModel.StatusEnum.Online : MainViewModel.StatusEnum.GridOutage;
 #endif
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;

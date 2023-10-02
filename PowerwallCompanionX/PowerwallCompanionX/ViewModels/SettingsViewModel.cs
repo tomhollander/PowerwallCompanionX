@@ -53,7 +53,8 @@ namespace PowerwallCompanionX.ViewModels
         public List<KeyValuePair<string, string>> AvailableExtras
         {
             get => new List<KeyValuePair<string, string>> {
-                new KeyValuePair<string, string>( "None", "None") ,
+                new KeyValuePair<string, string>( "None", "None"),
+                new KeyValuePair<string, string>( "Powerwall", "Powerwall stats"),
                 new KeyValuePair<string, string>("Weather", "Weather"),
                 new KeyValuePair<string, string>("Tesla", "Tesla car battery"),
                 new KeyValuePair<string, string>("Amber", "Amber electric prices")
