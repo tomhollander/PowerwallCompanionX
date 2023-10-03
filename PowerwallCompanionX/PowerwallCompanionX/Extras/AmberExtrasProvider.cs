@@ -39,7 +39,7 @@ namespace PowerwallCompanionX.Extras
                     await GetPrices();
                 }
                 string symbol = _sellPrice > 40 ? "🔴" : _sellPrice > 20 ? "🟡" : _sellPrice > 0 ? "🟢" : "💥";
-                return $"🔌{symbol}{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
+                return $"⚡{symbol}{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
             }
             catch
             {
