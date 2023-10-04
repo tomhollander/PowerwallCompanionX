@@ -58,7 +58,11 @@ namespace PowerwallCompanionX.Views
                 case "Tesla":
                     extrasProvider = new TeslaExtrasProvider();
                     break;
+                case "News":
+                    extrasProvider = new NewsExtrasProvider(Settings.NewsFeedUrl);
+                    break;
                 default:
+                    extrasProvider = new OnboardingExtrasProvider();
                     break;
             }
 
@@ -249,21 +253,14 @@ namespace PowerwallCompanionX.Views
         {
             extrasTextBlock.IsVisible = (extrasProvider != null);
             await RefreshDataFromTeslaOwnerApi();
-            if (extrasProvider != null)
-            {
-                viewModel.ExtrasContent = await extrasProvider.RefreshStatus();
-            }
-
+            viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
 
                 Device.StartTimer(TimeSpan.FromSeconds(10), () =>
-            {
+                {
                 Task.Run(async () =>
                 {
                     await RefreshDataFromTeslaOwnerApi();
-                    if (extrasProvider != null)
-                    {
-                        viewModel.ExtrasContent = await extrasProvider.RefreshStatus();
-                    }
+                    viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
                 });
                 if (DeviceInfo.Idiom == DeviceIdiom.Phone &&
                     Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)

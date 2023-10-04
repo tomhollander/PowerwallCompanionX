@@ -31,6 +31,7 @@ namespace PowerwallCompanionX.Views
             teslaCarSettings.IsVisible = (viewModel.SelectedExtras.Key == "Tesla");
             weatherSettings.IsVisible = (viewModel.SelectedExtras.Key == "Weather");
             amberSettings.IsVisible = (viewModel.SelectedExtras.Key == "Amber");
+            newsSettings.IsVisible = (viewModel.SelectedExtras.Key == "News");
         }
 
         private void weatherUnitsSegmentedControl_SelectionChanged(object sender, Syncfusion.XForms.Buttons.SelectionChangedEventArgs e)

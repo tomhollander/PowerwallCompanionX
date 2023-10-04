@@ -27,6 +27,7 @@ namespace PowerwallCompanionX
             WeatherCity,
             WeatherUnits,
             AmberApiKey,
+            NewsFeedUrl
         }
 
         public static string AccessToken
@@ -131,6 +132,13 @@ namespace PowerwallCompanionX
             get => GetProperty<string>(nameof(Properties.AmberApiKey), null);
             set => Application.Current.Properties[nameof(Properties.AmberApiKey)] = value;
         }
+
+        public static string NewsFeedUrl
+        {
+            get => GetProperty<string>(nameof(Properties.NewsFeedUrl), "http://feeds.bbci.co.uk/news/world/rss.xml");
+            set => Application.Current.Properties[nameof(Properties.NewsFeedUrl)] = value;
+        }
+
 
         private static T GetProperty<T>(string keyName, T defaultValue)
         {

@@ -90,6 +90,18 @@
                 <Label Text="Amber Electric API key" />
                 <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
             </Grid>
+            <Grid x:Name="newsSettings">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Label Text="News RSS feed URL" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
+            </Grid>
 
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
         </StackLayout>
