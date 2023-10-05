@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace PowerwallCompanionX.Extras
 {
     internal class TeslaExtrasProvider : IExtrasProvider
     {
-        private DateTime _lastRefreshed;
+        private DateTime _lastProcessed;
         private Dictionary<string, VehicleData> _vehicles;
         private string lastMessage = "Tesla status pending";
 
@@ -21,40 +22,46 @@ namespace PowerwallCompanionX.Extras
         public async Task<string> RefreshStatus()
         {
             try
-            {
-                var dataAge = DateTime.Now - _lastRefreshed;
-                if (dataAge > TimeSpan.FromMinutes(15))
+            { 
+                // Only ever update once every 15 mins
+                var timeSinceUpdate = DateTime.Now - _lastProcessed;
+                if (timeSinceUpdate > TimeSpan.FromMinutes(15))
                 {
-                    // Only ever update once every 15 mins
-
-
+                    _lastProcessed = DateTime.Now;
                     if (_vehicles == null)
                     {
                         await GetVehicles();
                     }
-
-                    await UpdateOnlineStatus();
-
-
-                    if (_vehicles.Values.Any(v => !v.IsAwake))
+                    else
                     {
-                        if (dataAge > TimeSpan.FromHours(6))
-                        {
-                            // Only wake cars once every 6 hours
-                            foreach (var v in _vehicles.Values)
-                            {
-                                if (!v.IsAwake)
-                                {
-                                    await WakeUpVehicle(v.VehicleId);
-                                }
-                            }
-                        }
-                        // Return previous status; wait until next cycle if the car has been woken
-                        return lastMessage;
+                        await UpdateOnlineStatus();
                     }
 
-                    await GetChargeLevels();
-
+                    var tasks = new List<Task>();
+                    foreach (var v in _vehicles.Values) // Run in parallel
+                    {
+                        tasks.Add(Task.Run(async () => 
+                        {
+                            if (v.IsAwake)
+                            {
+                                Debug.WriteLine(DateTime.Now + ": " + v.VehicleName + " is awake.");
+                                await GetChargeLevel(v);
+                            }
+                            else
+                            {
+                                Debug.WriteLine(DateTime.Now + ": " + v.VehicleName + " is asleep.");
+                                var timeSinceWoken = DateTime.Now - v.LastWoken;
+                                if (timeSinceWoken.TotalHours > 6)
+                                {
+                                    await WakeUpVehicle(v);
+                                    await WakeForVehicleToReportAsAwake(v);
+                                    await GetChargeLevel(v);
+                                }
+                            }
+                        }));
+                    }
+                    await Task.WhenAll(tasks);
+     
                     lastMessage = "🚘 ";
                     foreach (var v in _vehicles.Values)
                     {
@@ -88,6 +95,7 @@ namespace PowerwallCompanionX.Extras
 
         private async Task UpdateOnlineStatus()
         {
+            Debug.WriteLine(DateTime.Now + ": UpdateOnlineStatus");
             var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
             foreach (var p in productsResponse["response"])
             {
@@ -99,25 +107,44 @@ namespace PowerwallCompanionX.Extras
             }
         }
 
-        private async Task GetChargeLevels()
+        private async Task GetChargeLevel(VehicleData vehicle)
         {
-            foreach (var v in _vehicles.Values)
+            Debug.WriteLine(DateTime.Now + ": Getting charge level for " + vehicle.VehicleName);
+            try
             {
-                if (v.IsAwake)
-                {
-                    var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + v.VehicleId.ToString() + "/vehicle_data", null);
-                    v.BatteryLevel = vehicleResponse["response"]["charge_state"]["battery_level"].Value<int>();
-                    v.LastUpdated = DateTime.Now;
-                }
+                var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + vehicle.VehicleId.ToString() + "/vehicle_data", null);
+                vehicle.BatteryLevel = vehicleResponse["response"]["charge_state"]["battery_level"].Value<int>();
+                vehicle.LastUpdated = DateTime.Now;
+            }
+            catch
+            {
+                Debug.WriteLine(DateTime.Now + ": Error getting charge status for " + vehicle.VehicleName);
+                vehicle.IsAwake = false;
+            }
 
-            }    
-            _lastRefreshed = DateTime.Now;
         }
 
-        private async Task WakeUpVehicle(string id)
+        private async Task WakeUpVehicle(VehicleData vehicle)
         {
-            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + id + "/wake_up");
+            Debug.WriteLine(DateTime.Now + ": Waking " + vehicle.VehicleName);
+            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + vehicle.VehicleId + "/wake_up");
+            vehicle.LastWoken = DateTime.Now;
         }
+
+        private async Task WakeForVehicleToReportAsAwake(VehicleData vehicle)
+        {
+            int attempts = 0;
+            while (attempts++ < 5)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(10));
+                await UpdateOnlineStatus();
+                if (_vehicles[vehicle.VehicleId].IsAwake)
+                {
+                    return;
+                }
+            }
+        }
+
 
         public class VehicleData
         {
@@ -126,6 +153,7 @@ namespace PowerwallCompanionX.Extras
             public int BatteryLevel { get; set; }
             public bool IsAwake { get; set; }
             public DateTime LastUpdated { get; set;  }
+            public DateTime LastWoken { get; set; }
         }
     }
 }

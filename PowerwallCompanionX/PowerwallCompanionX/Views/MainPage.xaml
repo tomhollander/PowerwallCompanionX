@@ -83,7 +83,7 @@
             <!-- Column 0 -->
             <StackLayout Orientation="Vertical" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
 
-                <gauge:SfCircularGauge Margin="20,10,30,0" HeightRequest="260" >
+                <gauge:SfCircularGauge Margin="20,10,30,0" HeightRequest="260">
                     <gauge:SfCircularGauge.Headers>
                         <gauge:Header Text="{Binding BatteryPercent, Converter={ StaticResource BatteryPercentageConverter}}" ForegroundColor="White" TextSize="{Binding LargeFontSize}" Position="0.5,0.5" />
                     </gauge:SfCircularGauge.Headers>

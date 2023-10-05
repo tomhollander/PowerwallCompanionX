@@ -491,6 +491,7 @@ namespace PowerwallCompanionX.Views
                     await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
                 }
             }
+            await ShowSettingsButtonThenFade();
         }
 
 
