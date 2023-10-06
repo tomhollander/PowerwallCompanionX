@@ -41,7 +41,7 @@
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Left" VerticalTextAlignment="Top" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
-        <Label Grid.Row="2"  x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888" Padding="10"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}"/>
+        <Label Grid.Row="2"  x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Top" FontSize="{Binding SmallFontSize}" TextColor="#888888"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}"  />
         
         <ImageButton x:Name="settingsButton" 
                     Grid.Row="1" Source="Settings.png"
@@ -57,7 +57,7 @@
 
 
         <!-- Instantaneous Power View-->
-        <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
             <Grid.Resources>
                 <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
                 <converters:GridActiveToBackgroundColorConverter x:Key="GridActiveToBackgroundColorConverter"/>

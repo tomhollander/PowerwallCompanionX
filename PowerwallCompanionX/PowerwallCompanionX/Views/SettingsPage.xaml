@@ -102,7 +102,20 @@
                 <Label Text="News RSS feed URL" />
                 <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
             </Grid>
-
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Enjoying this app? " />
+                        <Span Text="Show your appreciation."
+                              TextColor="MediumBlue"
+                              TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
         </StackLayout>
     </ScrollView>

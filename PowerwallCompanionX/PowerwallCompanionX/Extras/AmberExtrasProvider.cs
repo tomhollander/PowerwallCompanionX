@@ -63,7 +63,7 @@ namespace PowerwallCompanionX.Extras
                 }
                 else if (item["channelType"].Value<string>() == "feedIn")
                 {
-                    _buyPrice = item["perKwh"].Value<decimal>();
+                    _buyPrice = -item["perKwh"].Value<decimal>();
                 }
             }
             _lastUpdated = DateTime.Now;

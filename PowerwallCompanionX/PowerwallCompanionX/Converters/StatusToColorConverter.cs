@@ -23,7 +23,7 @@ namespace PowerwallCompanionX.Converters
             }
             else if (status == MainViewModel.StatusEnum.Error)
             {
-                return Color.DarkRed;
+                return Color.DarkGray;
             }
             else
             {
