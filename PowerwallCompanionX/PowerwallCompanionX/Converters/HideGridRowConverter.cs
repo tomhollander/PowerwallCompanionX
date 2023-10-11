@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Opengl;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -13,9 +14,9 @@ namespace PowerwallCompanionX.Converters
             double doubleValue = (double)value;
             if (doubleValue < 50)
             {
-                return new GridLength(0D);
+                return false;
             }
-            return GridLength.Auto;
+            return true;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
