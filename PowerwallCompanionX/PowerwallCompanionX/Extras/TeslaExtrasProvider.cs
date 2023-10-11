@@ -13,19 +13,22 @@ namespace PowerwallCompanionX.Extras
     {
         private DateTime _lastProcessed;
         private Dictionary<string, VehicleData> _vehicles;
+        private int _wakeTeslaHours;
         private string lastMessage = "Tesla status pending";
+        private bool initialRefreshDone = false;
 
-        public TeslaExtrasProvider()
+        public TeslaExtrasProvider(int wakeTeslaHours)
         {
+            _wakeTeslaHours = wakeTeslaHours;
         }
 
         public async Task<string> RefreshStatus()
         {
             try
             { 
-                // Only ever update once every 15 mins
+                // Only ever update once every 10 mins
                 var timeSinceUpdate = DateTime.Now - _lastProcessed;
-                if (timeSinceUpdate > TimeSpan.FromMinutes(15))
+                if (timeSinceUpdate > TimeSpan.FromMinutes(10))
                 {
                     _lastProcessed = DateTime.Now;
                     if (_vehicles == null)
@@ -51,7 +54,7 @@ namespace PowerwallCompanionX.Extras
                             {
                                 Debug.WriteLine(DateTime.Now + ": " + v.VehicleName + " is asleep.");
                                 var timeSinceWoken = DateTime.Now - v.LastWoken;
-                                if (timeSinceWoken.TotalHours > 6)
+                                if (!initialRefreshDone || (_wakeTeslaHours > 0 && timeSinceWoken.TotalHours > _wakeTeslaHours))
                                 {
                                     await WakeUpVehicle(v);
                                     await WakeForVehicleToReportAsAwake(v);
@@ -68,6 +71,7 @@ namespace PowerwallCompanionX.Extras
                         lastMessage += $"{v.VehicleName}: {v.BatteryLevel}%  ";
                     }
                 }
+                initialRefreshDone = true;
                 return lastMessage;
             }
             catch

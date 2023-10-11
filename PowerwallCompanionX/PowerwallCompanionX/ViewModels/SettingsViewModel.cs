@@ -98,6 +98,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.NewsFeedUrl = value;
         }
 
+        public int WakeTeslaHours
+        {
+            get => Settings.WakeTeslaHours;
+            set => Settings.WakeTeslaHours = value;
+        }
+
         public decimal GraphScale
         {
             get => Settings.GraphScale;

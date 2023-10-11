@@ -76,7 +76,10 @@
                     </segmentCollection:List>
                 </buttons:SfSegmentedControl>
             </Grid>
-            <StackLayout x:Name="teslaCarSettings" IsVisible="False">
+            <StackLayout x:Name="teslaCarSettings" IsVisible="False" Orientation="Horizontal">
+                <Label Text="Wake car if needed every " VerticalOptions="End" />
+                <Entry TextColor="White" MaxLength="3" Text="{Binding WakeTeslaHours, Mode=TwoWay}" VerticalOptions="Center" WidthRequest="50" />
+                <Label Text=" hours (0 = never)" VerticalOptions="End" />
             </StackLayout>
             <Grid x:Name="amberSettings">
                 <Grid.ColumnDefinitions>
@@ -87,7 +90,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Label Text="Amber Electric API key" />
+                <Label Text="Amber Electric API key" VerticalOptions="Center" />
                 <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
             </Grid>
             <Grid x:Name="newsSettings">
@@ -107,7 +110,7 @@
                     <FormattedString>
                         <Span Text="Enjoying this app? " />
                         <Span Text="Show your appreciation."
-                              TextColor="MediumBlue"
+                              TextColor="LightBlue"
                               TextDecorations="Underline">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />

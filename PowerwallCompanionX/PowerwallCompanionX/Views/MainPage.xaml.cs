@@ -56,7 +56,7 @@ namespace PowerwallCompanionX.Views
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
                     break;
                 case "Tesla":
-                    extrasProvider = new TeslaExtrasProvider();
+                    extrasProvider = new TeslaExtrasProvider(Settings.WakeTeslaHours);
                     break;
                 case "News":
                     extrasProvider = new NewsExtrasProvider(Settings.NewsFeedUrl);
