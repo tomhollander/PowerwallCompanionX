@@ -64,8 +64,6 @@
                 <converters:PositiveToBooleanConverter x:Key="PositiveToBooleanConverter" />
                 <converters:BatteryPercentageConverter x:Key="BatteryPercentageConverter" />
                 <converters:HideGridRowConverter x:Key="HideGridRowConverter" />
-                <converters:HideHomePowerIconConverter x:Key="HideHomePowerIconConverter"/>
-                <converters:HideSolarPowerIconConverter x:Key="HideSolarPowerIconConverter"/>
                 <converters:KilowattConverter x:Key="KilowattConverter" />
                 <converters:PositiveBarGraphConverter x:Key="PositiveBarGraphConverter" />
                 <converters:GridExportingToVisibilityConverter x:Key="GridExportingToVisibilityConverter" />
@@ -83,7 +81,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Column 0 -->
-            <gauge:SfCircularGauge Margin="20,30,20,0" Grid.Column="0" HeightRequest="260" VerticalOptions="Center">
+            <gauge:SfCircularGauge Margin="20,20,20,0" Grid.Column="0" HeightRequest="260" VerticalOptions="Center">
                 <gauge:SfCircularGauge.Headers>
                     <gauge:Header Text="{Binding BatteryPercent, Converter={ StaticResource BatteryPercentageConverter}}" ForegroundColor="White" TextSize="{Binding LargeFontSize}" Position="0.5,0.5" />
                 </gauge:SfCircularGauge.Headers>
@@ -185,7 +183,7 @@
                     <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" Margin="0,0,0,-5" />
                 </StackLayout>
                 <Rectangle Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" Fill="Gold" WidthRequest="{Binding SolarValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
-                <Image Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Source="arrow_from_solar.png" WidthRequest="40"  IsVisible="{Binding HomeValue, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
+                <Image Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Source="arrow_from_solar.png" WidthRequest="40"  IsVisible="{Binding SolarValue, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
 
                 <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="6" Margin="0,-5">
                     <Image Source="icon_home.png" WidthRequest="20" VerticalOptions="Center" IsVisible="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
@@ -196,7 +194,7 @@
                     <Label TextColor="LightGray" Margin="-5,0,10,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="0" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" >
+                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="3" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" >
                     <Rectangle Fill="Cyan" WidthRequest="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LimeGreen" WidthRequest="{Binding SolarToBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}"  HeightRequest="10" />
                     <Rectangle Fill="LightGray" WidthRequest="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}"  HeightRequest="10" />
@@ -226,8 +224,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="2" Grid.Column="0">Today</Label>
             <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="1" Grid.Column="0">Yesterday</Label>
+            <Label HorizontalOptions="Center" VerticalOptions="Center" FontSize="{Binding LargeCaptionFontSize}" TextColor="DarkGray" Grid.Row="2" Grid.Column="0">Today (kWh)</Label>
+            
             <Image Source="icon_home.png" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
             <Image Source="icon_solar.png" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
             <Image Source="icon_grid.png" Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="30"></Image>
