@@ -156,10 +156,11 @@
                 <Image Source="icon_home.png" WidthRequest="50"  VerticalOptions="End" Grid.Row="0" Grid.Column="0"/>
                 <StackLayout Orientation="Horizontal" Grid.Column="1">
                     <Label TextColor="Cyan" HorizontalOptions="Start" VerticalTextAlignment="End" Margin="{Binding BigNumberMargin}"  FontSize="{Binding LargeFontSize}"  Text="{Binding HomeValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
-                    <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" />
+                    <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" Margin="0,0,0,-5" />
                 </StackLayout>
 
                 <Rectangle HorizontalOptions="Start"  Grid.Row="1" Grid.Column="1"  Fill="Cyan" WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Source="arrow_to_house.png" WidthRequest="40"  IsVisible="{Binding HomeValue, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
 
                 <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Margin="0,-5">
                     <Image Source="icon_solar.png" WidthRequest="20" VerticalOptions="Center" IsVisible="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
@@ -169,8 +170,6 @@
                     <Image Source="icon_grid.png" WidthRequest="20" VerticalOptions="Center" IsVisible="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
                     <Label TextColor="LightGray" Margin="-5,0,10,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
-
-                
 
                 <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Spacing="0" IsClippedToBounds="False"  WidthRequest="{Binding HomeValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" >
                     <Rectangle Fill="Gold" WidthRequest="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
@@ -183,9 +182,10 @@
                 <Image Source="icon_solar.png" WidthRequest="50"  Grid.Column="0" Grid.Row="4" VerticalOptions="End" />
                 <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
                     <Label  TextColor="Gold" HorizontalOptions="Start" VerticalTextAlignment="End" Margin="{Binding BigNumberMargin}"  FontSize="{Binding LargeFontSize}"  Text="{Binding SolarValue, Mode=OneWay, Converter={StaticResource KilowattConverter}}" ></Label>
-                    <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" />
+                    <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" Margin="0,0,0,-5" />
                 </StackLayout>
                 <Rectangle Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" Fill="Gold" WidthRequest="{Binding SolarValue, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                <Image Grid.Column="0" Grid.Row="5" Grid.RowSpan="2" Source="arrow_from_solar.png" WidthRequest="40"  IsVisible="{Binding HomeValue, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
 
                 <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="6" Margin="0,-5">
                     <Image Source="icon_home.png" WidthRequest="20" VerticalOptions="Center" IsVisible="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"/>
