@@ -206,8 +206,8 @@ namespace PowerwallCompanionX.Views
             if (lastOrientation == "Portrait") return;
 
             // Page 1 : Move graph from column to row
-            page1Grid.RowDefinitions[0].Height = GridLength.Auto;
-            page1Grid.RowDefinitions[1].Height = GridLength.Auto;
+            page1Grid.RowDefinitions[0].Height = new GridLength(3, GridUnitType.Star);
+            page1Grid.RowDefinitions[1].Height = new GridLength(4, GridUnitType.Star);
             page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
             page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
             Grid.SetRow(page1Grid.Children[1], 1);
