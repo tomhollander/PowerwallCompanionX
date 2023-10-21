@@ -38,6 +38,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.ShowGraph = value;
         }
 
+        public bool TwoPagesOnTablet
+        {
+            get => Settings.TwoPagesOnTablet;
+            set => Settings.TwoPagesOnTablet = value;
+        }
+
         public bool CyclePages
         {
             get => Settings.CyclePages;

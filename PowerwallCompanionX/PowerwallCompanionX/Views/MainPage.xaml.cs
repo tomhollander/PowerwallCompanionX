@@ -73,7 +73,7 @@ namespace PowerwallCompanionX.Views
         {
             timeDefaultMargin = timeTextBlock.Margin;
 
-            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            if (ShowTwoPages())
             {
                 rootGrid.Children.Remove(mainGrid);
                 rootGrid.Children.Remove(dailyEnergyGrid);
@@ -93,13 +93,25 @@ namespace PowerwallCompanionX.Views
             MainPage_SizeChanged(null, null);
         }
 
+        private bool ShowTwoPages()
+        {
+            var formfactor = DeviceInfo.Idiom;
+            if (formfactor == DeviceIdiom.Phone)
+            {
+                return true;
+            }
+            else
+            {
+                return Settings.TwoPagesOnTablet; // Configurable
+            }
+        }
+
         private void MainPage_SizeChanged(object sender, EventArgs e)
         {
 
             string visualState = Width > Height ? "Landscape" : "Portrait";
-            var formfactor = DeviceInfo.Idiom;
 
-            if (formfactor == DeviceIdiom.Phone)
+            if (ShowTwoPages())
             {
                 if (visualState == "Portrait")
                 {
@@ -264,7 +276,7 @@ namespace PowerwallCompanionX.Views
                     viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
 
                 });
-                if (DeviceInfo.Idiom == DeviceIdiom.Phone &&
+                if (ShowTwoPages() &&
                     Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
                 {
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
@@ -517,7 +529,7 @@ namespace PowerwallCompanionX.Views
 
         private async Task ShowSettingsButtonThenFade()
         {
-            if (DeviceInfo.Idiom == DeviceIdiom.Phone)
+            if (ShowTwoPages())
             {
                 await settingsButton.FadeTo(1, 500);
                 await Task.Delay(5000);

@@ -44,6 +44,10 @@
                 <Label Text="Show Power Graph" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
+                <Switch x:Name="twoPagesOnTablet" IsToggled="{Binding TwoPagesOnTablet}" />
+                <Label Text="Show two pages on tablets" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
                 <Label Text="Cycle pages when idle" />
             </StackLayout>
