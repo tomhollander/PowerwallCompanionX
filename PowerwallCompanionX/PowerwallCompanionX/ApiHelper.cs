@@ -229,13 +229,13 @@ namespace PowerwallCompanionX
             {
                 return JObject.Parse(@"{
     ""response"": {
-    ""solar_power"": 3473.6399993896484,
+    ""solar_power"": 3573.6399993896484,
     ""energy_left"": 6552.78947368421,
     ""total_pack_energy"": 14057,
     ""battery_power"": -1900,
     ""load_power"": 1583.669994354248,
     ""grid_status"": ""Active"",
-    ""grid_power"": -19.9700050354004,
+    ""grid_power"": -100.9700050354004,
     ""timestamp"": ""2018-02-28T07:12:32+11:00""
             }}");
             }

@@ -20,6 +20,7 @@ namespace PowerwallCompanionX
             GraphScale,
             FontScale,
             CyclePages,
+            TwoPagesOnTablet,
             ShowGraph,
             PlaySounds,
             SelectedExtras,
@@ -84,6 +85,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.CyclePages), false);
             set => Application.Current.Properties[nameof(Properties.CyclePages)] = value;
+        }
+
+        public static bool TwoPagesOnTablet
+        {
+            get => GetProperty<bool>(nameof(Properties.TwoPagesOnTablet), false);
+            set => Application.Current.Properties[nameof(Properties.TwoPagesOnTablet)] = value;
         }
 
         public static bool PlaySounds

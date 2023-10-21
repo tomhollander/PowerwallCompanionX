@@ -21,10 +21,6 @@ namespace PowerwallCompanionX.Views
             viewModel = new SettingsViewModel();
             this.BindingContext = viewModel;
             weatherUnitsSegmentedControl.SelectedIndex = viewModel.WeatherUnits == "C" ? 0 : 1;
-            if (DeviceInfo.Idiom != DeviceIdiom.Phone)
-            {
-                cyclePages.IsEnabled = false;
-            }
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)

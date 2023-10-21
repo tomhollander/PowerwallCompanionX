@@ -13,7 +13,7 @@ namespace PowerwallCompanionX.ViewModels
 {
     class LoginViewModel 
     {
-        private TeslaAuthHelper teslaAuth = new TeslaAuthHelper("PowerwallCompanionX/0.0");
+        private TeslaAuthHelper teslaAuth = new TeslaAuthHelper();
 
         public LoginViewModel()
         {
