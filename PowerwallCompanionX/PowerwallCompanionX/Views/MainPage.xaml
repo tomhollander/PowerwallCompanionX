@@ -9,10 +9,13 @@
              x:Class="PowerwallCompanionX.Views.MainPage">
 
     <Grid x:Name="rootGrid">
+        <Grid.Resources>
+            <converters:NullTGridLengthConverter x:Key="NullTGridLengthConverter"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{Binding ExtrasContent, Converter={StaticResource NullTGridLengthConverter}}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
