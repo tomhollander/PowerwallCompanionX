@@ -266,7 +266,6 @@ namespace PowerwallCompanionX.Views
             extrasTextBlock.IsVisible = (extrasProvider != null);
             await RefreshDataFromTeslaOwnerApi();
             viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
-            FixExtrasRowSpacing();
 
             Device.StartTimer(TimeSpan.FromSeconds(10), () =>
                 {
@@ -282,24 +281,10 @@ namespace PowerwallCompanionX.Views
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
                 }
 
-                FixExtrasRowSpacing();
                 return keepRefreshing; // True = Repeat again, False = Stop the timer
 
             });
 
-        }
-
-        private void FixExtrasRowSpacing()
-        {
-            // This shouldn't be needed but it isn't calculating on its own properly 
-            if (viewModel.ExtrasContent == null)
-            {
-                rootGrid.RowDefinitions[2].Height = new GridLength(0);
-            }
-            else
-            {
-                rootGrid.RowDefinitions[2].Height = GridLength.Auto;
-            }
         }
 
         protected override void OnDisappearing()

@@ -19,8 +19,10 @@ namespace PowerwallCompanionX.Extras
         private string _apiKey;
         private string _location;
         private DateTime _lastUpdated;
+        private string _lastCurrent;
         private string _lastForecast;
         private string _units;
+        private int lastPage = 0;
 
         private Dictionary<int, string> Icons = new Dictionary<int, string>()
         {
@@ -89,25 +91,25 @@ namespace PowerwallCompanionX.Extras
                 if (dataAge > TimeSpan.FromMinutes(10))
                 {
                     var client = new HttpClient();
-                    var response = await client.GetAsync($"https://api.weatherapi.com/v1/forecast.json?key={_apiKey}&q={_location}&days=1&aqi=no&alerts=no");
+                    var response = await client.GetAsync($"https://api.weatherapi.com/v1/forecast.json?key={_apiKey}&q={_location}&days=3&aqi=no&alerts=no");
                     var responseMessage = await response.Content.ReadAsStringAsync();
                     var responseJson = JObject.Parse(responseMessage);
-                    decimal currentTemp = _units == "C" ? responseJson["current"]["temp_c"].Value<decimal>() : responseJson["current"]["temp_f"].Value<decimal>();
-                    int currentConditionsCode = responseJson["current"]["condition"]["code"].Value<int>();
-                    string currentConditionsText = responseJson["current"]["condition"]["text"].Value<string>();
-                    string currentIcon = currentConditionsText == "Clear" ? "🌙" : Icons[currentConditionsCode];
-                    var forecastNode = responseJson["forecast"]["forecastday"][0]["day"];
-                    decimal forecastTemp = _units == "C" ? forecastNode["maxtemp_c"].Value<decimal>() : forecastNode["maxtemp_f"].Value<decimal>();
-
-                    _lastForecast = $"{currentTemp:f0}° {currentIcon} Max: {forecastTemp:f0}°";
+                    _lastCurrent = GetCurrentConditions(responseJson);
+                    _lastForecast = GetForecast(responseJson);
                     _lastUpdated = DateTime.Now;
-                    return _lastForecast;
+                    
+                }
+
+                if (++lastPage % 2 == 0)
+                {
+                    lastPage = 0;
+                    return _lastCurrent;
                 }
                 else
                 {
                     return _lastForecast;
                 }
-
+    
             }
             catch
             {
@@ -115,6 +117,31 @@ namespace PowerwallCompanionX.Extras
             }
         }
 
-       
+        private string GetCurrentConditions(JObject responseJson)
+        {
+            string location = responseJson["location"]["name"].Value<string>();
+            decimal currentTemp = _units == "C" ? responseJson["current"]["temp_c"].Value<decimal>() : responseJson["current"]["temp_f"].Value<decimal>();
+            int currentConditionsCode = responseJson["current"]["condition"]["code"].Value<int>();
+            string currentConditionsText = responseJson["current"]["condition"]["text"].Value<string>();
+            string currentIcon = currentConditionsText == "Clear" ? "🌙" : Icons[currentConditionsCode];
+            var forecastNode = responseJson["forecast"]["forecastday"][0]["day"];
+            decimal forecastTemp = _units == "C" ? forecastNode["maxtemp_c"].Value<decimal>() : forecastNode["maxtemp_f"].Value<decimal>();
+
+            return $"{location}: {currentTemp:f0}°{currentIcon}";
+        }
+
+        private string GetForecast(JObject responseJson)
+        {
+            string result = String.Empty;
+            foreach (var dayNode in responseJson["forecast"]["forecastday"])
+            {
+                DateTime date = DateTime.Parse(dayNode["date"].Value<string>());
+                decimal maxTemp = _units == "C" ? dayNode["day"]["maxtemp_c"].Value<decimal>() : dayNode["day"]["maxtemp_f"].Value<decimal>();
+                int conditionsCode = dayNode["day"]["condition"]["code"].Value<int>();
+                string conditionsIcon = Icons[conditionsCode];
+                result += $"{date:ddd}: {maxTemp:f0}°{conditionsIcon} ";
+            }
+            return result;
+        }
     }
 }
