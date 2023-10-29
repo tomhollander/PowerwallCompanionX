@@ -74,11 +74,6 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.SelectedExtras = value.Key;
         }
 
-        public string WeatherApiKey
-        {
-            get => Settings.WeatherApiKey;
-            set => Settings.WeatherApiKey = value;
-        }
 
         public string WeatherCity
         {

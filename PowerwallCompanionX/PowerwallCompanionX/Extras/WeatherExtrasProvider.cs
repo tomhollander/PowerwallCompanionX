@@ -77,9 +77,9 @@ namespace PowerwallCompanionX.Extras
         };
 
 
-        public WeatherExtrasProvider(string apiKey, string location, string units)
+        public WeatherExtrasProvider(string location, string units)
         {
-            _apiKey = apiKey;
+            _apiKey = Keys.WeatherApi;
             _location = location;
             _units = units;
         }
@@ -88,7 +88,7 @@ namespace PowerwallCompanionX.Extras
             try
             {
                 var dataAge = DateTime.Now - _lastUpdated;
-                if (dataAge > TimeSpan.FromMinutes(10))
+                if (dataAge > TimeSpan.FromMinutes(15))
                 {
                     var client = new HttpClient();
                     var response = await client.GetAsync($"https://api.weatherapi.com/v1/forecast.json?key={_apiKey}&q={_location}&days=3&aqi=no&alerts=no");

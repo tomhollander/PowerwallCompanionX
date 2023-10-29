@@ -67,9 +67,6 @@
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Label Grid.ColumnSpan="2">Get free API key from weatherapi.com</Label>
-                <Label Text="API key" Grid.Row="1" Grid.Column="0" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherApiKey, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
                 <Label Text="City" Grid.Row="2" Grid.Column="0" />
                 <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="2" Grid.Column="1"/>
                 <Label Text="Units" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" />

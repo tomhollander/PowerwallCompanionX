@@ -4,8 +4,9 @@ using System.Text;
 
 namespace PowerwallCompanionX
 {
-    static class SyncfusionLicence
+    static class Keys
     {
-        public const string licenceKey = null;
+        public const string SyncFusion = null;
+        public const string WeatherApi = null;
     }
 }

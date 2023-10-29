@@ -50,7 +50,7 @@ namespace PowerwallCompanionX.Views
                     extrasProvider = new PowerwallExtrasProvider(viewModel);
                     break;
                 case "Weather":
-                    extrasProvider = new WeatherExtrasProvider(Settings.WeatherApiKey, Settings.WeatherCity, Settings.WeatherUnits);
+                    extrasProvider = new WeatherExtrasProvider(Settings.WeatherCity, Settings.WeatherUnits);
                     break;
                 case "Amber":
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
@@ -78,6 +78,7 @@ namespace PowerwallCompanionX.Views
                 rootGrid.Children.Remove(mainGrid);
                 rootGrid.Children.Remove(dailyEnergyGrid);
                 carousel.ItemsSource = new View[] { mainGrid, dailyEnergyGrid };
+                carousel.IsVisible = true;
             }
             else
             {
@@ -89,6 +90,7 @@ namespace PowerwallCompanionX.Views
                 tabletGrid.Children.Add(mainGrid);
                 tabletGrid.Children.Add(dailyEnergyGrid);
                 settingsButton.Opacity = 1;
+                carousel.IsVisible = false;
             }
             MainPage_SizeChanged(null, null);
         }

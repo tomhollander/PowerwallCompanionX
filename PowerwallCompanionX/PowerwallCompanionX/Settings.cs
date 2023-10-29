@@ -117,12 +117,6 @@ namespace PowerwallCompanionX
             set => Application.Current.Properties[nameof(Properties.SelectedExtras)] = value;
         }
 
-        public static string WeatherApiKey
-        {
-            get => GetProperty<string>(nameof(Properties.WeatherApiKey), null);
-            set => Application.Current.Properties[nameof(Properties.WeatherApiKey)] = value;
-        }
-
         public static string WeatherCity
         {
             get => GetProperty<string>(nameof(Properties.WeatherCity), null);
