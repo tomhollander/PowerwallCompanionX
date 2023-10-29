@@ -64,13 +64,11 @@
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
-                <Label Text="City" Grid.Row="2" Grid.Column="0" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="2" Grid.Column="1"/>
-                <Label Text="Units" VerticalOptions="Center" Grid.Row="3" Grid.Column="0" />
-                <buttons:SfSegmentedControl Grid.Row="3" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" >
+                <Label Text="City" Grid.Row="0" Grid.Column="0" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Units" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                <buttons:SfSegmentedControl Grid.Row="1" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" HorizontalOptions="Start" >
                     <segmentCollection:List x:TypeArguments="x:String">
                         <x:String>C</x:String>
                         <x:String>F</x:String>
