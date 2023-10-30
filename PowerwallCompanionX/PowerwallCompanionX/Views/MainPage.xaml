@@ -208,7 +208,7 @@
         </Grid>
 
         <!-- Daily Energy View -->
-        <Grid x:Name="dailyEnergyGrid" Margin="10,10,10,10" HorizontalOptions="Center" ColumnSpacing="40" VerticalOptions="Center">
+        <Grid x:Name="dailyEnergyGrid" Margin="40,10,40,10" HorizontalOptions="FillAndExpand" ColumnSpacing="40" VerticalOptions="Center">
             <Grid.Resources>
                 <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
                 <converters:NegateValueConverter x:Key="NegateValueConverter" />
@@ -283,7 +283,7 @@
             </StackLayout>
 
             <!-- Power history chart -->
-            <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="-30,0,-30,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+            <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
                         HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding ShowGraph}">
                 <chart:SfChart.PrimaryAxis>
                     <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
