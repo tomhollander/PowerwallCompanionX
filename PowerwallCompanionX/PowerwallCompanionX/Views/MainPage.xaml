@@ -208,7 +208,7 @@
         </Grid>
 
         <!-- Daily Energy View -->
-        <Grid x:Name="dailyEnergyGrid" Margin="40,10,40,10" HorizontalOptions="FillAndExpand" ColumnSpacing="40" VerticalOptions="Center">
+        <Grid x:Name="dailyEnergyGrid" Margin="20,10,20,10" HorizontalOptions="FillAndExpand" ColumnSpacing="15" VerticalOptions="Center">
             <Grid.Resources>
                 <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
                 <converters:NegateValueConverter x:Key="NegateValueConverter" />
@@ -247,7 +247,7 @@
                     <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                    <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                     <Image Source="icon_grid_export.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
             </StackLayout>
@@ -257,7 +257,7 @@
                     <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                    <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                     <Image Source="icon_grid_export.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
             </StackLayout>
@@ -283,12 +283,12 @@
             </StackLayout>
 
             <!-- Power history chart -->
-            <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="0,0,0,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+            <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="-20,0,-20,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
                         HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding ShowGraph}">
                 <chart:SfChart.PrimaryAxis>
                     <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
                         <chart:DateTimeAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="hh:mm tt"/>
+                            <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="h tt" FontSize="16"/>
                         </chart:DateTimeAxis.LabelStyle>
                         <chart:DateTimeAxis.MajorGridLineStyle>
                             <chart:ChartLineStyle StrokeColor="#404040" />
@@ -299,7 +299,7 @@
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis RangePadding="None">
                         <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="# W"/>
+                            <chart:ChartAxisLabelStyle TextColor="LightGray" LabelFormat="# kW" FontSize="16"/>
                         </chart:NumericalAxis.LabelStyle>
                         <chart:NumericalAxis.MajorGridLineStyle>
                             <chart:ChartLineStyle StrokeColor="#404040" />

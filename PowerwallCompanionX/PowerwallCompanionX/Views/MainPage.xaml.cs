@@ -448,9 +448,9 @@ namespace PowerwallCompanionX.Views
                 foreach (var datapoint in (JArray)json["response"]["time_series"])
                 {
                     var timestamp = datapoint["timestamp"].Value<DateTime>();
-                    var solarPower = datapoint["solar_power"].Value<double>();
-                    var batteryPower = datapoint["battery_power"].Value<double>();
-                    var gridPower = datapoint["grid_power"].Value<double>();
+                    var solarPower = datapoint["solar_power"].Value<double>() / 1000;
+                    var batteryPower = datapoint["battery_power"].Value<double>() / 1000;
+                    var gridPower = datapoint["grid_power"].Value<double>() / 1000;
                     var homePower = solarPower + batteryPower + gridPower;
                     homeGraphData.Add(new ChartDataPoint(timestamp, homePower));
                     solarGraphData.Add(new ChartDataPoint(timestamp, solarPower));
