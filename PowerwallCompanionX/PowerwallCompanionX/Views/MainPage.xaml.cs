@@ -472,6 +472,7 @@ namespace PowerwallCompanionX.Views
             }
         }
 
+
         private static double GetJsonDoubleValue(JToken jtoken)
         {
             if (jtoken == null)

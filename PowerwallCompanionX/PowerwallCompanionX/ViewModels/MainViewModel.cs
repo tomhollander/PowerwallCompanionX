@@ -1,4 +1,5 @@
-﻿using PowerwallCompanionX.Views;
+﻿using Newtonsoft.Json.Linq;
+using PowerwallCompanionX.Views;
 using Syncfusion.SfChart.XForms;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using static Android.App.Assist.AssistStructure;
 
 namespace PowerwallCompanionX.ViewModels
 {
@@ -23,7 +26,7 @@ namespace PowerwallCompanionX.ViewModels
         private double _batteryPercent;
         private double _minPercentToday;
         private double _maxPercentToday;
-        private DateTime _batteryDay;
+        private DateTime _batteryDay = DateTime.MinValue;
         private double _homeValue;
         private double _solarValue;
         private double _batteryValue;
@@ -395,9 +398,15 @@ namespace PowerwallCompanionX.ViewModels
             get { return DateTime.Today; }
         }
 
-        private void UpdateMinMaxPercentToday()
+        private async void UpdateMinMaxPercentToday()
         {
-            if (_batteryDay != DateTime.Today)
+            if (_batteryDay == DateTime.MinValue)
+            {
+                await GetInitialBatteryMinMaxToday();
+                NotifyPropertyChanged(nameof(MinBatteryPercentToday));
+                NotifyPropertyChanged(nameof(MaxBatteryPercentToday));
+            }
+            else if (_batteryDay != DateTime.Today)
             {
                 _batteryDay = DateTime.Today;
                 _minPercentToday = BatteryPercent;
@@ -414,6 +423,34 @@ namespace PowerwallCompanionX.ViewModels
             {
                 _maxPercentToday = BatteryPercent;
                 NotifyPropertyChanged(nameof(MaxBatteryPercentToday));
+            }
+        }
+
+        private async Task GetInitialBatteryMinMaxToday()
+        {
+            try
+            {
+                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/calendar_history?kind=soe", "SOE");
+                int min = 100;
+                int max = 0;
+                foreach (var datapoint in (JArray)json["response"]["time_series"])
+                {
+                    var timestamp = datapoint["timestamp"].Value<DateTime>();
+                    if (timestamp.Date == DateTime.Now.Date)
+                    {
+                        var soe = datapoint["soe"].Value<int>();
+                        if (soe < min) min = soe;
+                        if (soe > max) max = soe;
+
+                    }
+                }
+                _batteryDay = DateTime.Now.Date;
+                _minPercentToday = (double)min;
+                _maxPercentToday = (double)max;
+            }
+            catch
+            {
+                // Don't worry, NBD
             }
         }
 

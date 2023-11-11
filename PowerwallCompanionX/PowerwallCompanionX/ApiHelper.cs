@@ -158,6 +158,10 @@ namespace PowerwallCompanionX
             {
                 return GetDemoPowerHistoryDocument(siteId);
             }
+            else if (apiName == "SOE")
+            {
+                return GetDemoSOEDocument(siteId); ;
+            }
             throw new InvalidOperationException();
         }
 
@@ -3494,8 +3498,14 @@ namespace PowerwallCompanionX
 ");
         }
 
-      
+        private static JObject GetDemoSOEDocument(string siteId)
+        {
+            return JObject.Parse(@"{
+  ""response"": {
+    ""serial_number"": ""xxx"",
+    ""time_series"": []
     }
-
-
+}");
+        }
+    }
 }
