@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App.Admin;
@@ -41,34 +42,22 @@ namespace PowerwallCompanionX.Extras
                     }
 
                     var tasks = new List<Task>();
-                    foreach (var v in _vehicles.Values) // Run in parallel
+                    foreach (var v in _vehicles.Values) 
                     {
-                        tasks.Add(Task.Run(async () => 
-                        {
-                            if (v.IsAwake)
-                            {
-                                Debug.WriteLine(DateTime.Now + ": " + v.VehicleName + " is awake.");
-                                await GetChargeLevel(v);
-                            }
-                            else
-                            {
-                                Debug.WriteLine(DateTime.Now + ": " + v.VehicleName + " is asleep.");
-                                var timeSinceWoken = DateTime.Now - v.LastWoken;
-                                if (!initialRefreshDone || (_wakeTeslaHours > 0 && timeSinceWoken.TotalHours > _wakeTeslaHours))
-                                {
-                                    await WakeUpVehicle(v);
-                                    await WakeForVehicleToReportAsAwake(v);
-                                    await GetChargeLevel(v);
-                                }
-                            }
-                        }));
+                        await GetChargeLevel(v);
                     }
-                    await Task.WhenAll(tasks);
      
                     lastMessage = "🚘 ";
                     foreach (var v in _vehicles.Values)
                     {
-                        lastMessage += $"{v.VehicleName}: {v.BatteryLevel}%  ";
+                        if (v.IsAwake || v.LastUpdated > DateTime.MinValue)
+                        {
+                            lastMessage += $"{v.VehicleName}: {v.BatteryLevel}%  ";
+                        }
+                        else
+                        {
+                            lastMessage += $"{v.VehicleName}: 💤  ";
+                        }
                     }
                 }
                 initialRefreshDone = true;
@@ -82,7 +71,7 @@ namespace PowerwallCompanionX.Extras
 
         private async Task GetVehicles()
         {
-            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
+            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh("/api/1/products", null);
             _vehicles = new Dictionary<string, VehicleData>();
             foreach (var p in productsResponse["response"])
             {
@@ -100,7 +89,7 @@ namespace PowerwallCompanionX.Extras
         private async Task UpdateOnlineStatus()
         {
             Debug.WriteLine(DateTime.Now + ": UpdateOnlineStatus");
-            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
+            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh("/api/1/products", null);
             foreach (var p in productsResponse["response"])
             {
                 if (p["vehicle_id"] != null)
@@ -116,37 +105,16 @@ namespace PowerwallCompanionX.Extras
             Debug.WriteLine(DateTime.Now + ": Getting charge level for " + vehicle.VehicleName);
             try
             {
-                var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + vehicle.VehicleId.ToString() + "/vehicle_data", null);
+                var vehicleResponse = await ApiHelper.CallGetApiWithTokenRefresh("/api/1/vehicles/" + vehicle.VehicleId.ToString() + "/vehicle_data", null);
                 vehicle.BatteryLevel = vehicleResponse["response"]["charge_state"]["battery_level"].Value<int>();
                 vehicle.LastUpdated = DateTime.Now;
             }
-            catch
+            catch 
             {
                 Debug.WriteLine(DateTime.Now + ": Error getting charge status for " + vehicle.VehicleName);
                 vehicle.IsAwake = false;
             }
 
-        }
-
-        private async Task WakeUpVehicle(VehicleData vehicle)
-        {
-            Debug.WriteLine(DateTime.Now + ": Waking " + vehicle.VehicleName);
-            await ApiHelper.CallPostApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/vehicles/" + vehicle.VehicleId + "/wake_up");
-            vehicle.LastWoken = DateTime.Now;
-        }
-
-        private async Task WakeForVehicleToReportAsAwake(VehicleData vehicle)
-        {
-            int attempts = 0;
-            while (attempts++ < 5)
-            {
-                await Task.Delay(TimeSpan.FromSeconds(10));
-                await UpdateOnlineStatus();
-                if (_vehicles[vehicle.VehicleId].IsAwake)
-                {
-                    return;
-                }
-            }
         }
 
 

@@ -25,7 +25,6 @@ namespace PowerwallCompanionX.Views
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            teslaCarSettings.IsVisible = (viewModel.SelectedExtras.Key == "Tesla");
             weatherSettings.IsVisible = (viewModel.SelectedExtras.Key == "Weather");
             amberSettings.IsVisible = (viewModel.SelectedExtras.Key == "Amber");
             newsSettings.IsVisible = (viewModel.SelectedExtras.Key == "News");

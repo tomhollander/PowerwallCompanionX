@@ -75,11 +75,6 @@
                     </segmentCollection:List>
                 </buttons:SfSegmentedControl>
             </Grid>
-            <StackLayout x:Name="teslaCarSettings" IsVisible="False" Orientation="Horizontal">
-                <Label Text="Wake car if needed every " VerticalOptions="End" />
-                <Entry TextColor="White" MaxLength="3" Text="{Binding WakeTeslaHours, Mode=TwoWay}" VerticalOptions="Center" WidthRequest="50" />
-                <Label Text=" hours (0 = never)" VerticalOptions="End" />
-            </StackLayout>
             <Grid x:Name="amberSettings">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>

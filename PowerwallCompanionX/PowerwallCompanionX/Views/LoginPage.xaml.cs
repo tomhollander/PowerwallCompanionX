@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,12 +27,23 @@ namespace PowerwallCompanionX.Views
             base.OnAppearing();
         }
 
-        private void webView_Navigating(object sender, WebNavigatingEventArgs e)
+        private async void webView_Navigating(object sender, WebNavigatingEventArgs e)
         {
-            if (e.Url.Contains("void/callback"))
+            if (e.Url.Contains(Keys.TeslaAppRedirectUrl))
             {
+                warningBanner.IsVisible = false;
                 webView.IsVisible = false;
-                viewModel.CompleteLogin(e.Url);
+                if (await viewModel.CompleteLogin(e.Url))
+                {
+                    Application.Current.MainPage = new MainPage();
+                }
+                else
+                {
+                    viewModel.ClearCookies();
+                    errorBanner.IsVisible = true;
+                    webView.IsVisible = true;
+                    webView.Source = viewModel.LoginUrl;
+                }
 
             }
         }
@@ -40,6 +51,23 @@ namespace PowerwallCompanionX.Views
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             viewModel.LoginAsDemoUser();
+        }
+        
+        private void LearnMoreHyperlink_Tapped(object sender, EventArgs e)
+        {
+            moreInfo.IsVisible = true;
+            webView.IsVisible = false;
+        }
+
+        private async void TeslaAccountHyperlink_Tapped(object sender, EventArgs e)
+        {
+            await Launcher.OpenAsync("https://accounts.tesla.com/account-settings/security?tab=tpty-apps"); 
+        }
+
+        private void hideAuthInfoButton_Clicked(object sender, EventArgs e)
+        {
+            moreInfo.IsVisible = false;
+            webView.IsVisible = true;
         }
     }
 }

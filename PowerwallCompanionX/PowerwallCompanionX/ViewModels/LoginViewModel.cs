@@ -3,19 +3,28 @@ using PowerwallCompanionX.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IdentityModel.Tokens.Jwt;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TeslaAuth;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace PowerwallCompanionX.ViewModels
 {
     class LoginViewModel 
     {
-        private TeslaAuthHelper teslaAuth = new TeslaAuthHelper();
+        private TeslaAuthHelper teslaAuth = new TeslaAuth.TeslaAuthHelper(TeslaAuth.TeslaAccountRegion.Unknown,
+                    Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, Keys.TeslaAppRedirectUrl,
+                     Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VechicleDeviceData}));
 
         public LoginViewModel()
+        {
+            ClearCookies();
+        }
+
+        public void ClearCookies()
         {
             DependencyService.Get<IClearCookies>().Clear();
         }
@@ -25,17 +34,23 @@ namespace PowerwallCompanionX.ViewModels
             get { return teslaAuth.GetLoginUrlForBrowser(); }
         }
 
-        public async Task CompleteLogin(string url)
+        public async Task<bool> CompleteLogin(string url)
         {
             var tokens = await teslaAuth.GetTokenAfterLoginAsync(url);
-            Settings.Email = "Tesla User";
-            Settings.AccessToken = tokens.AccessToken;
-            Settings.RefreshToken = tokens.RefreshToken;
-            await Settings.SavePropertiesAsync();
+            if (CheckTokenScopes(tokens.AccessToken))
+            {
+                Settings.Email = "Tesla User";
+                Settings.AccessToken = tokens.AccessToken;
+                Settings.RefreshToken = tokens.RefreshToken;
+                await Settings.SavePropertiesAsync();
 
-            await GetSiteId();
-
-            Application.Current.MainPage = new MainPage();
+                await GetSiteId();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public async Task LoginAsDemoUser()
@@ -65,7 +80,7 @@ namespace PowerwallCompanionX.ViewModels
                 await Settings.SavePropertiesAsync();
                 return;
             }
-            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh(ApiHelper.BaseUrl + "/api/1/products", null);
+            var productsResponse = await ApiHelper.CallGetApiWithTokenRefresh("/api/1/products", null);
             var availableSites = new Dictionary<string, string>();
             bool foundSite = false;
             foreach (var product in productsResponse["response"])
@@ -93,6 +108,15 @@ namespace PowerwallCompanionX.ViewModels
                 throw new Exception("Powerwall site not found");
             }
             
+        }
+
+        private bool CheckTokenScopes(string accessToken)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(accessToken);
+            var token = jsonToken as JwtSecurityToken;
+            var scopes = token.Claims.Where(x => x.Type == "scp").Select(x => x.Value).ToList();
+            return (scopes.Contains("energy_device_data") && scopes.Contains("vehicle_device_data"));
         }
 
 

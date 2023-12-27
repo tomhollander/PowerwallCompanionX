@@ -319,7 +319,7 @@ namespace PowerwallCompanionX.Views
 #else
                 var siteId = Settings.SiteId;
 
-                var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
+                var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
 
                 viewModel.BatteryPercent = GetJsonDoubleValue(powerInfo["response"]["energy_left"]) / GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]) * 100D;
                 viewModel.HomeValue = GetJsonDoubleValue(powerInfo["response"]["load_power"]);
@@ -390,7 +390,7 @@ namespace PowerwallCompanionX.Views
                 }
 
                 string period = "day";
-                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory");
+                var json = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/history?kind=energy&period={period}", "EnergyHistory");
 
                 var yesterday = json["response"]["time_series"][0];
                 viewModel.HomeEnergyYesterday = GetJsonDoubleValue(yesterday["consumer_energy_imported_from_grid"]) + GetJsonDoubleValue(yesterday["consumer_energy_imported_from_solar"]) + GetJsonDoubleValue(yesterday["consumer_energy_imported_from_battery"])+ GetJsonDoubleValue(yesterday["consumer_energy_imported_from_generator"]);
@@ -439,7 +439,7 @@ namespace PowerwallCompanionX.Views
                     return;
                 }
 
-                var json = await ApiHelper.CallGetApiWithTokenRefresh($"{ApiHelper.BaseUrl}/api/1/energy_sites/{Settings.SiteId}/history?kind=power", "PowerHistory");
+                var json = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/history?kind=power", "PowerHistory");
                 var homeGraphData = new List<ChartDataPoint>();
                 var solarGraphData = new List<ChartDataPoint>();
                 var batteryGraphData = new List<ChartDataPoint>();

@@ -7,6 +7,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using TeslaAuth;
 using Xamarin.Forms;
 using static Android.Provider.ContactsContract.CommonDataKinds;
 
@@ -14,12 +15,27 @@ namespace PowerwallCompanionX
 {
     static class ApiHelper
     {
-        public const string BaseUrl = "https://owner-api.teslamotors.com";
+        public static string _baseUrl;
         public static object lockObj = new object();
 
+        private static async Task<string> GetBaseUrl()
+        {
+            if (_baseUrl == null)
+            {
+                var response = await CallGetApiWithTokenRefresh("https://fleet-api.prd.na.vn.cloud.tesla.com/api/1/users/region", "region");
+                _baseUrl = response["response"]["fleet_api_base_url"].Value<string>();
+            }
+            return _baseUrl;
+        }
 
         public static async Task<JObject> CallGetApiWithTokenRefresh(string url, string demoApiName)
         {
+            string fullUrl = url;
+            if (!fullUrl.StartsWith("http"))
+            {
+                fullUrl = await GetBaseUrl() + fullUrl;
+            }
+
             if (Settings.AccessToken == null)
             {
                 throw new UnauthorizedAccessException();
@@ -27,13 +43,13 @@ namespace PowerwallCompanionX
 
             try
             {
-                return await CallGetApi(url, demoApiName);
+                return await CallGetApi(fullUrl, demoApiName);
             }
             catch (UnauthorizedAccessException)
             {
-                // First fail - try refreshing
+                // First fail - try refreshing,
                 await RefreshToken();
-                return await CallGetApi(url, demoApiName);
+                return await CallGetApi(fullUrl, demoApiName);
 
             }
         }
@@ -131,7 +147,9 @@ namespace PowerwallCompanionX
         {
             try
             {
-                var authHelper = new TeslaAuth.TeslaAuthHelper("PowerwallCompanion/0.0");
+                var authHelper = new TeslaAuth.TeslaAuthHelper(TeslaAuth.TeslaAccountRegion.Unknown,
+                    Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, Keys.TeslaAppRedirectUrl,
+                     Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VechicleDeviceData }));
                 var tokens = await authHelper.RefreshTokenAsync(Settings.RefreshToken);
                 Settings.AccessToken = tokens.AccessToken;
                 Settings.RefreshToken = tokens.RefreshToken;
@@ -161,6 +179,10 @@ namespace PowerwallCompanionX
             else if (apiName == "SOE")
             {
                 return GetDemoSOEDocument(siteId); ;
+            }
+            else if (apiName == "region")
+            {
+                return GetDemoRegionDocument();
             }
             throw new InvalidOperationException();
         }
@@ -3506,6 +3528,15 @@ namespace PowerwallCompanionX
     ""time_series"": []
     }
 }");
+        }
+
+        private static JObject GetDemoRegionDocument()
+        {
+            return JObject.Parse(@"{ 
+""response"": {
+ ""region"": ""eu"",
+ ""fleet_api_base_url"": ""https://fleet-api.prd.eu.vn.cloud.tesla.com""
+} }");
         }
     }
 }
