@@ -1,5 +1,7 @@
 ﻿using Android.Service.Voice;
 using Java.Net;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -17,6 +19,7 @@ namespace PowerwallCompanionX.Extras
         private int _timesDisplayed;
         public NewsExtrasProvider(string feedUrl)
         {
+            Analytics.TrackEvent("NewsExtrasProvider initialised");
             _feedUrl = feedUrl;
         }
 
@@ -42,8 +45,9 @@ namespace PowerwallCompanionX.Extras
                 }
                 return message;
             }
-            catch
+            catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 return "News RSS failed";
             } 
         }

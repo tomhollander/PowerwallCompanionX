@@ -1,4 +1,5 @@
-﻿using PowerwallCompanionX.ViewModels;
+﻿using Microsoft.AppCenter.Analytics;
+using PowerwallCompanionX.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +20,13 @@ namespace PowerwallCompanionX.Views
         {
             InitializeComponent();
             this.BindingContext = viewModel;
+            Analytics.TrackEvent("LoginPage opened");
         }
 
         protected override void OnAppearing()
         {
             webView.IsVisible = true;
+            waitMessage.IsVisible = false;
             base.OnAppearing();
         }
 
@@ -32,7 +35,9 @@ namespace PowerwallCompanionX.Views
             if (e.Url.Contains(Keys.TeslaAppRedirectUrl))
             {
                 warningBanner.IsVisible = false;
+                errorBanner.IsVisible = false;
                 webView.IsVisible = false;
+                waitMessage.IsVisible = true;
                 if (await viewModel.CompleteLogin(e.Url))
                 {
                     Application.Current.MainPage = new MainPage();
@@ -41,6 +46,7 @@ namespace PowerwallCompanionX.Views
                 {
                     viewModel.ClearCookies();
                     errorBanner.IsVisible = true;
+                    waitMessage.IsVisible = false;
                     webView.IsVisible = true;
                     webView.Source = viewModel.LoginUrl;
                 }

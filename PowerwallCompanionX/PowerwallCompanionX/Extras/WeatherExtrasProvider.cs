@@ -11,6 +11,8 @@ using Newtonsoft.Json.Linq;
 using Android.Hardware.Lights;
 using Android.Util;
 using Java.Util;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Analytics;
 
 namespace PowerwallCompanionX.Extras
 {
@@ -79,6 +81,7 @@ namespace PowerwallCompanionX.Extras
 
         public WeatherExtrasProvider(string location, string units)
         {
+            Analytics.TrackEvent("WeatherExtrasProvider initialised");
             _apiKey = Keys.WeatherApi;
             _location = location;
             _units = units;
@@ -111,8 +114,9 @@ namespace PowerwallCompanionX.Extras
                 }
     
             }
-            catch
+            catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 return "Weather failed";
             }
         }

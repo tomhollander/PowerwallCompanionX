@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App.Admin;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Newtonsoft.Json.Linq;
 
 namespace PowerwallCompanionX.Extras
@@ -14,13 +16,12 @@ namespace PowerwallCompanionX.Extras
     {
         private DateTime _lastProcessed;
         private Dictionary<string, VehicleData> _vehicles;
-        private int _wakeTeslaHours;
         private string lastMessage = "Tesla status pending";
         private bool initialRefreshDone = false;
 
-        public TeslaExtrasProvider(int wakeTeslaHours)
+        public TeslaExtrasProvider()
         {
-            _wakeTeslaHours = wakeTeslaHours;
+            Analytics.TrackEvent("TeslaExtrasProvider initialised");
         }
 
         public async Task<string> RefreshStatus()
@@ -63,8 +64,9 @@ namespace PowerwallCompanionX.Extras
                 initialRefreshDone = true;
                 return lastMessage;
             }
-            catch
+            catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 return "Tesla status failed";
             }
         }

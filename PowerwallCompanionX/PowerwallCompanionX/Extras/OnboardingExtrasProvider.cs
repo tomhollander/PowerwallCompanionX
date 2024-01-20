@@ -1,4 +1,5 @@
 ﻿using Android.Provider;
+using Microsoft.AppCenter.Analytics;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,11 @@ namespace PowerwallCompanionX.Extras
     internal class OnboardingExtrasProvider : IExtrasProvider
     {
         private static bool seen;
+
+        public OnboardingExtrasProvider()
+        {
+            Analytics.TrackEvent("OnboardingExtrasProvider initialised");
+        }
 
         public async Task<string> RefreshStatus()
         {

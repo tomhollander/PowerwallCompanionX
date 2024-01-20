@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using TeslaAuth;
 using Xamarin.Forms;
 using System.Linq;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Analytics;
 
 namespace PowerwallCompanionX.ViewModels
 {
@@ -36,21 +38,33 @@ namespace PowerwallCompanionX.ViewModels
 
         public async Task<bool> CompleteLogin(string url)
         {
-            var tokens = await teslaAuth.GetTokenAfterLoginAsync(url);
-            if (CheckTokenScopes(tokens.AccessToken))
+            try
             {
-                Settings.Email = "Tesla User";
-                Settings.AccessToken = tokens.AccessToken;
-                Settings.RefreshToken = tokens.RefreshToken;
-                await Settings.SavePropertiesAsync();
+                var tokens = await teslaAuth.GetTokenAfterLoginAsync(url);
+                if (CheckTokenScopes(tokens.AccessToken))
+                {
+                    Settings.Email = "Tesla User";
+                    Settings.AccessToken = tokens.AccessToken;
+                    Settings.RefreshToken = tokens.RefreshToken;
+                    await Settings.SavePropertiesAsync();
 
-                await GetSiteId();
-                return true;
+                    await GetSiteId();
+                    Analytics.TrackEvent("Login success");
+                    return true;
+                }
+                else
+                {
+                    Analytics.TrackEvent("Login failed");
+                    return false;
+                }
             }
-            else
+            catch (Exception ex)
             {
+                Analytics.TrackEvent("Login failed");
+                Crashes.TrackError(ex);
                 return false;
             }
+
         }
 
         public async Task LoginAsDemoUser()
@@ -116,7 +130,7 @@ namespace PowerwallCompanionX.ViewModels
             var jsonToken = handler.ReadToken(accessToken);
             var token = jsonToken as JwtSecurityToken;
             var scopes = token.Claims.Where(x => x.Type == "scp").Select(x => x.Value).ToList();
-            return (scopes.Contains("energy_device_data") && scopes.Contains("vehicle_device_data"));
+            return (scopes.Contains("energy_device_data"));
         }
 
 

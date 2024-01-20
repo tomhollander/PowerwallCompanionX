@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Newtonsoft.Json.Linq;
 using PanCardView;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
@@ -56,7 +58,7 @@ namespace PowerwallCompanionX.Views
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
                     break;
                 case "Tesla":
-                    extrasProvider = new TeslaExtrasProvider(Settings.WakeTeslaHours);
+                    extrasProvider = new TeslaExtrasProvider();
                     break;
                 case "News":
                     extrasProvider = new NewsExtrasProvider(Settings.NewsFeedUrl);
@@ -265,6 +267,7 @@ namespace PowerwallCompanionX.Views
 
         private async Task RefreshData()
         {
+            Analytics.TrackEvent("Data refreshed");
             extrasTextBlock.IsVisible = (extrasProvider != null);
             await RefreshDataFromTeslaOwnerApi();
             viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
@@ -353,6 +356,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyPowerProperties();
@@ -424,6 +428,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyDailyEnergyProperties();
@@ -467,6 +472,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.LastExceptionMessage = ex.Message;
             }

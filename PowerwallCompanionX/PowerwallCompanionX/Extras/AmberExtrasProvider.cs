@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Analytics;
 
 namespace PowerwallCompanionX.Extras
 {
@@ -24,6 +26,7 @@ namespace PowerwallCompanionX.Extras
         public AmberExtrasProvider(string apiKey)
         {
             _apiKey = apiKey;
+            Analytics.TrackEvent("AmberExtrasProvider initialised");
         }
         public async Task<string> RefreshStatus()
         {
@@ -41,8 +44,9 @@ namespace PowerwallCompanionX.Extras
                 string symbol = _sellPrice > 40 ? "🔴" : _sellPrice > 20 ? "🟡" : _sellPrice > 0 ? "🟢" : "💥";
                 return $"⚡{symbol}{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
             }
-            catch
+            catch (Exception ex)
             {
+                Crashes.TrackError(ex);
                 return "Amber failed";
             }
         }

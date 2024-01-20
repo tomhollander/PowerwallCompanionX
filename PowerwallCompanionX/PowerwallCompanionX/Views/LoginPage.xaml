@@ -23,7 +23,7 @@
                 </Label.GestureRecognizers>
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span>If asked you must allow permissions to both "Vehicle Information" and "Energy Product Information", even if you have no Tesla vehicles. </Span>
+                        <Span>If asked you must allow permissions to at least "Energy Product Information". </Span>
                         <Span Text=" "/>
                         <Span Text="Learn more..."  TextColor="Blue"  TextDecorations="Underline">
                         </Span>
@@ -33,7 +33,7 @@
             <Label x:Name="errorBanner" IsVisible="False" LineBreakMode="WordWrap" TextColor="Black" BackgroundColor="LightPink">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span>This account cannot be used with Powerwall Companion as you have not granted the required "Vehicle Information" and "Energy Product Information" scopes. Please go to your Tesla Account's </Span>
+                        <Span>This account cannot be used with Powerwall Companion. This could be because you have no Powerwalls in your account, or because you have not granted the required "Energy Product Information" scope. Please go to your Tesla Account's </Span>
                         <Span Text=" "/>
                         <Span TextColor="Blue" TextDecorations="Underline" Text="Third Party Apps">
                             <Span.GestureRecognizers>
@@ -56,11 +56,12 @@
             <StackLayout x:Name="moreInfo" IsVisible="False" Orientation="Vertical" >
                 <Label Margin="10" FontAttributes="Bold">Tesla authentication info</Label>
                 <Label Margin="10" LineBreakMode="WordWrap">You must sign in with your Tesla account so that the Powerwall Companion app can retrieve information from the Tesla API. Your credentials are sent directly to Tesla and are not accessible by this app.</Label>
-                <Label Margin="10" LineBreakMode="WordWrap">The first time you authenticate you will be prompted on what details you want the app to be able to access. You must select both the "Energy product information" and "Vehicle information" scopes for the app to work, even if you do not own any Tesla vehicles. This is because the API to list all of your Tesla products (needed to find your Powerwall) is covered by the "Vehicle Information" scope.</Label>
+                <Label Margin="10" LineBreakMode="WordWrap">The first time you authenticate you will be prompted on what details you want the app to be able to access. You must select the "Energy product information" scope for the app to work. The "Vehicle information" is optional and is only needed if you want to display vehicle battery info in the app.</Label>
                 <Label Margin="10"  LineBreakMode="WordWrap">After authentication, Tesla issues an API token which is stored securely on your device. The token can only be used by this app, and only has the access to the data you granted in the step mentioned above.</Label>
                 <Label Margin="10" LineBreakMode="WordWrap">If you want to revoke Powerwall Companion's access to your data, you can do this by logging on to Tesla website and navigating to Account and then Third Party Apps.</Label>
                 <Button TextColor="White" Background="Blue" Margin="10" x:Name="hideAuthInfoButton" Clicked="hideAuthInfoButton_Clicked" Text="Got it!"></Button>
             </StackLayout>
+            <Label x:Name="waitMessage" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center">Please wait...</Label>
             <WebView x:Name="webView" Source="{Binding LoginUrl}" Navigating="webView_Navigating" 
                     Margin="0,0,0,200" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />
         </StackLayout>

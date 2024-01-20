@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AppCenter.Crashes;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,8 @@ namespace PowerwallCompanionX
             if (_baseUrl == null)
             {
                 var response = await CallGetApiWithTokenRefresh("https://fleet-api.prd.na.vn.cloud.tesla.com/api/1/users/region", "region");
-                _baseUrl = response["response"]["fleet_api_base_url"].Value<string>();
+                _baseUrl = response["response"]["fleet_api_base_url"].Value<string>() 
+                    ?? "https://fleet-api.prd.na.vn.cloud.tesla.com";
             }
             return _baseUrl;
         }
@@ -156,8 +158,9 @@ namespace PowerwallCompanionX
                 await Settings.SavePropertiesAsync();
 
             }
-            catch
+            catch (Exception ex) 
             {
+                Crashes.TrackError(ex);
                 throw new UnauthorizedAccessException();
             }
         }

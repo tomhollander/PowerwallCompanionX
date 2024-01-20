@@ -60,7 +60,7 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => new List<KeyValuePair<string, string>> {
                 new KeyValuePair<string, string>("None", "None"),
-                new KeyValuePair<string, string>("Powerwall", "Powerwall stats"),
+                new KeyValuePair<string, string>("Powerwall", "Powerwall battery health"),
                 new KeyValuePair<string, string>("News", "RSS News"),
                 new KeyValuePair<string, string>("Weather", "Weather"),
                 new KeyValuePair<string, string>("Tesla", "Tesla car battery"),
