@@ -62,6 +62,7 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(GridValue));
             NotifyPropertyChanged(nameof(GridActive));
             NotifyPropertyChanged(nameof(Time));
+            NotifyPropertyChanged(nameof(PageOpacity));
         }
 
         public void NotifyDailyEnergyProperties()
@@ -81,6 +82,7 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(ShowBothGridSettingsToday));
             NotifyPropertyChanged(nameof(ShowBothGridSettingsYesterday));
             NotifyPropertyChanged(nameof(Time));
+            NotifyPropertyChanged(nameof(PageOpacity));
         }
 
         public void NotifyGraphProperties()
@@ -451,6 +453,50 @@ namespace PowerwallCompanionX.ViewModels
             catch
             {
                 // Don't worry, NBD
+            }
+        }
+
+        public double PageWidth { get; set; }
+        public double PageHeight { get; set; }
+
+        public void RecalculatePageMargin()
+        {
+            if (Settings.PreventBurnIn)
+            {
+                double marginTotal = Math.Min(PageWidth, PageHeight) * 0.1;
+                marginTotal = Math.Min(marginTotal, 50);
+                var random = new Random();
+                var leftMargin = random.NextDouble() * marginTotal;
+                var rightMargin = marginTotal - leftMargin;
+                var topMargin = random.NextDouble() * marginTotal;
+                var bottomMargin = marginTotal - topMargin;
+                PageMargin = new Thickness(leftMargin, topMargin, rightMargin, bottomMargin);
+                NotifyPropertyChanged(nameof(PageMargin));
+            }
+            else
+            {
+                PageMargin = new Thickness(0);
+            }
+
+        }
+
+        public Thickness PageMargin
+        {
+            get; set;
+        }
+
+        public double PageOpacity
+        {
+            get
+            {
+                if (Settings.DimAtNight && (DateTime.Now.Hour < 6 || DateTime.Now.Hour >= 22))
+                {
+                    return 0.3;
+                }
+                else
+                {
+                    return 1.0;
+                }
             }
         }
 

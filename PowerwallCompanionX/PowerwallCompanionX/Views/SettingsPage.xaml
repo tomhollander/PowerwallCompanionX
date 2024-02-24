@@ -51,9 +51,17 @@
                 <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
                 <Label Text="Cycle pages when idle" />
             </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="dimAtNight" IsToggled="{Binding DimAtNight}" />
+                <Label Text="Dim screen at night (22:00 to 06:00)" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Switch x:Name="preventBurnIn" IsToggled="{Binding PreventBurnIn}" />
+                <Label Text="Move page elements to prevent screen burn in" />
+            </StackLayout>
             <StackLayout Orientation="Horizontal" >
                 <Label Text="Extra Info" VerticalOptions="Center"/>
-                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="200" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="220" SelectedIndexChanged="Picker_SelectedIndexChanged" />
             </StackLayout>
 
             <Grid x:Name="weatherSettings">

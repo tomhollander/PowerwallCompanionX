@@ -56,6 +56,18 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.PlaySounds = value;
         }
 
+        public bool PreventBurnIn
+        {
+            get => Settings.PreventBurnIn;
+            set => Settings.PreventBurnIn = value;
+        }
+
+        public bool DimAtNight
+        {
+            get => Settings.DimAtNight;
+            set => Settings.DimAtNight = value;
+        }
+
         public List<KeyValuePair<string, string>> AvailableExtras
         {
             get => new List<KeyValuePair<string, string>> {

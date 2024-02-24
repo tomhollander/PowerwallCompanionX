@@ -8,7 +8,7 @@
              BackgroundColor="Black" 
              x:Class="PowerwallCompanionX.Views.MainPage">
 
-    <Grid x:Name="rootGrid">
+    <Grid x:Name="rootGrid" Margin="{Binding PageMargin}" Opacity="{Binding PageOpacity}">
         <Grid.Resources>
             <converters:NullTGridLengthConverter x:Key="NullTGridLengthConverter"/>
         </Grid.Resources>
@@ -29,7 +29,7 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Grid x:Name="tabletGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" >
+        <Grid x:Name="tabletGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" Margin="{Binding PageMargin}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>

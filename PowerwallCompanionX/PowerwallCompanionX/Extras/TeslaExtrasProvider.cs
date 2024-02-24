@@ -15,7 +15,7 @@ namespace PowerwallCompanionX.Extras
     internal class TeslaExtrasProvider : IExtrasProvider
     {
         private DateTime _lastProcessed;
-        private Dictionary<string, VehicleData> _vehicles;
+        private static Dictionary<string, VehicleData> _vehicles; // Static so we keep last known charge level if user opens different pages
         private string lastMessage = "Tesla status pending";
         private bool initialRefreshDone = false;
 
@@ -42,7 +42,6 @@ namespace PowerwallCompanionX.Extras
                         await UpdateOnlineStatus();
                     }
 
-                    var tasks = new List<Task>();
                     foreach (var v in _vehicles.Values) 
                     {
                         await GetChargeLevel(v);

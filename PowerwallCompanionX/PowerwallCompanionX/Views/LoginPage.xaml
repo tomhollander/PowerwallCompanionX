@@ -41,7 +41,7 @@
                             </Span.GestureRecognizers> 
                         </Span>
                         <Span Text=" "/>
-                        <Span>page, delete Powerwall Companion, sign in again, and be sure to check both scopes.</Span>
+                        <Span>page, delete Powerwall Companion, sign in again, and be sure to the required scope.</Span>
                         <Span Text=" "/>
                         <Span Text="Learn more..."
                           TextColor="Blue"

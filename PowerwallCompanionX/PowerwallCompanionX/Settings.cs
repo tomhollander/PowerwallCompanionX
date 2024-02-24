@@ -30,6 +30,8 @@ namespace PowerwallCompanionX
             AmberApiKey,
             NewsFeedUrl,
             WakeTeslaHours,
+            PreventBurnIn,
+            DimAtNight,
         }
 
         public static string AccessToken
@@ -146,6 +148,17 @@ namespace PowerwallCompanionX
             set => Application.Current.Properties[nameof(Properties.WakeTeslaHours)] = value;
         }
 
+        public static bool PreventBurnIn
+        {
+            get => GetProperty<bool>(nameof(Properties.PreventBurnIn), false);
+            set => Application.Current.Properties[nameof(Properties.PreventBurnIn)] = value;
+        }
+
+        public static bool DimAtNight
+        {
+            get => GetProperty<bool>(nameof(Properties.DimAtNight), false);
+            set => Application.Current.Properties[nameof(Properties.DimAtNight)] = value;
+        }
 
         private static T GetProperty<T>(string keyName, T defaultValue)
         {
