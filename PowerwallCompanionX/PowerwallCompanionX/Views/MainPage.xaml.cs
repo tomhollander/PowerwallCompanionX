@@ -112,9 +112,6 @@ namespace PowerwallCompanionX.Views
 
         private void MainPage_SizeChanged(object sender, EventArgs e)
         {
-            viewModel.PageWidth = Width;
-            viewModel.PageHeight = Height;
-
             string visualState = Width > Height ? "Landscape" : "Portrait";
 
             if (ShowTwoPages())
@@ -168,7 +165,9 @@ namespace PowerwallCompanionX.Views
             {
                 chart.HeightRequest = 200;
             }
-
+            viewModel.PageWidth = Width;
+            viewModel.PageHeight = Height;
+            viewModel.RecalculatePageMargin();
 
         }
 
@@ -280,7 +279,7 @@ namespace PowerwallCompanionX.Views
                 {
                     await RefreshDataFromTeslaOwnerApi();
                     viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
-                    if (count++ > 6)
+                    if (++count > 6)
                     {
                         count = 0;
                         viewModel.RecalculatePageMargin();

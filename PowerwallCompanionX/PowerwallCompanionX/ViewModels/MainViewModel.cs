@@ -463,13 +463,14 @@ namespace PowerwallCompanionX.ViewModels
         {
             if (Settings.PreventBurnIn)
             {
-                double marginTotal = Math.Min(PageWidth, PageHeight) * 0.1;
-                marginTotal = Math.Min(marginTotal, 50);
+                double horizontalMarginTotal = PageWidth > 700 ? PageWidth * 0.05 : 0;
+                double verticalMarginTotal = PageHeight > 700 ? PageHeight * 0.05 : 0;
+
                 var random = new Random();
-                var leftMargin = random.NextDouble() * marginTotal;
-                var rightMargin = marginTotal - leftMargin;
-                var topMargin = random.NextDouble() * marginTotal;
-                var bottomMargin = marginTotal - topMargin;
+                var leftMargin = random.NextDouble() * horizontalMarginTotal;
+                var rightMargin = horizontalMarginTotal - leftMargin;
+                var topMargin = random.NextDouble() * verticalMarginTotal;
+                var bottomMargin = verticalMarginTotal - topMargin;
                 PageMargin = new Thickness(leftMargin, topMargin, rightMargin, bottomMargin);
                 NotifyPropertyChanged(nameof(PageMargin));
             }
