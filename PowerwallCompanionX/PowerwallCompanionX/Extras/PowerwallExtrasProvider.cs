@@ -35,7 +35,11 @@ namespace PowerwallCompanionX.Extras
                 {
                     batteryCount = await GetBatteryCount();
                 }
-                
+                if (_viewModel.TotalPackEnergy == 0)
+                {
+                    return "Capacity unavailable, blame Tesla 😡";
+                }
+
                 return $"🔋 Capacity: {_viewModel.TotalPackEnergy / 1000:f2}kWh ({(_viewModel.TotalPackEnergy / (warrantedCapacity * batteryCount) * 100):f0}%)";
             }
             catch (Exception ex)
