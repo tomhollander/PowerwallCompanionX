@@ -32,6 +32,8 @@ namespace PowerwallCompanionX
             WakeTeslaHours,
             PreventBurnIn,
             DimAtNight,
+            GatewayIP,
+            GatewayPassword,
         }
 
         public static string AccessToken
@@ -146,6 +148,16 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<int>(nameof(Properties.WakeTeslaHours), 24);
             set => Application.Current.Properties[nameof(Properties.WakeTeslaHours)] = value;
+        }
+        public static string GatewayIP
+        {
+            get => GetProperty<string>(nameof(Properties.GatewayIP), null);
+            set => Application.Current.Properties[nameof(Properties.GatewayIP)] = value;
+        }
+        public static string GatewayPassword
+        {
+            get => GetProperty<string>(nameof(Properties.GatewayPassword), null);
+            set => Application.Current.Properties[nameof(Properties.GatewayPassword)] = value;
         }
 
         public static bool PreventBurnIn

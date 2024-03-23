@@ -28,6 +28,7 @@ namespace PowerwallCompanionX.Views
             weatherSettings.IsVisible = (viewModel.SelectedExtras.Key == "Weather");
             amberSettings.IsVisible = (viewModel.SelectedExtras.Key == "Amber");
             newsSettings.IsVisible = (viewModel.SelectedExtras.Key == "News");
+            powerwallSettings.IsVisible = (viewModel.SelectedExtras.Key == "Powerwall");
         }
 
         private void weatherUnitsSegmentedControl_SelectionChanged(object sender, Syncfusion.XForms.Buttons.SelectionChangedEventArgs e)

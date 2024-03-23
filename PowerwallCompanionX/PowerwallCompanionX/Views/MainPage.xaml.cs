@@ -49,7 +49,7 @@ namespace PowerwallCompanionX.Views
             switch (Settings.SelectedExtras)
             {
                 case "Powerwall":
-                    extrasProvider = new PowerwallExtrasProvider(viewModel);
+                    extrasProvider = new PowerwallExtrasProvider(Settings.GatewayIP, Settings.GatewayPassword);
                     break;
                 case "Weather":
                     extrasProvider = new WeatherExtrasProvider(Settings.WeatherCity, Settings.WeatherUnits);

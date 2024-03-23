@@ -117,6 +117,18 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.WakeTeslaHours = value;
         }
 
+        public string GatewayIP
+        {
+            get => Settings.GatewayIP;
+            set => Settings.GatewayIP = value;
+        }
+
+        public string GatewayPassword
+        {
+            get => Settings.GatewayPassword;
+            set => Settings.GatewayPassword = value;
+        }
+
         public decimal GraphScale
         {
             get => Settings.GraphScale;

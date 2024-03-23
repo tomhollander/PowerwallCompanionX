@@ -107,6 +107,20 @@
                 <Label Text="News RSS feed URL" />
                 <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
             </Grid>
+            <Grid x:Name="powerwallSettings">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Text="Gateway IP" VerticalOptions="Center" />
+                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayIP, Mode=TwoWay}" Grid.Column="1"/>
+                <Label Text="Gateway password" VerticalOptions="Center" Grid.Row="1"/>
+                <Entry IsPassword="True" TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayPassword, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
+            </Grid>
             <Label>
                 <Label.FormattedText>
                     <FormattedString>
