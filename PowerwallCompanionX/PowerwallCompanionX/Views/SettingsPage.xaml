@@ -61,7 +61,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" >
                 <Label Text="Extra Info" VerticalOptions="Center"/>
-                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="220" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="250" SelectedIndexChanged="Picker_SelectedIndexChanged" />
             </StackLayout>
 
             <Grid x:Name="weatherSettings">

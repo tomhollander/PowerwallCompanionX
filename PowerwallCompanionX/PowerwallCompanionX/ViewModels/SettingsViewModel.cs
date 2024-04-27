@@ -76,6 +76,7 @@ namespace PowerwallCompanionX.ViewModels
                 new KeyValuePair<string, string>("News", "RSS News"),
                 new KeyValuePair<string, string>("Weather", "Weather"),
                 new KeyValuePair<string, string>("Tesla", "Tesla car battery"),
+                new KeyValuePair<string, string>("Tariffs", "Energy prices (Tesla rate plan)"),
                 new KeyValuePair<string, string>("Amber", "Amber electric prices")
             };
         }

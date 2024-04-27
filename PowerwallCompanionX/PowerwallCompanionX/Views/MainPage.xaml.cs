@@ -54,6 +54,9 @@ namespace PowerwallCompanionX.Views
                 case "Weather":
                     extrasProvider = new WeatherExtrasProvider(Settings.WeatherCity, Settings.WeatherUnits);
                     break;
+                case "Tariffs":
+                    extrasProvider = new EnergyTariffExtrasProvider();
+                    break;
                 case "Amber":
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
                     break;
