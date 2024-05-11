@@ -15,7 +15,6 @@ namespace PowerwallCompanionX
 
         private JObject ratePlan;
 
-
         public TariffHelper(JObject ratePlan)
         {
             if (ratePlan == null)
@@ -29,6 +28,10 @@ namespace PowerwallCompanionX
         private JProperty GetSeasonForDate(DateTime date)
         {
             var seasons = ratePlan["response"]["seasons"];
+            if (seasons == null)
+            {
+                return null;
+            }
             foreach (var season in seasons)
             {
                 var seasonData = season.First;
@@ -60,6 +63,10 @@ namespace PowerwallCompanionX
         {
             var tariffs = new List<Tariff>();
             var season = GetSeasonForDate(date);
+            if (season == null)
+            {
+                return tariffs;
+            }
 
             int currentWeekDay = ((int)date.DayOfWeek - 1); // Tesla uses 0 for Monday
             if (currentWeekDay == -1)
@@ -80,7 +87,18 @@ namespace PowerwallCompanionX
                         var fromMinute = period["fromMinute"].Value<int>();
                         var toHour = period["toHour"].Value<int>();
                         var toMinute = period["toMinute"].Value<int>();
-                        if (fromHour < toHour)
+                        if (fromHour == 0 && toHour == 0 && fromMinute == 0 && toMinute == 0)
+                        {
+                            var tariff = new Tariff
+                            {
+                                Name = rateName,
+                                Season = season.Name,
+                                StartDate = date,
+                                EndDate = date.AddDays(1),
+                            };
+                            tariffs.Add(tariff);
+                        }
+                        else if (fromHour < toHour)
                         {
                             var tariff = new Tariff
                             {
@@ -122,13 +140,30 @@ namespace PowerwallCompanionX
                 }
             }
             return tariffs;
+        }
 
+        public bool IsSingleRatePlan
+        {
+            get
+            {
+                var season = GetSeasonForDate(DateTime.Now.Date);
+                if (season == null || season.First()["tou_periods"] == null)
+                {
+                    return true;
+                }
+                return season.First()["tou_periods"].Children().Count() <= 1;
+            }
         }
 
         public Tariff GetTariffForInstant(DateTime date)
         {
             var tariffs = GetTariffsForDay(date.Date);
+            return GetTariffForInstant(date, tariffs);
+        }
 
+        public Tariff GetTariffForInstant(DateTime date, List<Tariff> tariffs)
+        {
+            // This version is more efficient if you already have the tariffs for the day
             foreach (var tariff in tariffs)
             {
                 if (date >= tariff.StartDate && date < tariff.EndDate)
@@ -160,6 +195,45 @@ namespace PowerwallCompanionX
             catch { }
 
             return new Tuple<decimal, decimal>(buyRate, sellRate);
+        }
+
+        public Tuple<decimal, decimal> GetEnergyCostAndFeedInFromEnergyHistory(JArray energyHistoryTimeSeries)
+        {
+            // This currently assumes the history is for a single day
+            try
+            {
+                var startDate = energyHistoryTimeSeries.First()["timestamp"].Value<DateTime>();
+                var tariffs = GetTariffsForDay(startDate.Date);
+                var rates = new Dictionary<string, Tuple<decimal, decimal>>();
+                foreach (var tariff in tariffs)
+                {
+                    rates[tariff.Name] = GetRatesForTariff(tariff);
+                }
+                decimal totalCost = 0M;
+                decimal totalFeedIn = 0M;
+                foreach (var energyHistory in energyHistoryTimeSeries)
+                {
+                    var timestamp = energyHistory["timestamp"].Value<DateTime>();
+                    var energyImported = energyHistory["grid_energy_imported"].Value<double>() / 1000; // Convert to kWh
+                    var energyExported = (energyHistory["grid_energy_exported_from_solar"].Value<double>() +
+                        energyHistory["grid_energy_exported_from_battery"].Value<double>() +
+                        energyHistory["grid_energy_exported_from_generator"].Value<double>()) / 1000; // Convert to kWh
+                    var tariff = GetTariffForInstant(timestamp, tariffs);
+                    if (tariff == null)
+                    {
+                        continue;
+                    }
+                    var rate = rates[tariff.Name];
+                    totalCost += (decimal)energyImported * rate.Item1;
+                    totalFeedIn += (decimal)energyExported * rate.Item2;
+                }
+                return new Tuple<decimal, decimal>(totalCost, totalFeedIn);
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+                return null;
+            }
         }
     }
 }

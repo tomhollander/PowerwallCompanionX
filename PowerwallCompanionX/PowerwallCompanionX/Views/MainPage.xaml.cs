@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TimeZoneConverter;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -37,6 +38,7 @@ namespace PowerwallCompanionX.Views
         private Thickness timeDefaultMargin;
 
         private IExtrasProvider extrasProvider;
+        private TariffHelper tariffHelper;
 
         public MainPage()
         {
@@ -238,8 +240,12 @@ namespace PowerwallCompanionX.Views
             page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
             for (int i = 0; i < 4; i++)
             {
-                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Star });
+                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
             }
+            // Give more room for the grid power
+            //page2Grid.RowDefinitions[3].Height = new GridLength(6, GridUnitType.Star);
+
+            // Chart row
             page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
 
             page2Grid.ColumnDefinitions.Clear();
@@ -311,6 +317,7 @@ namespace PowerwallCompanionX.Views
             await GetCurrentPowerData();
             await GetEnergyHistoryData();
             await GetPowerHistoryData();
+            await RefreshEnergyCostData();
         }
 
         private async Task GetCurrentPowerData()
@@ -424,14 +431,14 @@ namespace PowerwallCompanionX.Views
                 viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyDailyEnergyProperties();
 
-                // This should be possible with data binding, but for some reason it is failing on phones in portrait mode
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    bothGridSettingsToday.IsVisible = viewModel.ShowBothGridSettingsToday;
-                    bothGridSettingsYesterday.IsVisible = viewModel.ShowBothGridSettingsYesterday;
-                    singleGridSettingsToday.IsVisible = !viewModel.ShowBothGridSettingsToday; 
-                    singleGridSettingsYesterday.IsVisible = !viewModel.ShowBothGridSettingsYesterday;
-                });
+                //// This should be possible with data binding, but for some reason it is failing on phones in portrait mode
+                //Device.BeginInvokeOnMainThread(() =>
+                //{
+                //    bothGridSettingsToday.IsVisible = viewModel.ShowBothGridSettingsToday;
+                //    bothGridSettingsYesterday.IsVisible = viewModel.ShowBothGridSettingsYesterday;
+                //    singleGridSettingsToday.IsVisible = !viewModel.ShowBothGridSettingsToday; 
+                //    singleGridSettingsYesterday.IsVisible = !viewModel.ShowBothGridSettingsYesterday;
+                //});
 
 
             }
@@ -487,6 +494,65 @@ namespace PowerwallCompanionX.Views
             }
         }
 
+        private async Task RefreshEnergyCostData()
+        {
+            try
+            {
+                if (tariffHelper == null)
+                {
+                    var ratePlan = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/tariff_rate", "TariffRate");
+                    tariffHelper = new TariffHelper(ratePlan);
+                }
+
+                var yesterdayEnergy = await GetCalendarHistoryData(DateTime.Now.Date.AddDays(-1));
+                var yesterdayCost = tariffHelper.GetEnergyCostAndFeedInFromEnergyHistory((JArray)yesterdayEnergy["response"]["time_series"]);
+                viewModel.EnergyCostYesterday = yesterdayCost.Item1;
+                viewModel.EnergyFeedInYesterday = yesterdayCost.Item2;
+
+                var todayEnergy = await GetCalendarHistoryData(DateTime.Now.Date);
+                var todayCost = tariffHelper.GetEnergyCostAndFeedInFromEnergyHistory((JArray)todayEnergy["response"]["time_series"]);
+                viewModel.EnergyCostToday = todayCost.Item1;
+                viewModel.EnergyFeedInToday = todayCost.Item2;
+
+                Analytics.TrackEvent("Energy cost data refreshed");
+                viewModel.NotifyEnergyCostProperties();
+
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+            }
+        }
+
+        private async Task<JObject> GetCalendarHistoryData(DateTime date)
+        {
+            var url = GetCalendarHistoryUrl("energy", "day", date, date.AddDays(1).AddSeconds(-1));
+            return await ApiHelper.CallGetApiWithTokenRefresh(url, "CalendarHistory");
+        }
+
+        private string GetCalendarHistoryUrl(string kind, string period, DateTime periodStart, DateTime periodEnd)
+        {
+            var sb = new StringBuilder();
+            var siteId = Settings.SiteId;
+
+            var timeZone = TimeZoneInfo.Local.Id;;
+            var startOffset = TimeZoneInfo.FindSystemTimeZoneById(timeZone).GetUtcOffset(periodStart);
+            var endOffset = TimeZoneInfo.FindSystemTimeZoneById(timeZone).GetUtcOffset(periodEnd);
+            var startDate = new DateTimeOffset(periodStart, startOffset);
+            var endDate = new DateTimeOffset(periodEnd, endOffset).AddSeconds(-1);
+
+            sb.Append($"/api/1/energy_sites/{siteId}/calendar_history?");
+            sb.Append("kind=" + kind);
+            sb.Append("&period=" + period.ToLowerInvariant());
+            if (period != "Lifetime")
+            {
+                sb.Append("&start_date=" + Uri.EscapeDataString(startDate.ToString("o")));
+                sb.Append("&end_date=" + Uri.EscapeDataString(endDate.ToString("o")));
+            }
+            sb.Append("&time_zone=" + Uri.EscapeDataString(timeZone));
+            sb.Append("&fill_telemetry=0");
+            return sb.ToString();
+        }
 
         private static double GetJsonDoubleValue(JToken jtoken)
         {

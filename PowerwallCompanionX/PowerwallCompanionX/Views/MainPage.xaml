@@ -208,10 +208,12 @@
         </Grid>
 
         <!-- Daily Energy View -->
-        <Grid x:Name="dailyEnergyGrid" Margin="20,10,20,10" HorizontalOptions="FillAndExpand" ColumnSpacing="15" VerticalOptions="Center">
+        <Grid x:Name="dailyEnergyGrid" Margin="20,10,20,10" HorizontalOptions="FillAndExpand" ColumnSpacing="15"  VerticalOptions="Center">
             <Grid.Resources>
                 <converters:KilowattHourConverter x:Key="KilowattHourConverter" />
                 <converters:NegateValueConverter x:Key="NegateValueConverter" />
+                <converters:RateCurrencyConverter x:Key="RateCurrencyConverter"/>
+                <converters:PostitiveNegativeCostBrushConverter x:Key="PostitiveNegativeCostBrushConverter"/>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -238,37 +240,39 @@
             <Label Grid.Row="1" Grid.Column="1" TextColor="Cyan" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding HomeEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
             <Label Grid.Row="2" Grid.Column="2" TextColor="Gold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
             <Label Grid.Row="1" Grid.Column="2" TextColor="Gold" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding SolarEnergyYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-            <Label Grid.Row="2" Grid.Column="3" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" x:Name="singleGridSettingsToday" ></Label>
-            <Label Grid.Row="1" Grid.Column="3" TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" x:Name="singleGridSettingsYesterday" ></Label>
-
-            <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" x:Name="bothGridSettingsToday">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Image Source="icon_grid_import.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" />
+            
+            <StackLayout Grid.Row="2" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Grid.Row="1" Grid.Column="3" TextColor="LightGray" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" IsVisible="{Binding ShowSingleGridSettingsToday}" ></Label>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowBothGridSettingsToday}">
+                    <Image Source="icon_grid_import.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center"  />
                     <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowBothGridSettingsToday}"  Margin="0,-10,0,0">
+                    <Label TextColor="LightGray" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" />
                     <Image Source="icon_grid_export.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
+                <Label TextColor="{Binding EnergyNetCostToday, Converter={StaticResource PostitiveNegativeCostBrushConverter}}"  VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding EnergyNetCostToday, Converter={StaticResource RateCurrencyConverter}}" LineBreakMode="NoWrap" Margin="0,5,0,0"></Label>
             </StackLayout>
-            <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" x:Name="bothGridSettingsYesterday">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Grid.Row="1" Grid.Column="3" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center" >
+                <Label Grid.Row="1" Grid.Column="3" TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="{Binding LargeFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" IsVisible="{Binding ShowSingleGridSettingsYesterday}" ></Label>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowBothGridSettingsYesterday}">
                     <Image Source="icon_grid_import.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center"  />
                     <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding GridEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding ShowBothGridSettingsYesterday}" Margin="0,-10,0,0">
+                    <Label TextColor="LightGray" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}"  Text="{Binding GridEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" />
                     <Image Source="icon_grid_export.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
+                <Label TextColor="{Binding EnergyNetCostYesterday, Converter={StaticResource PostitiveNegativeCostBrushConverter}}" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding EnergyNetCostYesterday, Converter={StaticResource RateCurrencyConverter}}" LineBreakMode="NoWrap" Margin="0,5,0,0"></Label>
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
                 <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
                     <Image Source="icon_battery_export.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" />
                     <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,-10,0,0">
                     <Label TextColor="LimeGreen" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedToday, Converter={StaticResource KilowattHourConverter}}" ></Label>
-                    <Image Source="icon_battery_import.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
+                    <Image Source="icon_battery_import.png" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout Grid.Row="1" Grid.Column="4" Orientation="Vertical" Spacing="-20" HorizontalOptions="Center" VerticalOptions="Center">
@@ -276,12 +280,11 @@
                     <Image Source="icon_battery_export.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" />
                     <Label TextColor="LimeGreen" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyExportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center"  Margin="0,-10,0,0">
                     <Label TextColor="LimeGreen" Opacity="0.7" VerticalTextAlignment="Center" FontSize="{Binding MediumFontSize}" Text="{Binding BatteryEnergyImportedYesterday, Converter={StaticResource KilowattHourConverter}}" ></Label>
                     <Image Source="icon_battery_import.png" Opacity="0.7" WidthRequest="{Binding SmallFontSize}" VerticalOptions="Center" Margin="0,5,0,0" />
                 </StackLayout>
             </StackLayout>
-
             <!-- Power history chart -->
             <chart:SfChart x:Name="chart"  BackgroundColor="Black" Margin="-20,0,-20,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
                         HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding ShowGraph}">

@@ -204,9 +204,19 @@ namespace PowerwallCompanionX.ViewModels
             get { return GridEnergyExportedToday > 500;  }
         }
 
+        public bool ShowSingleGridSettingsToday
+        {
+            get => !ShowBothGridSettingsToday;
+        }
+
         public bool ShowBothGridSettingsYesterday
         {
             get { return GridEnergyExportedYesterday > 500;  }
+        }
+
+        public bool ShowSingleGridSettingsYesterday
+        {
+            get => !ShowBothGridSettingsYesterday;
         }
 
         public double BatteryEnergyImportedToday
@@ -499,6 +509,31 @@ namespace PowerwallCompanionX.ViewModels
                     return 1.0;
                 }
             }
+        }
+
+        public decimal EnergyCostYesterday { get; set; }
+        public decimal EnergyCostToday { get; set; }
+        public decimal EnergyFeedInYesterday { get; set; }
+        public decimal EnergyFeedInToday { get; set; }
+        public decimal EnergyNetCostYesterday
+        {
+            get => EnergyCostYesterday - EnergyFeedInYesterday;
+        }
+
+        public decimal EnergyNetCostToday
+        {
+            get => EnergyCostToday - EnergyFeedInToday;
+        }
+
+        public void NotifyEnergyCostProperties()
+        {
+            NotifyPropertyChanged(nameof(EnergyCostYesterday));
+            NotifyPropertyChanged(nameof(EnergyCostToday));
+            NotifyPropertyChanged(nameof(EnergyFeedInYesterday));
+            NotifyPropertyChanged(nameof(EnergyFeedInToday));
+            NotifyPropertyChanged(nameof(EnergyNetCostYesterday));
+            NotifyPropertyChanged(nameof(EnergyNetCostToday));
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
