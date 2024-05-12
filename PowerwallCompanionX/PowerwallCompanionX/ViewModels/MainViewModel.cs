@@ -3,14 +3,10 @@ using PowerwallCompanionX.Views;
 using Syncfusion.SfChart.XForms;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Globalization;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using static Android.App.Assist.AssistStructure;
 
 namespace PowerwallCompanionX.ViewModels
 {
@@ -97,6 +93,7 @@ namespace PowerwallCompanionX.ViewModels
         public void NotifyChangedSettings()
         {
             NotifyPropertyChanged(nameof(ShowClock));
+            NotifyPropertyChanged(nameof(ShowEnergyCosts));
         }
 
         public double BatteryPercent
@@ -361,6 +358,14 @@ namespace PowerwallCompanionX.ViewModels
             get
             {
                 return Settings.ShowClock;
+            }
+        }
+
+        public bool ShowEnergyCosts
+        {
+            get
+            {
+                return Settings.ShowEnergyCosts;
             }
         }
 

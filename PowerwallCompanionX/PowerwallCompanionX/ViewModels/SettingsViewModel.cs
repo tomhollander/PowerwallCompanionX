@@ -68,6 +68,12 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.DimAtNight = value;
         }
 
+        public bool ShowEnergyCosts
+        {
+            get => Settings.ShowEnergyCosts;
+            set => Settings.ShowEnergyCosts = value;
+        }
+
         public List<KeyValuePair<string, string>> AvailableExtras
         {
             get => new List<KeyValuePair<string, string>> {
@@ -76,7 +82,7 @@ namespace PowerwallCompanionX.ViewModels
                 new KeyValuePair<string, string>("News", "RSS News"),
                 new KeyValuePair<string, string>("Weather", "Weather"),
                 new KeyValuePair<string, string>("Tesla", "Tesla car battery"),
-                new KeyValuePair<string, string>("Tariffs", "Energy prices (Tesla rate plan)"),
+                new KeyValuePair<string, string>("Tariffs", "Energy rates (Tesla rate plan)"),
                 new KeyValuePair<string, string>("Amber", "Amber electric prices")
             };
         }

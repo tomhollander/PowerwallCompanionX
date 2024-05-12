@@ -34,6 +34,7 @@ namespace PowerwallCompanionX
             DimAtNight,
             GatewayIP,
             GatewayPassword,
+            ShowEnergyCosts
         }
 
         public static string AccessToken
@@ -170,6 +171,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.DimAtNight), false);
             set => Application.Current.Properties[nameof(Properties.DimAtNight)] = value;
+        }
+
+        public static bool ShowEnergyCosts
+        {
+            get => GetProperty<bool>(nameof(Properties.ShowEnergyCosts), false);
+            set => Application.Current.Properties[nameof(Properties.ShowEnergyCosts)] = value;
         }
 
         private static T GetProperty<T>(string keyName, T defaultValue)

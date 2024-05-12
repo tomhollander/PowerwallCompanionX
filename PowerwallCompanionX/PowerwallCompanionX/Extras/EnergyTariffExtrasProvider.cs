@@ -1,6 +1,8 @@
 ﻿using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Newtonsoft.Json.Linq;
+using PowerwallCompanionX.Converters;
+using PowerwallCompanionX.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,10 +16,12 @@ namespace PowerwallCompanionX.Extras
     {
         JObject ratePlan;
         TariffHelper tariffHelper;
+        MainViewModel mainViewModel;
 
-        public EnergyTariffExtrasProvider()
+        public EnergyTariffExtrasProvider(MainViewModel mainViewModel)
         {
             Analytics.TrackEvent("EnergyTariffExtrasProvider initialised");
+            this.mainViewModel = mainViewModel;
         }
         public async Task<string> RefreshStatus()
         {
@@ -33,32 +37,52 @@ namespace PowerwallCompanionX.Extras
                 }
                 var tariff = tariffHelper.GetTariffForInstant(DateTime.Now);
                 var prices = tariffHelper.GetRatesForTariff(tariff);
+                var converter = new RateCurrencyConverter();
 
                 string message = "";
-                switch (tariff.DisplayName)
-                {
-                    case "On Peak":
-                        message = "🔴 ";
-                        break;
-                    case "Partial Peak":
-                        message = "🟠 ";
-                        break;
-                    case "Off Peak":
-                        message = "🟢 ";
-                        break;
-                    case "Super Off Peak":
-                        message = "🔵 ";
-                        break;
-                    default:
-                        break;
-                }    
+                string tariffIcon = "";
+                const string green = "🟢";
+                const string red = "🔴";
+                const string yellow = "🟡";
+                const string blue = "🔵";
+                const string sun = "☀️";
 
-                message += tariff.DisplayName;
-                message += $": {FormatCurrency(prices.Item1)}";
-                if (prices.Item2 > 0)
+                if (!tariffHelper.IsSingleRatePlan)
                 {
-                    message += $" (Feed in: {FormatCurrency(prices.Item2)})";
+                    switch (tariff.DisplayName)
+                    {
+                        case "On Peak":
+                            tariffIcon = red;
+                            break;
+                        case "Partial Peak":
+                            tariffIcon = yellow;
+                            break;
+                        case "Off Peak":
+                            tariffIcon = green;
+                            break;
+                        case "Super Off Peak":
+                            tariffIcon = blue;
+                            break;
+                        default:
+                            break;
+                    }
                 }
+
+                if (mainViewModel.HomeFromGrid > 50)
+                {
+                    var cost = prices.Item1 * (decimal)(mainViewModel.HomeFromGrid / 1000); 
+                    message += $"{FormatCurrency(cost)}/h ∙ {tariffIcon}{FormatCurrency(prices.Item1)}/kWh";
+                }
+                else if (mainViewModel.SolarToGrid > 50)
+                {
+                    var feedIn = prices.Item2 * (decimal)(mainViewModel.SolarToGrid / 1000);
+                    message += $"Feed in: {FormatCurrency(feedIn)}/h ∙ {sun}{FormatCurrency(prices.Item2)}/kWh";
+                }
+                else if (!tariffHelper.IsSingleRatePlan)
+                {
+                    message += $"{tariff.DisplayName} {tariffIcon}{FormatCurrency(prices.Item1)}/kWh";
+                }
+
                 return message;
             }
             catch (Exception ex)
@@ -69,32 +93,11 @@ namespace PowerwallCompanionX.Extras
       
         }
 
-        public string FormatCurrency(decimal rate)
+        private string FormatCurrency(decimal value)
         {
-       
-            var currencySymbol = NumberFormatInfo.CurrentInfo.CurrencySymbol;
-
-            if (rate == 0)
-            {
-                return String.Empty;
-            }
-            else if (rate > 1)
-            {
-                return rate.ToString("C");
-            }
-            else if (currencySymbol == "$" || currencySymbol == "€")
-            {
-                return (rate * 100).ToString("#.#") + "c";
-            }
-            else if (currencySymbol == "£")
-            {
-                return (rate * 100).ToString("#.#") + "p";
-            }
-            else
-            {
-                return rate.ToString("C");
-            }
-
+            var converter = new RateCurrencyConverter();
+            return (string)converter.Convert(value, typeof(string), null, CultureInfo.CurrentCulture);
         }
+
     }
 }

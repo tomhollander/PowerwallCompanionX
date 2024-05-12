@@ -36,6 +36,10 @@
                 <Label Text="Show Clock" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
+                <Switch x:Name="energyCostsSwitch" IsToggled="{Binding ShowEnergyCosts}" />
+                <Label Text="Show Energy Costs (uses custom rate plan set in Tesla app)" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" />
                 <Label Text="Play sound when battery becomes full or empty" />
             </StackLayout>

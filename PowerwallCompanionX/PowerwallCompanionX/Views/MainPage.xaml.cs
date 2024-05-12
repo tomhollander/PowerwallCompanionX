@@ -57,7 +57,7 @@ namespace PowerwallCompanionX.Views
                     extrasProvider = new WeatherExtrasProvider(Settings.WeatherCity, Settings.WeatherUnits);
                     break;
                 case "Tariffs":
-                    extrasProvider = new EnergyTariffExtrasProvider();
+                    extrasProvider = new EnergyTariffExtrasProvider(viewModel);
                     break;
                 case "Amber":
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
@@ -498,6 +498,10 @@ namespace PowerwallCompanionX.Views
         {
             try
             {
+                if (!Settings.ShowEnergyCosts)
+                {
+                    return;
+                }
                 if (tariffHelper == null)
                 {
                     var ratePlan = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/tariff_rate", "TariffRate");
