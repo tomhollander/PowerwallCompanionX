@@ -77,6 +77,8 @@ namespace PowerwallCompanionX.ViewModels
             NotifyPropertyChanged(nameof(BatteryEnergyExportedToday));
             NotifyPropertyChanged(nameof(ShowBothGridSettingsToday));
             NotifyPropertyChanged(nameof(ShowBothGridSettingsYesterday));
+            NotifyPropertyChanged(nameof(ShowSingleGridSettingsToday));
+            NotifyPropertyChanged(nameof(ShowSingleGridSettingsYesterday));
             NotifyPropertyChanged(nameof(Time));
             NotifyPropertyChanged(nameof(PageOpacity));
         }
