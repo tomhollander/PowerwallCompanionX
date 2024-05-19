@@ -7,7 +7,7 @@
              BackgroundColor="Black">
 
     <ScrollView>
-        <StackLayout Margin="10" Grid.Row="0" Grid.Column="0">
+        <StackLayout Margin="10" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
                 <ImageButton Source="Back.png"
                     HeightRequest="30" WidthRequest="30"
@@ -17,115 +17,130 @@
                     Command="{Binding BackCommand}"/>
                 <Label Text="Settings" FontSize="Title" TextColor="White" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Bar Scale" VerticalOptions="Center"/>
-                <Slider Minimum="0.1" Maximum="5"  Value="{Binding GraphScale, Mode=TwoWay}" WidthRequest="190" />
-                <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
-                <Label Text="kW / cm" VerticalOptions="Center"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="Font Scale" VerticalOptions="Center"/>
-                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" />
-                <Picker Title="Energy Site" ItemsSource="{Binding AvailableSites}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedSite}" TextColor="White" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}" />
-                <Label Text="Show Clock" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="energyCostsSwitch" IsToggled="{Binding ShowEnergyCosts}" />
-                <Label Text="Show Energy Costs (uses custom rate plan set in Tesla app)" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" />
-                <Label Text="Play sound when battery becomes full or empty" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}" />
-                <Label Text="Show Power Graph" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="twoPagesOnTablet" IsToggled="{Binding TwoPagesOnTablet}" />
-                <Label Text="Show two pages on tablets" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" />
-                <Label Text="Cycle pages when idle" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="dimAtNight" IsToggled="{Binding DimAtNight}" />
-                <Label Text="Dim screen at night (22:00 to 06:00)" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Switch x:Name="preventBurnIn" IsToggled="{Binding PreventBurnIn}" />
-                <Label Text="Move page elements to prevent screen burn in" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="Extra Info" VerticalOptions="Center"/>
-                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="250" SelectedIndexChanged="Picker_SelectedIndexChanged" />
-            </StackLayout>
+            <Grid ColumnSpacing="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Bar Scale" VerticalOptions="Center" Grid.Row="0"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start">
+                    <Slider Minimum="0.1" Maximum="5"  Value="{Binding GraphScale, Mode=TwoWay}" WidthRequest="190" HeightRequest="10"/>
+                    <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
+                    <Label Text="kW / cm" VerticalOptions="Center"/>
+                </StackLayout>
 
-            <Grid x:Name="weatherSettings">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Label Text="City" Grid.Row="0" Grid.Column="0" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="0" Grid.Column="1"/>
-                <Label Text="Units" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
-                <buttons:SfSegmentedControl Grid.Row="1" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" HorizontalOptions="Start" >
-                    <segmentCollection:List x:TypeArguments="x:String">
-                        <x:String>C</x:String>
-                        <x:String>F</x:String>
-                    </segmentCollection:List>
-                </buttons:SfSegmentedControl>
-            </Grid>
-            <Grid x:Name="amberSettings">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+                <Label Text="Font Scale" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" WidthRequest="190" HeightRequest="10" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" />
 
-                <Label Text="Amber Electric API key" VerticalOptions="Center" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
-            </Grid>
-            <Grid x:Name="newsSettings">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+                <Label Text="Energy Site:" VerticalOptions="Center" TextColor="White" Grid.Row="2" Grid.Column="0"/>
+                <Picker Title="Energy Site" ItemsSource="{Binding AvailableSites}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedSite}" TextColor="White"  Grid.Row="2" Grid.Column="1"  HorizontalOptions="Start"/>
 
-                <Label Text="News RSS feed URL" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
+                <Switch x:Name="clockSwitch" IsToggled="{Binding ShowClock}"  Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10" />
+                <Label Text="Show Clock" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Switch x:Name="energyCostsSwitch" IsToggled="{Binding ShowEnergyCosts}" Grid.Row="4" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"  />
+                <Label Text="Show Energy Costs (uses custom rate plan set in Tesla app)"  Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" Grid.Row="5" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"  />
+                <Label Text="Play sound when battery becomes full or empty" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}"  Grid.Row="6" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10" />
+                <Label Text="Show Power Graph" Grid.Row="6" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                <Switch x:Name="twoPagesOnTablet" IsToggled="{Binding TwoPagesOnTablet}" Grid.Row="7" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+                <Label Text="Show two pages on tablets" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" Grid.Row="8" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+                <Label Text="Cycle pages when idle" Grid.Row="8" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                <Switch x:Name="dimAtNight" IsToggled="{Binding DimAtNight}" Grid.Row="9" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+                <Label Text="Dim screen at night (22:00 to 06:00)"  Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Switch x:Name="preventBurnIn" IsToggled="{Binding PreventBurnIn}" Grid.Row="10" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+                <Label Text="Move page elements to prevent screen burn in" Grid.Row="10" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Label Text="Extra Info"  Grid.Row="11" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" WidthRequest="250" SelectedIndexChanged="Picker_SelectedIndexChanged" 
+                         Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                <Grid x:Name="weatherSettings" Grid.Row="12" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Text="City" Grid.Row="0" Grid.Column="0" />
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="0" Grid.Column="1"/>
+                    <Label Text="Units" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                    <buttons:SfSegmentedControl Grid.Row="1" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" HorizontalOptions="Start" >
+                        <buttons:SfSegmentedControl.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>C</x:String>
+                                <x:String>F</x:String>
+                            </x:Array>
+                        </buttons:SfSegmentedControl.ItemsSource>
+                    </buttons:SfSegmentedControl>
+                </Grid>
+                <Grid x:Name="amberSettings" Grid.Row="12" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Amber Electric API key" VerticalOptions="Center" />
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
+                </Grid>
+                <Grid x:Name="newsSettings" Grid.Row="12" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="News RSS feed URL" />
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
+                </Grid>
+                <Grid x:Name="powerwallSettings" Grid.Row="12" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Text="Gateway IP" VerticalOptions="Center" />
+                    <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayIP, Mode=TwoWay}" Grid.Column="1"/>
+                    <Label Text="Gateway password" VerticalOptions="Center" Grid.Row="1"/>
+                    <Entry IsPassword="True" TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayPassword, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+
             </Grid>
-            <Grid x:Name="powerwallSettings">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Label Text="Gateway IP" VerticalOptions="Center" />
-                <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayIP, Mode=TwoWay}" Grid.Column="1"/>
-                <Label Text="Gateway password" VerticalOptions="Center" Grid.Row="1"/>
-                <Entry IsPassword="True" TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayPassword, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
-            </Grid>
-            <Label>
+         
+            <Label Margin="10">
                 <Label.FormattedText>
                     <FormattedString>
                         <Span Text="Enjoying this app? " />
@@ -139,7 +154,7 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-            <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start"/>
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start" Margin="10"/>
         </StackLayout>
     </ScrollView>
 

@@ -38,7 +38,7 @@
 
         </Grid>
         
-        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared" IsPanSwipeEnabled="True">
+        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared" IsPanSwipeEnabled="True" IsEnabled="True">
         </cards:CarouselView>
 
 
@@ -106,9 +106,9 @@
                         <gauge:RadialAxis.Annotations>
                             <gauge:GaugeAnnotation>
                                 <gauge:GaugeAnnotation.Content>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
                                         <Image HeightRequest="40" WidthRequest="40" Source="icon_battery.png" />
-                                        <Label Text="{Binding BatteryPercent, Converter={StaticResource BatteryPercentageConverter}}" TextColor="White" FontSize="{Binding LargeFontSize}" />
+                                        <Label Text="{Binding BatteryPercent, Converter={StaticResource BatteryPercentageConverter}}" TextColor="White" FontSize="{Binding LargeFontSize}"  />
                                     </StackLayout>
                                 </gauge:GaugeAnnotation.Content> 
                             </gauge:GaugeAnnotation>
@@ -124,7 +124,7 @@
                             </gauge:GaugeAnnotation>
                             <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="45" PositionFactor="1">
                                 <gauge:GaugeAnnotation.Content>
-                                    <Image HeightRequest="40" WidthRequest="40" Margin="0,30,-50,0" Source="icon_battery_export.png" IsVisible="{Binding BatteryValue, Converter={StaticResource BatteryImportingToVisibilityConverter}}" />
+                                    <Image HeightRequest="40" WidthRequest="40" Margin="0,30,-50,0" Source="icon_battery_export.png" IsVisible="{Binding BatteryValue, Converter={StaticResource BatteryExportingToVisibilityConverter}}" />
                                 </gauge:GaugeAnnotation.Content>
                             </gauge:GaugeAnnotation>
                             <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="135" PositionFactor="1">
@@ -179,12 +179,11 @@
                     <Label TextColor="LightGray" Margin="-5,0,5,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Spacing="1" IsClippedToBounds="False" HorizontalOptions="Start">
+                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Spacing="1" IsClippedToBounds="False" HorizontalOptions="Start" Margin="0,-4">
                     <Rectangle Fill="Gold" WidthRequest="{Binding HomeFromSolar, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LimeGreen" WidthRequest="{Binding HomeFromBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LightGray" WidthRequest="{Binding HomeFromGrid, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                 </StackLayout>
-
 
                 <!-- Solar Generation -->
                 <Image Source="icon_solar.png" WidthRequest="50"  Grid.Column="0" Grid.Row="4" VerticalOptions="End" />
@@ -204,7 +203,7 @@
                     <Label TextColor="LightGray" Margin="-5,0,5,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="1" HorizontalOptions="Start">
+                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="1" HorizontalOptions="Start" Margin="0,-4">
                     <Rectangle Fill="Cyan" WidthRequest="{Binding SolarToHome, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LimeGreen" WidthRequest="{Binding SolarToBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}"  HeightRequest="10" />
                     <Rectangle Fill="LightGray" WidthRequest="{Binding SolarToGrid, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}"  HeightRequest="10" />

@@ -4,6 +4,7 @@ using Android.Runtime;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
+using PanCardView;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace PowerwallCompanionX.Droid
@@ -22,6 +23,7 @@ namespace PowerwallCompanionX.Droid
             builder.UseMauiApp<App>();
 
             builder.ConfigureSyncfusionCore();
+            builder.UseCardsView();
             return builder.Build();
         }
     }
