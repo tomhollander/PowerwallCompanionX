@@ -150,10 +150,12 @@ namespace PowerwallCompanionX.Views
                 }
             }
 
+            // Manually tweak chart height so it doesn't jiggle
             if (chart.Height > 200)
             {
                 chart.HeightRequest = 200;
             }
+            chart.WidthRequest = dailyEnergyGrid.Width;
             viewModel.PageWidth = Width;
             viewModel.PageHeight = Height;
             viewModel.RecalculatePageMargin();

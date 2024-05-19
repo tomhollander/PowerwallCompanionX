@@ -20,23 +20,6 @@ namespace PowerwallCompanionX.Droid
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             //global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Microsoft.Maui.Devices.DeviceDisplay.KeepScreenOn = true;
-
-            //if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.R)
-            //{
-            //    Window.SetDecorFitsSystemWindows(false);
-            //    var windowInsetsController = Window.DecorView.WindowInsetsController;
-            //    if (windowInsetsController != null)
-            //    {
-            //        windowInsetsController.Hide(WindowInsetsCompat.Type.NavigationBars());
-            //    }
-            //}
-            //else
-            //{
-            //    var uiOptions = SystemUiFlags.HideNavigation;
-            //    Window.DecorView.SystemUiVisibility = (StatusBarVisibility)uiOptions;
-            //}
-
-            // LoadApplication(new App());
         }
 
     }

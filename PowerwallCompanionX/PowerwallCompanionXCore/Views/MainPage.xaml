@@ -106,10 +106,12 @@
                         <gauge:RadialAxis.Annotations>
                             <gauge:GaugeAnnotation>
                                 <gauge:GaugeAnnotation.Content>
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                                        <Image HeightRequest="40" WidthRequest="40" Source="icon_battery.png" />
-                                        <Label Text="{Binding BatteryPercent, Converter={StaticResource BatteryPercentageConverter}}" TextColor="White" FontSize="{Binding LargeFontSize}"  />
-                                    </StackLayout>
+                                    <Grid HorizontalOptions="Center" WidthRequest="200">
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center">
+                                            <Image HeightRequest="40" WidthRequest="40" Source="icon_battery.png"  />
+                                            <Label Text="{Binding BatteryPercent, Converter={StaticResource BatteryPercentageConverter}}" TextColor="White" FontSize="{Binding LargeFontSize}"  />
+                                        </StackLayout>
+                                    </Grid>
                                 </gauge:GaugeAnnotation.Content> 
                             </gauge:GaugeAnnotation>
                             <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="225" PositionFactor="1">
@@ -320,8 +322,8 @@
                 <chart:SfCartesianChart.Legend>
                     <chart:ChartLegend ToggleSeriesVisibility="True" Placement="Right">
                         <!--<chart:ChartLegend.LabelStyle>
-                            <chart:ChartLegendLabelStyle TextColor="DarkGray" />
-                        </chart:ChartLegend.LabelStyle>-->
+                       <chart:ChartLegendLabelStyle TextColor="DarkGray" />
+                   </chart:ChartLegend.LabelStyle>-->
                     </chart:ChartLegend>
                 </chart:SfCartesianChart.Legend>
 
