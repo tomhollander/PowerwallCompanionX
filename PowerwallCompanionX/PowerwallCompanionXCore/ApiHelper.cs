@@ -136,23 +136,34 @@ namespace PowerwallCompanionX
             }
         }
 
+        private static SemaphoreSlim _tokenRefreshSemaphore = new SemaphoreSlim(1, 1);
+        private static DateTime _tokenLastRefreshed;
         private static async Task RefreshToken()
         {
+            await _tokenRefreshSemaphore.WaitAsync(); // Token refreshes invalidate past tokens, so we don't want to do this multiple times at once
             try
             {
-                var authHelper = new TeslaAuth.TeslaAuthHelper(TeslaAuth.TeslaAccountRegion.Unknown,
-                    Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, Keys.TeslaAppRedirectUrl,
-                     Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VechicleDeviceData }));
-                var tokens = await authHelper.RefreshTokenAsync(Settings.RefreshToken);
+                if ((DateTime.Now - _tokenLastRefreshed).TotalSeconds < 10)
+                {
+                    return; // Token was likely refreshed while waiting for the semaphore
+                }
+                var helper = new TeslaAuthHelper(TeslaAccountRegion.Unknown, Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, Keys.TeslaAppRedirectUrl,
+                Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VechicleDeviceData }));
+                var tokens = await helper.RefreshTokenAsync(Settings.RefreshToken);
+                Analytics.TrackEvent("RefreshToken");
                 Settings.AccessToken = tokens.AccessToken;
                 Settings.RefreshToken = tokens.RefreshToken;
-                await Settings.SavePropertiesAsync();
+                _tokenLastRefreshed = DateTime.Now;
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Crashes.TrackError(ex);
                 throw new UnauthorizedAccessException();
+            }
+            finally
+            {
+                _tokenRefreshSemaphore.Release();
             }
         }
 

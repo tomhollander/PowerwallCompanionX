@@ -150,16 +150,24 @@ namespace PowerwallCompanionX.Views
                 }
             }
 
-            // Manually tweak chart height so it doesn't jiggle
-            if (chart.Height > 200)
+            if (Height > 0 && Height < 800)
             {
-                chart.HeightRequest = 200;
+                double proposedHeight = Height / 4;
+                if (proposedHeight < 150)
+                {
+                    chart.IsVisible = false;
+                }
+                else
+                {
+                    chart.IsVisible = true;
+                    chart.MaximumHeightRequest = proposedHeight;
+                }
+                
             }
-            chart.WidthRequest = dailyEnergyGrid.Width;
+
             viewModel.PageWidth = Width;
             viewModel.PageHeight = Height;
             viewModel.RecalculatePageMargin();
-
         }
 
         private void SetLandscapeMode(Grid page1Grid, Grid page2Grid)
@@ -182,10 +190,15 @@ namespace PowerwallCompanionX.Views
                 page2Grid.ColumnDefinitions.Add(new ColumnDefinition() { Width = GridLength.Star });
             }
             page2Grid.RowDefinitions.Clear();
-            for (int i = 0; i < 4; i++)
-            {
-                page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
-            }
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            //}
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+            page2Grid.RowDefinitions.Add(new RowDefinition() { Height = Settings.ShowGraph ? GridLength.Star : new GridLength(0)});
+
             var chart = page2Grid.Children.Last();
             if (page2Grid.GetRow(chart) == 6)
             {
@@ -268,9 +281,10 @@ namespace PowerwallCompanionX.Views
             viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
             int count = 0;
 
-            // TODO Xamarin.Forms.Device.StartTimer is no longer supported. Use Microsoft.Maui.Dispatching.DispatcherExtensions.StartTimer instead. For more details see https://learn.microsoft.com/en-us/dotnet/maui/migration/forms-projects#device-changes
-            Dispatcher.DispatchDelayed(TimeSpan.FromSeconds(10), () =>
-                {
+            var timer = Application.Current.Dispatcher.CreateTimer();
+            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Tick += (s, e) =>
+            {
                 Task.Run(async () =>
                 {
                     await RefreshDataFromTeslaOwnerApi();
@@ -289,8 +303,9 @@ namespace PowerwallCompanionX.Views
                 }
                 //x
                 //return keepRefreshing; // True = Repeat again, False = Stop the timer
+            };
 
-            });
+            timer.Start();
 
         }
 
@@ -302,9 +317,18 @@ namespace PowerwallCompanionX.Views
         private async Task RefreshDataFromTeslaOwnerApi()
         {
             // Doing these in parallel seems to break stuff
-            await GetCurrentPowerData();
-            await GetEnergyHistoryData();
-            await GetPowerHistoryData();
+            //await GetCurrentPowerData();
+            //await GetEnergyHistoryData();
+            //await GetPowerHistoryData();
+
+            var tasks = new List<Task>()
+            {
+                GetCurrentPowerData(),
+                GetEnergyHistoryData(),
+                GetPowerHistoryData()
+            };
+            await Task.WhenAll(tasks);
+
         }
 
         private async Task GetCurrentPowerData()
@@ -614,6 +638,12 @@ namespace PowerwallCompanionX.Views
                 await Task.Delay(5000);
                 await settingsButton.FadeTo(0, 500);
             }
+        }
+
+        private void dailyEnergyGrid_SizeChanged(object sender, EventArgs e)
+        {
+            // Fix resize jitter on chart
+            chart.WidthRequest = dailyEnergyGrid.Width;
         }
     }
 

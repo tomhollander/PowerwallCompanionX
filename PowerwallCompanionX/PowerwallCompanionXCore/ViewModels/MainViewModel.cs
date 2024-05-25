@@ -374,7 +374,7 @@ namespace PowerwallCompanionX.ViewModels
 
         public double LargeFontSize
         {
-            get { return Settings.FontScale * 50; }
+            get { return Settings.FontScale * 55; }
         }
         public double MediumFontSize
         {

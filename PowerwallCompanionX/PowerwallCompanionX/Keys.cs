@@ -4,14 +4,13 @@ using System.Text;
 
 namespace PowerwallCompanionX
 {
-    static class Keys
+    public static class Keys
     {
-        // The app will not run with valid values for these constants. The keys used in the store app are not in the repo.
-
-        public const string SyncFusion = null; // Sign up for a free key at syncfusion.com
-        public const string WeatherApi = null; // Sign up for a free key at weatherapi.com
-        public const string TeslaAppClientId = null; // Register an app at dev.tesla.com
-        public const string TeslaAppClientSecret = null;
-        public const string TeslaAppRedirectUrl = null;
+        public const string SyncFusion = "MTE0ODU5MUAzMTM5MmUzNDJlMzBDRVg4aUpYNVJFRHRVNmU0WGVobWtLeFMydG51cXlmSmJIa0VHMWRQYVlnPQ==";
+        public const string WeatherApi = "92f1f8e860f24979b4154231233009";
+        public const string TeslaAppClientId = "d23dafb09fb8-45f2-8813-a76e0bcd0012";
+        public const string TeslaAppClientSecret = "ta-secret.I5VkrVxaPFd6jQx%";
+        public const string TeslaAppRedirectUrl = "temp://temp/temp";
+        public const string AppCenterKey = "00e4d92e-002d-4eb8-b50f-f97aa4404983";
     }
 }
