@@ -45,7 +45,10 @@
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
                                IsVisible="{Binding ShowClock, Mode=OneWay}"
                                Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
-        <Label Grid.Row="2"  x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" TextColor="#888888"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}" />
+
+
+
+        <Label Grid.Row="2" x:Name="extrasTextBlock" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" TextColor="#888888"  HorizontalOptions="Center"  VerticalOptions="Start" Text="{Binding ExtrasContent}" />
         
         <ImageButton x:Name="settingsButton" 
                     Grid.Row="1" Source="Settings.png"
@@ -300,49 +303,50 @@
                 </StackLayout>
             </StackLayout>
             <!-- Power history chart -->
-            <chart:SfCartesianChart x:Name="chart"  BackgroundColor="Black" Margin="-20,0,-20,-15" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
-                        HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" IsVisible="{Binding ShowGraph}" MaximumHeightRequest="300" MinimumHeightRequest="150">
-                <chart:SfCartesianChart.XAxes>
-                    <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
-                        <chart:DateTimeAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle TextColor="DarkGray" LabelFormat="h tt" FontSize="16"/>
-                        </chart:DateTimeAxis.LabelStyle>
-                        <chart:DateTimeAxis.MajorGridLineStyle>
-                            <chart:ChartLineStyle Stroke="#404040" />
-                        </chart:DateTimeAxis.MajorGridLineStyle>
-                    </chart:DateTimeAxis>
-                </chart:SfCartesianChart.XAxes>
+            <Grid x:Name="chartContainer" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" MinimumHeightRequest="0" MaximumHeightRequest="300">
+                <chart:SfCartesianChart x:Name="chart" IsVisible="{Binding ShowGraph}" Margin="20"  >
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
+                            <chart:DateTimeAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="DarkGray" LabelFormat="h tt" FontSize="16"/>
+                            </chart:DateTimeAxis.LabelStyle>
+                            <chart:DateTimeAxis.MajorGridLineStyle>
+                                <chart:ChartLineStyle Stroke="#404040" />
+                            </chart:DateTimeAxis.MajorGridLineStyle>
+                        </chart:DateTimeAxis>
+                    </chart:SfCartesianChart.XAxes>
 
-                <chart:SfCartesianChart.YAxes>
-                    <chart:NumericalAxis RangePadding="None">
-                        <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle TextColor="DarkGray" LabelFormat="0 kW" FontSize="16"/>
-                        </chart:NumericalAxis.LabelStyle>
-                        <chart:NumericalAxis.MajorGridLineStyle>
-                            <chart:ChartLineStyle Stroke="#404040" />
-                        </chart:NumericalAxis.MajorGridLineStyle>
-                    </chart:NumericalAxis>
-                </chart:SfCartesianChart.YAxes>
-               
-                <chart:SfCartesianChart.Legend>
-                    <chart:ChartLegend ToggleSeriesVisibility="True" Placement="Right">
-                        <!--<chart:ChartLegend.LabelStyle>
-                       <chart:ChartLegendLabelStyle TextColor="DarkGray" />
-                   </chart:ChartLegend.LabelStyle>-->
-                    </chart:ChartLegend>
-                </chart:SfCartesianChart.Legend>
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis RangePadding="None">
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="DarkGray" LabelFormat="0 kW" FontSize="16"/>
+                            </chart:NumericalAxis.LabelStyle>
+                            <chart:NumericalAxis.MajorGridLineStyle>
+                                <chart:ChartLineStyle Stroke="#404040" />
+                            </chart:NumericalAxis.MajorGridLineStyle>
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
 
-                <chart:AreaSeries Fill="Cyan" Stroke="Cyan" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" XBindingPath="XValue" YBindingPath="YValue" />
-                <chart:AreaSeries Fill="Gold" Stroke="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" XBindingPath="XValue" YBindingPath="YValue"  />
-                <chart:AreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
-                <chart:AreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
-                <!--
-                <chart:SfCartesianChart.ChartAnnotations>
-                    <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
+                    <chart:SfCartesianChart.Legend>
+                        <chart:ChartLegend ToggleSeriesVisibility="True" Placement="Right">
+                            <!--<chart:ChartLegend.LabelStyle>
+           <chart:ChartLegendLabelStyle TextColor="DarkGray" />
+       </chart:ChartLegend.LabelStyle>-->
+                        </chart:ChartLegend>
+                    </chart:SfCartesianChart.Legend>
+
+                    <chart:AreaSeries Fill="Cyan" Stroke="Cyan" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding HomeGraphData}" Label="Home" XBindingPath="XValue" YBindingPath="YValue" />
+                    <chart:AreaSeries Fill="Gold" Stroke="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding SolarGraphData}" Label="Solar" XBindingPath="XValue" YBindingPath="YValue"  />
+                    <chart:AreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
+                    <chart:AreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
+                    <!--
+    <chart:SfCartesianChart.ChartAnnotations>
+        <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
 
 
-                </chart:SfCartesianChart.ChartAnnotations>-->
-            </chart:SfCartesianChart>  
+    </chart:SfCartesianChart.ChartAnnotations>-->
+                </chart:SfCartesianChart>
+            </Grid>
         </Grid>
 
 

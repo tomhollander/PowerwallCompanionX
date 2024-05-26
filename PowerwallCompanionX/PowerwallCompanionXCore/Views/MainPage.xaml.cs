@@ -150,20 +150,6 @@ namespace PowerwallCompanionX.Views
                 }
             }
 
-            if (Height > 0 && Height < 800)
-            {
-                double proposedHeight = Height / 4;
-                if (proposedHeight < 150)
-                {
-                    chart.IsVisible = false;
-                }
-                else
-                {
-                    chart.IsVisible = true;
-                    chart.MaximumHeightRequest = proposedHeight;
-                }
-                
-            }
 
             viewModel.PageWidth = Width;
             viewModel.PageHeight = Height;
@@ -642,8 +628,15 @@ namespace PowerwallCompanionX.Views
 
         private void dailyEnergyGrid_SizeChanged(object sender, EventArgs e)
         {
-            // Fix resize jitter on chart
             chart.WidthRequest = dailyEnergyGrid.Width;
+            if (dailyEnergyGrid.Height > 0 && dailyEnergyGrid.Height < 400)
+            {
+                chart.IsVisible = false;
+            }
+            else
+            {
+                chart.IsVisible = true;
+            }
         }
     }
 
