@@ -303,8 +303,8 @@
                 </StackLayout>
             </StackLayout>
             <!-- Power history chart -->
-            <Grid x:Name="chartContainer" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" MinimumHeightRequest="0" MaximumHeightRequest="300">
-                <chart:SfCartesianChart x:Name="chart" IsVisible="{Binding ShowGraph}" Margin="20"  >
+            <Grid x:Name="chartContainer" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0" MinimumHeightRequest="0" HorizontalOptions="FillAndExpand" MaximumHeightRequest="300">
+                <chart:SfCartesianChart x:Name="chart" IsVisible="{Binding ShowGraph}" Margin="0,-20,0,-10">
                     <chart:SfCartesianChart.XAxes>
                         <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
                             <chart:DateTimeAxis.LabelStyle>
@@ -330,8 +330,8 @@
                     <chart:SfCartesianChart.Legend>
                         <chart:ChartLegend ToggleSeriesVisibility="True" Placement="Right">
                             <!--<chart:ChartLegend.LabelStyle>
-           <chart:ChartLegendLabelStyle TextColor="DarkGray" />
-       </chart:ChartLegend.LabelStyle>-->
+       <chart:ChartLegendLabelStyle TextColor="DarkGray" />
+   </chart:ChartLegend.LabelStyle>-->
                         </chart:ChartLegend>
                     </chart:SfCartesianChart.Legend>
 
@@ -340,11 +340,11 @@
                     <chart:AreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding GridGraphData}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
                     <chart:AreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding BatteryGraphData}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
                     <!--
-    <chart:SfCartesianChart.ChartAnnotations>
-        <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
+<chart:SfCartesianChart.ChartAnnotations>
+    <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
 
 
-    </chart:SfCartesianChart.ChartAnnotations>-->
+</chart:SfCartesianChart.ChartAnnotations>-->
                 </chart:SfCartesianChart>
             </Grid>
         </Grid>

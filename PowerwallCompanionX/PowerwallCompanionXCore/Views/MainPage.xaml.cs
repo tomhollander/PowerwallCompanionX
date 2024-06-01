@@ -200,8 +200,8 @@ namespace PowerwallCompanionX.Views
                     }
                     else
                     {
-                        page2Grid.SetRow(chart, 3);
-                        page2Grid.SetColumnSpan(chart, 5);
+                        page2Grid.SetRow(chartContainer, 3);
+                        page2Grid.SetColumnSpan(chartContainer, 5);
                     }
                 }
             }
@@ -252,8 +252,8 @@ namespace PowerwallCompanionX.Views
                     }
                     else
                     {
-                        page2Grid.SetRow(chart, 6);
-                        page2Grid.SetColumnSpan(chart, 3);
+                        page2Grid.SetRow(chartContainer, 6);
+                        page2Grid.SetColumnSpan(chartContainer, 3);
                     }
                 }
             }
@@ -629,11 +629,11 @@ namespace PowerwallCompanionX.Views
         private void dailyEnergyGrid_SizeChanged(object sender, EventArgs e)
         {
             chart.WidthRequest = dailyEnergyGrid.Width;
-            if (dailyEnergyGrid.Height > 0 && dailyEnergyGrid.Height < 400)
+            if (chartContainer.Height > 0 && chartContainer.Height < 100)
             {
                 chart.IsVisible = false;
             }
-            else
+            else if (Settings.ShowGraph)
             {
                 chart.IsVisible = true;
             }

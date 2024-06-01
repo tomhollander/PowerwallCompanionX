@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sentry;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace PowerwallCompanionX
     {
         public static void TrackError(Exception ex)
         {
-            // TODO
+            SentrySdk.CaptureException(ex);
         }
     }
 }

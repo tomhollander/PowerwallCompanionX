@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Sentry;
 
 namespace PowerwallCompanionX
 {
@@ -10,7 +6,7 @@ namespace PowerwallCompanionX
     {
         public static void TrackEvent(string eventName)
         {
-            // TODO
+            SentrySdk.CaptureMessage(eventName);
         }
     }
 }

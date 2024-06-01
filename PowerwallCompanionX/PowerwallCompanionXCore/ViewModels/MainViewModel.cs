@@ -350,9 +350,22 @@ namespace PowerwallCompanionX.ViewModels
         {
             get
             {
+#if ANDROID
+                bool is24Hour = Android.Text.Format.DateFormat.Is24HourFormat(Android.App.Application.Context);
+                if (is24Hour)
+                {
+                    return DateTime.Now.ToString("HH:mm");
+                }
+                else
+                {
+                    return DateTime.Now.ToString("h:mm");
+                }
+#else
+                
                 string pattern = DateTimeFormatInfo.CurrentInfo.ShortTimePattern;
                 string patternWithoutAmPm = pattern.Replace("tt", "");
                 return DateTime.Now.ToString(patternWithoutAmPm);
+#endif
             }
         }
 
