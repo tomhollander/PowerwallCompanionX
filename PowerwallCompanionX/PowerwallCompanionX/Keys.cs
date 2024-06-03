@@ -4,13 +4,14 @@ using System.Text;
 
 namespace PowerwallCompanionX
 {
-    internal class Keys
+    internal static partial class Keys
     {
-        public const string SyncFusion = null;
-        public const string WeatherApi = null;
-        public const string TeslaAppClientId = null;
-        public const string TeslaAppClientSecret = null;
-        public const string TeslaAppRedirectUrl = null;
-        public const string AppCenterKey = null;
+        public static string SyncFusion;
+        public static string WeatherApi;
+        public static string TeslaAppClientId;
+        public static string TeslaAppClientSecret;
+        public static string TeslaAppRedirectUrl;
+        public static string AppCenterKey;
     }
+
 }

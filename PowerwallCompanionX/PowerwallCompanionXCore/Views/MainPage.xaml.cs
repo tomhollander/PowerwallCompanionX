@@ -629,14 +629,7 @@ namespace PowerwallCompanionX.Views
         private void dailyEnergyGrid_SizeChanged(object sender, EventArgs e)
         {
             chart.WidthRequest = dailyEnergyGrid.Width;
-            if (chartContainer.Height > 0 && chartContainer.Height < 100)
-            {
-                chart.IsVisible = false;
-            }
-            else if (Settings.ShowGraph)
-            {
-                chart.IsVisible = true;
-            }
+            chart.MaximumHeightRequest = Math.Min(dailyEnergyGrid.Height/3, 300);
         }
     }
 
