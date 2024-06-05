@@ -19,7 +19,7 @@ namespace PowerwallCompanionX.Views
         private double maxPercentSinceSound = 0D;
         private double minPercentSinceSound = 100D;
 
-        private bool keepRefreshing = true;
+        private IDispatcherTimer timer;
         private string lastOrientation;
 
         private Thickness timeDefaultMargin;
@@ -267,7 +267,7 @@ namespace PowerwallCompanionX.Views
             viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
             int count = 0;
 
-            var timer = Application.Current.Dispatcher.CreateTimer();
+            timer = Application.Current.Dispatcher.CreateTimer();
             timer.Interval = TimeSpan.FromSeconds(10);
             timer.Tick += (s, e) =>
             {
@@ -287,8 +287,7 @@ namespace PowerwallCompanionX.Views
                 {
                     carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
                 }
-                //x
-                //return keepRefreshing; // True = Repeat again, False = Stop the timer
+                
             };
 
             timer.Start();
@@ -297,7 +296,7 @@ namespace PowerwallCompanionX.Views
 
         protected override void OnDisappearing()
         {
-            keepRefreshing = false;
+            timer.Stop();
         }
 
         private async Task RefreshDataFromTeslaOwnerApi()
