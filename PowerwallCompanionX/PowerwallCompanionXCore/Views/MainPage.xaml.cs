@@ -72,7 +72,6 @@ namespace PowerwallCompanionX.Views
                 rootGrid.Children.Remove(mainGrid);
                 rootGrid.Children.Remove(dailyEnergyGrid);
                 carousel.ItemsSource = new View[] { mainGrid, dailyEnergyGrid };
-                //carousel.IsVisible = true; //x
             }
             else
             {
@@ -81,7 +80,6 @@ namespace PowerwallCompanionX.Views
                 tabletGrid.Children.Add(mainGrid);
                 tabletGrid.Children.Add(dailyEnergyGrid);
                 settingsButton.Opacity = 1;
-                //carousel.IsVisible = false; //x
             }
             MainPage_SizeChanged(null, null);
         }

@@ -18,8 +18,11 @@ namespace PowerwallCompanionX.ViewModels
 
         public void ClearCookies()
         {
-            //x
-            //DependencyService.Get<IClearCookies>().Clear();
+#if ANDROID
+            Android.Webkit.CookieManager.Instance.RemoveAllCookies(null);
+            Android.Webkit.CookieManager.Instance.Flush();
+#endif
+      
         }
 
         public string LoginUrl
