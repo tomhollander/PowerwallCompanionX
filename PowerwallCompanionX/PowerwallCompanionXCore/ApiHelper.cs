@@ -98,20 +98,24 @@ namespace PowerwallCompanionX
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Settings.AccessToken);
             client.DefaultRequestHeaders.UserAgent.ParseAdd("X-Tesla-User-Agent");
-            var response = await client.GetAsync(url);
-            var responseMessage = await response.Content.ReadAsStringAsync();
-            if (response.IsSuccessStatusCode)
+            // This redundant await _seems_ to minimise exceptions going uncaught and crashing the app
+            return await Task.Run(async () =>
             {
-                return JObject.Parse(responseMessage);
-            }
-            else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-            {
-                throw new UnauthorizedAccessException();
-            }
-            else
-            {
-                throw new HttpRequestException(responseMessage);
-            }
+                var response = await client.GetAsync(url);
+                var responseMessage = await response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                {
+                    return JObject.Parse(responseMessage);
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    throw new UnauthorizedAccessException();
+                }
+                else
+                {
+                    throw new HttpRequestException(responseMessage);
+                }
+            });
         }
 
         private static async Task<JObject> CallPostApi(string url)
