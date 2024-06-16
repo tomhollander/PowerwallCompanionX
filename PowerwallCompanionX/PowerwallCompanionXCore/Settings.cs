@@ -188,9 +188,6 @@ namespace PowerwallCompanionX
             Preferences.Default.Remove(nameof(Properties.RefreshToken));
             //await Application.Current.SavePropertiesAsync();
         }
-        public static async Task SavePropertiesAsync()
-        {
-            //await Application.Current.SavePropertiesAsync();
-        }
+
     }
 }

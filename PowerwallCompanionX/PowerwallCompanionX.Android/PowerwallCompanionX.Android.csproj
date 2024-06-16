@@ -118,12 +118,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PowerwallCompanionX\PowerwallCompanionX.csproj">
-      <Project>{41EBCA99-91D8-4572-861F-E05540D7BA0F}</Project>
-      <Name>PowerwallCompanionX</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>

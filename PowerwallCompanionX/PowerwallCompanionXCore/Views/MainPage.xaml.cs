@@ -1,7 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration;
+using Newtonsoft.Json.Linq;
+using PowerwallCompanion.Lib;
+using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
+using Syncfusion.Maui.Core.Carousel;
 using System.Text;
 
 namespace PowerwallCompanionX.Views
@@ -24,6 +28,7 @@ namespace PowerwallCompanionX.Views
 
         private Thickness timeDefaultMargin;
 
+        private PowerwallApi powerwallApi;
         private IExtrasProvider extrasProvider;
         private TariffHelper tariffHelper;
 
@@ -31,6 +36,7 @@ namespace PowerwallCompanionX.Views
         {
             InitializeComponent();
             viewModel = new MainViewModel();
+            powerwallApi = new PowerwallApi(Settings.SiteId, new MauiPlatformAdapter());
             SetPhoneOrTabletLayout();
             this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
@@ -299,10 +305,7 @@ namespace PowerwallCompanionX.Views
 
         private async Task RefreshDataFromTeslaOwnerApi()
         {
-            // Doing these in parallel seems to break stuff
-            //await GetCurrentPowerData();
-            //await GetEnergyHistoryData();
-            //await GetPowerHistoryData();
+            await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
 
             var tasks = new List<Task>()
             {
@@ -314,6 +317,23 @@ namespace PowerwallCompanionX.Views
 
         }
 
+        private async Task RefreshTariffData()
+        {
+            if (tariffHelper == null && Settings.ShowEnergyCosts)
+            {
+                try
+                {
+                    var ratePlan = await powerwallApi.GetRatePlan();
+                    tariffHelper = new TariffHelper(ratePlan);
+                }
+                catch (Exception ex)
+                {
+                    Crashes.TrackError(ex);
+                }
+            }
+            
+        }
+
         private async Task GetCurrentPowerData()
         { 
             try
@@ -322,36 +342,19 @@ namespace PowerwallCompanionX.Views
                 {
                     return;
                 }
-#if FAKE
-                viewModel.BatteryPercent = 72;
-                viewModel.HomeValue = 1900D;
-                viewModel.SolarValue = 1900D;
-                viewModel.BatteryValue = -1000D;
-                viewModel.GridValue = 100D;
-                viewModel.GridActive = true;
-#else
-                var siteId = Settings.SiteId;
 
-                var powerInfo = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{siteId}/live_status", "LiveStatus");
-
-                viewModel.BatteryPercent = GetJsonDoubleValue(powerInfo["response"]["percentage_charged"]);
-                viewModel.HomeValue = GetJsonDoubleValue(powerInfo["response"]["load_power"]);
-                viewModel.SolarValue = GetJsonDoubleValue(powerInfo["response"]["solar_power"]);
-                viewModel.BatteryValue = GetJsonDoubleValue(powerInfo["response"]["battery_power"]);
-                viewModel.GridValue = GetJsonDoubleValue(powerInfo["response"]["grid_power"]);
-                viewModel.GridActive = powerInfo["response"]["grid_status"].Value<string>() != "Inactive";
-                viewModel.TotalPackEnergy = GetJsonDoubleValue(powerInfo["response"]["total_pack_energy"]);  
-                viewModel.Status = viewModel.GridActive ? MainViewModel.StatusEnum.Online : MainViewModel.StatusEnum.GridOutage;
-#endif
+                viewModel.InstantaneousPower = await powerwallApi.GetInstantaneousPower();
+                await UpdateMinMaxPercentToday();
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
+                viewModel.Status = viewModel.InstantaneousPower.GridActive ? MainViewModel.StatusEnum.Online : MainViewModel.StatusEnum.GridOutage;
                 viewModel.NotifyPowerProperties();
 
 
-                PlaySoundsOnBatteryStatus(viewModel.BatteryPercent);
+                PlaySoundsOnBatteryStatus(viewModel.InstantaneousPower.BatteryStoragePercent);
             }
             catch (UnauthorizedAccessException ex)
             {
-                Device.BeginInvokeOnMainThread(() =>
+                MainThread.BeginInvokeOnMainThread(() =>
                 {
                     if (!(Application.Current.MainPage is LoginPage))
                     {
@@ -371,6 +374,34 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyPowerProperties();
                 viewModel.Status = MainViewModel.StatusEnum.Error;
+            }
+        }
+
+        private async Task UpdateMinMaxPercentToday()
+        {
+            if (viewModel.InstantaneousPower == null)
+            {
+                return;
+            }
+            if (viewModel.BatteryDay == DateTime.MinValue)
+            {
+                var minMax = await powerwallApi.GetBatteryMinMaxToday();
+                viewModel.MinBatteryPercentToday = minMax.Item1;
+                viewModel.MaxBatteryPercentToday = minMax.Item2;
+            }
+            else if (viewModel.BatteryDay != (await powerwallApi.ConvertToPowerwallDate(DateTime.Now)).Date)
+            {
+                viewModel.BatteryDay = DateTime.Today;
+                viewModel.MinBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
+                viewModel.MaxBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
+            }
+            else if (viewModel.InstantaneousPower.BatteryStoragePercent < viewModel.MinBatteryPercentToday)
+            {
+                viewModel.MaxBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
+            }
+            else if (viewModel.InstantaneousPower.BatteryStoragePercent > viewModel.MaxBatteryPercentToday)
+            {
+                viewModel.MaxBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
             }
         }
 
@@ -403,54 +434,16 @@ namespace PowerwallCompanionX.Views
                     return;
                 }
 
-                var tasks = new List<Task<JObject>>()
+                var tasks = new List<Task<EnergyTotals>>()
                 {
-                    GetCalendarHistoryData(DateTime.Now.Date.AddDays(-1)),
-                    GetCalendarHistoryData(DateTime.Now.Date)
+                    powerwallApi.GetEnergyTotalsForDay(DateTime.Now.Date.AddDays(-1), tariffHelper),
+                    powerwallApi.GetEnergyTotalsForDay(DateTime.Now.Date, tariffHelper)
                 };
                 var results = await Task.WhenAll(tasks);
-                var yesterdayEnergy = results[0];
-                var todayEnergy = results[1];
+                viewModel.EnergyTotalsYesterday = results[0];
+                viewModel.EnergyTotalsToday = results[1];
 
-                viewModel.HomeEnergyYesterday = 0;
-                viewModel.SolarEnergyYesterday = 0;
-                viewModel.GridEnergyImportedYesterday = 0;
-                viewModel.GridEnergyExportedYesterday = 0;
-                viewModel.BatteryEnergyImportedYesterday = 0;
-                viewModel.BatteryEnergyExportedYesterday = 0;
-                foreach (var period in yesterdayEnergy["response"]["time_series"])
-                {
-                    viewModel.HomeEnergyYesterday += GetJsonDoubleValue(period["total_home_usage"]);
-                    viewModel.SolarEnergyYesterday += GetJsonDoubleValue(period["total_solar_generation"]);
-                    viewModel.GridEnergyImportedYesterday += GetJsonDoubleValue(period["grid_energy_imported"]);
-                    viewModel.GridEnergyExportedYesterday += GetJsonDoubleValue(period["grid_energy_exported_from_solar"]) + GetJsonDoubleValue(period["grid_energy_exported_from_generator"]) + GetJsonDoubleValue(period["grid_energy_exported_from_battery"]);
-                    viewModel.BatteryEnergyImportedYesterday += GetJsonDoubleValue(period["battery_energy_imported_from_grid"]) + GetJsonDoubleValue(period["battery_energy_imported_from_solar"]) + GetJsonDoubleValue(period["battery_energy_imported_from_generator"]);
-                    viewModel.BatteryEnergyExportedYesterday += GetJsonDoubleValue(period["battery_energy_exported"]);
-                }
-
-                viewModel.HomeEnergyToday = 0;
-                viewModel.SolarEnergyToday = 0;
-                viewModel.GridEnergyImportedToday = 0;
-                viewModel.GridEnergyExportedToday = 0;
-                viewModel.BatteryEnergyImportedToday = 0;
-                viewModel.BatteryEnergyExportedToday = 0;
-                foreach (var period in todayEnergy["response"]["time_series"])
-                {
-                    viewModel.HomeEnergyToday += GetJsonDoubleValue(period["total_home_usage"]);
-                    viewModel.SolarEnergyToday += GetJsonDoubleValue(period["total_solar_generation"]);
-                    viewModel.GridEnergyImportedToday += GetJsonDoubleValue(period["grid_energy_imported"]);
-                    viewModel.GridEnergyExportedToday += GetJsonDoubleValue(period["grid_energy_exported_from_solar"]) + GetJsonDoubleValue(period["grid_energy_exported_from_generator"]) + GetJsonDoubleValue(period["grid_energy_exported_from_battery"]);
-                    viewModel.BatteryEnergyImportedToday += GetJsonDoubleValue(period["battery_energy_imported_from_grid"]) + GetJsonDoubleValue(period["battery_energy_imported_from_solar"]) + GetJsonDoubleValue(period["battery_energy_imported_from_generator"]);
-                    viewModel.BatteryEnergyExportedToday += GetJsonDoubleValue(period["battery_energy_exported"]);
-                }
-
-                viewModel.EnergyHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyDailyEnergyProperties();
-
-                if (Settings.ShowEnergyCosts)
-                {
-                    await RefreshEnergyCostData(yesterdayEnergy, todayEnergy);
-                }
 
             }
             catch (Exception ex)
@@ -471,29 +464,19 @@ namespace PowerwallCompanionX.Views
                     return;
                 }
 
-                var json = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/history?kind=power", "PowerHistory");
-                var homeGraphData = new List<ChartDataPoint>();
-                var solarGraphData = new List<ChartDataPoint>();
-                var batteryGraphData = new List<ChartDataPoint>();
-                var gridGraphData = new List<ChartDataPoint>();
+                viewModel.PowerChartSeries = await powerwallApi.GetPowerChartSeriesForLastTwoDays();
 
-                foreach (var datapoint in (JArray)json["response"]["time_series"])
+                DateTime d = await powerwallApi.ConvertToPowerwallDate(DateTime.Now);
+                if (Settings.AccessToken == "DEMO")
                 {
-                    var timestamp = datapoint["timestamp"].Value<DateTime>();
-                    var solarPower = datapoint["solar_power"].Value<double>() / 1000;
-                    var batteryPower = datapoint["battery_power"].Value<double>() / 1000;
-                    var gridPower = datapoint["grid_power"].Value<double>() / 1000;
-                    var homePower = solarPower + batteryPower + gridPower;
-                    homeGraphData.Add(new ChartDataPoint(timestamp, homePower));
-                    solarGraphData.Add(new ChartDataPoint(timestamp, solarPower));
-                    gridGraphData.Add(new ChartDataPoint(timestamp, gridPower));
-                    batteryGraphData.Add(new ChartDataPoint(timestamp, batteryPower));
+                    viewModel.ChartMaxDate = new DateTime(2018, 3, 1);
+                }
+                else
+                {
+                    viewModel.ChartMaxDate = d.Date.AddDays(1);
                 }
 
-                viewModel.HomeGraphData = homeGraphData;
-                viewModel.SolarGraphData = solarGraphData;
-                viewModel.GridGraphData = gridGraphData;
-                viewModel.BatteryGraphData = batteryGraphData;
+
                 viewModel.PowerHistoryLastRefreshed = DateTime.Now;
                 viewModel.NotifyGraphProperties();
             }
@@ -505,83 +488,9 @@ namespace PowerwallCompanionX.Views
             }
         }
 
-        private async Task RefreshEnergyCostData(JObject yesterdayEnergy, JObject todayEnergy)
-        {
-            try
-            {
-                if (!Settings.ShowEnergyCosts)
-                {
-                    return;
-                }
-                if (tariffHelper == null)
-                {
-                    var ratePlan = await ApiHelper.CallGetApiWithTokenRefresh($"/api/1/energy_sites/{Settings.SiteId}/tariff_rate", "TariffRate");
-                    tariffHelper = new TariffHelper(ratePlan);
-                }
+        
 
-                var yesterdayCost = tariffHelper.GetEnergyCostAndFeedInFromEnergyHistory((JArray)yesterdayEnergy["response"]["time_series"]);
-                viewModel.EnergyCostYesterday = yesterdayCost.Item1;
-                viewModel.EnergyFeedInYesterday = yesterdayCost.Item2;
-
-                var todayCost = tariffHelper.GetEnergyCostAndFeedInFromEnergyHistory((JArray)todayEnergy["response"]["time_series"]);
-                viewModel.EnergyCostToday = todayCost.Item1;
-                viewModel.EnergyFeedInToday = todayCost.Item2;
-
-                Analytics.TrackEvent("Energy cost data refreshed");
-                viewModel.NotifyEnergyCostProperties();
-
-            }
-            catch (Exception ex)
-            {
-                Crashes.TrackError(ex);
-            }
-        }
-
-        private async Task<JObject> GetCalendarHistoryData(DateTime date)
-        {
-            var url = GetCalendarHistoryUrl("energy", "day", date, date.AddDays(1).AddSeconds(-1));
-            return await ApiHelper.CallGetApiWithTokenRefresh(url, "CalendarHistory");
-        }
-
-        private string GetCalendarHistoryUrl(string kind, string period, DateTime periodStart, DateTime periodEnd)
-        {
-            var sb = new StringBuilder();
-            var siteId = Settings.SiteId;
-
-            var timeZone = TimeZoneInfo.Local.Id;;
-            var startOffset = TimeZoneInfo.FindSystemTimeZoneById(timeZone).GetUtcOffset(periodStart);
-            var endOffset = TimeZoneInfo.FindSystemTimeZoneById(timeZone).GetUtcOffset(periodEnd);
-            var startDate = new DateTimeOffset(periodStart, startOffset);
-            var endDate = new DateTimeOffset(periodEnd, endOffset).AddSeconds(-1);
-
-            sb.Append($"/api/1/energy_sites/{siteId}/calendar_history?");
-            sb.Append("kind=" + kind);
-            sb.Append("&period=" + period.ToLowerInvariant());
-            if (period != "Lifetime")
-            {
-                sb.Append("&start_date=" + Uri.EscapeDataString(startDate.ToString("o")));
-                sb.Append("&end_date=" + Uri.EscapeDataString(endDate.ToString("o")));
-            }
-            sb.Append("&time_zone=" + Uri.EscapeDataString(timeZone));
-            sb.Append("&fill_telemetry=0");
-            return sb.ToString();
-        }
-
-        private static double GetJsonDoubleValue(JToken jtoken)
-        {
-            if (jtoken == null)
-            {
-                return 0;
-            }
-            try
-            {
-                return jtoken.Value<double>();
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+        
 
         private void CarouselView_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
         {
@@ -628,6 +537,7 @@ namespace PowerwallCompanionX.Views
             chart.WidthRequest = dailyEnergyGrid.Width;
             chart.MaximumHeightRequest = Math.Min(dailyEnergyGrid.Height/3, 300);
         }
+
     }
 
 }
