@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
+using System.Text.Json.Nodes;
 
 namespace PowerwallCompanionX.Extras
 {
@@ -47,17 +47,17 @@ namespace PowerwallCompanionX.Extras
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
             var response = await client.GetAsync(baseUrl + "/sites/" + _siteId + "/prices/current");
             var responseMessage = await response.Content.ReadAsStringAsync();
-            var responseJson = JArray.Parse(responseMessage);
-            foreach (var item in responseJson)
+            var responseJson = JsonObject.Parse(responseMessage);
+            foreach (var item in responseJson.AsArray())
             {
-                if (item["channelType"].Value<string>() == "general")
+                if (item["channelType"].GetValue<string>() == "general")
                 {
-                    _sellPrice = item["perKwh"].Value<decimal>();
-                    _renewables = item["renewables"].Value<decimal>();
+                    _sellPrice = item["perKwh"].GetValue<decimal>();
+                    _renewables = item["renewables"].GetValue<decimal>();
                 }
-                else if (item["channelType"].Value<string>() == "feedIn")
+                else if (item["channelType"].GetValue<string>() == "feedIn")
                 {
-                    _buyPrice = -item["perKwh"].Value<decimal>();
+                    _buyPrice = -item["perKwh"].GetValue<decimal>();
                 }
             }
             _lastUpdated = DateTime.Now;
@@ -69,12 +69,12 @@ namespace PowerwallCompanionX.Extras
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
             var response = await client.GetAsync(baseUrl + "/sites");
             var responseMessage = await response.Content.ReadAsStringAsync();
-            var responseJson = JArray.Parse(responseMessage);
-            foreach (var site in responseJson)
+            var responseJson = JsonObject.Parse(responseMessage);
+            foreach (var site in responseJson.AsArray())
             {
-                if (site["status"].Value<string>() == "active")
+                if (site["status"].GetValue<string>() == "active")
                 {
-                    _siteId = site["id"].Value<string>();
+                    _siteId = site["id"].GetValue<string>();
                 }
             }
 

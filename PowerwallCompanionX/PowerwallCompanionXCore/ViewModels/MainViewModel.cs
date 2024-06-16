@@ -1,14 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Views;
-using Syncfusion.Maui.Charts;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui;
-using PowerwallCompanion.Lib.Models;
 
 namespace PowerwallCompanionX.ViewModels
 {

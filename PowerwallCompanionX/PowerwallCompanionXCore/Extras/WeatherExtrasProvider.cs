@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Text.Json.Nodes;
 
 namespace PowerwallCompanionX.Extras
 {
@@ -82,7 +82,7 @@ namespace PowerwallCompanionX.Extras
                     var client = new HttpClient();
                     var response = await client.GetAsync($"https://api.weatherapi.com/v1/forecast.json?key={_apiKey}&q={_location}&days=3&aqi=no&alerts=no");
                     var responseMessage = await response.Content.ReadAsStringAsync();
-                    var responseJson = JObject.Parse(responseMessage);
+                    var responseJson = (JsonObject) JsonObject.Parse(responseMessage);
                     _lastCurrent = GetCurrentConditions(responseJson);
                     _lastForecast = GetForecast(responseJson);
                     _lastUpdated = DateTime.Now;
@@ -107,27 +107,27 @@ namespace PowerwallCompanionX.Extras
             }
         }
 
-        private string GetCurrentConditions(JObject responseJson)
+        private string GetCurrentConditions(JsonObject responseJson)
         {
-            string location = responseJson["location"]["name"].Value<string>();
-            decimal currentTemp = _units == "C" ? responseJson["current"]["temp_c"].Value<decimal>() : responseJson["current"]["temp_f"].Value<decimal>();
-            int currentConditionsCode = responseJson["current"]["condition"]["code"].Value<int>();
-            string currentConditionsText = responseJson["current"]["condition"]["text"].Value<string>();
+            string location = responseJson["location"]["name"].GetValue<string>();
+            decimal currentTemp = _units == "C" ? responseJson["current"]["temp_c"].GetValue<decimal>() : responseJson["current"]["temp_f"].GetValue<decimal>();
+            int currentConditionsCode = responseJson["current"]["condition"]["code"].GetValue<int>();
+            string currentConditionsText = responseJson["current"]["condition"]["text"].GetValue<string>();
             string currentIcon = currentConditionsText == "Clear" ? "🌙" : Icons[currentConditionsCode];
             var forecastNode = responseJson["forecast"]["forecastday"][0]["day"];
-            decimal forecastTemp = _units == "C" ? forecastNode["maxtemp_c"].Value<decimal>() : forecastNode["maxtemp_f"].Value<decimal>();
+            decimal forecastTemp = _units == "C" ? forecastNode["maxtemp_c"].GetValue<decimal>() : forecastNode["maxtemp_f"].GetValue<decimal>();
 
             return $"{location}: {currentTemp:f0}°{currentIcon}";
         }
 
-        private string GetForecast(JObject responseJson)
+        private string GetForecast(JsonObject responseJson)
         {
             string result = String.Empty;
-            foreach (var dayNode in responseJson["forecast"]["forecastday"])
+            foreach (var dayNode in responseJson["forecast"]["forecastday"].AsArray())
             {
-                DateTime date = DateTime.Parse(dayNode["date"].Value<string>());
-                decimal maxTemp = _units == "C" ? dayNode["day"]["maxtemp_c"].Value<decimal>() : dayNode["day"]["maxtemp_f"].Value<decimal>();
-                int conditionsCode = dayNode["day"]["condition"]["code"].Value<int>();
+                DateTime date = DateTime.Parse(dayNode["date"].GetValue<string>());
+                decimal maxTemp = _units == "C" ? dayNode["day"]["maxtemp_c"].GetValue<decimal>() : dayNode["day"]["maxtemp_f"].GetValue<decimal>();
+                int conditionsCode = dayNode["day"]["condition"]["code"].GetValue<int>();
                 string conditionsIcon = Icons[conditionsCode];
                 result += $"{date:ddd}: {maxTemp:f0}°{conditionsIcon} ";
             }

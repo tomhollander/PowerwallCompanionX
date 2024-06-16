@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
-using PowerwallCompanion.Lib;
+﻿using PowerwallCompanion.Lib;
 using PowerwallCompanion.Lib.Models;
-using System.Diagnostics;
 
 namespace PowerwallCompanionX.Extras
 {

@@ -1,12 +1,8 @@
-﻿using Microsoft.Maui.Controls.PlatformConfiguration;
-using Newtonsoft.Json.Linq;
-using PowerwallCompanion.Lib;
+﻿using PowerwallCompanion.Lib;
 using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
-using Syncfusion.Maui.Core.Carousel;
-using System.Text;
 
 namespace PowerwallCompanionX.Views
 {

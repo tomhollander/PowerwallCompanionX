@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 
 namespace PowerwallCompanionX
 {
@@ -54,11 +54,11 @@ namespace PowerwallCompanionX
             get
             {
                 var json = GetProperty<string>(nameof(Properties.AvailableSites), null);
-                return json == null ? null : JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                return json == null ? null : JsonSerializer.Deserialize<Dictionary<string, string>>(json);
             }
             set
             {
-                var json = JsonConvert.SerializeObject(value);
+                var json = JsonSerializer.Serialize(value);
                 Preferences.Default.Set(nameof(Properties.AvailableSites), json);
             }
         }

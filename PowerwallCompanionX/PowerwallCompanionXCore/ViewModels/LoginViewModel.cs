@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using PowerwallCompanion.Lib;
+﻿using PowerwallCompanion.Lib;
 using PowerwallCompanionX.Views;
 using System.IdentityModel.Tokens.Jwt;
 using TeslaAuth;

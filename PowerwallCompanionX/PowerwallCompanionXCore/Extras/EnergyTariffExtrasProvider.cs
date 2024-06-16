@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using PowerwallCompanion.Lib;
-using PowerwallCompanionX;
+﻿using PowerwallCompanion.Lib;
 using PowerwallCompanionX.Converters;
 using PowerwallCompanionX.ViewModels;
 using System.Globalization;
