@@ -296,12 +296,12 @@ namespace PowerwallCompanionX.Views
 
         protected override void OnDisappearing()
         {
-            timer.Stop();
+            timer?.Stop();
         }
 
         private async Task RefreshDataFromTeslaOwnerApi()
         {
-            await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
+           await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
 
             var tasks = new List<Task>()
             {

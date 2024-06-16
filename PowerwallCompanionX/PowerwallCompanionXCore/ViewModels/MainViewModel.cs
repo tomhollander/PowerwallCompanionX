@@ -33,6 +33,8 @@ namespace PowerwallCompanionX.ViewModels
         public void NotifyPowerProperties()
         {
             NotifyPropertyChanged(nameof(InstantaneousPower));
+            NotifyPropertyChanged(nameof(MinBatteryPercentToday));
+            NotifyPropertyChanged(nameof(MaxBatteryPercentToday));
             NotifyPropertyChanged(nameof(Time));
             NotifyPropertyChanged(nameof(PageOpacity));
         }
