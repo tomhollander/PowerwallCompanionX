@@ -29,6 +29,48 @@
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <ItemGroup>
+    <AndroidAsset Remove="Assets\calendar_history-energy-day.json" />
+    <AndroidAsset Remove="Assets\calendar_history-energy-month.json" />
+    <AndroidAsset Remove="Assets\calendar_history-energy-week.json" />
+    <AndroidAsset Remove="Assets\calendar_history-energy-year.json" />
+    <AndroidAsset Remove="Assets\calendar_history-power-day.json" />
+    <AndroidAsset Remove="Assets\calendar_history-soe-day.json" />
+    <AndroidAsset Remove="Assets\history-power.json" />
+    <AndroidAsset Remove="Assets\live_status.json" />
+    <AndroidAsset Remove="Assets\products.json" />
+    <AndroidAsset Remove="Assets\site_info.json" />
+    <AndroidAsset Remove="Assets\site_status.json" />
+    <AndroidAsset Remove="Assets\tariff_rate.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\calendar_history-energy-day.json" />
+    <None Remove="Assets\calendar_history-energy-month.json" />
+    <None Remove="Assets\calendar_history-energy-week.json" />
+    <None Remove="Assets\calendar_history-energy-year.json" />
+    <None Remove="Assets\calendar_history-power-day.json" />
+    <None Remove="Assets\calendar_history-soe-day.json" />
+    <None Remove="Assets\history-power.json" />
+    <None Remove="Assets\live_status.json" />
+    <None Remove="Assets\site_info.json" />
+    <None Remove="Assets\site_status.json" />
+    <None Remove="Assets\tariff_rate.json" />
+    <None Remove="Resources\products.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiAsset Include="Assets\calendar_history-energy-day.json" />
+    <MauiAsset Include="Assets\calendar_history-energy-month.json" />
+    <MauiAsset Include="Assets\calendar_history-energy-week.json" />
+    <MauiAsset Include="Assets\calendar_history-energy-year.json" />
+    <MauiAsset Include="Assets\calendar_history-power-day.json" />
+    <MauiAsset Include="Assets\calendar_history-soe-day.json" />
+    <MauiAsset Include="Assets\history-power.json" />
+    <MauiAsset Include="Assets\live_status.json" />
+    <MauiAsset Include="Assets\products.json" />
+    <MauiAsset Include="Assets\site_info.json" />
+    <MauiAsset Include="Assets\site_status.json" />
+    <MauiAsset Include="Assets\tariff_rate.json" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
   </ItemGroup>

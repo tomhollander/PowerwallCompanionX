@@ -12,6 +12,7 @@ namespace PowerwallCompanionX.Views
         private readonly TimeSpan liveStatusRefreshInterval = new TimeSpan(0, 0, 30);
         private readonly TimeSpan energyHistoryRefreshInterval = new TimeSpan(0, 5, 0);
         private readonly TimeSpan powerHistoryRefreshInterval = new TimeSpan(0, 5, 0);
+        private readonly TimeSpan energySiteInfoRefreshInterval = new TimeSpan(1, 0, 0);
 
         private DateTime lastManualSwipe;
         private readonly TimeSpan swipeIdlePeriod = new TimeSpan(0, 1, 0);
@@ -307,10 +308,28 @@ namespace PowerwallCompanionX.Views
             {
                 GetCurrentPowerData(),
                 GetEnergyHistoryData(),
-                GetPowerHistoryData()
+                GetPowerHistoryData(),
+                GetEnergySiteInfo()
             };
             await Task.WhenAll(tasks);
 
+        }
+
+        private async Task GetEnergySiteInfo()
+        {
+            try
+            {
+                if (viewModel.EnergySiteInfo == null || (DateTime.Now - viewModel.EnergySiteInfoLastRefreshed > energySiteInfoRefreshInterval))
+                {
+                    viewModel.EnergySiteInfo = await powerwallApi.GetEnergySiteInfo();
+                    viewModel.EnergySiteInfoLastRefreshed = DateTime.Now;
+                    viewModel.NotifyPropertyChanged(nameof(viewModel.EnergySiteInfo));
+                }
+            }
+            catch (Exception ex)
+            {
+                Crashes.TrackError(ex);
+            }
         }
 
         private async Task RefreshTariffData()

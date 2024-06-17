@@ -92,7 +92,7 @@ namespace PowerwallCompanionX.ViewModels
             get; set;
         }
 
-
+        public EnergySiteInfo EnergySiteInfo { get; set; }
 
         public bool ShowBothGridSettingsToday
         {
@@ -226,6 +226,7 @@ namespace PowerwallCompanionX.ViewModels
         public string LastExceptionMessage { get; set; }
         public DateTime LastExceptionDate { get; set; }
         public DateTime LiveStatusLastRefreshed { get; set;  }
+        public DateTime EnergySiteInfoLastRefreshed { get; set; }
         public DateTime EnergyHistoryLastRefreshed { get; set; }
 
         public DateTime PowerHistoryLastRefreshed { get; set; }
@@ -309,7 +310,7 @@ namespace PowerwallCompanionX.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(string propertyName)
+        public void NotifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
@@ -13,9 +14,13 @@ namespace PowerwallCompanionX
         public string AccessToken { get => Settings.AccessToken; set => Settings.AccessToken = value; }
         public string RefreshToken { get => Settings.RefreshToken; set => Settings.RefreshToken = value; }
 
-        public Task<string> ReadFileContents(string filename)
+        public async Task<string> ReadFileContents(string filename)
         {
-            throw new NotImplementedException();
+            using (Stream stream = await FileSystem.Current.OpenAppPackageFileAsync(filename)) 
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                return await reader.ReadToEndAsync();
+            }
         }
 
         public Task<JsonObject> ReadGatewayDetailsFromCache()
@@ -26,6 +31,16 @@ namespace PowerwallCompanionX
         public Task SaveGatewayDetailsToCache(JsonObject json)
         {
             throw new NotImplementedException();
+        }
+
+        private static Stream GetStreamFromFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+            var assemblyName = assembly.GetName().Name;
+
+            var stream = assembly.GetManifestResourceStream($"{assemblyName}.{filename}");
+
+            return stream;
         }
     }
 }
