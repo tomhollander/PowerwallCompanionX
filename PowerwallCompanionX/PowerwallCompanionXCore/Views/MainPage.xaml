@@ -340,12 +340,10 @@
                     <chart:AreaSeries Fill="Gold" Stroke="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Solar}" Label="Solar" XBindingPath="XValue" YBindingPath="YValue"  />
                     <chart:AreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Grid}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
                     <chart:AreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Battery}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
-                    <!--
-<chart:SfCartesianChart.ChartAnnotations>
-    <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" StrokeColor="LightGray" StrokeWidth="2" />
-
-
-</chart:SfCartesianChart.ChartAnnotations>-->
+                    
+                    <chart:SfCartesianChart.Annotations>
+                        <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" Stroke="LightGray" StrokeWidth="2" />
+                    </chart:SfCartesianChart.Annotations>
                 </chart:SfCartesianChart>
             </Grid>
         </Grid>
