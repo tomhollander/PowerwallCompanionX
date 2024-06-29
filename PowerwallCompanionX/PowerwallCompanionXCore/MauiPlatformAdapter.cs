@@ -42,5 +42,15 @@ namespace PowerwallCompanionX
 
             return stream;
         }
+
+        public string GetPersistedData(string key)
+        {
+            return Preferences.Default.Get<string>(key, null);
+        }
+
+        public void PersistData(string key, string value)
+        {
+            Preferences.Default.Set(key, value);
+        }
     }
 }

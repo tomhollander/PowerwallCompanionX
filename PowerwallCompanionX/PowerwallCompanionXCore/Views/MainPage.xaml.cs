@@ -302,7 +302,15 @@ namespace PowerwallCompanionX.Views
 
         private async Task RefreshDataFromTeslaOwnerApi()
         {
-           await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+            {
+                viewModel.LastExceptionMessage = "No internet access";
+                viewModel.LastExceptionDate = DateTime.Now;
+                viewModel.Status = MainViewModel.StatusEnum.Error;
+                return;
+            }
+
+            await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
 
             var tasks = new List<Task>()
             {
@@ -451,8 +459,8 @@ namespace PowerwallCompanionX.Views
 
                 var tasks = new List<Task<EnergyTotals>>()
                 {
-                    powerwallApi.GetEnergyTotalsForDay(DateTime.Now.Date.AddDays(-1), tariffHelper),
-                    powerwallApi.GetEnergyTotalsForDay(DateTime.Now.Date, tariffHelper)
+                    powerwallApi.GetEnergyTotalsForDay(-1, tariffHelper),
+                    powerwallApi.GetEnergyTotalsForDay(0, tariffHelper)
                 };
                 var results = await Task.WhenAll(tasks);
                 viewModel.EnergyTotalsYesterday = results[0];
@@ -553,6 +561,10 @@ namespace PowerwallCompanionX.Views
             chart.MaximumHeightRequest = Math.Min(dailyEnergyGrid.Height/3, 300);
         }
 
+        private async void ErrorGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        {
+            await DisplayAlert("Last error", viewModel.LastExceptionMessage, "OK");
+        }
     }
 
 }
