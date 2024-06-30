@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using Microsoft.Maui.Controls.PlatformConfiguration;
-using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui;
+﻿using System.Globalization;
 
 namespace PowerwallCompanionX.Converters
 {

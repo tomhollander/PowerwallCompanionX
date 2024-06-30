@@ -70,7 +70,7 @@
 
 
         <!-- Instantaneous Power View-->
-        <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+        <Grid x:Name="mainGrid" HorizontalOptions="FillAndExpand" VerticalOptions="Center" IsClippedToBounds="True">
             <Grid.Resources>
                 <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
                 <converters:PositiveToBooleanConverter x:Key="PositiveToBooleanConverter" />
@@ -157,7 +157,7 @@
          
 
             <!-- Power values and bars -->
-            <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" IsClippedToBounds="true" RowSpacing="10">
+            <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="Center" HorizontalOptions="Center" Margin="10"  RowSpacing="10" IsClippedToBounds="True" Padding="5" WidthRequest="{Binding BarChartMaxWidth}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
@@ -184,7 +184,7 @@
                     <Label FontSize="{Binding SmallFontSize}" TextColor="#888888" VerticalTextAlignment="End" Text="kW" Margin="0,0,0,-5" />
                 </StackLayout>
 
-                <Rectangle HorizontalOptions="Start"  Grid.Row="1" Grid.Column="1" Fill="Cyan" WidthRequest="{Binding InstantaneousPower.HomePower, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
+                <Rectangle HorizontalOptions="Start" Grid.Row="1" Grid.Column="1" Fill="Cyan" WidthRequest="{Binding InstantaneousPower.HomePower, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" HeightRequest="20" />
                 <Image Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Source="arrow_to_house.png" WidthRequest="40"  IsVisible="{Binding InstantaneousPower.HomePower, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" />
 
                 <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Margin="0,-5">
@@ -196,7 +196,7 @@
                     <Label TextColor="LightGray" Margin="0,0,5,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding InstantaneousPower.HomeFromGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding InstantaneousPower.HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Spacing="1" IsClippedToBounds="False" HorizontalOptions="Start" Margin="0,-4">
+                <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Spacing="1" IsClippedToBounds="True" HorizontalOptions="Start" Margin="0,-4">
                     <Rectangle Fill="Gold" WidthRequest="{Binding InstantaneousPower.HomeFromSolar, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}"  IsVisible="{Binding InstantaneousPower.HomeFromSolar, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LimeGreen" WidthRequest="{Binding InstantaneousPower.HomeFromBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" IsVisible="{Binding InstantaneousPower.HomeFromBattery, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LightGray" WidthRequest="{Binding InstantaneousPower.HomeFromGrid, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" IsVisible="{Binding InstantaneousPower.HomeFromGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />
@@ -220,7 +220,7 @@
                     <Label TextColor="LightGray" Margin="0,0,5,0" HorizontalOptions="Center" VerticalTextAlignment="Start" FontSize="{Binding SmallFontSize}" Text="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" LineBreakMode="NoWrap" IsVisible="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}"></Label>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="1" HorizontalOptions="Start" Margin="0,-4">
+                <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Spacing="1"  HorizontalOptions="Start" Margin="0,-4">
                     <Rectangle Fill="Cyan" WidthRequest="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" IsVisible="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LimeGreen" WidthRequest="{Binding InstantaneousPower.SolarToBattery, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" IsVisible="{Binding InstantaneousPower.SolarToBattery, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />
                     <Rectangle Fill="LightGray" WidthRequest="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource PositiveBarGraphConverter}}" IsVisible="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource HideGridRowConverter}}" HeightRequest="10" />

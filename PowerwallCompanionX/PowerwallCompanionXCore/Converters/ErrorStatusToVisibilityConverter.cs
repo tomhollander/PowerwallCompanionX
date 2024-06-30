@@ -1,12 +1,5 @@
 ﻿using PowerwallCompanionX.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-using static PowerwallCompanionX.ViewModels.MainViewModel;
-using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui;
 
 namespace PowerwallCompanionX.Converters
 {

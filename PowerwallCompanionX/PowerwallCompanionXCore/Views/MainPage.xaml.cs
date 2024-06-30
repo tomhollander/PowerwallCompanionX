@@ -110,14 +110,14 @@ namespace PowerwallCompanionX.Views
                 {
                     // Give extra space for the clock
                     timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 15, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
-
+                    viewModel.BarChartMaxWidth = Width - 50;
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
                 else if (visualState == "Landscape")
                 {
                     // Restore default margins for clock 
                     timeTextBlock.Margin = timeDefaultMargin;
-
+                    viewModel.BarChartMaxWidth = -1;
                     SetLandscapeMode(mainGrid, dailyEnergyGrid);
                 }
             }
@@ -135,6 +135,7 @@ namespace PowerwallCompanionX.Views
                     Grid.SetRow(dailyEnergyGrid, 1);
                     Grid.SetColumn(mainGrid, 0);
                     Grid.SetColumn(dailyEnergyGrid, 0);
+                    viewModel.BarChartMaxWidth = -1;
                 }
                 else
                 {
@@ -148,6 +149,7 @@ namespace PowerwallCompanionX.Views
                     Grid.SetColumn(dailyEnergyGrid, 1);
                     Grid.SetRow(mainGrid, 0);
                     Grid.SetRow(dailyEnergyGrid, 0);
+                    viewModel.BarChartMaxWidth = (Width / 2) - 50;
                 }
             }
 
@@ -155,6 +157,7 @@ namespace PowerwallCompanionX.Views
             viewModel.PageWidth = Width;
             viewModel.PageHeight = Height;
             viewModel.RecalculatePageMargin();
+            viewModel.NotifyPropertyChanged(nameof(viewModel.BarChartMaxWidth));
         }
 
         private void SetLandscapeMode(Grid page1Grid, Grid page2Grid)
@@ -304,10 +307,14 @@ namespace PowerwallCompanionX.Views
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
             {
-                viewModel.LastExceptionMessage = "No internet access";
-                viewModel.LastExceptionDate = DateTime.Now;
-                viewModel.Status = MainViewModel.StatusEnum.Error;
-                return;
+                await Task.Delay(1000); // When resuming the app, internet access may not be available immediately 
+                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+                {
+                    viewModel.LastExceptionMessage = "No internet access";
+                    viewModel.LastExceptionDate = DateTime.Now;
+                    viewModel.Status = MainViewModel.StatusEnum.Error;
+                    return;
+                }
             }
 
             await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes

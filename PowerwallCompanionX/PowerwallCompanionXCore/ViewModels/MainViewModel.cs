@@ -241,6 +241,8 @@ namespace PowerwallCompanionX.ViewModels
         public double PageWidth { get; set; }
         public double PageHeight { get; set; }
 
+        public double BarChartMaxWidth { get; set; }
+
         public void RecalculatePageMargin()
         {
             if (Settings.PreventBurnIn)
