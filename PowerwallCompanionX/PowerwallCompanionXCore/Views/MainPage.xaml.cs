@@ -117,7 +117,7 @@ namespace PowerwallCompanionX.Views
                 {
                     // Restore default margins for clock 
                     timeTextBlock.Margin = timeDefaultMargin;
-                    viewModel.BarChartMaxWidth = -1;
+                    viewModel.BarChartMaxWidth = Width - 300;
                     SetLandscapeMode(mainGrid, dailyEnergyGrid);
                 }
             }
@@ -135,7 +135,7 @@ namespace PowerwallCompanionX.Views
                     Grid.SetRow(dailyEnergyGrid, 1);
                     Grid.SetColumn(mainGrid, 0);
                     Grid.SetColumn(dailyEnergyGrid, 0);
-                    viewModel.BarChartMaxWidth = -1;
+                    viewModel.BarChartMaxWidth = Width;
                 }
                 else
                 {
@@ -307,14 +307,10 @@ namespace PowerwallCompanionX.Views
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
             {
-                await Task.Delay(1000); // When resuming the app, internet access may not be available immediately 
-                if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-                {
-                    viewModel.LastExceptionMessage = "No internet access";
-                    viewModel.LastExceptionDate = DateTime.Now;
-                    viewModel.Status = MainViewModel.StatusEnum.Error;
-                    return;
-                }
+                viewModel.LastExceptionMessage = "No internet access";
+                viewModel.LastExceptionDate = DateTime.Now;
+                viewModel.Status = MainViewModel.StatusEnum.Error;
+                return;
             }
 
             await RefreshTariffData(); // Refresh tariff data first, as it's used in other data refreshes
