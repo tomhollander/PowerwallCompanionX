@@ -6,7 +6,6 @@
 
         public OnboardingExtrasProvider()
         {
-            Analytics.TrackEvent("OnboardingExtrasProvider initialised");
         }
 
         public async Task<string> RefreshStatus()

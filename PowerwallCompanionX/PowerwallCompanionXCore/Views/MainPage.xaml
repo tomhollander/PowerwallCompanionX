@@ -157,7 +157,7 @@
          
 
             <!-- Power values and bars -->
-            <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="Center" HorizontalOptions="Center" Margin="10"  RowSpacing="10" IsClippedToBounds="True" Padding="5" MaximumWidthRequest="{Binding BarChartMaxWidth}">
+            <Grid Grid.Column="1"  x:Name="graphGrid" VerticalOptions="Center" HorizontalOptions="Center" Margin="10"  RowSpacing="10" IsClippedToBounds="True" Padding="0,5" MaximumWidthRequest="{Binding BarChartMaxWidth}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
