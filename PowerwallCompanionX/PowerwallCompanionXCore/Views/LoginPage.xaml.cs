@@ -11,7 +11,7 @@ namespace PowerwallCompanionX.Views
         {
             InitializeComponent();
             this.BindingContext = viewModel;
-            Analytics.TrackEvent("LoginPage opened");
+            Telemetry.TrackEvent("LoginPage opened");
         }
 
         protected override void OnAppearing()

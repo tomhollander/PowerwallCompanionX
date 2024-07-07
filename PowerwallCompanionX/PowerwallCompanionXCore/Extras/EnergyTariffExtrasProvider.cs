@@ -15,7 +15,7 @@ namespace PowerwallCompanionX.Extras
 
         public EnergyTariffExtrasProvider(MainViewModel mainViewModel)
         {
-            Analytics.TrackEvent("EnergyTariffExtrasProvider initialised");
+            Telemetry.TrackEvent("EnergyTariffExtrasProvider initialised");
             this.mainViewModel = mainViewModel;
             this.powerwallApi = new PowerwallApi(Settings.SiteId, new MauiPlatformAdapter());
 
@@ -84,7 +84,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 return "Rates unavailable";
             }
       

@@ -13,7 +13,7 @@ namespace PowerwallCompanionX.Extras
 
         public TeslaExtrasProvider()
         {
-            Analytics.TrackEvent("TeslaExtrasProvider initialised");
+            Telemetry.TrackEvent("TeslaExtrasProvider initialised");
             vehicleApi = new VehicleApi(new MauiPlatformAdapter());
         }
 
@@ -58,7 +58,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 return "Tesla status failed";
             }
         }

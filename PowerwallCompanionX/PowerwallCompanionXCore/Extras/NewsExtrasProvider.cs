@@ -10,7 +10,7 @@ namespace PowerwallCompanionX.Extras
         private int _timesDisplayed;
         public NewsExtrasProvider(string feedUrl)
         {
-            Analytics.TrackEvent("NewsExtrasProvider initialised");
+            Telemetry.TrackEvent("NewsExtrasProvider initialised");
             _feedUrl = feedUrl;
         }
 
@@ -38,7 +38,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 return "News RSS failed";
             } 
         }

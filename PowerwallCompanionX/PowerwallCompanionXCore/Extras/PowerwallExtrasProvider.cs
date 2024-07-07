@@ -14,7 +14,7 @@ namespace PowerwallCompanionX.Extras
         private TimeSpan refreshInterval = TimeSpan.FromMinutes(20);
         public PowerwallExtrasProvider(string gatewayIP, string gatewayPassword)
         {
-            Analytics.TrackEvent("PowerwallExtrasProvider initialised");
+            Telemetry.TrackEvent("PowerwallExtrasProvider initialised");
             this.gatewayIP = gatewayIP;
             this.gatewayPassword = gatewayPassword;
         }
@@ -46,7 +46,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 lastRefeshed = DateTime.Now; // Prevent frequent retries
                 if (lastStatus == null)
                 {

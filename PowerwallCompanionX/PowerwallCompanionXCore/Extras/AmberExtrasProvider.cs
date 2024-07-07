@@ -16,7 +16,7 @@ namespace PowerwallCompanionX.Extras
         public AmberExtrasProvider(string apiKey)
         {
             _apiKey = apiKey;
-            Analytics.TrackEvent("AmberExtrasProvider initialised");
+            Telemetry.TrackEvent("AmberExtrasProvider initialised");
         }
         public async Task<string> RefreshStatus()
         {
@@ -36,7 +36,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 return "Amber failed";
             }
         }

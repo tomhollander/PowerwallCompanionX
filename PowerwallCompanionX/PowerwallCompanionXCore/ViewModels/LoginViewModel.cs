@@ -43,19 +43,19 @@ namespace PowerwallCompanionX.ViewModels
                     Settings.RefreshToken = tokens.RefreshToken;
                     Settings.SiteId = await powerwallApi.GetFirstSiteId();
                     Settings.AvailableSites = await powerwallApi.GetEnergySites();
-                    Analytics.TrackEvent("Login success");
+                    Telemetry.TrackEvent("Login success");
                     return true;
                 }
                 else
                 {
-                    Analytics.TrackEvent("Login failed");
+                    Telemetry.TrackEvent("Login failed");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                Analytics.TrackEvent("Login failed");
-                Crashes.TrackError(ex);
+                Telemetry.TrackEvent("Login failed");
+                Telemetry.TrackException(ex);
                 return false;
             }
 

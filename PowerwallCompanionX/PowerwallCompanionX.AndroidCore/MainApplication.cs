@@ -1,6 +1,7 @@
 using System;
 using Android.App;
 using Android.Runtime;
+using Microsoft.IdentityModel.Abstractions;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
@@ -16,10 +17,9 @@ namespace PowerwallCompanionX.Droid
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)
             : base(handle, ownership)
         {
-            AppDomain.CurrentDomain.UnhandledException += (s, e) =>
+            AppDomain.CurrentDomain.UnhandledException += async (s, e) =>
             {
-                var ex = new ApplicationException("An unhandled exception occurred", (Exception)e.ExceptionObject);
-                SentrySdk.CaptureException(ex);
+                await Telemetry.TrackUnhandledException((Exception)e.ExceptionObject);
             };
         }
 
@@ -32,18 +32,9 @@ namespace PowerwallCompanionX.Droid
             builder.UseCardsView();
 
             builder
-              .UseMauiApp<App>()
+              .UseMauiApp<App>();
 
-              // Add this section anywhere on the builder:
-              .UseSentry(options =>
-              {
-                  // The DSN is the only required setting.
-                  options.Dsn = "https://a48cbf8d91dca55d794d8a06aac78c43@o4507321171902464.ingest.us.sentry.io/4507321174589440";
-
-                  options.Debug = true;
-
-                  // Other Sentry options can be set here.
-              });
+            Telemetry.TrackEvent("SessionStart");
             return builder.Build();
         }
     }

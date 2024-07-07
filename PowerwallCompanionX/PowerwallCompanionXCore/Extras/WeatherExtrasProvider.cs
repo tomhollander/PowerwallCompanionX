@@ -67,7 +67,7 @@ namespace PowerwallCompanionX.Extras
 
         public WeatherExtrasProvider(string location, string units)
         {
-            Analytics.TrackEvent("WeatherExtrasProvider initialised");
+            Telemetry.TrackEvent("WeatherExtrasProvider initialised");
             _apiKey = Keys.WeatherApi;
             _location = location;
             _units = units;
@@ -102,7 +102,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 return "Weather failed";
             }
         }

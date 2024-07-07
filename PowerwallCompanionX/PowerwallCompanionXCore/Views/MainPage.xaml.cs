@@ -339,7 +339,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
             }
         }
 
@@ -354,7 +354,7 @@ namespace PowerwallCompanionX.Views
                 }
                 catch (Exception ex)
                 {
-                    Crashes.TrackError(ex);
+                    Telemetry.TrackException(ex);
                 }
             }
             
@@ -395,7 +395,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyPowerProperties();
@@ -474,7 +474,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 viewModel.LastExceptionMessage = ex.Message;
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.NotifyDailyEnergyProperties();
@@ -508,7 +508,7 @@ namespace PowerwallCompanionX.Views
             }
             catch (Exception ex)
             {
-                Crashes.TrackError(ex);
+                Telemetry.TrackException(ex);
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.LastExceptionMessage = ex.Message;
             }
