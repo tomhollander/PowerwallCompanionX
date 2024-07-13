@@ -1,13 +1,11 @@
-using System;
 using Android.App;
 using Android.Runtime;
-using Microsoft.IdentityModel.Abstractions;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using PanCardView;
-using Sentry;
 using Syncfusion.Maui.Core.Hosting;
+using System;
 
 namespace PowerwallCompanionX.Droid
 {

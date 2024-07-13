@@ -71,10 +71,12 @@
     <MauiAsset Include="Assets\tariff_rate.json" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />
+    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.70" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />
   </ItemGroup>
 </Project>
