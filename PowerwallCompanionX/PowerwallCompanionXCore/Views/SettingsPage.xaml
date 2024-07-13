@@ -15,7 +15,11 @@
                     HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Command="{Binding BackCommand}"/>
-                <Label Text="Settings" FontSize="Title" TextColor="White" />
+                <Label Text="Settings" FontSize="Title" TextColor="White" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="SettingsLabelTapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
             <Grid ColumnSpacing="2">
                 <Grid.ColumnDefinitions>

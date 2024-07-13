@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PowerwallCompanionX
 {
-    public class MauiAndroidTelemeryPlatformAdapter : ITelemetryPlatformAdapter
+    public class MauiAndroidTelemetryPlatformAdapter : ITelemetryPlatformAdapter
     {
         public string Platform => "Android";
         public string UserId

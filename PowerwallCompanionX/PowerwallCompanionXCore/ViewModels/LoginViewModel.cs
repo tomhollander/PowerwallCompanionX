@@ -43,6 +43,7 @@ namespace PowerwallCompanionX.ViewModels
                     Settings.RefreshToken = tokens.RefreshToken;
                     Settings.SiteId = await powerwallApi.GetFirstSiteId();
                     Settings.AvailableSites = await powerwallApi.GetEnergySites();
+                    await powerwallApi.StoreInstallationTimeZone();
                     Telemetry.TrackEvent("Login success");
                     return true;
                 }
@@ -67,8 +68,8 @@ namespace PowerwallCompanionX.ViewModels
             Settings.AccessToken = "DEMO";
             Settings.RefreshToken = "DEMO";
             Settings.SiteId = "DEMO";
-
-            Application.Current.MainPage = new MainPage();
+            Settings.AvailableSites = new Dictionary<string, string> { { "DEMO", "Demo Site" } };
+            Settings.InstallationTimeZone = "Australia/Sydney";
 
         }
 

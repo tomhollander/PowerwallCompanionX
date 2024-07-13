@@ -15,7 +15,7 @@ namespace PowerwallCompanionX
 
         static Telemetry()
         {
-            mongodbTelemetry = new MongoDBTelemetry(new MauiAndroidTelemeryPlatformAdapter());
+            mongodbTelemetry = new MongoDBTelemetry(new MauiAndroidTelemetryPlatformAdapter());
         }
         public static void TrackException(Exception ex)
         {

@@ -1,4 +1,5 @@
 ﻿using PowerwallCompanionX.ViewModels;
+using System.Text;
 
 namespace PowerwallCompanionX.Views
 {
@@ -30,6 +31,24 @@ namespace PowerwallCompanionX.Views
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             await Launcher.OpenAsync("https://ko-fi.com/tomhollander");
+        }
+
+        private async void SettingsLabelTapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+        {
+            try
+            {
+                // Copy debug info to clipboard
+                var sb = new StringBuilder();
+                sb.AppendLine($"SiteId: {Settings.SiteId}");
+                sb.AppendLine($"InstallationTimeZone: {Settings.InstallationTimeZone}");
+                sb.AppendLine($"SystemTimeZone: {TimeZoneInfo.Local.Id}");
+                sb.AppendLine($"AccessToken: {Settings.AccessToken}");
+                await Clipboard.Default.SetTextAsync(sb.ToString());
+            }
+            catch (Exception ex)
+            {
+                Telemetry.TrackException(ex);
+            }
         }
     }
 }

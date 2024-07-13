@@ -45,9 +45,11 @@ namespace PowerwallCompanionX.Views
             }
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            viewModel.LoginAsDemoUser();
+            await viewModel.LoginAsDemoUser();
+            await Task.Delay(10); // https://github.com/dotnet/maui/issues/19465
+            Application.Current.MainPage = new MainPage();
         }
         
         private void LearnMoreHyperlink_Tapped(object sender, EventArgs e)

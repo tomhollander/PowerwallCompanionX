@@ -29,7 +29,8 @@ namespace PowerwallCompanionX
             DimAtNight,
             GatewayIP,
             GatewayPassword,
-            ShowEnergyCosts
+            ShowEnergyCosts,
+            InstallationTimeZone
         }
 
         public static string AccessToken
@@ -156,6 +157,12 @@ namespace PowerwallCompanionX
             set => Preferences.Default.Set(nameof(Properties.GatewayPassword), value);
         }
 
+        public static string InstallationTimeZone
+        {
+            get => GetProperty<string>(nameof(Properties.InstallationTimeZone), null);
+            set => Preferences.Default.Set(nameof(Properties.InstallationTimeZone), value);
+        }
+
         public static bool PreventBurnIn
         {
             get => GetProperty<bool>(nameof(Properties.PreventBurnIn), false);
@@ -186,6 +193,7 @@ namespace PowerwallCompanionX
             Preferences.Default.Remove(nameof(Properties.AvailableSites));
             Preferences.Default.Remove(nameof(Properties.AccessToken));
             Preferences.Default.Remove(nameof(Properties.RefreshToken));
+            Preferences.Default.Remove(nameof(Properties.InstallationTimeZone));
             //await Application.Current.SavePropertiesAsync();
         }
 
