@@ -27,7 +27,7 @@ namespace PowerwallCompanionX.Views
 
         private PowerwallApi powerwallApi;
         private IExtrasProvider extrasProvider;
-        private TariffHelper tariffHelper;
+        private ITariffProvider tariffHelper;
 
         public MainPage()
         {
@@ -350,7 +350,7 @@ namespace PowerwallCompanionX.Views
                 try
                 {
                     var ratePlan = await powerwallApi.GetRatePlan();
-                    tariffHelper = new TariffHelper(ratePlan);
+                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan);
                 }
                 catch (Exception ex)
                 {
@@ -415,7 +415,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.MinBatteryPercentToday = minMax.Item1;
                 viewModel.MaxBatteryPercentToday = minMax.Item2;
             }
-            else if (viewModel.BatteryDay != (await powerwallApi.ConvertToPowerwallDate(DateTime.Now)).Date)
+            else if (viewModel.BatteryDay != (powerwallApi.ConvertToPowerwallDate(DateTime.Now)).Date)
             {
                 viewModel.BatteryDay = DateTime.Today;
                 viewModel.MinBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
@@ -492,7 +492,7 @@ namespace PowerwallCompanionX.Views
 
                 viewModel.PowerChartSeries = await powerwallApi.GetPowerChartSeriesForLastTwoDays();
 
-                DateTime d = await powerwallApi.ConvertToPowerwallDate(DateTime.Now);
+                DateTime d = powerwallApi.ConvertToPowerwallDate(DateTime.Now);
                 if (Settings.AccessToken == "DEMO")
                 {
                     viewModel.ChartMaxDate = new DateTime(2018, 3, 1);

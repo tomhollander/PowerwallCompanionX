@@ -7,7 +7,7 @@ using AndroidX.Core.View;
 
 namespace PowerwallCompanionX.Droid
 {
-    [Activity(Label = "Powerwall Companion", Icon = "@mipmap/myIcon", Theme = "@style/MainTheme", 
+    [Activity(Label = "Powerwall Companion", Icon = "@mipmap/myIcon", Theme = "@style/MainTheme", LaunchMode = LaunchMode.SingleTop,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : Microsoft.Maui.MauiAppCompatActivity
     {

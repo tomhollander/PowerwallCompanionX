@@ -109,6 +109,10 @@ namespace PowerwallCompanionX.Extras
 
         private string GetCurrentConditions(JsonObject responseJson)
         {
+            if (responseJson["location"] == null)
+            {
+                return "Weather: location not found";
+            }
             string location = responseJson["location"]["name"].GetValue<string>();
             decimal currentTemp = _units == "C" ? responseJson["current"]["temp_c"].GetValue<decimal>() : responseJson["current"]["temp_f"].GetValue<decimal>();
             int currentConditionsCode = responseJson["current"]["condition"]["code"].GetValue<int>();
@@ -122,6 +126,11 @@ namespace PowerwallCompanionX.Extras
 
         private string GetForecast(JsonObject responseJson)
         {
+            if (responseJson["forecast"] == null)
+            {
+                return "Weather: location not found";
+            }
+
             string result = String.Empty;
             foreach (var dayNode in responseJson["forecast"]["forecastday"].AsArray())
             {
@@ -131,6 +140,7 @@ namespace PowerwallCompanionX.Extras
                 string conditionsIcon = Icons[conditionsCode];
                 result += $"{date:ddd}: {maxTemp:f0}°{conditionsIcon} ";
             }
+
             return result;
         }
     }

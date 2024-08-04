@@ -9,7 +9,7 @@ namespace PowerwallCompanionX.Extras
     public class EnergyTariffExtrasProvider : IExtrasProvider
     {
         JsonObject ratePlan;
-        TariffHelper tariffHelper;
+        ITariffProvider tariffHelper;
         MainViewModel mainViewModel;
         PowerwallApi powerwallApi;
 
@@ -30,9 +30,9 @@ namespace PowerwallCompanionX.Extras
                 }
                 if (tariffHelper == null)
                 {
-                    tariffHelper = new TariffHelper(ratePlan);
+                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan);
                 }
-                var tariff = tariffHelper.GetTariffForInstant(DateTime.Now);
+                var tariff = await tariffHelper.GetInstantaneousTariff();
                 var prices = tariffHelper.GetRatesForTariff(tariff);
                 var converter = new RateCurrencyConverter();
 

@@ -28,6 +28,9 @@
     <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+  </PropertyGroup>
   <ItemGroup>
     <AndroidAsset Remove="Assets\calendar_history-energy-day.json" />
     <AndroidAsset Remove="Assets\calendar_history-energy-month.json" />
@@ -74,7 +77,7 @@
     <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.70" />
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />

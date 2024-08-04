@@ -8,7 +8,7 @@
 
     <ScrollView>
         <StackLayout Margin="10" Grid.Row="0" Grid.Column="0" Orientation="Vertical">
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Margin="0,0,0,10" Orientation="Horizontal">
                 <ImageButton Source="Back.png"
                     HeightRequest="30" WidthRequest="30"
                     BackgroundColor="#202020"
@@ -94,7 +94,7 @@
                     <Label Text="City" Grid.Row="0" Grid.Column="0" />
                     <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding WeatherCity, Mode=TwoWay}"  Grid.Row="0" Grid.Column="1"/>
                     <Label Text="Units" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
-                    <buttons:SfSegmentedControl Grid.Row="1" Grid.Column="1" x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" HorizontalOptions="Start" >
+                    <buttons:SfSegmentedControl Grid.Row="1" Grid.Column="1" BackgroundColor="DimGray"  x:Name="weatherUnitsSegmentedControl" SelectionChanged="weatherUnitsSegmentedControl_SelectionChanged" HorizontalOptions="Start" >
                         <buttons:SfSegmentedControl.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>C</x:String>
