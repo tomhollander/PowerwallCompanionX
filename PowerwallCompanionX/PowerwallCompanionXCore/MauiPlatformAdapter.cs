@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using TimeZoneConverter;
 
 namespace PowerwallCompanionX
 {
@@ -13,8 +14,11 @@ namespace PowerwallCompanionX
     {
         public string AccessToken { get => Settings.AccessToken; set => Settings.AccessToken = value; }
         public string RefreshToken { get => Settings.RefreshToken; set => Settings.RefreshToken = value; }
-        public string InstallationTimeZone { get => Settings.InstallationTimeZone; set => Settings.InstallationTimeZone = value; }
-
+        public string InstallationTimeZone
+        {
+            get => Settings.InstallationTimeZone ?? TimeZoneInfo.Local.Id;
+            set => Settings.InstallationTimeZone = value;
+        }
         public async Task<string> ReadFileContents(string filename)
         {
             using (Stream stream = await FileSystem.Current.OpenAppPackageFileAsync(filename)) 

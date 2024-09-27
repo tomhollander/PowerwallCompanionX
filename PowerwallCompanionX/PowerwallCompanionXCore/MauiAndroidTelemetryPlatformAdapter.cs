@@ -12,8 +12,15 @@ namespace PowerwallCompanionX
             get
             {
 #if ANDROID
-                var context = global::Android.App.Application.Context;
-                return global::Android.Provider.Settings.Secure.GetString(global::Android.App.Application.Context.ContentResolver, global::Android.Provider.Settings.Secure.AndroidId);
+                try
+                {
+                    var context = global::Android.App.Application.Context;
+                    return global::Android.Provider.Settings.Secure.GetString(global::Android.App.Application.Context.ContentResolver, global::Android.Provider.Settings.Secure.AndroidId);
+                }
+                catch 
+                {
+                    return null;
+                }
 #else
                 return null;
 #endif

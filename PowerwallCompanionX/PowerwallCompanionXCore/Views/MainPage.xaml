@@ -82,7 +82,8 @@
                 <converters:GridImportingToVisibilityConverter x:Key="GridImportingToVisibilityConverter" />
                 <converters:BatteryExportingToVisibilityConverter x:Key="BatteryExportingToVisibilityConverter"/>
                 <converters:BatteryImportingToVisibilityConverter x:Key="BatteryImportingToVisibilityConverter"/>
-                <converters:StatusToBackgroundColorConverter x:Key="StatusToBackgroundColorConverter"/> 
+                <converters:StatusToBackgroundColorConverter x:Key="StatusToBackgroundColorConverter"/>
+                <converters:NegateValueConverter x:Key="NegateValueConverter"/>
             </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -128,6 +129,16 @@
                                         </StackLayout>
                                     </Grid>
                                 </gauge:GaugeAnnotation.Content> 
+                            </gauge:GaugeAnnotation>
+                            <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="270" PositionFactor="0.35">
+                                <gauge:GaugeAnnotation.Content>
+                                    <Image HeightRequest="40" WidthRequest="40" Source="storm_watch.png" IsVisible="{Binding InstantaneousPower.StormWatchActive, FallbackValue='False'}" />
+                                </gauge:GaugeAnnotation.Content>
+                            </gauge:GaugeAnnotation>
+                            <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="270" PositionFactor="0.35">
+                                <gauge:GaugeAnnotation.Content>
+                                    <Image HeightRequest="40" WidthRequest="40" Source="grid_disconnected.png" IsVisible="{Binding InstantaneousPower.GridActive, Converter={StaticResource NegateValueConverter}, FallbackValue='False'}"  />
+                                </gauge:GaugeAnnotation.Content>
                             </gauge:GaugeAnnotation>
                             <gauge:GaugeAnnotation DirectionUnit="Angle" DirectionValue="225" PositionFactor="1">
                                 <gauge:GaugeAnnotation.Content>
