@@ -9,7 +9,6 @@ namespace PowerwallCompanionX.Extras
         private VehicleApi vehicleApi;
         private static Dictionary<string, VehicleData> _vehicles; // Static so we keep last known charge level if user opens different pages
         private string lastMessage = "Tesla status pending";
-        private bool initialRefreshDone = false;
 
         public TeslaExtrasProvider()
         {
@@ -53,7 +52,6 @@ namespace PowerwallCompanionX.Extras
                         }
                     }
                 }
-                initialRefreshDone = true;
                 return lastMessage;
             }
             catch (Exception ex)

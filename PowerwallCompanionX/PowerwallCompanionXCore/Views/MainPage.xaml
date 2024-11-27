@@ -39,7 +39,7 @@
 
         </Grid>
         
-        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared" IsPanSwipeEnabled="True" IsEnabled="True">
+        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared"  IsPanSwipeEnabled="True" IsEnabled="True">
         </cards:CarouselView>
 
 

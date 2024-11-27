@@ -189,7 +189,7 @@ namespace PowerwallCompanionX
             
         }
 
-        public static async Task SignOutUser()
+        public static void SignOutUser()
         {
             Preferences.Default.Remove(nameof(Properties.SiteId));
             Preferences.Default.Remove(nameof(Properties.AvailableSites));

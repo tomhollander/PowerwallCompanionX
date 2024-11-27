@@ -26,7 +26,7 @@ namespace PowerwallCompanionX.ViewModels
 
         private void OnSettingsTapped(object obj)
         {
-            Application.Current.MainPage = new SettingsPage();
+            Application.Current.Windows[0].Page = new SettingsPage();
         }
 
 

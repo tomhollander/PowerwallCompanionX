@@ -184,14 +184,14 @@ namespace PowerwallCompanionX.ViewModels
         private async void OnBackTapped(object obj)
         {
             //await Application.Current.SavePropertiesAsync();
-            Application.Current.MainPage = new MainPage();
+            Application.Current.Windows[0].Page = new MainPage();
         }
 
 
         private async void OnSignOutTapped(object obj)
         {
-            await Settings.SignOutUser();
-            Application.Current.MainPage = new LoginPage();
+            Settings.SignOutUser();
+            Application.Current.Windows[0].Page = new LoginPage();
         }
 
 
