@@ -1,4 +1,5 @@
 ﻿using PowerwallCompanionX.ViewModels;
+using Microsoft.Maui.ApplicationModel;
 
 namespace PowerwallCompanionX.Views
 {

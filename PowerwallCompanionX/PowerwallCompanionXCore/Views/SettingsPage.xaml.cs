@@ -1,5 +1,7 @@
 ﻿using PowerwallCompanionX.ViewModels;
 using System.Text;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
+using Microsoft.Maui.ApplicationModel;
 
 namespace PowerwallCompanionX.Views
 {

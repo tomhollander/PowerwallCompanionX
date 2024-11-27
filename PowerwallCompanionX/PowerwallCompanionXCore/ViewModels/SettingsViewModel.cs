@@ -1,5 +1,6 @@
 ﻿using PowerwallCompanionX.Views;
 using System.ComponentModel;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX.ViewModels
 {

@@ -1,4 +1,6 @@
 ﻿using System.Text.Json;
+using Microsoft.Maui.Storage;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX
 {

@@ -3,6 +3,9 @@ using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Networking;
+using Microsoft.Maui.Devices;
 
 namespace PowerwallCompanionX.Views
 {
