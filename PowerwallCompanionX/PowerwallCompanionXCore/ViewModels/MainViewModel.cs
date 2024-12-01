@@ -188,6 +188,26 @@ namespace PowerwallCompanionX.ViewModels
             }
         }
 
+        public bool ShowSiteName
+        {
+            get
+            {
+                return Settings.ShowSiteName;
+            }
+        }
+
+        public GridLength TitleRowHeight
+        {
+            get
+            {
+                if (Settings.ShowSiteName)
+                {
+                    return new GridLength(50);
+                }
+                return new GridLength(30);
+            }
+        }
+
         public double LargeFontSize
         {
             get { return Settings.FontScale * 55; }

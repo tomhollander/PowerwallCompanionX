@@ -3,6 +3,7 @@ using PowerwallCompanion.Lib.Models;
 
 namespace PowerwallCompanionX.Extras
 {
+    // This is no longer available due to the API pricing changes, but keeping the code just in case
     internal class TeslaExtrasProvider : IExtrasProvider
     {
         private DateTime _lastProcessed;

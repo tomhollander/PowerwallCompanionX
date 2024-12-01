@@ -32,7 +32,8 @@ namespace PowerwallCompanionX
             GatewayIP,
             GatewayPassword,
             ShowEnergyCosts,
-            InstallationTimeZone
+            InstallationTimeZone,
+            ShowSiteName
         }
 
         public static string AccessToken
@@ -182,6 +183,13 @@ namespace PowerwallCompanionX
             get => GetProperty<bool>(nameof(Properties.ShowEnergyCosts), false);
             set => Preferences.Default.Set(nameof(Properties.ShowEnergyCosts), value);
         }
+
+        public static bool ShowSiteName
+        {
+            get => GetProperty<bool>(nameof(Properties.ShowSiteName), false);
+            set => Preferences.Default.Set(nameof(Properties.ShowSiteName), value);
+        }
+
 
         private static T GetProperty<T>(string keyName, T defaultValue)
         {
