@@ -1,4 +1,5 @@
-﻿namespace PowerwallCompanionX.Extras
+﻿using Microsoft.Maui.Devices;
+namespace PowerwallCompanionX.Extras
 {
     internal class OnboardingExtrasProvider : IExtrasProvider
     {

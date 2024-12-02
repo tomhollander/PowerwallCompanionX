@@ -1,5 +1,6 @@
 ﻿using PowerwallCompanionX.Views;
 using System.ComponentModel;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX.ViewModels
 {
@@ -24,6 +25,12 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => Settings.ShowClock;
             set => Settings.ShowClock = value;
+        }
+
+        public bool ShowSiteName
+        {
+            get => Settings.ShowSiteName;
+            set => Settings.ShowSiteName = value;
         }
 
         public bool ShowGraph
@@ -183,14 +190,14 @@ namespace PowerwallCompanionX.ViewModels
         private async void OnBackTapped(object obj)
         {
             //await Application.Current.SavePropertiesAsync();
-            Application.Current.MainPage = new MainPage();
+            Application.Current.Windows[0].Page = new MainPage();
         }
 
 
         private async void OnSignOutTapped(object obj)
         {
-            await Settings.SignOutUser();
-            Application.Current.MainPage = new LoginPage();
+            Settings.SignOutUser();
+            Application.Current.Windows[0].Page = new LoginPage();
         }
 
 

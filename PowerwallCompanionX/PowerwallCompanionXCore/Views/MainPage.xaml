@@ -5,6 +5,8 @@
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
              xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:converters="clr-namespace:PowerwallCompanionX.Converters"
+             xmlns:viewmodels="clr-namespace:PowerwallCompanionX.ViewModels"
+             x:DataType="viewmodels:MainViewModel"
              BackgroundColor="Black" 
              x:Class="PowerwallCompanionX.Views.MainPage"
              Shell.NavBarIsVisible="false">
@@ -15,7 +17,7 @@
             <converters:ErrorStatusToVisibilityConverter x:Key="ErrorStatusToVisibilityConverter"/>
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
+            <RowDefinition Height="{Binding TitleRowHeight}" />
             <RowDefinition Height="*"/>
             <RowDefinition Height="{Binding ExtrasContent, Converter={StaticResource NullTGridLengthConverter}}"/>
         </Grid.RowDefinitions>
@@ -25,11 +27,13 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Tapped="grid_Tapped"/>
         </Grid.GestureRecognizers>
-        <Image Source="AppLogo.png" HorizontalOptions="Center" Scale="0.7" Margin="0,-20,0,-20">
+        <Image Source="AppLogo.png" VerticalOptions="Start" HorizontalOptions="Center" Scale="0.7" Margin="0,-10,0,-20">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="status_Tapped" />
             </Image.GestureRecognizers>
         </Image>
+        <Label Text="{Binding EnergySiteInfo.SiteName}" IsVisible="{Binding ShowSiteName}" HorizontalOptions="Center" Margin="0,25,0,-40" TextColor="Gray" FontSize="{Binding SmallFontSize}"/>
+
 
         <Grid x:Name="tabletGrid" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" Margin="{Binding PageMargin}">
             <Grid.ColumnDefinitions>
@@ -39,7 +43,7 @@
 
         </Grid>
         
-        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared" IsPanSwipeEnabled="True" IsEnabled="True">
+        <cards:CarouselView x:Name="carousel" Grid.Row="1" ItemAppeared="CarouselView_ItemAppeared"  IsPanSwipeEnabled="True" IsEnabled="True">
         </cards:CarouselView>
 
 
@@ -321,8 +325,8 @@
                 </StackLayout>
             </StackLayout>
             <!-- Power history chart -->
-            <Grid x:Name="chartContainer" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0" MinimumHeightRequest="0" HorizontalOptions="FillAndExpand" MaximumHeightRequest="300">
-                <chart:SfCartesianChart x:Name="chart" IsVisible="{Binding ShowGraph}" Margin="0,-20,0,-10">
+            <Grid x:Name="chartContainer" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0"  MinimumHeightRequest="100" MaximumHeightRequest="300" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <chart:SfCartesianChart x:Name="chart" IsVisible="{Binding ShowGraph}" Margin="0,-20,0,-10" >
                     <chart:SfCartesianChart.XAxes>
                         <chart:DateTimeAxis IntervalType="Hours" Interval="6" Maximum="{Binding ChartMaxDate}">
                             <chart:DateTimeAxis.LabelStyle>

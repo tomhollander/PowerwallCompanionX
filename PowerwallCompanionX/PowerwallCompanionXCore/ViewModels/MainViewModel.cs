@@ -26,7 +26,7 @@ namespace PowerwallCompanionX.ViewModels
 
         private void OnSettingsTapped(object obj)
         {
-            Application.Current.MainPage = new SettingsPage();
+            Application.Current.Windows[0].Page = new SettingsPage();
         }
 
 
@@ -185,6 +185,26 @@ namespace PowerwallCompanionX.ViewModels
             get
             {
                 return Settings.ShowEnergyCosts;
+            }
+        }
+
+        public bool ShowSiteName
+        {
+            get
+            {
+                return Settings.ShowSiteName;
+            }
+        }
+
+        public GridLength TitleRowHeight
+        {
+            get
+            {
+                if (Settings.ShowSiteName)
+                {
+                    return new GridLength(50);
+                }
+                return new GridLength(30);
             }
         }
 

@@ -1,6 +1,8 @@
 ﻿using PowerwallCompanion.Lib;
 using System.Globalization;
 using System.Text;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.ApplicationModel;
 
 namespace PowerwallCompanionX
 {

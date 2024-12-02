@@ -2,6 +2,7 @@
 using PowerwallCompanionX.Views;
 using System.IdentityModel.Tokens.Jwt;
 using TeslaAuth;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX.ViewModels
 {

@@ -1,4 +1,5 @@
 ﻿using PowerwallCompanionX.ViewModels;
+using Microsoft.Maui.ApplicationModel;
 
 namespace PowerwallCompanionX.Views
 {
@@ -31,7 +32,7 @@ namespace PowerwallCompanionX.Views
                 waitMessage.IsVisible = true;
                 if (await viewModel.CompleteLogin(e.Url))
                 {
-                    Application.Current.MainPage = new MainPage();
+                    Application.Current.Windows[0].Page = new MainPage();
                 }
                 else
                 {
@@ -49,7 +50,7 @@ namespace PowerwallCompanionX.Views
         {
             await viewModel.LoginAsDemoUser();
             await Task.Delay(10); // https://github.com/dotnet/maui/issues/19465
-            Application.Current.MainPage = new MainPage();
+            Application.Current.Windows[0].Page = new MainPage();
         }
         
         private void LearnMoreHyperlink_Tapped(object sender, EventArgs e)

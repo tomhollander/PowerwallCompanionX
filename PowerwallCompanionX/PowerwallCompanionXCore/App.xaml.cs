@@ -12,17 +12,19 @@ namespace PowerwallCompanionX
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Keys.SyncFusion);
             InitializeComponent();
+        }
 
+        protected override Window CreateWindow(IActivationState activationState)
+        {
             if (!string.IsNullOrEmpty(Settings.SiteId))
             {
-                MainPage = new MainPage();
+                return new Window(new MainPage());
             }
             else
             {
-                MainPage = new LoginPage();
+                return new Window(new LoginPage());
             }
         }
-
         protected override void OnStart()
         {
         }

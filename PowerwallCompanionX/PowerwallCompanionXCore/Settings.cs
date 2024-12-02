@@ -1,4 +1,6 @@
 ﻿using System.Text.Json;
+using Microsoft.Maui.Storage;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX
 {
@@ -30,7 +32,8 @@ namespace PowerwallCompanionX
             GatewayIP,
             GatewayPassword,
             ShowEnergyCosts,
-            InstallationTimeZone
+            InstallationTimeZone,
+            ShowSiteName
         }
 
         public static string AccessToken
@@ -181,13 +184,20 @@ namespace PowerwallCompanionX
             set => Preferences.Default.Set(nameof(Properties.ShowEnergyCosts), value);
         }
 
+        public static bool ShowSiteName
+        {
+            get => GetProperty<bool>(nameof(Properties.ShowSiteName), false);
+            set => Preferences.Default.Set(nameof(Properties.ShowSiteName), value);
+        }
+
+
         private static T GetProperty<T>(string keyName, T defaultValue)
         {
             return Preferences.Default.Get(keyName, defaultValue);
             
         }
 
-        public static async Task SignOutUser()
+        public static void SignOutUser()
         {
             Preferences.Default.Remove(nameof(Properties.SiteId));
             Preferences.Default.Remove(nameof(Properties.AvailableSites));

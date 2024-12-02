@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using AndroidX.Core.View;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui;
 
 namespace PowerwallCompanionX.Droid
 {

@@ -3,13 +3,13 @@ using PowerwallCompanion.Lib.Models;
 
 namespace PowerwallCompanionX.Extras
 {
+    // This is no longer available due to the API pricing changes, but keeping the code just in case
     internal class TeslaExtrasProvider : IExtrasProvider
     {
         private DateTime _lastProcessed;
         private VehicleApi vehicleApi;
         private static Dictionary<string, VehicleData> _vehicles; // Static so we keep last known charge level if user opens different pages
         private string lastMessage = "Tesla status pending";
-        private bool initialRefreshDone = false;
 
         public TeslaExtrasProvider()
         {
@@ -53,7 +53,6 @@ namespace PowerwallCompanionX.Extras
                         }
                     }
                 }
-                initialRefreshDone = true;
                 return lastMessage;
             }
             catch (Exception ex)

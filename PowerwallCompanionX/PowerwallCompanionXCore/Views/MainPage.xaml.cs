@@ -3,6 +3,10 @@ using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Networking;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace PowerwallCompanionX.Views
 {
@@ -51,9 +55,6 @@ namespace PowerwallCompanionX.Views
                     break;
                 case "Amber":
                     extrasProvider = new AmberExtrasProvider(Settings.AmberApiKey);
-                    break;
-                case "Tesla":
-                    extrasProvider = new TeslaExtrasProvider();
                     break;
                 case "News":
                     extrasProvider = new NewsExtrasProvider(Settings.NewsFeedUrl);
@@ -398,9 +399,9 @@ namespace PowerwallCompanionX.Views
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    if (!(Application.Current.MainPage is LoginPage))
+                    if (!(Application.Current.Windows[0].Page is LoginPage))
                     {
-                        Application.Current.MainPage = new LoginPage();
+                        Application.Current.Windows[0].Page = new LoginPage();
                         viewModel.LastExceptionMessage = ex.Message;
                         viewModel.LastExceptionDate = DateTime.Now;
                         viewModel.NotifyPowerProperties();
@@ -551,7 +552,7 @@ namespace PowerwallCompanionX.Views
                 if (viewModel.LastExceptionMessage != null)
                 {
                     var message = $"Last error occurred at {viewModel.LastExceptionDate.ToString("g")}:\r\n{viewModel.LastExceptionMessage}";
-                    await Application.Current.MainPage.DisplayAlert("Alert", message, "OK");
+                    await Application.Current.Windows[0].Page.DisplayAlert("Alert", message, "OK");
                 }
             }
             await ShowSettingsButtonThenFade();
