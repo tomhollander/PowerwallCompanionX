@@ -578,7 +578,7 @@ namespace PowerwallCompanionX.Views
         private void dailyEnergyGrid_SizeChanged(object sender, EventArgs e)
         {
             chart.WidthRequest = dailyEnergyGrid.Width;
-            //chart.MaximumHeightRequest = Math.Min(dailyEnergyGrid.Height/3, 300);
+            chart.MaximumHeightRequest = Math.Min(dailyEnergyGrid.Height/3, 300);
         }
 
         private async void ErrorGestureRecognizer_Tapped(object sender, TappedEventArgs e)
