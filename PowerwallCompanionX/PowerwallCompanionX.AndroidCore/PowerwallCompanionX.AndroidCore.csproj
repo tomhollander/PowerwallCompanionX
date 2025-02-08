@@ -54,6 +54,10 @@
     <AndroidAsset Remove="Assets\tariff_rate.json" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Remove="Resources\Images\appicon.png" />
+    <AndroidResource Remove="Resources\Images\splashscreenicon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Assets\calendar_history-energy-day.json" />
     <None Remove="Assets\calendar_history-energy-month.json" />
     <None Remove="Assets\calendar_history-energy-week.json" />
@@ -80,6 +84,12 @@
     <MauiAsset Include="Assets\site_info.json" />
     <MauiAsset Include="Assets\site_status.json" />
     <MauiAsset Include="Assets\tariff_rate.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiIcon Include="Resources\Images\appicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <MauiSplashScreen Include="Resources\Images\splashscreenicon.png" Color="#000000" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />

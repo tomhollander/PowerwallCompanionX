@@ -5,11 +5,11 @@ namespace PowerwallCompanionX
 {
     public  static class Telemetry
     {
-        private static MongoDBTelemetry mongodbTelemetry;
+        private static AzureFunctionsTelemetry telemetry;
 
         static Telemetry()
         {
-            mongodbTelemetry = new MongoDBTelemetry(new MauiAndroidTelemetryPlatformAdapter());
+            telemetry = new AzureFunctionsTelemetry(new MauiAndroidTelemetryPlatformAdapter());
         }
         public static void TrackException(Exception ex)
         {
@@ -18,22 +18,22 @@ namespace PowerwallCompanionX
             {
                 return;
             }
-            mongodbTelemetry.WriteExceptionSafe(ex, true);
+            telemetry.WriteExceptionSafe(ex, true);
         }
 
         public static async Task TrackUnhandledException(Exception ex)
         {
-            await mongodbTelemetry.WriteException(ex, false);
+            await telemetry.WriteException(ex, false);
         }
 
         public static void TrackEvent(string eventName, IDictionary<string, string> metadata)
         {
-            mongodbTelemetry.WriteEventSafe(eventName, metadata);
+            telemetry.WriteEventSafe(eventName, metadata);
         }
 
         public static void TrackEvent(string eventName)
         {
-            mongodbTelemetry.WriteEventSafe(eventName, null);
+            telemetry.WriteEventSafe(eventName, null);
         }
 
     }
