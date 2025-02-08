@@ -311,6 +311,7 @@ namespace PowerwallCompanionX.Views
                 viewModel.LastExceptionMessage = "No internet access";
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.Status = MainViewModel.StatusEnum.Error;
+                viewModel.NotifyPropertyChanged(nameof(viewModel.Time));
                 return;
             }
 
