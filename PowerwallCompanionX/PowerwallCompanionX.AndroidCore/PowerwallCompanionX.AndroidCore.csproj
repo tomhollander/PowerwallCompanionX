@@ -11,6 +11,10 @@
     <FileVersion>1.0.0.0</FileVersion>
     <RootNamespace>PowerwallCompanionX.Android</RootNamespace>
   </PropertyGroup>
+<PropertyGroup>
+	<!-- Used in .NET for Android projects -->
+	<RuntimeIdentifiers>android-arm;android-arm64;android-x86;android-x64</RuntimeIdentifiers>
+</PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <AndroidLinkMode>None</AndroidLinkMode>
     <RunAOTCompilation>false</RunAOTCompilation>
