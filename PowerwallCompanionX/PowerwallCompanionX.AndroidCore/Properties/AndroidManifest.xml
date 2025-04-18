@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="230" android:versionName="2.30" package="com.thirtyhippos.powerwallcompanionx" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="231" android:versionName="2.31" package="com.thirtyhippos.powerwallcompanionx" android:installLocation="auto">
 	<application android:label="Powerwall Companion" android:theme="@style/MainTheme" android:icon="@mipmap/appicon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />

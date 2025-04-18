@@ -17,7 +17,15 @@ namespace PowerwallCompanionX
         public string RefreshToken { get => Settings.RefreshToken; set => Settings.RefreshToken = value; }
         public string InstallationTimeZone
         {
-            get => Settings.InstallationTimeZone ?? TimeZoneInfo.Local.Id;
+            get
+            {
+                string tz = Settings.InstallationTimeZone ?? TimeZoneInfo.Local.Id;
+                if (tz == "GMT") // Returned by Powerwall API for London, interpreted by some Android devices as UTC without DST
+                {
+                    tz = "Europe/London";
+                }
+                return tz;
+            }
             set => Settings.InstallationTimeZone = value;
         }
         public async Task<string> ReadFileContents(string filename)
