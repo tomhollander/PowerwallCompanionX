@@ -33,7 +33,8 @@ namespace PowerwallCompanionX
             GatewayPassword,
             ShowEnergyCosts,
             InstallationTimeZone,
-            ShowSiteName
+            ShowSiteName,
+            DailySupplyCharge,
         }
 
         public static string AccessToken
@@ -184,6 +185,16 @@ namespace PowerwallCompanionX
             set => Preferences.Default.Set(nameof(Properties.ShowEnergyCosts), value);
         }
 
+        public static decimal DailySupplyCharge
+        {
+            get  
+            {
+                var value = GetProperty<string>(nameof(Properties.DailySupplyCharge), "0.0");
+                return decimal.TryParse(value, out decimal result) ? result : 0.0M;
+            }
+            set => Preferences.Default.Set(nameof(Properties.DailySupplyCharge), value.ToString());
+        }
+
         public static bool ShowSiteName
         {
             get => GetProperty<bool>(nameof(Properties.ShowSiteName), false);
@@ -193,7 +204,15 @@ namespace PowerwallCompanionX
 
         private static T GetProperty<T>(string keyName, T defaultValue)
         {
-            return Preferences.Default.Get(keyName, defaultValue);
+            try
+            {
+                return Preferences.Default.Get(keyName, defaultValue);
+            }
+            catch
+            {
+                // It shouldn't throw, but it does sometimes. 
+                return defaultValue;
+            }
             
         }
 

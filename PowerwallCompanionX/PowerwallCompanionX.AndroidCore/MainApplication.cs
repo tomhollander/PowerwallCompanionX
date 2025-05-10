@@ -17,7 +17,7 @@ namespace PowerwallCompanionX.Droid
         {
             AppDomain.CurrentDomain.UnhandledException += async (s, e) =>
             {
-                await Telemetry.TrackUnhandledException((Exception)e.ExceptionObject);
+                Telemetry.TrackUnhandledException((Exception)e.ExceptionObject);
             };
         }
 
@@ -32,6 +32,7 @@ namespace PowerwallCompanionX.Droid
             builder
               .UseMauiApp<App>();
 
+            Telemetry.TrackUser();
             Telemetry.TrackEvent("SessionStart");
             return builder.Build();
         }

@@ -11,5 +11,6 @@ namespace PowerwallCompanionX
         public static string TeslaAppClientId;
         public static string TeslaAppClientSecret;
         public static string TeslaAppRedirectUrl;
+        public static string MixpanelToken;
     }
 }

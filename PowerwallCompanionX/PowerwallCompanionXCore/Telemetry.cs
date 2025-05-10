@@ -1,40 +1,108 @@
-﻿using PowerwallCompanion.Lib;
+﻿using Mixpanel;
+using PowerwallCompanion.Lib;
+using System.Diagnostics;
+using System.Dynamic;
 using System.Net;
 
 namespace PowerwallCompanionX
 {
-    public  static class Telemetry
+    public static class Telemetry
     {
-        private static AzureFunctionsTelemetry telemetry;
 
-        static Telemetry()
+        public static void TrackUser()
         {
-            telemetry = new AzureFunctionsTelemetry(new MauiAndroidTelemetryPlatformAdapter());
+            try
+            {
+                var telemetryAdapter = new MauiAndroidTelemetryPlatformAdapter();
+                var mc = new MixpanelClient(Keys.MixpanelToken);
+                mc.PeopleSetAsync(new
+                {
+                    DistinctId = telemetryAdapter.UserId,
+                    Region = telemetryAdapter.Region,
+                });
+            }
+            catch
+            {
+                // Ignore errors
+            }
         }
+
         public static void TrackException(Exception ex)
         {
-            // Filter out noisy web exceptions so we don't blow our Sentry quota
-            if (ex is HttpRequestException || ex is WebException)
-            {
-                return;
-            }
-            telemetry.WriteExceptionSafe(ex, true);
+
+            TrackEventToMixpanelSafe("Exception", BuildExceptionMetadata(ex, true));
         }
 
-        public static async Task TrackUnhandledException(Exception ex)
+        public static void TrackUnhandledException(Exception ex)
         {
-            await telemetry.WriteException(ex, false);
+            TrackEventToMixpanelSafe("Exception", BuildExceptionMetadata(ex, false));
+        }
+
+        private static Dictionary<string, string> BuildExceptionMetadata(Exception ex, bool handled)
+        {
+            // Split stack trace into 256 character segments as this is the limit for Mixpanel strings
+            var stackTrace1 = ex.StackTrace.Length > 256 ? ex.StackTrace.Substring(0, 256) : ex.StackTrace;
+            var stackTrace2 = ex.StackTrace.Length > 256 ? ex.StackTrace.Substring(256) : null;
+            return new Dictionary<string, string>()
+            {
+                { "Type", ex.GetType().ToString() },
+                { "Message", ex.Message },
+                { "StackTrace1", stackTrace1 },
+                { "StackTrace2", stackTrace2 },
+                { "IsHandled", handled.ToString() }
+            };
         }
 
         public static void TrackEvent(string eventName, IDictionary<string, string> metadata)
         {
-            telemetry.WriteEventSafe(eventName, metadata);
+            TrackEventToMixpanelSafe(eventName, metadata);
         }
 
         public static void TrackEvent(string eventName)
         {
-            telemetry.WriteEventSafe(eventName, null);
+            TrackEventToMixpanelSafe(eventName, null);
+        }
+
+        private static void TrackEventToMixpanelSafe(string eventName, IDictionary<string, string> metadata)
+        {
+            try
+            {
+                Task.Run(async () => await TrackEventToMixpanel(eventName, metadata));
+            }
+            catch
+            {
+
+            }
+        }
+
+        private static async Task TrackEventToMixpanel(string eventName, IDictionary<string, string> metadata)
+        {
+            var telemetryAdapter = new MauiAndroidTelemetryPlatformAdapter();
+            var mc = new MixpanelClient(Keys.MixpanelToken);
+            dynamic expando = new ExpandoObject();
+            IDictionary<string, object> dict = expando;
+
+            dict.Add("DistinctId", telemetryAdapter.UserId);
+            dict.Add("AppVersion", telemetryAdapter.AppVersion);
+            dict.Add("OSVersion", telemetryAdapter.OSVersion);
+            dict.Add("AppName", telemetryAdapter.AppName);
+            dict.Add("Platform", "Android");
+
+            if (metadata != null)
+            {
+                foreach (var kvp in metadata)
+                {
+                    dict.Add(kvp.Key, kvp.Value);
+                }
+            }
+#if DEBUG
+            Debug.WriteLine($"Telemetry: {eventName} {string.Join(", ", dict.Select(kvp => $"{kvp.Key}: {kvp.Value}"))}");
+#else
+            await mc.TrackAsync(eventName, dict);
+#endif
         }
 
     }
+
 }
+

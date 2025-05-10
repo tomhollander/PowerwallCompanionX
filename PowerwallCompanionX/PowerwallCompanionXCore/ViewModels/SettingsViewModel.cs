@@ -150,6 +150,22 @@ namespace PowerwallCompanionX.ViewModels
             get => Settings.FontScale;
             set => Settings.FontScale = value;
         }
+        
+        public string DailySupplyCharge
+        {
+            get => Settings.DailySupplyCharge.ToString("0.00");
+            set
+            {
+                if (decimal.TryParse(value, out decimal result))
+                {
+                    Settings.DailySupplyCharge = result;
+                }
+                else
+                {
+                    Settings.DailySupplyCharge = 0;
+                }
+            }
+        }
 
         public List<KeyValuePair<string, string>> AvailableSites
         {

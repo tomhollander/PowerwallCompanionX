@@ -30,7 +30,7 @@ namespace PowerwallCompanionX.Extras
                 }
                 if (tariffHelper == null)
                 {
-                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan);
+                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge);
                 }
                 var tariff = await tariffHelper.GetInstantaneousTariff();
                 var prices = tariffHelper.GetRatesForTariff(tariff);
