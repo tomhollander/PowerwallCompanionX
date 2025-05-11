@@ -27,7 +27,7 @@
         </StackLayout>
 
         <ScrollView Grid.Row="1">
-            <Grid ColumnSpacing="5" RowSpacing="10" Padding="5">
+            <Grid ColumnSpacing="5" RowSpacing="10" Padding="5" MaximumWidthRequest="800">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="80" />
@@ -108,39 +108,7 @@
                 <Entry Grid.Row="6" Grid.Column="1"  Text="{Binding DailySupplyCharge, Mode=TwoWay}" />
 
                 <BoxView BackgroundColor="#202020" Grid.Row="7" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Label Text="Play sound when battery becomes full or empty" Padding="10" Grid.Row="7" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"  />
-
-                
-                <BoxView BackgroundColor="#202020" Grid.Row="8" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Label Text="Show Power Graph" Grid.Row="8" Padding="10" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}"  Grid.Row="8" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10" />
-
-                <BoxView BackgroundColor="#202020" Grid.Row="9" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Label Text="Show two pages on tablets" Padding="10" Grid.Row="9" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Switch x:Name="twoPagesOnTablet" IsToggled="{Binding TwoPagesOnTablet}" Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
-
-                <BoxView BackgroundColor="#202020" Grid.Row="10" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Label Text="Cycle pages when idle" Padding="10" Grid.Row="10" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" Grid.Row="10" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
-
-                <BoxView BackgroundColor="#202020" Grid.Row="11" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Grid Grid.Row="11" Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Label Text="Dim screen at night"  Grid.Row="0"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Label Text="22:00 to 06:00" FontSize="Caption" Grid.Row="1"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                </Grid>
-                <Switch x:Name="dimAtNight" IsToggled="{Binding DimAtNight}" Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
-
-                <BoxView BackgroundColor="#202020" Grid.Row="12" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Label Text="Move page elements to prevent screen burn in" Padding="10" Grid.Row="12" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
-                <Switch x:Name="preventBurnIn" IsToggled="{Binding PreventBurnIn}" Grid.Row="12" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
-
-                <BoxView BackgroundColor="#202020" Grid.Row="13" Grid.ColumnSpan="2" CornerRadius="10"/>
-                <Grid Grid.Row="13" Padding="10">
+                <Grid Grid.Row="7" Padding="10">
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
@@ -148,7 +116,7 @@
                     </Grid.RowDefinitions>
                     <Label Text="Extra Info"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center"/>
                     <Picker Title="Extra Info" ItemsSource="{Binding AvailableExtras}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedExtras}" TextColor="White" SelectedIndexChanged="Picker_SelectedIndexChanged" 
-                    Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="Center"/>
+                            Grid.Row="1"  HorizontalOptions="Fill" VerticalOptions="Center"/>
 
                     <Grid x:Name="weatherSettings" Grid.Row="3" Padding="10">
                         <Grid.ColumnDefinitions>
@@ -173,7 +141,7 @@
                             </buttons:SfSegmentedControl.ItemsSource>
                         </buttons:SfSegmentedControl>
                     </Grid>
-                    <Grid x:Name="amberSettings" Grid.Row="3" Grid.Column="1">
+                    <Grid x:Name="amberSettings" Grid.Row="3" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -182,10 +150,10 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <Label Text="Amber Electric API key" VerticalOptions="Center" />
+                        <Label Text="Amber Electric API key: " VerticalOptions="Center" />
                         <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding AmberApiKey, Mode=TwoWay}" Grid.Column="1"/>
                     </Grid>
-                    <Grid x:Name="newsSettings" Grid.Row="3" Grid.Column="1">
+                    <Grid x:Name="newsSettings" Grid.Row="3" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -194,10 +162,10 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
 
-                        <Label Text="News RSS feed URL" />
+                        <Label Text="News RSS feed URL: " VerticalOptions="Center" />
                         <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding NewsFeedUrl, Mode=TwoWay}" Grid.Column="1"/>
                     </Grid>
-                    <Grid x:Name="powerwallSettings" Grid.Row="3" Grid.Column="1">
+                    <Grid x:Name="powerwallSettings" Grid.Row="3">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -206,14 +174,45 @@
                             <RowDefinition />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Label Text="Gateway IP" VerticalOptions="Center" />
+                        <Label Text="Gateway IP: " VerticalOptions="Center" />
                         <Entry TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayIP, Mode=TwoWay}" Grid.Column="1"/>
-                        <Label Text="Gateway password" VerticalOptions="Center" Grid.Row="1"/>
+                        <Label Text="Gateway password: " VerticalOptions="Center" Grid.Row="1"/>
                         <Entry IsPassword="True" TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayPassword, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>
                     </Grid>
 
                 </Grid>
 
+                <BoxView BackgroundColor="#202020" Grid.Row="8" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Label Text="Play sound when battery becomes full or empty" Padding="10" Grid.Row="8" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Switch x:Name="soundsSwitch" IsToggled="{Binding PlaySounds}" Grid.Row="8" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"  />
+
+                
+                <BoxView BackgroundColor="#202020" Grid.Row="9" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Label Text="Show Power Graph" Grid.Row="9" Padding="10" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Switch x:Name="graphSwitch" IsToggled="{Binding ShowGraph}"  Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10" />
+
+                <BoxView BackgroundColor="#202020" Grid.Row="10" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Label Text="Show two pages on tablets" Padding="12" Grid.Row="10" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Switch x:Name="twoPagesOnTablet" IsToggled="{Binding TwoPagesOnTablet}" Grid.Row="10" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+
+                <BoxView BackgroundColor="#202020" Grid.Row="11" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Label Text="Cycle pages when idle" Padding="10" Grid.Row="11" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Switch x:Name="cyclePages" IsToggled="{Binding CyclePages}" Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+
+                <BoxView BackgroundColor="#202020" Grid.Row="12" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Grid Grid.Row="12" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Label Text="Dim screen at night"  Grid.Row="0"  HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="22:00 to 06:00" FontSize="Caption" Grid.Row="1"  HorizontalOptions="Start" VerticalOptions="Center"/>
+                </Grid>
+                <Switch x:Name="dimAtNight" IsToggled="{Binding DimAtNight}" Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
+
+                <BoxView BackgroundColor="#202020" Grid.Row="13" Grid.ColumnSpan="2" CornerRadius="10"/>
+                <Label Text="Move page elements to prevent screen burn in" Padding="10" Grid.Row="13" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Switch x:Name="preventBurnIn" IsToggled="{Binding PreventBurnIn}" Grid.Row="13" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="10"/>
 
                 <Button Grid.Row="14" Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start" Margin="10"/>
 
