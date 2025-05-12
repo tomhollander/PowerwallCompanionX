@@ -79,11 +79,11 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => new List<KeyValuePair<string, string>> {
                 new KeyValuePair<string, string>("None", "None"),
+                new KeyValuePair<string, string>("Tariffs", "Energy rates (Tesla rate plan)"),
+                new KeyValuePair<string, string>("Amber", "Amber electric prices"),
                 new KeyValuePair<string, string>("Powerwall", "Powerwall battery health"),
                 new KeyValuePair<string, string>("News", "RSS News"),
                 new KeyValuePair<string, string>("Weather", "Weather"),
-                new KeyValuePair<string, string>("Tariffs", "Energy rates (Tesla rate plan)"),
-                new KeyValuePair<string, string>("Amber", "Amber electric prices")
             };
         }
 
@@ -190,6 +190,14 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => AvailableSites.Where(s => s.Key == Settings.SiteId).FirstOrDefault();
             set => Settings.SiteId = value.Key;
+        }
+
+        public string AppVersion
+        {
+            get
+            {
+                return VersionTracking.CurrentVersion;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
