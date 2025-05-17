@@ -61,7 +61,7 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="3" CornerRadius="10" />
