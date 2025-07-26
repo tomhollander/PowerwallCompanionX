@@ -99,7 +99,7 @@
     <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.90" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />

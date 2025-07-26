@@ -368,7 +368,7 @@ namespace PowerwallCompanionX.Views
                 try
                 {
                     var ratePlan = await powerwallApi.GetRatePlan();
-                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge);
+                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge, 0.0M);
                 }
                 catch (Exception ex)
                 {
