@@ -27,6 +27,13 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.ShowClock = value;
         }
 
+        public bool ShowAnimations
+        {
+            get => Settings.ShowAnimations;
+            set => Settings.ShowAnimations = value;
+        }
+      
+
         public bool ShowSiteName
         {
             get => Settings.ShowSiteName;

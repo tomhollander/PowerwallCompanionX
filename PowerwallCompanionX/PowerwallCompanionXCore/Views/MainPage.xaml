@@ -48,8 +48,8 @@
 
 
         <Label Grid.Row="1" x:Name="timeTextBlock" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="{Binding LargeFontSize}" TextColor="#888888" Margin="20,-45,0,0"
-                               IsVisible="{Binding ShowClock, Mode=OneWay}"
-                               Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start"/>
+                               IsVisible="{Binding ShowClock, Mode=OneWay}" 
+                               Text="{Binding Time, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Start" />
 
 
 
@@ -110,6 +110,7 @@
 
                         <gauge:RadialAxis.Ranges>
                             <gauge:RadialRange StartValue="0" EndValue="{Binding InstantaneousPower.BatteryStoragePercent}" StartWidth="30" EndWidth="30" Fill="{Binding Status, Converter={StaticResource StatusToColorConverter}}"  />
+                            <gauge:RadialRange StartValue="{Binding AnimatedBatteryPercentStart}"  EndValue="{Binding AnimatedBatteryPercentEnd}" StartWidth="30" EndWidth="30" Fill="#50000000" />
                             <gauge:RadialRange StartValue="0" EndValue="{Binding EnergySiteInfo.ReservePercent}" StartWidth="30" EndWidth="30" Fill="#40000000"  />
                             <gauge:RadialRange StartValue="{Binding MinBatteryPercentToday}" EndValue="{Binding MaxBatteryPercentToday}" StartWidth="5" EndWidth="5" RangeOffset="35" Fill="Green" />
                             <!-- Ticks because the control doesn't let you put normal ticks over the range -->

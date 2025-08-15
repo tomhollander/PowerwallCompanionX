@@ -330,6 +330,22 @@ namespace PowerwallCompanionX.ViewModels
 
         }
 
+        public double AnimatedBatteryPercentStart
+        {
+            get; set;
+        }
+
+        public double AnimatedBatteryPercentEnd
+        {
+            get; set;
+        }
+
+        public void NotifyAnimationProperties()
+        {
+            NotifyPropertyChanged(nameof(AnimatedBatteryPercentStart));
+            NotifyPropertyChanged(nameof(AnimatedBatteryPercentEnd));
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(string propertyName)

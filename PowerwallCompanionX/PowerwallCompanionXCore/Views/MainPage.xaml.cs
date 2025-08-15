@@ -1,12 +1,13 @@
-﻿using PowerwallCompanion.Lib;
+﻿using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.Dispatching;
+using Microsoft.Maui.Networking;
+using PowerwallCompanion.Lib;
 using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
-using Microsoft.Maui.ApplicationModel;
-using Microsoft.Maui.Networking;
-using Microsoft.Maui.Devices;
-using Microsoft.Maui.Controls.PlatformConfiguration;
 
 namespace PowerwallCompanionX.Views
 {
@@ -26,6 +27,7 @@ namespace PowerwallCompanionX.Views
         private double minPercentSinceSound = 100D;
 
         private IDispatcherTimer timer;
+        private IDispatcherTimer animationTimer;
         private string lastOrientation;
 
         private Thickness timeDefaultMargin;
@@ -66,6 +68,14 @@ namespace PowerwallCompanionX.Views
             }
 
             Task.Run(() => RefreshData());
+
+            if (Settings.ShowAnimations)
+            {
+                animationTimer = Application.Current.Dispatcher.CreateTimer();
+                animationTimer.Interval = TimeSpan.FromSeconds(5);
+                animationTimer.Tick += AnimationTimer_Tick;
+                animationTimer.Start();
+            }
         }
 
         private void SetPhoneOrTabletLayout()
@@ -327,6 +337,48 @@ namespace PowerwallCompanionX.Views
                 GetEnergySiteInfo()
             };
             await Task.WhenAll(tasks);
+
+        }
+
+        private async void AnimationTimer_Tick(object sender, object e)
+        {
+            if (viewModel.InstantaneousPower.BatteryPower < 0)
+            {
+                // Battery is charging
+                viewModel.AnimatedBatteryPercentEnd = viewModel.InstantaneousPower.BatteryStoragePercent;
+                await PropertyAnimator.AnimatePropertyAsync(
+                      value => {
+                          viewModel.AnimatedBatteryPercentStart = value;
+                          viewModel.NotifyAnimationProperties();
+                      },
+                      0,
+                      viewModel.InstantaneousPower.BatteryStoragePercent,
+                      viewModel.InstantaneousPower.BatteryStoragePercent,
+                      TimeSpan.FromMilliseconds(800)
+                );
+            }
+            else if (viewModel.InstantaneousPower.BatteryPower > 0)
+            {
+                // Battery is discharging
+                viewModel.AnimatedBatteryPercentStart = viewModel.InstantaneousPower.BatteryStoragePercent;
+                await PropertyAnimator.AnimatePropertyAsync(
+                      value => {
+                          viewModel.AnimatedBatteryPercentEnd = value;
+                          viewModel.NotifyAnimationProperties();
+                      },
+                      viewModel.InstantaneousPower.BatteryStoragePercent,
+                      0,
+                      viewModel.InstantaneousPower.BatteryStoragePercent,
+                      TimeSpan.FromMilliseconds(800)
+                );
+            }
+            else
+            {
+                // Battery is not charging or discharging
+                viewModel.AnimatedBatteryPercentStart = 0;
+                viewModel.AnimatedBatteryPercentEnd = 0;
+                viewModel.NotifyAnimationProperties();
+            }
 
         }
 

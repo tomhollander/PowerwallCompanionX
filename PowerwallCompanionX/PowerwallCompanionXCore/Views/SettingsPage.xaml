@@ -227,6 +227,16 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" CornerRadius="10"/>
+                    <Label Margin="10" Text="Show Animations"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Switch x:Name="animationsSwitch" Margin="10" IsToggled="{Binding ShowAnimations}"  Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="10" />
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" CornerRadius="10"/>
                     <Label Margin="10" Text="Show Power Graph"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" />
                     <Switch x:Name="graphSwitch" Margin="10" IsToggled="{Binding ShowGraph}" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="10" />
                 </Grid>

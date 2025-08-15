@@ -33,7 +33,7 @@ namespace PowerwallCompanionX.Droid
               .UseMauiApp<App>();
 
             Telemetry.TrackUser();
-            Telemetry.TrackEvent("SessionStart");
+            Telemetry.TrackEvent("SessionStart", Settings.ToDictionary());
             return builder.Build();
         }
     }

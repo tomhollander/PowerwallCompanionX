@@ -4,7 +4,7 @@ using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace PowerwallCompanionX
 {
-    static class Settings
+    public static class Settings
     {
         private enum Properties
         {
@@ -35,6 +35,7 @@ namespace PowerwallCompanionX
             InstallationTimeZone,
             ShowSiteName,
             DailySupplyCharge,
+            ShowAnimations,
         }
 
         public static string AccessToken
@@ -78,6 +79,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.ShowClock), false);
             set => Preferences.Default.Set(nameof(Properties.ShowClock), value);
+        }
+
+        public static bool ShowAnimations
+        {
+            get => GetProperty<bool>(nameof(Properties.ShowAnimations), true);
+            set => Preferences.Default.Set(nameof(Properties.ShowAnimations), value);
         }
 
         public static bool ShowGraph
@@ -224,6 +231,31 @@ namespace PowerwallCompanionX
             Preferences.Default.Remove(nameof(Properties.RefreshToken));
             Preferences.Default.Remove(nameof(Properties.InstallationTimeZone));
             //await Application.Current.SavePropertiesAsync();
+        }
+
+        public static IDictionary<string, string> ToDictionary()
+        {
+            var result = new Dictionary<string, string>()
+            {
+                { "ShowClock", ShowClock.ToString() },
+                { "GraphScale", GraphScale.ToString() },
+                { "FontScale", FontScale.ToString() },
+                { "CyclePages", CyclePages.ToString() },
+                { "TwoPagesOnTablet", TwoPagesOnTablet.ToString() },
+                { "ShowGraph", ShowGraph.ToString() },
+                { "PlaySounds", PlaySounds.ToString() },
+                { "SelectedExtras", SelectedExtras ?? "" },
+                { "WeatherCity", WeatherCity ?? "" },
+                { "WeatherUnits", WeatherUnits ?? "" },
+                { "NewsFeedUrl", NewsFeedUrl ?? "" },
+                { "PreventBurnIn", PreventBurnIn.ToString() },
+                { "DimAtNight", DimAtNight.ToString() },
+                { "ShowEnergyCosts", ShowEnergyCosts.ToString() },
+                { "ShowSiteName", ShowSiteName.ToString() },
+                { "ShowAnimations", ShowAnimations.ToString() }
+            };
+
+            return result;
         }
 
     }
