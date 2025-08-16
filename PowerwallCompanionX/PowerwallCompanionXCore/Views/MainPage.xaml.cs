@@ -342,7 +342,11 @@ namespace PowerwallCompanionX.Views
 
         private async void AnimationTimer_Tick(object sender, object e)
         {
-            if (viewModel.InstantaneousPower.BatteryPower < 0)
+            if (viewModel.InstantaneousPower == null)
+            {
+                return;
+            }
+            else if (viewModel.InstantaneousPower.BatteryPower < 0)
             {
                 // Battery is charging
                 viewModel.AnimatedBatteryPercentEnd = viewModel.InstantaneousPower.BatteryStoragePercent;
@@ -368,7 +372,7 @@ namespace PowerwallCompanionX.Views
                       },
                       viewModel.InstantaneousPower.BatteryStoragePercent,
                       0,
-                      viewModel.InstantaneousPower.BatteryStoragePercent,
+                      0,
                       TimeSpan.FromMilliseconds(800)
                 );
             }
