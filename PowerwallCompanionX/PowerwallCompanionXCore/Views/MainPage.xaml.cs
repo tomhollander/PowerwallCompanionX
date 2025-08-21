@@ -427,9 +427,9 @@ namespace PowerwallCompanionX.Views
                     var ratePlan = await powerwallApi.GetRatePlan();
                     tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge, 0.0M);
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    Telemetry.TrackException(ex);
+                    // Don't track as this can be noisy.
                 }
             }
             

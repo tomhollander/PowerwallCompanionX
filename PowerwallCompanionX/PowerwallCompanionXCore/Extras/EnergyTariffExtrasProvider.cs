@@ -65,9 +65,9 @@ namespace PowerwallCompanionX.Extras
                     }
                 }
 
-                if (mainViewModel.InstantaneousPower.HomeFromGrid > 50)
+                if (mainViewModel.InstantaneousPower.GridToHome > 50)
                 {
-                    var cost = prices.Item1 * (decimal)(mainViewModel.InstantaneousPower.HomeFromGrid / 1000); 
+                    var cost = prices.Item1 * (decimal)(mainViewModel.InstantaneousPower.GridToHome / 1000); 
                     message += $"{FormatCurrency(cost)}/h ∙ {tariffIcon}{FormatCurrency(prices.Item1)}/kWh";
                 }
                 else if (mainViewModel.InstantaneousPower.SolarToGrid > 50)
@@ -84,7 +84,7 @@ namespace PowerwallCompanionX.Extras
             }
             catch (Exception ex)
             {
-                Telemetry.TrackException(ex);
+                // Telemetry.TrackException(ex); // Don't track as this is often noisy
                 return "Rates unavailable";
             }
       
