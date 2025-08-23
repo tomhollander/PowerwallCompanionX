@@ -36,6 +36,7 @@ namespace PowerwallCompanionX
             ShowSiteName,
             DailySupplyCharge,
             ShowAnimations,
+            PowerDisplayMode,
         }
 
         public static string AccessToken
@@ -85,6 +86,12 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<bool>(nameof(Properties.ShowAnimations), true);
             set => Preferences.Default.Set(nameof(Properties.ShowAnimations), value);
+        }
+
+        public static string PowerDisplayMode
+        {
+            get => GetProperty<string>(nameof(Properties.PowerDisplayMode), "Graph");
+            set => Preferences.Default.Set(nameof(Properties.PowerDisplayMode), value);
         }
 
         public static bool ShowGraph
@@ -252,7 +259,8 @@ namespace PowerwallCompanionX
                 { "DimAtNight", DimAtNight.ToString() },
                 { "ShowEnergyCosts", ShowEnergyCosts.ToString() },
                 { "ShowSiteName", ShowSiteName.ToString() },
-                { "ShowAnimations", ShowAnimations.ToString() }
+                { "ShowAnimations", ShowAnimations.ToString() },
+                { "PowerDisplayMode", PowerDisplayMode.ToString() },
             };
 
             return result;

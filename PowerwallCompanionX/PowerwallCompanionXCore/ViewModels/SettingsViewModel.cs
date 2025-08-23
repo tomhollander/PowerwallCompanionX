@@ -21,6 +21,12 @@ namespace PowerwallCompanionX.ViewModels
             get => Settings.Email;
         }
 
+        public string PowerDisplayMode
+        {
+            get => Settings.PowerDisplayMode;
+            set => Settings.PowerDisplayMode = value;
+        }
+
         public bool ShowClock
         {
             get => Settings.ShowClock;
@@ -80,6 +86,20 @@ namespace PowerwallCompanionX.ViewModels
         {
             get => Settings.ShowEnergyCosts;
             set => Settings.ShowEnergyCosts = value;
+        }
+
+        public List<KeyValuePair<string, string>> AvailablePowerDisplayModes
+        {
+            get => new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("Graph", "Graph"),
+                new KeyValuePair<string, string>("Flow", "Flow"),
+            };
+        }
+
+        public KeyValuePair<string, string> SelectedPowerDisplayMode
+        {
+            get => AvailablePowerDisplayModes.Where(s => s.Key == Settings.PowerDisplayMode).FirstOrDefault();
+            set => Settings.PowerDisplayMode = value.Key;
         }
 
         public List<KeyValuePair<string, string>> AvailableExtras

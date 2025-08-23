@@ -95,12 +95,12 @@
                 <RowDefinition Height="0" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="360"/>
+                <ColumnDefinition Width="320"/>
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
             <!-- Battery gauge -->
-            <gauge:SfRadialGauge Margin="20,20,20,20" Grid.Column="0" HeightRequest="260" VerticalOptions="Center" BackgroundColor="Black">
+            <gauge:SfRadialGauge Margin="10,20,20,20" Grid.Column="0" HeightRequest="260" VerticalOptions="Center" BackgroundColor="Black">
                 <gauge:SfRadialGauge.Axes>
                     <gauge:RadialAxis StartAngle="95" EndAngle="85" ShowLabels="False" ShowTicks="False" ShowAxisLine="True" RadiusFactor="1" TickPosition="Cross" TickOffset="30">
                         
@@ -173,7 +173,7 @@
                 
          
 
-            <!-- Instantaneous Power - Grid View -->
+            <!-- Instantaneous Power - Graph View -->
             <Grid Grid.Column="1" IsVisible="False"   x:Name="powerGridView" VerticalOptions="Center" HorizontalOptions="Center" Margin="10"  RowSpacing="10" IsClippedToBounds="True" Padding="0,5" MaximumWidthRequest="{Binding BarChartMaxWidth}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -248,7 +248,7 @@
 
 
             <!-- Instantaneous Power - flow view -->
-            <Grid x:Name="powerFlowView" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="True" Margin="10" WidthRequest="320" >
+            <Grid x:Name="powerFlowView" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False" Margin="10"  WidthRequest="320"  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="208" />
@@ -318,7 +318,7 @@
                 <Label TextColor="Gold" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="Center" HorizontalOptions="Center" FontSize="30" Text="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.SolarToGrid, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}" ></Label>
                 <Label TextColor="LightGray" Grid.Row="0" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="End"  FontSize="50" Text="{Binding InstantaneousPower.GridPower, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.GridPower, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}"  Margin="0,0,0,-20"></Label>
 
-                <Label TextColor="Gold" Grid.Row="1" Grid.Column="0"  VerticalOptions="Center"  HorizontalOptions="End" FontSize="30" Text="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}"  Margin="0,0,10,0"/>
+                <Label TextColor="Gold" Grid.Row="1" Grid.Column="0"  VerticalOptions="Center"  HorizontalOptions="End" FontSize="30" Text="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.SolarToHome, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}"  Margin="0,0,10,0" />
                 <Label TextColor="Gold" Grid.Row="1" Grid.Column="1"  VerticalOptions="Center" FontSize="30" Margin="30,-50,0,0" Text="{Binding InstantaneousPower.SolarToBattery, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.SolarToBattery, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}" HorizontalOptions="Center" ></Label>
                 <Label TextColor="LightGray" Grid.Row="1" Grid.Column="1"  VerticalOptions="Center" FontSize="30" Margin="100,45,0,0" Text="{Binding InstantaneousPower.GridToHome, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.GridToHome, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}" HorizontalOptions="Start" ></Label>
                 <Label TextColor="LightGray" Grid.Row="1" Grid.Column="3"  VerticalOptions="Center" FontSize="30" Text="{Binding InstantaneousPower.GridToBattery, Mode=OneWay, Converter={StaticResource KilowattConverter}}" IsVisible="{Binding InstantaneousPower.GridToBattery, Mode=OneWay, Converter={StaticResource VisibilityCollapsedLessThan10Converter}}" HorizontalOptions="Start" Margin="5,0,0,0"></Label>

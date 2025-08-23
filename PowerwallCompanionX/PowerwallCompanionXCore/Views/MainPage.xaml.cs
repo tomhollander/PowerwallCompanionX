@@ -44,6 +44,18 @@ namespace PowerwallCompanionX.Views
             viewModel = new MainViewModel();
             powerwallApi = new PowerwallApi(Settings.SiteId, new MauiPlatformAdapter());
             SetPhoneOrTabletLayout();
+
+            if (Settings.PowerDisplayMode == "Flow")
+            {
+                powerGridView.IsVisible = false;
+                powerFlowView.IsVisible = true;
+            }
+            else
+            {
+                powerGridView.IsVisible = true;
+                powerFlowView.IsVisible = false;
+            }
+
             this.SizeChanged += MainPage_SizeChanged;
             this.BindingContext = viewModel;
 
@@ -78,10 +90,14 @@ namespace PowerwallCompanionX.Views
                 batteryAnimationTimer.Tick += BatteryAnimationTimer_Tick;
                 batteryAnimationTimer.Start();
 
-                powerFlowAnimationTimer = Application.Current.Dispatcher.CreateTimer();
-                powerFlowAnimationTimer.Interval = TimeSpan.FromSeconds(2);
-                powerFlowAnimationTimer.Tick += PowerFlowAnimationTimer_Tick;
-                powerFlowAnimationTimer.Start();
+                if (Settings.PowerDisplayMode == "Flow")
+                {
+                    powerFlowAnimationTimer = Application.Current.Dispatcher.CreateTimer();
+                    powerFlowAnimationTimer.Interval = TimeSpan.FromSeconds(2);
+                    powerFlowAnimationTimer.Tick += PowerFlowAnimationTimer_Tick;
+                    powerFlowAnimationTimer.Start();
+                }
+        
             }
         }
 
@@ -186,7 +202,7 @@ namespace PowerwallCompanionX.Views
             // Page 1 : Move graph from row to column
             page1Grid.RowDefinitions[0].Height = GridLength.Auto;
             page1Grid.RowDefinitions[1].Height = new GridLength(0);
-            page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
+            page1Grid.ColumnDefinitions[0].Width = DeviceDisplay.Current.MainDisplayInfo.Width > 800 ? new GridLength(330) : new GridLength(270); // Compress for small screens
             page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
             page1Grid.SetRow(powerGridView, 0);
             page1Grid.SetRow(powerFlowView, 0);
@@ -387,7 +403,6 @@ namespace PowerwallCompanionX.Views
         private async void PowerFlowAnimationTimer_Tick(object sender, object e)
         {
             // Animate arcs on flow diagram
-            // if (Settings.Mode == Flow...)
             var tasks = new List<Task>();
             if (viewModel.InstantaneousPower == null)
             {

@@ -55,6 +55,17 @@
                 <Label FontSize="Header" TextColor="CornflowerBlue" Grid.Row="0">Features</Label>
 
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" CornerRadius="10"/>
+                    <Label Margin="10" Text="Power Display Mode"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Picker Margin="10" Title="Power Display Mode" ItemsSource="{Binding AvailablePowerDisplayModes}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedPowerDisplayMode}" TextColor="White"  
+                            Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" />
+                </Grid>
+
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
