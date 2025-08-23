@@ -1,5 +1,6 @@
 ﻿using Microsoft.Maui.ApplicationModel;
 using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.Shapes;
 using Microsoft.Maui.Devices;
 using Microsoft.Maui.Dispatching;
 using Microsoft.Maui.Networking;
@@ -27,7 +28,8 @@ namespace PowerwallCompanionX.Views
         private double minPercentSinceSound = 100D;
 
         private IDispatcherTimer timer;
-        private IDispatcherTimer animationTimer;
+        private IDispatcherTimer batteryAnimationTimer;
+        private IDispatcherTimer powerFlowAnimationTimer;
         private string lastOrientation;
 
         private Thickness timeDefaultMargin;
@@ -71,10 +73,15 @@ namespace PowerwallCompanionX.Views
 
             if (Settings.ShowAnimations)
             {
-                animationTimer = Application.Current.Dispatcher.CreateTimer();
-                animationTimer.Interval = TimeSpan.FromSeconds(5);
-                animationTimer.Tick += AnimationTimer_Tick;
-                animationTimer.Start();
+                batteryAnimationTimer = Application.Current.Dispatcher.CreateTimer();
+                batteryAnimationTimer.Interval = TimeSpan.FromSeconds(3);
+                batteryAnimationTimer.Tick += BatteryAnimationTimer_Tick;
+                batteryAnimationTimer.Start();
+
+                powerFlowAnimationTimer = Application.Current.Dispatcher.CreateTimer();
+                powerFlowAnimationTimer.Interval = TimeSpan.FromSeconds(2);
+                powerFlowAnimationTimer.Tick += PowerFlowAnimationTimer_Tick;
+                powerFlowAnimationTimer.Start();
             }
         }
 
@@ -181,8 +188,10 @@ namespace PowerwallCompanionX.Views
             page1Grid.RowDefinitions[1].Height = new GridLength(0);
             page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
             page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
-            page1Grid.SetRow(page1Grid.Children[1], 0);
-            page1Grid.SetColumn(page1Grid.Children[1], 1);
+            page1Grid.SetRow(powerGridView, 0);
+            page1Grid.SetRow(powerFlowView, 0);
+            page1Grid.SetColumn(powerGridView, 1);
+            page1Grid.SetColumn(powerFlowView, 1);
 
             // Page 2 : Transpose grid
             page2Grid.ColumnDefinitions.Clear();
@@ -233,8 +242,10 @@ namespace PowerwallCompanionX.Views
             page1Grid.RowDefinitions[1].Height = new GridLength(4, GridUnitType.Star);
             page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
             page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
-            page1Grid.SetRow(page1Grid.Children[1], 1);
-            page1Grid.SetColumn(page1Grid.Children[1], 0);
+            page1Grid.SetRow(powerGridView, 1);
+            page1Grid.SetRow(powerFlowView, 1);
+            page1Grid.SetColumn(powerGridView, 0);
+            page1Grid.SetColumn(powerFlowView, 0);
 
             // Page 2 : Transpose grid
             page2Grid.RowDefinitions.Clear();
@@ -313,6 +324,8 @@ namespace PowerwallCompanionX.Views
         protected override void OnDisappearing()
         {
             timer?.Stop();
+            powerFlowAnimationTimer?.Stop();
+            batteryAnimationTimer?.Stop();
         }
 
         private async Task RefreshDataFromTeslaOwnerApi()
@@ -340,7 +353,7 @@ namespace PowerwallCompanionX.Views
 
         }
 
-        private async void AnimationTimer_Tick(object sender, object e)
+        private async void BatteryAnimationTimer_Tick(object sender, object e)
         {
             if (viewModel.InstantaneousPower == null)
             {
@@ -350,31 +363,17 @@ namespace PowerwallCompanionX.Views
             {
                 // Battery is charging
                 viewModel.AnimatedBatteryPercentEnd = viewModel.InstantaneousPower.BatteryStoragePercent;
-                await PropertyAnimator.AnimatePropertyAsync(
-                      value => {
-                          viewModel.AnimatedBatteryPercentStart = value;
-                          viewModel.NotifyAnimationProperties();
-                      },
-                      0,
-                      viewModel.InstantaneousPower.BatteryStoragePercent,
-                      viewModel.InstantaneousPower.BatteryStoragePercent,
-                      TimeSpan.FromMilliseconds(800)
-                );
+                var animation = new Animation(v => viewModel.AnimatedBatteryPercentStart = v, 0, viewModel.InstantaneousPower.BatteryStoragePercent);
+                animation.Commit(this, "ChargeAnimation", 16, 1000, Easing.Linear);
+
             }
             else if (viewModel.InstantaneousPower.BatteryPower > 0)
             {
                 // Battery is discharging
                 viewModel.AnimatedBatteryPercentStart = viewModel.InstantaneousPower.BatteryStoragePercent;
-                await PropertyAnimator.AnimatePropertyAsync(
-                      value => {
-                          viewModel.AnimatedBatteryPercentEnd = value;
-                          viewModel.NotifyAnimationProperties();
-                      },
-                      viewModel.InstantaneousPower.BatteryStoragePercent,
-                      0,
-                      0,
-                      TimeSpan.FromMilliseconds(800)
-                );
+                var animation = new Animation(v => viewModel.AnimatedBatteryPercentEnd = v, viewModel.InstantaneousPower.BatteryStoragePercent, 0);
+                animation.Commit(this, "DischargeAnimation", 16, 1000, Easing.Linear);
+
             }
             else
             {
@@ -383,7 +382,60 @@ namespace PowerwallCompanionX.Views
                 viewModel.AnimatedBatteryPercentEnd = 0;
                 viewModel.NotifyAnimationProperties();
             }
+        }
 
+        private async void PowerFlowAnimationTimer_Tick(object sender, object e)
+        {
+            // Animate arcs on flow diagram
+            // if (Settings.Mode == Flow...)
+            var tasks = new List<Task>();
+            if (viewModel.InstantaneousPower == null)
+            {
+                return;
+            }
+
+            if (viewModel.InstantaneousPower.SolarToHome > 0)
+            {
+                var animation = new Animation(v => ((RotateTransform) solarToHomeAnimationPath.RenderTransform).Angle = v, 20, -60);
+                animation.Commit(this, "solarToHomeAnimation", 16, 1000, Easing.Linear);
+            }
+            if (viewModel.InstantaneousPower.SolarToGrid > 0)
+            {
+                var animation = new Animation(v => ((RotateTransform)solarToGridAnimationPath.RenderTransform).Angle = v, -20, 60);
+                animation.Commit(this, "solarToGridAnimation", 16, 1000, Easing.Linear);
+            }
+            if (viewModel.InstantaneousPower.GridToBattery > 0)
+            {
+                var animation = new Animation(v => ((RotateTransform)gridToBatteryAnimationPath.RenderTransform).Angle = v, -10, 70);
+                animation.Commit(this, "gridToBatteryAnimation", 16, 1000, Easing.Linear);
+            }
+            if (viewModel.InstantaneousPower.BatteryToHome > 0)
+            {
+                var animation = new Animation(v => ((RotateTransform)batteryToHomeAnimationPath.RenderTransform).Angle = v, -20, 60);
+                animation.Commit(this, "batteryToHomeAnimation", 16, 1000, Easing.Linear);
+            }
+            if (viewModel.InstantaneousPower.BatteryToGrid > 0)
+            {
+                var animation = new Animation(v => ((RotateTransform)batteryToGridAnimationPath.RenderTransform).Angle = v, 20, -80);
+                animation.Commit(this, "batteryToGridAnimation", 16, 1000, Easing.Linear);
+            }
+            // Diagonals
+            if (viewModel.InstantaneousPower.GridToHome > 0)
+            {
+                tasks.Add(gridToHomeAnimationPath.TranslateTo(-130, 130, 1000));
+            }
+            if (viewModel.InstantaneousPower.SolarToBattery > 0)
+            {
+                tasks.Add(solarToBatteryAnimationPath.TranslateTo(100, 100, 1000));
+            }
+
+            await Task.WhenAll(tasks);
+            // Reset animations
+            gridToHomeAnimationPath.TranslationX = 15;
+            gridToHomeAnimationPath.TranslationY = -15;
+
+            solarToBatteryAnimationPath.TranslationX = -25;
+            solarToBatteryAnimationPath.TranslationY = -25;
         }
 
         private async Task GetInstallationTimeZoneIfNeeded()
@@ -445,6 +497,14 @@ namespace PowerwallCompanionX.Views
                 }
 
                 viewModel.InstantaneousPower = await powerwallApi.GetInstantaneousPower();
+
+#if FAKE
+                viewModel.InstantaneousPower.SolarPower = 0;
+                viewModel.InstantaneousPower.GridPower = -500;
+                viewModel.InstantaneousPower.HomePower = 500;
+                viewModel.InstantaneousPower.BatteryPower = 1000;
+#endif
+
                 await UpdateMinMaxPercentToday();
                 viewModel.LiveStatusLastRefreshed = DateTime.Now;
                 viewModel.Status = viewModel.InstantaneousPower.GridActive ? MainViewModel.StatusEnum.Online : MainViewModel.StatusEnum.GridOutage;
