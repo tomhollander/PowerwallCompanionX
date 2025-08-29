@@ -7,6 +7,12 @@ namespace PowerwallCompanionX.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double scaledValue = (double)(value) / 1000;
+
+            if (parameter != null && parameter.ToString() == "abs")
+            {
+                scaledValue = Math.Abs(scaledValue);
+            }
+
             return scaledValue.ToString("f1");
         }
 

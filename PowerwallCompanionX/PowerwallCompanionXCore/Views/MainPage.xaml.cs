@@ -1,9 +1,4 @@
-﻿using Microsoft.Maui.ApplicationModel;
-using Microsoft.Maui.Controls.PlatformConfiguration;
-using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Devices;
-using Microsoft.Maui.Dispatching;
-using Microsoft.Maui.Networking;
+﻿using Microsoft.Maui.Controls.Shapes;
 using PowerwallCompanion.Lib;
 using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
@@ -97,7 +92,7 @@ namespace PowerwallCompanionX.Views
                     powerFlowAnimationTimer.Tick += PowerFlowAnimationTimer_Tick;
                     powerFlowAnimationTimer.Start();
                 }
-        
+
             }
         }
 
@@ -202,8 +197,8 @@ namespace PowerwallCompanionX.Views
             // Page 1 : Move graph from row to column
             page1Grid.RowDefinitions[0].Height = GridLength.Auto;
             page1Grid.RowDefinitions[1].Height = new GridLength(0);
-            page1Grid.ColumnDefinitions[0].Width = DeviceDisplay.Current.MainDisplayInfo.Width > 800 ? new GridLength(330) : new GridLength(270); // Compress for small screens
-            page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
+            page1Grid.ColumnDefinitions[0].Width = new GridLength(330); // DeviceDisplay.Current.MainDisplayInfo.Width > 800 ? new GridLength(330) : new GridLength(270); // Compress for small screens
+            page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
             page1Grid.SetRow(powerGridView, 0);
             page1Grid.SetRow(powerFlowView, 0);
             page1Grid.SetColumn(powerGridView, 1);
@@ -409,48 +404,56 @@ namespace PowerwallCompanionX.Views
                 return;
             }
 
-            if (viewModel.InstantaneousPower.SolarToHome > 0)
-            {
-                var animation = new Animation(v => ((RotateTransform) solarToHomeAnimationPath.RenderTransform).Angle = v, 20, -60);
-                animation.Commit(this, "solarToHomeAnimation", 16, 1000, Easing.Linear);
-            }
             if (viewModel.InstantaneousPower.SolarToGrid > 0)
             {
                 var animation = new Animation(v => ((RotateTransform)solarToGridAnimationPath.RenderTransform).Angle = v, -20, 60);
-                animation.Commit(this, "solarToGridAnimation", 16, 1000, Easing.Linear);
+                animation.Commit(this, "solarToGridAnimation", 16, 1500, Easing.Linear);
             }
-            if (viewModel.InstantaneousPower.GridToBattery > 0)
-            {
-                var animation = new Animation(v => ((RotateTransform)gridToBatteryAnimationPath.RenderTransform).Angle = v, -10, 70);
-                animation.Commit(this, "gridToBatteryAnimation", 16, 1000, Easing.Linear);
-            }
+            
             if (viewModel.InstantaneousPower.BatteryToHome > 0)
             {
-                var animation = new Animation(v => ((RotateTransform)batteryToHomeAnimationPath.RenderTransform).Angle = v, -20, 60);
-                animation.Commit(this, "batteryToHomeAnimation", 16, 1000, Easing.Linear);
+                var animation = new Animation(v => ((RotateTransform)batteryToHomeAnimationPath.RenderTransform).Angle = v, 10, -60);
+                animation.Commit(this, "batteryToHomeAnimation", 16, 1500, Easing.Linear);
             }
-            if (viewModel.InstantaneousPower.BatteryToGrid > 0)
-            {
-                var animation = new Animation(v => ((RotateTransform)batteryToGridAnimationPath.RenderTransform).Angle = v, 20, -80);
-                animation.Commit(this, "batteryToGridAnimation", 16, 1000, Easing.Linear);
-            }
-            // Diagonals
+            
             if (viewModel.InstantaneousPower.GridToHome > 0)
             {
-                tasks.Add(gridToHomeAnimationPath.TranslateTo(-130, 130, 1000));
+                var animation = new Animation(v => ((RotateTransform)gridToHomeAnimationPath.RenderTransform).Angle = v, -10, 60);
+                animation.Commit(this, "gridToHomeAnimation", 16, 1500, Easing.Linear);
             }
             if (viewModel.InstantaneousPower.SolarToBattery > 0)
             {
-                tasks.Add(solarToBatteryAnimationPath.TranslateTo(100, 100, 1000));
+                var animation = new Animation(v => ((RotateTransform)solarToBatteryAnimationPath.RenderTransform).Angle = v, 20, -60);
+                animation.Commit(this, "solarToBatteryAnimation", 16, 1500, Easing.Linear);
+                
+            }
+
+            // Diagonals
+            if (viewModel.InstantaneousPower.SolarToHome > 0)
+            {
+                tasks.Add(solarToHomeAnimationPath.TranslateTo(90, 90, 1500));
+            }
+
+            if (viewModel.InstantaneousPower.BatteryToGrid > 0)
+            {
+                tasks.Add(batteryToGridAnimationPath.TranslateTo(90, -90, 1500));
+            }
+
+            if (viewModel.InstantaneousPower.GridToBattery > 0)
+            {
+                tasks.Add(gridToBatteryAnimationPath.TranslateTo(-90, 90, 1500));
             }
 
             await Task.WhenAll(tasks);
             // Reset animations
-            gridToHomeAnimationPath.TranslationX = 15;
-            gridToHomeAnimationPath.TranslationY = -15;
+            gridToBatteryAnimationPath.TranslationX = 20;
+            gridToBatteryAnimationPath.TranslationY = -20;
 
-            solarToBatteryAnimationPath.TranslationX = -25;
-            solarToBatteryAnimationPath.TranslationY = -25;
+            batteryToGridAnimationPath.TranslationX = -30;
+            batteryToGridAnimationPath.TranslationY = 30;
+
+            solarToHomeAnimationPath.TranslationX = -30;
+            solarToHomeAnimationPath.TranslationY = -30;
         }
 
         private async Task GetInstallationTimeZoneIfNeeded()
@@ -513,11 +516,24 @@ namespace PowerwallCompanionX.Views
 
                 viewModel.InstantaneousPower = await powerwallApi.GetInstantaneousPower();
 
-#if FAKE
+#if FAKE1
+                // Solar to grid, home, battery
+                viewModel.InstantaneousPower.SolarPower = 6000;
+                viewModel.InstantaneousPower.GridPower = -1000;
+                viewModel.InstantaneousPower.HomePower = 3000;
+                viewModel.InstantaneousPower.BatteryPower = -2000;
+#elif FAKE2
+                // Grid to home, battery
                 viewModel.InstantaneousPower.SolarPower = 0;
-                viewModel.InstantaneousPower.GridPower = -500;
-                viewModel.InstantaneousPower.HomePower = 500;
-                viewModel.InstantaneousPower.BatteryPower = 1000;
+                viewModel.InstantaneousPower.GridPower = 3000;
+                viewModel.InstantaneousPower.HomePower = 2000;
+                viewModel.InstantaneousPower.BatteryPower = -1000;
+#elif FAKE3
+                // Battery to grid, home
+                viewModel.InstantaneousPower.SolarPower = 0;
+                viewModel.InstantaneousPower.GridPower = -1000;
+                viewModel.InstantaneousPower.HomePower = 2000;
+                viewModel.InstantaneousPower.BatteryPower = 3000;
 #endif
 
                 await UpdateMinMaxPercentToday();
@@ -585,7 +601,7 @@ namespace PowerwallCompanionX.Views
             }
             else if (viewModel.InstantaneousPower.BatteryStoragePercent < viewModel.MinBatteryPercentToday)
             {
-                viewModel.MaxBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
+                viewModel.MinBatteryPercentToday = viewModel.InstantaneousPower.BatteryStoragePercent;
             }
             else if (viewModel.InstantaneousPower.BatteryStoragePercent > viewModel.MaxBatteryPercentToday)
             {
