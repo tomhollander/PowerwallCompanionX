@@ -1,4 +1,5 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
+using Microsoft.Maui.Platform;
 using PowerwallCompanion.Lib;
 using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
@@ -139,7 +140,7 @@ namespace PowerwallCompanionX.Views
                 if (visualState == "Portrait")
                 {
                     // Give extra space for the clock
-                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 15, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
+                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 18, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
                     viewModel.BarChartMaxWidth = Width - 50;
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
@@ -195,9 +196,27 @@ namespace PowerwallCompanionX.Views
             if (lastOrientation == "Landscape") return;
 
             // Page 1 : Move graph from row to column
-            page1Grid.RowDefinitions[0].Height = GridLength.Auto;
+            page1Grid.RowDefinitions[0].Height = GridLength.Star;
             page1Grid.RowDefinitions[1].Height = new GridLength(0);
-            page1Grid.ColumnDefinitions[0].Width = new GridLength(330); // DeviceDisplay.Current.MainDisplayInfo.Width > 800 ? new GridLength(330) : new GridLength(270); // Compress for small screens
+            if (DeviceDisplay.MainDisplayInfo.Width <= 800)
+            {
+                // Small screen, squish the gauge
+                page1Grid.ColumnDefinitions[0].Width = new GridLength(270);
+                page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
+            }
+            else if (Settings.PowerDisplayMode == "Flow")
+            {
+                // 50-50 split for flow view
+                page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
+                page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
+            }
+            else
+            { 
+                // Fixed gauge width for grid view
+                page1Grid.ColumnDefinitions[0].Width = new GridLength(330);
+                page1Grid.ColumnDefinitions[1].Width = GridLength.Auto;
+            }
+
             page1Grid.ColumnDefinitions[1].Width = GridLength.Star;
             page1Grid.SetRow(powerGridView, 0);
             page1Grid.SetRow(powerFlowView, 0);

@@ -90,7 +90,7 @@ namespace PowerwallCompanionX
 
         public static string PowerDisplayMode
         {
-            get => GetProperty<string>(nameof(Properties.PowerDisplayMode), "Graph");
+            get => GetProperty<string>(nameof(Properties.PowerDisplayMode), "Flow");
             set => Preferences.Default.Set(nameof(Properties.PowerDisplayMode), value);
         }
 
