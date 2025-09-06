@@ -7,7 +7,7 @@ namespace PowerwallCompanionX.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double scaledValue = (double)(value) / 1000;
-            return scaledValue.ToString("f0");
+            return scaledValue.ToString($"f{Settings.EnergyDecimals}");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

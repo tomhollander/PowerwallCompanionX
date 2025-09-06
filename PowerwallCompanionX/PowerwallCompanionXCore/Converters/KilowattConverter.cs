@@ -13,7 +13,7 @@ namespace PowerwallCompanionX.Converters
                 scaledValue = Math.Abs(scaledValue);
             }
 
-            return scaledValue.ToString("f1");
+            return scaledValue.ToString($"f{Settings.PowerDecimals}");
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

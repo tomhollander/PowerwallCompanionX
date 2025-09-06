@@ -44,9 +44,8 @@ namespace PowerwallCompanionX.Extras
                 lastStatus = $"🔋 Capacity: {totalCapacity / 1000.0:f2}kWh ({percentWarranted}%)";
                 return lastStatus;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Telemetry.TrackException(ex);
                 lastRefeshed = DateTime.Now; // Prevent frequent retries
                 if (lastStatus == null)
                 {

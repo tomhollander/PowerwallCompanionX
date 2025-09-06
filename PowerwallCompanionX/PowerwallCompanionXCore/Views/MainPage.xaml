@@ -74,7 +74,7 @@
 
 
         <!-- Instantaneous Power View-->
-        <Grid x:Name="mainGrid"  HorizontalOptions="Fill" VerticalOptions="Fill" IsClippedToBounds="True">
+        <Grid x:Name="mainGrid" HorizontalOptions="Fill" VerticalOptions="Fill" IsClippedToBounds="True">
             <Grid.Resources>
                 <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
                 <converters:PositiveToBooleanConverter x:Key="PositiveToBooleanConverter" />

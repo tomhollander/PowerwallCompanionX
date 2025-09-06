@@ -88,6 +88,26 @@ namespace PowerwallCompanionX.ViewModels
             set => Settings.ShowEnergyCosts = value;
         }
 
+        public int PowerDecimals
+        {
+            get => Settings.PowerDecimals;
+            set
+            {
+                Settings.PowerDecimals = value;
+                NotifyPropertyChanged(nameof(PowerDecimals));
+            }
+        }
+
+        public int EnergyDecimals
+        {
+            get => Settings.EnergyDecimals;
+            set
+            {
+                Settings.EnergyDecimals = value;
+                NotifyPropertyChanged(nameof(EnergyDecimals));
+            }
+        }
+
         public List<KeyValuePair<string, string>> AvailablePowerDisplayModes
         {
             get => new List<KeyValuePair<string, string>> {

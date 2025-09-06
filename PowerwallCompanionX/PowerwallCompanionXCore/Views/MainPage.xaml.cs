@@ -5,6 +5,7 @@ using PowerwallCompanion.Lib.Models;
 using PowerwallCompanionX.Extras;
 using PowerwallCompanionX.Media;
 using PowerwallCompanionX.ViewModels;
+using System.Diagnostics;
 
 namespace PowerwallCompanionX.Views
 {
@@ -140,7 +141,7 @@ namespace PowerwallCompanionX.Views
                 if (visualState == "Portrait")
                 {
                     // Give extra space for the clock
-                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 18, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
+                    timeTextBlock.Margin = new Thickness(timeDefaultMargin.Left, timeDefaultMargin.Top + 20, timeDefaultMargin.Right, timeDefaultMargin.Bottom);
                     viewModel.BarChartMaxWidth = Width - 50;
                     SetPortraitMode(mainGrid, dailyEnergyGrid);
                 }
@@ -268,8 +269,8 @@ namespace PowerwallCompanionX.Views
             if (lastOrientation == "Portrait") return;
 
             // Page 1 : Move graph from column to row
-            page1Grid.RowDefinitions[0].Height = new GridLength(3, GridUnitType.Star);
-            page1Grid.RowDefinitions[1].Height = new GridLength(4, GridUnitType.Star);
+            page1Grid.RowDefinitions[0].Height = GridLength.Star;
+            page1Grid.RowDefinitions[1].Height = GridLength.Star;
             page1Grid.ColumnDefinitions[0].Width = GridLength.Star;
             page1Grid.ColumnDefinitions[1].Width = new GridLength(0);
             page1Grid.SetRow(powerGridView, 1);
@@ -362,6 +363,13 @@ namespace PowerwallCompanionX.Views
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
             {
+                // This happens often when resuming the app, sleep a few seconds to see if it comes back
+                Debug.WriteLine("No internet");
+                await Task.Delay(3000);
+            }        
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
+            {
+                // Still no internet, huh? This might be a real issue
                 viewModel.LastExceptionMessage = "No internet access";
                 viewModel.LastExceptionDate = DateTime.Now;
                 viewModel.Status = MainViewModel.StatusEnum.Error;
@@ -567,7 +575,7 @@ namespace PowerwallCompanionX.Views
             {
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    if (!(Application.Current.Windows[0].Page is LoginPage))
+                    if (Application.Current.Windows.Count > 0 && !(Application.Current.Windows[0].Page is LoginPage))
                     {
                         Application.Current.Windows[0].Page = new LoginPage();
                         viewModel.LastExceptionMessage = ex.Message;

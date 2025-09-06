@@ -37,6 +37,8 @@ namespace PowerwallCompanionX
             DailySupplyCharge,
             ShowAnimations,
             PowerDisplayMode,
+            PowerDecimals,
+            EnergyDecimals,
         }
 
         public static string AccessToken
@@ -128,6 +130,18 @@ namespace PowerwallCompanionX
         {
             get => GetProperty<double>(nameof(Properties.FontScale), 1);
             set => Preferences.Default.Set(nameof(Properties.FontScale), value);
+        }
+
+        public static int PowerDecimals
+        {
+            get => GetProperty<int>(nameof(Properties.PowerDecimals), 1);
+            set => Preferences.Default.Set(nameof(Properties.PowerDecimals), value);
+        }
+
+        public static int EnergyDecimals
+        {
+            get => GetProperty<int>(nameof(Properties.EnergyDecimals), 0);
+            set => Preferences.Default.Set(nameof(Properties.EnergyDecimals), value);
         }
 
         public static string SelectedExtras
