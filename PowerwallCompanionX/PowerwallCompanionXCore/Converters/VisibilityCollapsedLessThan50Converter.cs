@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PowerwallCompanionX.Converters
 {
-    class VisibilityCollapsedLessThan10Converter : IValueConverter
+    class VisibilityCollapsedLessThan50Converter : IValueConverter
     {
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double doubleValue = Math.Abs((double)value); // Absolute value to handle negative numbers
-            if (doubleValue < 10D)
+            if (doubleValue < 50D)
             {
                 return false;
             }

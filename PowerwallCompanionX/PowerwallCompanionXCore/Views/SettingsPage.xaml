@@ -189,6 +189,20 @@
                         <ColumnDefinition Width="100"/>
                     </Grid.ColumnDefinitions>
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10"/>
+                    <Label Margin="10" Text="Font Scale" VerticalOptions="Center" />
+                    <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" HeightRequest="20" Grid.Row="1"  />
+                </Grid>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10"/>
                     <Label Margin="10" Text="Power decimals" VerticalOptions="Center" Grid.Row="0"/>
                     <Slider Minimum="0" Maximum="3"   Value="{Binding PowerDecimals, Mode=TwoWay}" HeightRequest="20" Grid.Row="1" />
                     <StackLayout Orientation="Horizontal" Grid.RowSpan="2" Grid.Column="1" Margin="10" Spacing="5">
@@ -229,21 +243,6 @@
                         <Label Text="{Binding GraphScale, Mode=TwoWay, StringFormat='{0:0.0}'}" VerticalOptions="Center"/>
                         <Label Text="kW / cm" VerticalOptions="Center" HorizontalOptions="End"/>
                     </StackLayout>
-                </Grid>
-
-                
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="100"/>
-                    </Grid.ColumnDefinitions>
-                    <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10"/>
-                    <Label Margin="10" Text="Font Scale" VerticalOptions="Center" />
-                    <Slider Minimum="0.5" Maximum="1.5" Value="{Binding FontScale}" HeightRequest="20" Grid.Row="1"  />
                 </Grid>
 
                 <Grid>

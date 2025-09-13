@@ -275,6 +275,8 @@ namespace PowerwallCompanionX
                 { "ShowSiteName", ShowSiteName.ToString() },
                 { "ShowAnimations", ShowAnimations.ToString() },
                 { "PowerDisplayMode", PowerDisplayMode.ToString() },
+                { "PowerDecimals", PowerDecimals.ToString() },
+                { "EnergyDecimals", EnergyDecimals.ToString() },
             };
 
             return result;
