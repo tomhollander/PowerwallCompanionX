@@ -11,6 +11,7 @@ namespace PowerwallCompanionX.Extras
         private decimal _sellPrice;
         private decimal _buyPrice;
         private decimal _renewables;
+        public string _descriptor;
         private const string baseUrl = "https://api.amber.com.au/v1";
 
         public AmberExtrasProvider(string apiKey)
@@ -31,7 +32,13 @@ namespace PowerwallCompanionX.Extras
                 {
                     await GetPrices();
                 }
-                string symbol = _sellPrice > 40 ? "🔴" : _sellPrice > 20 ? "🟡" : _sellPrice > 0 ? "🟢" : "💥";
+                string symbol = _descriptor == "extremelyLow" ? "🟣" : // Purple 
+                    _descriptor == "veryLow" ? "🔵" : // Blue
+                    _descriptor == "low" ? "🟢" : // Green
+                    _descriptor == "neutral" ? "🟠" : // Orange
+                    _descriptor == "high" ? "🔴" : // Red
+                    _descriptor == "spike" ? "🫣" : // Panic!
+                    "";
                 return $"⚡{symbol}{_sellPrice:f1}c ☀️ {_buyPrice:f1}c 🌱{_renewables:f0}%";
             }
             catch (Exception ex)
@@ -54,13 +61,14 @@ namespace PowerwallCompanionX.Extras
                 {
                     _sellPrice = item["perKwh"].GetValue<decimal>();
                     _renewables = item["renewables"].GetValue<decimal>();
+                    _descriptor = item["descriptor"].GetValue<string>();
                 }
                 else if (item["channelType"].GetValue<string>() == "feedIn")
                 {
                     _buyPrice = -item["perKwh"].GetValue<decimal>();
                 }
             }
-            _lastUpdated = DateTime.Now;
+           _lastUpdated = DateTime.Now;
         }
 
         private async Task GetSiteId()

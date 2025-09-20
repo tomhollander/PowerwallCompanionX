@@ -159,7 +159,7 @@
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10"/>
                     <VerticalStackLayout  Margin="10">
                         <Label Text="Show Energy Costs"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                        <Label Text="Uses custom rate plan set in Tesla app" FontSize="Caption" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Label Text="Uses custom rate plan set in Tesla app (or Amber if configured)" FontSize="Caption" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" />
                     </VerticalStackLayout>
                     <Switch x:Name="energyCostsSwitch" Margin="10" IsToggled="{Binding ShowEnergyCosts}"  Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="10"  />
                     <Label Text="Include daily supply charge" Margin="10" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" />

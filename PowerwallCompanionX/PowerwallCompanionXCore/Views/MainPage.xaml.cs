@@ -521,8 +521,16 @@ namespace PowerwallCompanionX.Views
             {
                 try
                 {
-                    var ratePlan = await powerwallApi.GetRatePlan();
-                    tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge, 0.0M);
+                    if (Settings.SelectedExtras == "Amber" && Settings.AmberApiKey != null)
+                    {
+                        tariffHelper = new AmberElectricTariffProvider(Settings.AmberApiKey, Settings.DailySupplyCharge);
+                    }
+                    else
+                    {
+                        var ratePlan = await powerwallApi.GetRatePlan();
+                        tariffHelper = new TeslaRatePlanTariffProvider(ratePlan, Settings.DailySupplyCharge, 0.0M);
+                    }
+                        
                 }
                 catch 
                 {
