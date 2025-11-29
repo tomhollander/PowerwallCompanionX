@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using PowerwallCompanion.Lib;
+using System.Text;
 using System.Text.Json.Nodes;
 
 
@@ -11,7 +12,7 @@ namespace PowerwallCompanionX.Extras
         private const int warrantedCapacity = 13500;
         private static string lastStatus = null;
         private DateTime lastRefeshed = DateTime.MinValue;
-        private TimeSpan refreshInterval = TimeSpan.FromMinutes(20);
+        private TimeSpan refreshInterval = TimeSpan.FromDays(1);
         public PowerwallExtrasProvider(string gatewayIP, string gatewayPassword)
         {
             Telemetry.TrackEvent("PowerwallExtrasProvider initialised");
@@ -21,6 +22,52 @@ namespace PowerwallCompanionX.Extras
 
 
         public async Task<string> RefreshStatus()
+        {
+            if (Settings.BatteryHealthMode == "Estimates")
+            {
+                return await RefreshStatusFromEstimates();
+            }
+            else
+            {
+                return await RefreshStatusFromGateway();
+            }
+        }
+
+        public async Task<string> RefreshStatusFromEstimates()
+        {
+            if ((DateTime.Now - lastRefeshed) < refreshInterval)
+            {
+                return lastStatus ?? "🔋 Estimates unavailable";
+            }
+
+            try
+            {
+                var api = new PowerwallApi(Settings.SiteId, new MauiPlatformAdapter());
+                var estimator = new BatteryCapacityEstimator(api);
+                var siteInfo = await api.GetEnergySiteInfo();
+                int batteryCount = siteInfo.NumberOfBatteries;
+                double estimatedCapacity = await estimator.GetEstimatedBatteryCapacity(DateTime.Today);
+                int totalWarantedCapacity = batteryCount * warrantedCapacity;
+                int percentWarranted = (int)((estimatedCapacity / (double)totalWarantedCapacity) * 100);
+
+                lastStatus = $"🔋 Est. Capacity: {estimatedCapacity / 1000.0:f2}kWh ({percentWarranted}%)";
+                return lastStatus;
+            }
+            catch (Exception)
+            {
+                lastRefeshed = DateTime.Now; // Prevent frequent retries
+                if (lastStatus == null)
+                {
+                    return "🔋 Estimates unavailable";
+                }
+                else
+                {
+                    return lastStatus + "*"; // Indicate stale data
+                }
+            }
+        }
+
+        public async Task<string> RefreshStatusFromGateway()
         {
             
             if ((DateTime.Now - lastRefeshed) < refreshInterval)

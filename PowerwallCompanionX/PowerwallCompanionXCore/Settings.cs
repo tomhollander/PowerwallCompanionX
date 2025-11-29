@@ -39,6 +39,7 @@ namespace PowerwallCompanionX
             PowerDisplayMode,
             PowerDecimals,
             EnergyDecimals,
+            BatteryHealthMode
         }
 
         public static string AccessToken
@@ -178,6 +179,13 @@ namespace PowerwallCompanionX
             get => GetProperty<int>(nameof(Properties.WakeTeslaHours), 24);
             set => Preferences.Default.Set(nameof(Properties.WakeTeslaHours), value);
         }
+
+        public static string BatteryHealthMode
+        {
+            get => GetProperty<string>(nameof(Properties.BatteryHealthMode), "Estimates");
+            set => Preferences.Default.Set(nameof(Properties.BatteryHealthMode), value);
+        }
+
         public static string GatewayIP
         {
             get => GetProperty<string>(nameof(Properties.GatewayIP), null);

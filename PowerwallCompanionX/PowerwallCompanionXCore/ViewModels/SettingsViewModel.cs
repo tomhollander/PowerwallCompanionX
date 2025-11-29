@@ -116,6 +116,20 @@ namespace PowerwallCompanionX.ViewModels
             };
         }
 
+        public KeyValuePair<string, string> SelectedBatteryHealthMode
+        {
+            get => AvailableBatteryHealthModes.Where(s => s.Key == Settings.BatteryHealthMode).FirstOrDefault();
+            set => Settings.BatteryHealthMode = value.Key;
+        }
+
+        public List<KeyValuePair<string, string>> AvailableBatteryHealthModes
+        {
+            get => new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("Estimates", "Estimates"),
+                new KeyValuePair<string, string>("Gateway", "Gateway"),
+            };
+        }
+
         public KeyValuePair<string, string> SelectedPowerDisplayMode
         {
             get => AvailablePowerDisplayModes.Where(s => s.Key == Settings.PowerDisplayMode).FirstOrDefault();

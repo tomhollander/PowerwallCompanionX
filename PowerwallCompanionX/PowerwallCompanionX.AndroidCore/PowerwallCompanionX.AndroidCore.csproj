@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworks>net9.0-android</TargetFrameworks>
+    <TargetFrameworks>net10.0-android</TargetFrameworks>
     <UseMaui>True</UseMaui>
     <AssemblyTitle>PowerwallCompanionX.Android</AssemblyTitle>
     <Product>PowerwallCompanionX.Android</Product>
