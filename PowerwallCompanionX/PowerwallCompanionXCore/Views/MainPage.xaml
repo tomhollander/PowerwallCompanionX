@@ -9,7 +9,8 @@
              x:DataType="viewmodels:MainViewModel"
              BackgroundColor="Black" 
              x:Class="PowerwallCompanionX.Views.MainPage"
-             Shell.NavBarIsVisible="false">
+             Shell.NavBarIsVisible="false"
+             SafeAreaEdges="Container">
 
     <Grid x:Name="rootGrid" Margin="{Binding PageMargin}" Opacity="{Binding PageOpacity}">
         <Grid.Resources>

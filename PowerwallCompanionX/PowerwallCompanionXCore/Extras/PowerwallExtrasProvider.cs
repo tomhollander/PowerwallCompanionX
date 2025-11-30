@@ -43,9 +43,9 @@ namespace PowerwallCompanionX.Extras
             try
             {
                 var api = new PowerwallApi(Settings.SiteId, new MauiPlatformAdapter());
-                var estimator = new BatteryCapacityEstimator(api);
                 var siteInfo = await api.GetEnergySiteInfo();
                 int batteryCount = siteInfo.NumberOfBatteries;
+                var estimator = new BatteryCapacityEstimator(api, batteryCount);
                 double estimatedCapacity = await estimator.GetEstimatedBatteryCapacity(DateTime.Today);
                 int totalWarantedCapacity = batteryCount * warrantedCapacity;
                 int percentWarranted = (int)((estimatedCapacity / (double)totalWarantedCapacity) * 100);
