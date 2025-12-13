@@ -10,7 +10,7 @@
     </Page.Resources>
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="FillAndExpand">
-            <Image Source="AppLogo.png" HorizontalOptions="Center" HeightRequest="30">
+            <Image Source="applogo.png" HorizontalOptions="Center" HeightRequest="30">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="TapGestureRecognizer_Tapped"

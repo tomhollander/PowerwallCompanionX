@@ -38,7 +38,7 @@
                     </Grid.ColumnDefinitions>
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" CornerRadius="10" />
                     <Label Margin="10" VerticalOptions="Center" Grid.Row="1">Signed into Tesla</Label>
-                    <Button  Grid.Column="1" Text="Sign Out" Command="{Binding SignOutCommand}" HorizontalOptions="Start" Margin="10" />
+                    <Button  Grid.Column="1" Text="Sign Out" TextColor="White" Command="{Binding SignOutCommand}" HorizontalOptions="Start" Margin="10" />
                 </Grid>
 
                 <Grid>
@@ -163,7 +163,7 @@
                     <BoxView BackgroundColor="#202020" Grid.ColumnSpan="2" Grid.RowSpan="2" CornerRadius="10"/>
                     <VerticalStackLayout  Margin="10">
                         <Label Text="Show Energy Costs"  Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" />
-                        <Label Text="Uses custom rate plan set in Tesla app (or Amber if configured)" FontSize="Caption" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Label Text="Uses Tesla rate plan or Amber" FontSize="Caption" Grid.Row="1"  HorizontalOptions="Start"  VerticalOptions="Center" />
                     </VerticalStackLayout>
                     <Switch x:Name="energyCostsSwitch" Margin="10" IsToggled="{Binding ShowEnergyCosts}"  Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="10"  />
                     <Label Text="Include daily supply charge" Margin="10" Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" />
@@ -346,7 +346,7 @@
                         <Label Text="This app is not built or endordsed by Tesla" FontSize="Caption" HorizontalOptions="Start" VerticalOptions="Center" />
                     </VerticalStackLayout>
                     <HorizontalStackLayout Margin="10" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
-                        <Label Text="Version "/>
+                        <Label Text="v "/>
                         <Label Text="{Binding AppVersion}"/>
                     </HorizontalStackLayout>
                 </Grid>

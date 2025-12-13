@@ -28,7 +28,7 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Tapped="grid_Tapped"/>
         </Grid.GestureRecognizers>
-        <Image Source="AppLogo.png" VerticalOptions="Start" HorizontalOptions="Center" Scale="0.7" Margin="0,-10,0,-20">
+        <Image Source="applogo.png" VerticalOptions="Start" HorizontalOptions="Center" Scale="0.7" Margin="0,-10,0,-20">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer Tapped="status_Tapped" />
             </Image.GestureRecognizers>

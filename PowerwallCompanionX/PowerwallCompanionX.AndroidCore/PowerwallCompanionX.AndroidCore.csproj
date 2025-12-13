@@ -5,11 +5,15 @@
     <TargetFrameworks>net10.0-android</TargetFrameworks>
     <UseMaui>True</UseMaui>
     <AssemblyTitle>PowerwallCompanionX.Android</AssemblyTitle>
+	<ApplicationTitle>Powerwall Companion</ApplicationTitle>
     <Product>PowerwallCompanionX.Android</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <RootNamespace>PowerwallCompanionX.Android</RootNamespace>
+	<WindowsPackageType>None</WindowsPackageType>
+	<SingleProject>true</SingleProject>
+	  
   </PropertyGroup>
 <PropertyGroup>
 	<!-- Used in .NET for Android projects -->
@@ -58,7 +62,6 @@
     <AndroidAsset Remove="Assets\tariff_rate.json" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Remove="Resources\Images\appicon.png" />
     <AndroidResource Remove="Resources\Images\splashscreenicon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +76,7 @@
     <None Remove="Assets\site_info.json" />
     <None Remove="Assets\site_status.json" />
     <None Remove="Assets\tariff_rate.json" />
+    <None Remove="Resources\AppIcon\appicon.png" />
     <None Remove="Resources\products.json" />
   </ItemGroup>
   <ItemGroup>
@@ -88,9 +92,8 @@
     <MauiAsset Include="Assets\site_info.json" />
     <MauiAsset Include="Assets\site_status.json" />
     <MauiAsset Include="Assets\tariff_rate.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <MauiIcon Include="Resources\Images\appicon.png" />
+    <MauiIcon Include="Resources\AppIcon\appicon.png" />
+    <MauiImage Include="Resources\Images\*" />
   </ItemGroup>
   <ItemGroup>
     <MauiSplashScreen Include="Resources\Images\splashscreenicon.png" Color="#000000" />
