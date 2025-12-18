@@ -65,6 +65,8 @@
     <AndroidResource Remove="Resources\Images\splashscreenicon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Assets\battery-empty.wav" />
+    <None Remove="Assets\battery-full.wav" />
     <None Remove="Assets\calendar_history-energy-day.json" />
     <None Remove="Assets\calendar_history-energy-month.json" />
     <None Remove="Assets\calendar_history-energy-week.json" />
@@ -80,6 +82,10 @@
     <None Remove="Resources\products.json" />
   </ItemGroup>
   <ItemGroup>
+    <MauiAsset Include="Assets\battery-empty.wav" />
+    <MauiAsset Include="Assets\battery-full.wav">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </MauiAsset>
     <MauiAsset Include="Assets\calendar_history-energy-day.json" />
     <MauiAsset Include="Assets\calendar_history-energy-month.json" />
     <MauiAsset Include="Assets\calendar_history-energy-week.json" />
@@ -102,7 +108,7 @@
     <ProjectReference Include="..\PowerwallCompanionXCore\PowerwallCompanionXCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.11" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.20" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />

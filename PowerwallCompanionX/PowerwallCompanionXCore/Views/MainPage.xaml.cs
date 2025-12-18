@@ -77,6 +77,7 @@ namespace PowerwallCompanionX.Views
                     extrasProvider = new OnboardingExtrasProvider();
                     break;
             }
+            extrasTextBlock.IsVisible = (extrasProvider != null);
 
             Task.Run(() => RefreshData());
 
@@ -320,7 +321,6 @@ namespace PowerwallCompanionX.Views
 
         private async Task RefreshData()
         {
-            extrasTextBlock.IsVisible = (extrasProvider != null);
             await RefreshDataFromTeslaOwnerApi();
             viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
             int count = 0;
@@ -329,7 +329,7 @@ namespace PowerwallCompanionX.Views
             timer.Interval = TimeSpan.FromSeconds(10);
             timer.Tick += (s, e) =>
             {
-                Task.Run(async () =>
+                Application.Current.Dispatcher.Dispatch(async () =>
                 {
                     await RefreshDataFromTeslaOwnerApi();
                     viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
@@ -338,13 +338,13 @@ namespace PowerwallCompanionX.Views
                         count = 0;
                         viewModel.RecalculatePageMargin();
                     }
+                    if (ShowTwoPages() &&
+                    Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
+                    {
+                        carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
+                    }
 
                 });
-                if (ShowTwoPages() &&
-                    Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
-                {
-                    carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
-                }
                 
             };
 

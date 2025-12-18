@@ -4,12 +4,14 @@ namespace PowerwallCompanionX.Media
 {
     public class SoundPlayer
     {
-        public const string BatteryEmpty = "battery-empty.wav";
-        public const string BatteryFull = "battery-full.wav";
+        public const string BatteryEmpty = "Assets/battery-empty.wav";
+        public const string BatteryFull = "Assets/battery-full.wav";
 
-        public void PlaySound(string file)
+        public async void PlaySound(string file)
         {
-            var audioPlayer = AudioManager.Current.CreatePlayer(file);
+            // MauiAsset files must be read as a stream
+            var stream = await FileSystem.OpenAppPackageFileAsync(file);
+            var audioPlayer = AudioManager.Current.CreatePlayer(stream);
             audioPlayer.Play();
         }
 
