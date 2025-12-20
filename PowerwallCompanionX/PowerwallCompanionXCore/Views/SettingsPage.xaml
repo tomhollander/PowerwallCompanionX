@@ -142,7 +142,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Label Margin="10" Text="Capacity source: " VerticalOptions="Center" Grid.Row="0" />
-                        <Picker Margin="10" Title="Power Display Mode" ItemsSource="{Binding AvailableBatteryHealthModes}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedBatteryHealthMode}" TextColor="White"  
+                        <Picker Margin="10" Title="Capacity source" ItemsSource="{Binding AvailableBatteryHealthModes}" ItemDisplayBinding="{Binding Value}" SelectedItem="{Binding SelectedBatteryHealthMode}" TextColor="White"  
                             Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" />
                         <Label Margin="10" Text="Gateway IP (PW2 only): " VerticalOptions="Center" Grid.Row="1" />
                         <Entry Margin="10" TextColor="White" HorizontalOptions="FillAndExpand" Text="{Binding GatewayIP, Mode=TwoWay}"  Grid.Row="1" Grid.Column="1"/>

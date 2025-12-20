@@ -327,23 +327,26 @@ namespace PowerwallCompanionX.Views
 
             timer = Application.Current.Dispatcher.CreateTimer();
             timer.Interval = TimeSpan.FromSeconds(10);
-            timer.Tick += (s, e) =>
+            timer.Tick += (s, e) => 
             {
-                Application.Current.Dispatcher.Dispatch(async () =>
+                Task.Run(async () =>
                 {
                     await RefreshDataFromTeslaOwnerApi();
                     viewModel.ExtrasContent = await extrasProvider?.RefreshStatus();
-                    if (++count > 6)
+                    Application.Current.Dispatcher.Dispatch(async () => // UI thread
                     {
-                        count = 0;
-                        viewModel.RecalculatePageMargin();
-                    }
-                    if (ShowTwoPages() &&
-                    Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
-                    {
-                        carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
-                    }
+                        if (++count > 6)
+                        {
+                            count = 0;
+                            viewModel.RecalculatePageMargin();
+                        }
+                        if (ShowTwoPages() &&
+                        Settings.CyclePages && DateTime.Now - lastManualSwipe > swipeIdlePeriod)
+                        {
+                            carousel.SelectedIndex = (carousel.SelectedIndex + 1) % 2;
+                        }
 
+                    });
                 });
                 
             };

@@ -13,7 +13,7 @@
     <RootNamespace>PowerwallCompanionX.Android</RootNamespace>
 	<WindowsPackageType>None</WindowsPackageType>
 	<SingleProject>true</SingleProject>
-	  
+		  
   </PropertyGroup>
 <PropertyGroup>
 	<!-- Used in .NET for Android projects -->
