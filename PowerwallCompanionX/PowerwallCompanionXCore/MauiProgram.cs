@@ -12,7 +12,6 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>();
         builder.Services.AddSingleton(AudioManager.Current);
-
         return builder.Build();
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34316.72
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11312.151 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerwallCompanionX.AndroidCore", "PowerwallCompanionX\PowerwallCompanionX.AndroidCore\PowerwallCompanionX.AndroidCore.csproj", "{D1EBFF6B-F767-4E7E-8DFF-0F11C1A7DE68}"
 EndProject
@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6175E223-4235-4CEE-B9D7-C3A20C22D284}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		logincode.html = logincode.html
+		loginurl.html = loginurl.html
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerwallCompanion.Lib", "..\PowerwallCompanion\PowerwallCompanion.Lib\PowerwallCompanion.Lib.csproj", "{AA28F014-3935-480A-BDC5-B6C2C25F3C64}"

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy browser login helper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 600px;
+    }
+    .url-box {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      word-wrap: break-word;
+      background: #f9f9f9;
+      margin-bottom: 15px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 14px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 10px;
+      color: #006400;
+      font-size: 14px;
+    }
+    .warning {
+      color: #b00020;
+    }
+  </style>
+</head>
+<body>
+  <h1>Legacy Login Helper</h1>
+  <p>
+    Please paste this code into Powerwall Companion to complete the login process. 
+  </p>
+
+  <div id="urlContainer" class="url-box"></div>
+
+  <button id="copyButton" disabled>Copy to Clipboard</button>
+
+  <div id="message" class="message"></div>
+
+
+  <script>
+    // Get ?code=... from query string
+    function getCodeParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("code") || "";
+    }
+
+    function getErrorParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("error") || "";
+    }
+
+    const codeValue = getCodeParam();
+    const errorValue = getErrorParam();
+    const urlContainer = document.getElementById("urlContainer");
+    const copyButton = document.getElementById("copyButton");
+    const message = document.getElementById("message");
+
+    if (codeValue) {
+      // Display code (escaped via textContent)
+      urlContainer.textContent = codeValue;
+      copyButton.disabled = false;
+    } else if (errorValue) {
+      // Display error text (escaped via textContent)
+      urlContainer.textContent = "Error: " + errorValue;
+    }
+    else {
+      urlContainer.innerHTML = "<span class='warning'>No <code>code</code> parameter found in the query string.</span>";
+    }
+
+
+
+    copyButton.addEventListener("click", async function () {
+      message.textContent = "";
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(codeValue);
+          message.textContent = "Code copied to clipboard.";
+          message.classList.remove("warning");
+        } else {
+          // Fallback for older browsers
+          const tempInput = document.createElement("textarea");
+          tempInput.value = codeValue;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+          message.textContent = "Code copied to clipboard (fallback).";
+          message.classList.remove("warning");
+        }
+      } catch (e) {
+        message.textContent = "Could not copy code to clipboard.";
+        message.classList.add("warning");
+      }
+    });
+  </script>
+</body>
+</html>

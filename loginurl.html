@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy browser login helper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 600px;
+    }
+    .url-box {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      word-wrap: break-word;
+      background: #f9f9f9;
+      margin-bottom: 15px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 14px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 10px;
+      color: #006400;
+      font-size: 14px;
+    }
+    .warning {
+      color: #b00020;
+    }
+  </style>
+</head>
+<body>
+  <h1>Legacy browser login helper</h1>
+  <p>
+    The version of Android you are running doesn't support authentication to Tesla within the app. 
+    Please copy this URL and open in an external browser (or on another device if your old browser doesn't work) 
+      to complete the authentication flow.
+  </p>
+
+  <div id="urlContainer" class="url-box"></div>
+
+  <div id="message" class="message"></div>
+
+  <p>After a successful login you should see a code. Please paste it here:</p>
+
+  <p><input id="code" type="text"></p>
+
+  <button id="finaliseButton">Complete Process</button>
+
+
+  <script>
+    // Get ?url=... from query string
+    function getUrlParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("url") || "";
+    }
+
+    const urlValue = getUrlParam();
+    const urlContainer = document.getElementById("urlContainer");
+    const openButton = document.getElementById("openButton");
+    const copyButton = document.getElementById("copyButton");
+    const message = document.getElementById("message");
+
+    if (urlValue) {
+      // Display URL text (escaped via textContent)
+      urlContainer.textContent = urlValue;
+    } else {
+      urlContainer.innerHTML = "<span class='warning'>No <code>url</code> parameter found in the query string.</span>";
+    }
+
+
+    finaliseButton.addEventListener("click", function () {
+       window.location.href = "temp://temp/temp?code=" + document.getElementById("code").value;
+    });
+
+  </script>
+</body>
+</html>

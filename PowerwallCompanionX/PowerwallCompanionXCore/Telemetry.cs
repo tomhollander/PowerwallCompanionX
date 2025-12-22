@@ -32,9 +32,9 @@ namespace PowerwallCompanionX
         {
             string exceptionKey = ex.Message + ":" + ex.GetType().ToString();
             DateTime lastTracked = exceptionLastTrackedTimes.ContainsKey(exceptionKey) ? exceptionLastTrackedTimes[exceptionKey] : DateTime.MinValue;
-            if (lastTracked != DateTime.MinValue && (DateTime.UtcNow - lastTracked).TotalSeconds < 180)
+            if (lastTracked != DateTime.MinValue && (DateTime.UtcNow - lastTracked).TotalSeconds < 300)
             {
-                // Don't track the same exception more than once every 180 seconds
+                // Don't track the same exception more than once every 300 seconds
                 return;
             }
             exceptionLastTrackedTimes[exceptionKey] = DateTime.UtcNow;
