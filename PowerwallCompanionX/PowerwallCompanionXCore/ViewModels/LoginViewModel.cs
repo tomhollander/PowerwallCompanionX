@@ -15,23 +15,10 @@ namespace PowerwallCompanionX.ViewModels
         private TeslaAuthHelper teslaAuth = new TeslaAuth.TeslaAuthHelper(TeslaAuth.TeslaAccountRegion.Unknown,
                     Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, Keys.TeslaAppRedirectUrl,
                      Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VehicleDeviceData }));
-        private bool useLegacyLogin = false;
 
         public LoginViewModel()
         {
             ClearCookies();
-
-#if ANDROID
-            // Tesla login page crashses in older versions of Android, so use a fallback
-            if (Android.OS.Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.O)
-            {
-                useLegacyLogin = true;
-                string legacyRedirectUri = "https://tomsapps2.blob.core.windows.net/powerwall-companion/logincode.html";
-                teslaAuth = new TeslaAuth.TeslaAuthHelper(TeslaAuth.TeslaAccountRegion.Unknown,
-                    Keys.TeslaAppClientId, Keys.TeslaAppClientSecret, legacyRedirectUri,
-                     Scopes.BuildScopeString(new[] { Scopes.EnergyDeviceData, Scopes.VehicleDeviceData }));
-            }
-#endif
         }
 
         public void ClearCookies()
@@ -47,17 +34,7 @@ namespace PowerwallCompanionX.ViewModels
         {
             get 
             {
-                if (!useLegacyLogin)
-                {
-                    return teslaAuth.GetLoginUrlForBrowser();
-                }
-                else
-                {
-                    var url = teslaAuth.GetLoginUrlForBrowser();
-                    string legacyUrl = "https://tomsapps2.blob.core.windows.net/powerwall-companion/loginurl.html?url=" + UrlEncoder.Default.Encode(url);
-                    return legacyUrl;
-                }
-                    
+                return teslaAuth.GetLoginUrlForBrowser();
             }
         }
 

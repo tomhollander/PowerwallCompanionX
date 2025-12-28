@@ -3,13 +3,15 @@ using PowerwallCompanion.Lib;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Net;
+using System.Text.Json;
 
 namespace PowerwallCompanionX
 {
     public static class Telemetry
     {
         private static Dictionary<string, DateTime> exceptionLastTrackedTimes = new Dictionary<string, DateTime>();
-
+        private static bool? _shouldLogExceptionCache;
+        private static DateTime _shouldLogExceptionCacheTime = DateTime.MinValue;
         public static void TrackUser()
         {
             try
@@ -39,7 +41,54 @@ namespace PowerwallCompanionX
             }
             exceptionLastTrackedTimes[exceptionKey] = DateTime.UtcNow;
 
-            TrackEventToMixpanelSafe("Exception", BuildExceptionMetadata(ex, true));
+            Task.Run(async () =>
+            {
+                try
+                {
+                    // Check if telemetry is disabled for this version
+                    if (await ShouldLogException())
+                    {
+                        await TrackEventToMixpanel("Exception", BuildExceptionMetadata(ex, true));
+                    }
+                }
+                catch
+                {
+                    // Ignore errors
+                }
+            });
+        }
+
+        private static async Task<bool> ShouldLogException()
+        {
+            if (_shouldLogExceptionCache.HasValue && (DateTime.UtcNow - _shouldLogExceptionCacheTime).TotalHours < 8)
+            {
+                return _shouldLogExceptionCache.Value;
+            }
+
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var json = await client.GetStringAsync("https://tomsapps2.blob.core.windows.net/powerwall-companion/disable-exception-telemetry-version.json");
+                    var versions = JsonSerializer.Deserialize<string[]>(json);
+
+                    var telemetryAdapter = new MauiAndroidTelemetryPlatformAdapter();
+                    if (versions.Contains(telemetryAdapter.AppVersion) || versions.Contains("*"))
+                    {
+                        _shouldLogExceptionCache = false;
+                    }
+                    else
+                    {
+                        _shouldLogExceptionCache = true;
+                    }
+                    _shouldLogExceptionCacheTime = DateTime.UtcNow;
+                    return _shouldLogExceptionCache.Value;
+                }
+            }
+            catch
+            {
+                return true;
+            }
         }
 
         public static void TrackUnhandledException(Exception ex)
