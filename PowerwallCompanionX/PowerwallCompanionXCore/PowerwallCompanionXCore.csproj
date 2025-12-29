@@ -28,4 +28,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\PowerwallCompanion\PowerwallCompanion.Lib\PowerwallCompanion.Lib.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <MauiXaml Update="Views\StartupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Views\UpdateRequiredPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+  </ItemGroup>
 </Project>

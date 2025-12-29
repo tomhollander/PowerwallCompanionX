@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PowerwallCompanionX.Views.UpdateRequiredPage"
+             BackgroundColor="Black">
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20" Padding="20">
+        <Label Text="Update Required" FontSize="Title" HorizontalOptions="Center" TextColor="White"/>
+        <Label Text="This version of the app is no longer supported. Please update to the latest version." 
+               HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White"/>
+        <Button Text="Update Now" Clicked="UpdateButton_Clicked" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
