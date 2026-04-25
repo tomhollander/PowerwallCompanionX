@@ -437,16 +437,16 @@
 
                     <chart:SfCartesianChart.Legend>
                         <chart:ChartLegend ToggleSeriesVisibility="True" Placement="Right">
-                            <!--<chart:ChartLegend.LabelStyle>
-       <chart:ChartLegendLabelStyle TextColor="DarkGray" />
-   </chart:ChartLegend.LabelStyle>-->
+                            <chart:ChartLegend.LabelStyle>
+                                <chart:ChartLegendLabelStyle TextColor="DarkGray" />
+                            </chart:ChartLegend.LabelStyle>
                         </chart:ChartLegend>
                     </chart:SfCartesianChart.Legend>
 
-                    <chart:AreaSeries Fill="DeepSkyBlue" Stroke="DeepSkyBlue" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Home}" Label="Home" XBindingPath="XValue" YBindingPath="YValue" />
-                    <chart:AreaSeries Fill="Gold" Stroke="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Solar}" Label="Solar" XBindingPath="XValue" YBindingPath="YValue"  />
-                    <chart:AreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Grid}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
-                    <chart:AreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Battery}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
+                    <chart:StackingAreaSeries Fill="DeepSkyBlue" Stroke="DeepSkyBlue" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Home}" Label="Home" XBindingPath="XValue" YBindingPath="YValue" />
+                    <chart:StackingAreaSeries Fill="Gold" Stroke="Gold" StrokeWidth="0.5" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Solar}" Label="Solar" XBindingPath="XValue" YBindingPath="YValue"  />
+                    <chart:StackingAreaSeries Fill="LightGray" Stroke="LightGray" StrokeWidth="0" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Grid}" Label="Grid" XBindingPath="XValue" YBindingPath="YValue" />
+                    <chart:StackingAreaSeries Fill="LimeGreen" Stroke="LimeGreen" StrokeWidth="0" Opacity="0.5" ItemsSource="{Binding PowerChartSeries.Battery}" Label="Battery" XBindingPath="XValue" YBindingPath="YValue" />
                     
                     <chart:SfCartesianChart.Annotations>
                         <chart:VerticalLineAnnotation X1="{Binding GraphDayBoundary}" Stroke="LightGray" StrokeWidth="2" />
